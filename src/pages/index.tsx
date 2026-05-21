@@ -32,126 +32,42 @@ export default function Home() {
       <Navigation />
 
       <main>
-        <section className="relative min-h-screen flex items-center overflow-hidden">
-          <div className="absolute inset-0 z-0">
-            <Image
-              src="/generated/executive-advisory-hero.png"
-              alt="Executive advisory background"
-              fill
-              className="object-cover"
-              priority
-              style={{
-                transform: `translateY(${heroTransform}px)`,
-              }}
-            />
-            <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/85 to-background/70"></div>
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
-          </div>
-
+        <section className="relative min-h-screen flex items-center overflow-hidden bg-background">
           <div className="container relative z-10 pt-32 pb-20 md:pt-40 md:pb-32">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="space-y-8">
-                <div className="inline-flex items-center gap-3">
-                  <div className="relative">
-                    <div className="absolute inset-0 bg-accent/30 blur-xl"></div>
-                    <div className="relative px-4 py-1.5 bg-accent/10 backdrop-blur-md border border-accent/30 rounded-full">
-                      <span className="text-sm font-semibold text-accent">21+ Years Experience</span>
-                    </div>
-                  </div>
-                  <div className="relative">
-                    <div className="absolute inset-0 bg-accent/30 blur-xl"></div>
-                    <div className="relative px-4 py-1.5 bg-accent/10 backdrop-blur-md border border-accent/30 rounded-full">
-                      <span className="text-sm font-semibold text-accent">Women-Owned</span>
-                    </div>
-                  </div>
+            <div className="max-w-5xl mx-auto text-center">
+              <div className="flex items-center justify-center gap-3 mb-8">
+                <div className="px-4 py-1.5 bg-accent/10 border border-accent/30 rounded-full">
+                  <span className="text-sm font-semibold text-accent">21+ Years Experience</span>
                 </div>
-
-                <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-semibold text-foreground leading-tight">
-                  Business Restructuring & Financial Advisory
-                </h1>
-
-                <p className="text-xl md:text-2xl text-foreground/70 leading-relaxed">
-                  Helping businesses navigate financial complexity through strategic restructuring, creditor coordination, and cash flow stabilization.
-                </p>
-
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Link
-                    href="/contact"
-                    className="relative group"
-                  >
-                    <div className="absolute inset-0 bg-accent/30 blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-                    <div className="relative px-8 py-4 bg-gradient-to-r from-accent to-accent/80 backdrop-blur-sm text-white font-semibold rounded-lg hover:from-accent/90 hover:to-accent/70 transition-all duration-300 text-center">
-                      Request Confidential Review
-                    </div>
-                  </Link>
-                  <Link
-                    href="/services"
-                    className="relative group"
-                  >
-                    <div className="absolute inset-0 bg-foreground/10 blur-lg group-hover:blur-xl transition-all duration-500"></div>
-                    <div className="relative px-8 py-4 bg-card/80 backdrop-blur-md border-2 border-foreground/20 text-foreground font-semibold rounded-lg hover:bg-card/60 hover:border-foreground/30 transition-all duration-300 text-center">
-                      Explore Services
-                    </div>
-                  </Link>
+                <div className="px-4 py-1.5 bg-accent/10 border border-accent/30 rounded-full">
+                  <span className="text-sm font-semibold text-accent">Women-Owned</span>
                 </div>
               </div>
 
-              <div className="space-y-6">
-                <div className="relative group">
-                  <div className="absolute inset-0 bg-accent/20 blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
-                  <div className="relative bg-card/80 backdrop-blur-xl border border-border/50 p-8 rounded-2xl shadow-2xl hover:shadow-accent/20 transition-all duration-500">
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-accent/30 to-accent/10 backdrop-blur-sm border border-accent/30 flex items-center justify-center flex-shrink-0">
-                        <svg className="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                        </svg>
-                      </div>
-                      <div>
-                        <h3 className="font-serif text-xl font-semibold mb-2 text-foreground">Institutional Expertise</h3>
-                        <p className="text-foreground/70">Two decades of hands-on restructuring experience with deep industry relationships</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-semibold text-foreground leading-tight mb-8">
+                Business Restructuring & Financial Advisory
+              </h1>
 
-                <div className="relative group">
-                  <div className="absolute inset-0 bg-accent/20 blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
-                  <div className="relative bg-card/80 backdrop-blur-xl border border-border/50 p-8 rounded-2xl shadow-2xl hover:shadow-accent/20 transition-all duration-500">
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-accent/30 to-accent/10 backdrop-blur-sm border border-accent/30 flex items-center justify-center flex-shrink-0">
-                        <svg className="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                        </svg>
-                      </div>
-                      <div>
-                        <h3 className="font-serif text-xl font-semibold mb-2 text-foreground">Creditor Coordination</h3>
-                        <p className="text-foreground/70">Strategic management of relationships with banks, lenders, vendors, and financial stakeholders</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <p className="text-xl md:text-2xl text-foreground/70 leading-relaxed max-w-3xl mx-auto mb-12">
+                Helping businesses navigate financial complexity through strategic restructuring, creditor coordination, and cash flow stabilization.
+              </p>
 
-                <div className="relative group">
-                  <div className="absolute inset-0 bg-accent/20 blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
-                  <div className="relative bg-card/80 backdrop-blur-xl border border-border/50 p-8 rounded-2xl shadow-2xl hover:shadow-accent/20 transition-all duration-500">
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-accent/30 to-accent/10 backdrop-blur-sm border border-accent/30 flex items-center justify-center flex-shrink-0">
-                        <svg className="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                        </svg>
-                      </div>
-                      <div>
-                        <h3 className="font-serif text-xl font-semibold mb-2 text-foreground">Cash Flow Stabilization</h3>
-                        <p className="text-foreground/70">Proven strategies for improving operational cash flow and achieving financial stability</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center px-8 py-4 bg-accent text-white font-semibold rounded-lg hover:bg-accent/90 transition-all duration-300 shadow-lg hover:shadow-xl"
+                >
+                  Request Confidential Review
+                </Link>
+                <Link
+                  href="/services"
+                  className="inline-flex items-center justify-center px-8 py-4 bg-background border-2 border-foreground text-foreground font-semibold rounded-lg hover:bg-foreground hover:text-background transition-all duration-300"
+                >
+                  Explore Services
+                </Link>
               </div>
             </div>
           </div>
-
-          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent z-10"></div>
         </section>
 
         {/* Experience Badge */}
