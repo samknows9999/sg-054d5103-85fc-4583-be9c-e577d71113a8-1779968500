@@ -71,6 +71,14 @@ export default function Services() {
                 </p>
               </div>
               <div className="space-y-8">
+                <div className="relative h-[300px] rounded-lg overflow-hidden shadow-lg">
+                  <Image
+                    src="/generated/services-workspace.png"
+                    alt="Modern office workspace"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
                 <div className="group relative">
                   <div className="absolute inset-0 bg-accent/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   <div className="relative bg-card p-8 rounded-xl border border-border shadow-lg hover:shadow-2xl hover:shadow-accent/10 hover:scale-[1.02] hover:border-accent/30 transition-all duration-500">
@@ -112,6 +120,14 @@ export default function Services() {
           <div className="container">
             <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
               <div className="order-2 md:order-1 space-y-8">
+                <div className="relative h-[300px] rounded-lg overflow-hidden shadow-lg">
+                  <Image
+                    src="/generated/services-advisory.png"
+                    alt="Professional business consultant advisory"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
                 <div className="group relative">
                   <div className="absolute inset-0 bg-accent/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   <div className="relative bg-card p-8 rounded-xl border border-border shadow-lg hover:shadow-2xl hover:shadow-accent/10 hover:scale-[1.02] hover:border-accent/30 transition-all duration-500">
@@ -187,6 +203,14 @@ export default function Services() {
                 </p>
               </div>
               <div className="space-y-8">
+                <div className="relative h-[300px] rounded-lg overflow-hidden shadow-lg">
+                  <Image
+                    src="/generated/services-documents.png"
+                    alt="Business documents and financial reports"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
                 <div className="group relative">
                   <div className="absolute inset-0 bg-accent/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   <div className="relative bg-card p-8 rounded-xl border border-border shadow-lg hover:shadow-2xl hover:shadow-accent/10 hover:scale-[1.02] hover:border-accent/30 transition-all duration-500">
@@ -227,34 +251,39 @@ export default function Services() {
         <section className="py-20 md:py-32">
           <div className="container">
             <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
-              <div className="bg-card p-8 rounded-lg border border-border shadow-sm order-2 md:order-1">
-                <h3 className="font-serif text-xl font-semibold mb-6">MCA Services Include</h3>
-                <ul className="space-y-4">
-                  <li className="flex items-start">
-                    <svg className="w-6 h-6 text-accent mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span className="text-foreground/70">Multi-provider coordination and communication strategy</span>
-                  </li>
-                  <li className="flex items-start">
-                    <svg className="w-6 h-6 text-accent mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span className="text-foreground/70">Daily remittance optimization and cash flow management</span>
-                  </li>
-                  <li className="flex items-start">
-                    <svg className="w-6 h-6 text-accent mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span className="text-foreground/70">Negotiation of sustainable repayment structures</span>
-                  </li>
-                  <li className="flex items-start">
-                    <svg className="w-6 h-6 text-accent mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span className="text-foreground/70">Balance preservation while maintaining operations</span>
-                  </li>
-                </ul>
+              <div className="order-2 md:order-1">
+                <div className="group relative">
+                  <div className="absolute inset-0 bg-accent/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="relative bg-card p-8 rounded-xl border border-border shadow-lg hover:shadow-2xl hover:shadow-accent/10 hover:scale-[1.02] hover:border-accent/30 transition-all duration-500">
+                    <h3 className="font-serif text-xl font-semibold mb-6 group-hover:text-accent transition-colors duration-300">MCA Services Include</h3>
+                    <ul className="space-y-4">
+                      <li className="flex items-start">
+                        <svg className="w-6 h-6 text-accent mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span className="text-foreground/70">Multi-provider coordination and communication strategy</span>
+                      </li>
+                      <li className="flex items-start">
+                        <svg className="w-6 h-6 text-accent mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span className="text-foreground/70">Daily remittance optimization and cash flow management</span>
+                      </li>
+                      <li className="flex items-start">
+                        <svg className="w-6 h-6 text-accent mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span className="text-foreground/70">Negotiation of sustainable repayment structures</span>
+                      </li>
+                      <li className="flex items-start">
+                        <svg className="w-6 h-6 text-accent mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span className="text-foreground/70">Balance preservation while maintaining operations</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
               <div className="order-1 md:order-2">
                 <div className="inline-block px-4 py-1 bg-accent/10 border border-accent/20 rounded-full mb-6">
