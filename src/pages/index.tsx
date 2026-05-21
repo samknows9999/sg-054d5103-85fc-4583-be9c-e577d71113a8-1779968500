@@ -10,8 +10,8 @@ export default function HomePage() {
   return (
     <>
       <SEO
-        title="Regroup Partners | Business Restructuring & Financial Advisory"
-        description="Experienced business restructuring and financial advisory firm specializing in creditor coordination, cash flow improvement, and merchant cash advance advisory. 21+ years of expertise."
+        title="Business Restructuring & Financial Advisory | Regroup Partners"
+        description="Boutique business restructuring and financial advisory firm with 21+ years experience. Specializing in creditor coordination, cash flow stabilization, and merchant cash advance restructuring."
       />
       <Navigation />
       
@@ -139,6 +139,125 @@ export default function HomePage() {
                 >
                   View All Services
                 </Button>
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20 md:py-32">
+          <div className="container">
+            <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+              <div>
+                <div className="inline-block px-4 py-1 bg-accent/10 border border-accent/20 rounded-full mb-6">
+                  <span className="text-sm font-semibold text-accent">21+ Years Experience</span>
+                </div>
+                <h2 className="font-serif text-4xl md:text-5xl font-semibold mb-6 text-foreground">
+                  Experience, Relationships, Results
+                </h2>
+                <p className="text-lg text-foreground/70 mb-6 leading-relaxed">
+                  As a women-owned and operated professional business advisory firm, we bring more than two decades of hands-on restructuring experience and deep industry relationships.
+                </p>
+                <p className="text-lg text-foreground/70 leading-relaxed">
+                  We maintain longstanding relationships with lenders, attorneys, and restructuring professionals. Our value comes from our experience, reputation, and commitment to standing behind our clients through complex financial challenges.
+                </p>
+              </div>
+              <div className="space-y-8">
+                <div className="bg-card p-8 rounded-lg border border-border shadow-sm">
+                  <h3 className="font-serif text-xl font-semibold mb-3">Industry Pioneer</h3>
+                  <p className="text-foreground/70">
+                    Pioneers in the merchant cash advance industry for over 20 years, with specialized expertise in MCA restructuring and creditor coordination.
+                  </p>
+                </div>
+                <div className="bg-card p-8 rounded-lg border border-border shadow-sm">
+                  <h3 className="font-serif text-xl font-semibold mb-3">Trusted Advisors</h3>
+                  <p className="text-foreground/70">
+                    We work diligently with all types of creditors, maintaining professional relationships that benefit our clients' restructuring outcomes.
+                  </p>
+                </div>
+                <div className="bg-card p-8 rounded-lg border border-border shadow-sm">
+                  <h3 className="font-serif text-xl font-semibold mb-3">Hands-On Approach</h3>
+                  <p className="text-foreground/70">
+                    Direct involvement in every engagement, coordinating with banks, lenders, vendors, attorneys, and financial stakeholders.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20 md:py-32 bg-muted/30">
+          <div className="container">
+            <div className="max-w-3xl mb-16">
+              <h2 className="font-serif text-4xl md:text-5xl font-semibold mb-6 text-foreground">
+                Insights & Expertise
+              </h2>
+              <p className="text-lg text-foreground/70 leading-relaxed">
+                Thought leadership on business restructuring, financial stabilization, and creditor coordination strategies.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              <Link href="/insights" className="group bg-card rounded-lg border border-border shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-300">
+                <div className="p-8">
+                  <div className="text-sm font-semibold text-accent mb-4">Business Restructuring</div>
+                  <h3 className="font-serif text-2xl font-semibold mb-4 group-hover:text-accent transition-colors">
+                    How Business Restructuring Improves Cash Flow
+                  </h3>
+                  <p className="text-foreground/70 mb-6 leading-relaxed">
+                    Strategic approaches to improving operational cash flow through creditor coordination and financial stabilization.
+                  </p>
+                  <div className="flex items-center text-accent font-semibold group-hover:gap-2 transition-all">
+                    Read Article
+                    <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </div>
+              </Link>
+
+              <Link href="/insights" className="group bg-card rounded-lg border border-border shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-300">
+                <div className="p-8">
+                  <div className="text-sm font-semibold text-accent mb-4">MCA Advisory</div>
+                  <h3 className="font-serif text-2xl font-semibold mb-4 group-hover:text-accent transition-colors">
+                    Understanding Merchant Cash Advance Restructuring
+                  </h3>
+                  <p className="text-foreground/70 mb-6 leading-relaxed">
+                    Expert guidance on navigating MCA obligations and coordinating with multiple advance providers.
+                  </p>
+                  <div className="flex items-center text-accent font-semibold group-hover:gap-2 transition-all">
+                    Read Article
+                    <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </div>
+              </Link>
+
+              <Link href="/insights" className="group bg-card rounded-lg border border-border shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-300">
+                <div className="p-8">
+                  <div className="text-sm font-semibold text-accent mb-4">Financial Strategy</div>
+                  <h3 className="font-serif text-2xl font-semibold mb-4 group-hover:text-accent transition-colors">
+                    Working With Creditors During Financial Pressure
+                  </h3>
+                  <p className="text-foreground/70 mb-6 leading-relaxed">
+                    Building productive relationships with lenders and creditors through transparent communication and strategic coordination.
+                  </p>
+                  <div className="flex items-center text-accent font-semibold group-hover:gap-2 transition-all">
+                    Read Article
+                    <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </div>
+              </Link>
+            </div>
+
+            <div className="text-center mt-12">
+              <Link
+                href="/insights"
+                className="inline-flex items-center px-8 py-4 bg-background border-2 border-foreground text-foreground font-semibold rounded-lg hover:bg-foreground hover:text-background transition-colors duration-300"
+              >
+                View All Insights
               </Link>
             </div>
           </div>
