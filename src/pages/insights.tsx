@@ -89,77 +89,88 @@ export default function Insights() {
           <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent z-10"></div>
         </section>
 
-        <section className="py-20 md:py-32 bg-muted/30">
+        <section className="py-20 md:py-32">
           <div className="container">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {articles.map((article, index) => (
-                <article key={index} className="group bg-card rounded-lg border border-border shadow-sm overflow-hidden hover:shadow-md transition-all duration-300">
-                  <div className="p-8">
-                    <div className="text-sm font-semibold text-accent mb-4">{article.category}</div>
-                    <h2 className="font-serif text-2xl font-semibold mb-4 group-hover:text-accent transition-colors">
-                      {article.title}
-                    </h2>
-                    <p className="text-foreground/70 mb-6 leading-relaxed">
-                      {article.excerpt}
-                    </p>
-                    <Link href={article.slug} className="inline-flex items-center text-accent font-semibold group-hover:gap-2 transition-all">
-                      Read Article
-                      <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </Link>
+                <Link
+                  key={index}
+                  href="/insights"
+                  className="group relative block"
+                >
+                  <div className="absolute inset-0 bg-accent/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="relative bg-card backdrop-blur-sm border border-border shadow-lg rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-accent/10 hover:scale-[1.02] hover:border-accent/30 transition-all duration-500">
+                    <div className="p-8">
+                      <div className="text-sm font-semibold text-accent mb-4">{article.category}</div>
+                      <h3 className="font-serif text-2xl font-semibold mb-4 text-foreground group-hover:text-accent transition-colors duration-300">
+                        {article.title}
+                      </h3>
+                      <p className="text-foreground/70 mb-6 leading-relaxed">
+                        {article.excerpt}
+                      </p>
+                      <div className="flex items-center text-accent font-semibold group-hover:gap-2 transition-all">
+                        Read Article
+                        <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </div>
+                    </div>
                   </div>
-                </article>
+                </Link>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="py-20 md:py-32">
+        <section className="py-20 md:py-32 bg-muted/30">
           <div className="container">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="font-serif text-4xl md:text-5xl font-semibold mb-12 text-center text-foreground">
-                Topics We Cover
+            <div className="max-w-3xl mx-auto text-center mb-16">
+              <h2 className="font-serif text-4xl md:text-5xl font-semibold mb-6 text-foreground">
+                Topics & Expertise
               </h2>
-              <div className="grid md:grid-cols-2 gap-8">
-                <div className="bg-card p-8 rounded-lg border border-border shadow-sm">
-                  <h3 className="font-serif text-xl font-semibold mb-4">Business Restructuring</h3>
-                  <ul className="space-y-3 text-foreground/70">
-                    <li>• Strategic restructuring approaches</li>
-                    <li>• Cash flow optimization strategies</li>
-                    <li>• Operational continuity planning</li>
-                    <li>• Stakeholder communication best practices</li>
-                  </ul>
-                </div>
+              <p className="text-xl text-foreground/70 leading-relaxed">
+                Deep knowledge across critical areas of business restructuring and financial advisory.
+              </p>
+            </div>
 
-                <div className="bg-card p-8 rounded-lg border border-border shadow-sm">
-                  <h3 className="font-serif text-xl font-semibold mb-4">Creditor Coordination</h3>
-                  <ul className="space-y-3 text-foreground/70">
-                    <li>• Multi-creditor negotiation strategies</li>
-                    <li>• Lender relationship management</li>
-                    <li>• Payment prioritization frameworks</li>
-                    <li>• Communication protocols with creditors</li>
-                  </ul>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="group relative">
+                <div className="absolute inset-0 bg-accent/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative bg-card backdrop-blur-sm border border-border shadow-lg rounded-xl p-8 text-center hover:shadow-2xl hover:shadow-accent/10 hover:scale-[1.02] hover:border-accent/30 transition-all duration-500">
+                  <div className="text-4xl font-serif font-bold text-accent mb-3 group-hover:scale-110 transition-transform duration-300">01</div>
+                  <h3 className="font-serif text-xl font-semibold mb-2 text-foreground group-hover:text-accent transition-colors duration-300">
+                    Business Restructuring
+                  </h3>
                 </div>
+              </div>
 
-                <div className="bg-card p-8 rounded-lg border border-border shadow-sm">
-                  <h3 className="font-serif text-xl font-semibold mb-4">Merchant Cash Advance</h3>
-                  <ul className="space-y-3 text-foreground/70">
-                    <li>• MCA industry dynamics and trends</li>
-                    <li>• Multi-provider coordination strategies</li>
-                    <li>• Daily remittance optimization</li>
-                    <li>• Sustainable MCA restructuring approaches</li>
-                  </ul>
+              <div className="group relative">
+                <div className="absolute inset-0 bg-accent/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative bg-card backdrop-blur-sm border border-border shadow-lg rounded-xl p-8 text-center hover:shadow-2xl hover:shadow-accent/10 hover:scale-[1.02] hover:border-accent/30 transition-all duration-500">
+                  <div className="text-4xl font-serif font-bold text-accent mb-3 group-hover:scale-110 transition-transform duration-300">02</div>
+                  <h3 className="font-serif text-xl font-semibold mb-2 text-foreground group-hover:text-accent transition-colors duration-300">
+                    Creditor Coordination
+                  </h3>
                 </div>
+              </div>
 
-                <div className="bg-card p-8 rounded-lg border border-border shadow-sm">
-                  <h3 className="font-serif text-xl font-semibold mb-4">Financial Strategy</h3>
-                  <ul className="space-y-3 text-foreground/70">
-                    <li>• Working capital management</li>
-                    <li>• Cash flow forecasting techniques</li>
-                    <li>• Financial stabilization planning</li>
-                    <li>• Strategic advisory best practices</li>
-                  </ul>
+              <div className="group relative">
+                <div className="absolute inset-0 bg-accent/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative bg-card backdrop-blur-sm border border-border shadow-lg rounded-xl p-8 text-center hover:shadow-2xl hover:shadow-accent/10 hover:scale-[1.02] hover:border-accent/30 transition-all duration-500">
+                  <div className="text-4xl font-serif font-bold text-accent mb-3 group-hover:scale-110 transition-transform duration-300">03</div>
+                  <h3 className="font-serif text-xl font-semibold mb-2 text-foreground group-hover:text-accent transition-colors duration-300">
+                    MCA Advisory
+                  </h3>
+                </div>
+              </div>
+
+              <div className="group relative">
+                <div className="absolute inset-0 bg-accent/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative bg-card backdrop-blur-sm border border-border shadow-lg rounded-xl p-8 text-center hover:shadow-2xl hover:shadow-accent/10 hover:scale-[1.02] hover:border-accent/30 transition-all duration-500">
+                  <div className="text-4xl font-serif font-bold text-accent mb-3 group-hover:scale-110 transition-transform duration-300">04</div>
+                  <h3 className="font-serif text-xl font-semibold mb-2 text-foreground group-hover:text-accent transition-colors duration-300">
+                    Financial Strategy
+                  </h3>
                 </div>
               </div>
             </div>

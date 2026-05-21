@@ -92,50 +92,93 @@ export default function About() {
 
         <section className="py-20 md:py-32">
           <div className="container">
-            <div className="max-w-3xl mx-auto mb-16 text-center">
+            <div className="grid md:grid-cols-3 gap-8 mb-20">
+              <div className="group relative">
+                <div className="absolute inset-0 bg-accent/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative bg-card backdrop-blur-sm border border-border shadow-lg rounded-xl p-8 text-center hover:shadow-2xl hover:shadow-accent/10 hover:scale-[1.02] hover:border-accent/30 transition-all duration-500">
+                  <div className="text-5xl font-serif font-bold text-accent mb-2 group-hover:scale-110 transition-transform duration-300">21+</div>
+                  <div className="text-foreground/70">Years of Experience</div>
+                </div>
+              </div>
+              <div className="group relative">
+                <div className="absolute inset-0 bg-accent/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative bg-card backdrop-blur-sm border border-border shadow-lg rounded-xl p-8 text-center hover:shadow-2xl hover:shadow-accent/10 hover:scale-[1.02] hover:border-accent/30 transition-all duration-500">
+                  <div className="text-5xl font-serif font-bold text-accent mb-2 group-hover:scale-110 transition-transform duration-300">100%</div>
+                  <div className="text-foreground/70">Women-Owned & Operated</div>
+                </div>
+              </div>
+              <div className="group relative">
+                <div className="absolute inset-0 bg-accent/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative bg-card backdrop-blur-sm border border-border shadow-lg rounded-xl p-8 text-center hover:shadow-2xl hover:shadow-accent/10 hover:scale-[1.02] hover:border-accent/30 transition-all duration-500">
+                  <div className="text-5xl font-serif font-bold text-accent mb-2 group-hover:scale-110 transition-transform duration-300">20+</div>
+                  <div className="text-foreground/70">Years MCA Industry</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20 md:py-32 bg-muted/30">
+          <div className="container">
+            <div className="max-w-3xl mx-auto text-center mb-16">
               <h2 className="font-serif text-4xl md:text-5xl font-semibold mb-6 text-foreground">
                 Our Approach
               </h2>
-              <p className="text-lg text-foreground/70 leading-relaxed">
-                We stand behind our clients through every stage of financial restructuring, bringing experience, relationships, and strategic expertise to complex situations.
+              <p className="text-xl text-foreground/70 leading-relaxed">
+                Strategic advisory grounded in experience, relationships, and hands-on involvement.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <svg className="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                  </svg>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="group relative">
+                <div className="absolute inset-0 bg-accent/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative bg-card backdrop-blur-sm border border-border shadow-lg rounded-xl p-8 hover:shadow-2xl hover:shadow-accent/10 hover:scale-[1.02] hover:border-accent/30 transition-all duration-500">
+                  <div className="w-14 h-14 rounded-lg bg-gradient-to-br from-accent/20 to-accent/5 flex items-center justify-center mb-6 group-hover:from-accent/30 group-hover:to-accent/10 transition-all duration-500">
+                    <svg className="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                  </div>
+                  <h3 className="font-serif text-2xl font-semibold mb-4 text-foreground group-hover:text-accent transition-colors duration-300">
+                    Creditor Coordination
+                  </h3>
+                  <p className="text-foreground/70 leading-relaxed">
+                    We work directly with banks, lenders, vendors, and all types of creditors to negotiate fair restructuring terms.
+                  </p>
                 </div>
-                <h3 className="font-serif text-xl font-semibold mb-3">Creditor Coordination</h3>
-                <p className="text-foreground/70">
-                  We work diligently with all types of creditors, leveraging longstanding relationships to achieve favorable outcomes.
-                </p>
               </div>
 
-              <div className="text-center">
-                <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <svg className="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                  </svg>
+              <div className="group relative">
+                <div className="absolute inset-0 bg-accent/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative bg-card backdrop-blur-sm border border-border shadow-lg rounded-xl p-8 hover:shadow-2xl hover:shadow-accent/10 hover:scale-[1.02] hover:border-accent/30 transition-all duration-500">
+                  <div className="w-14 h-14 rounded-lg bg-gradient-to-br from-accent/20 to-accent/5 flex items-center justify-center mb-6 group-hover:from-accent/30 group-hover:to-accent/10 transition-all duration-500">
+                    <svg className="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                  </div>
+                  <h3 className="font-serif text-2xl font-semibold mb-4 text-foreground group-hover:text-accent transition-colors duration-300">
+                    Industry Relationships
+                  </h3>
+                  <p className="text-foreground/70 leading-relaxed">
+                    Our longstanding relationships with lenders, attorneys, and restructuring professionals add significant value to client engagements.
+                  </p>
                 </div>
-                <h3 className="font-serif text-xl font-semibold mb-3">Industry Relationships</h3>
-                <p className="text-foreground/70">
-                  Deep relationships with lenders, attorneys, and restructuring professionals built over 21+ years.
-                </p>
               </div>
 
-              <div className="text-center">
-                <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <svg className="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
-                  </svg>
+              <div className="group relative">
+                <div className="absolute inset-0 bg-accent/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative bg-card backdrop-blur-sm border border-border shadow-lg rounded-xl p-8 hover:shadow-2xl hover:shadow-accent/10 hover:scale-[1.02] hover:border-accent/30 transition-all duration-500">
+                  <div className="w-14 h-14 rounded-lg bg-gradient-to-br from-accent/20 to-accent/5 flex items-center justify-center mb-6 group-hover:from-accent/30 group-hover:to-accent/10 transition-all duration-500">
+                    <svg className="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <h3 className="font-serif text-2xl font-semibold mb-4 text-foreground group-hover:text-accent transition-colors duration-300">
+                    Hands-On Involvement
+                  </h3>
+                  <p className="text-foreground/70 leading-relaxed">
+                    Direct, personal involvement in every engagement—not a call center or outsourced service provider.
+                  </p>
                 </div>
-                <h3 className="font-serif text-xl font-semibold mb-3">Hands-On Involvement</h3>
-                <p className="text-foreground/70">
-                  Direct, personal involvement in every engagement, coordinating with all stakeholders throughout the process.
-                </p>
               </div>
             </div>
           </div>

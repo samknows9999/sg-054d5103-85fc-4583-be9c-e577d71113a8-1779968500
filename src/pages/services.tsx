@@ -71,42 +71,37 @@ export default function Services() {
                 </p>
               </div>
               <div className="space-y-8">
-                <div className="relative h-[300px] rounded-lg overflow-hidden shadow-lg">
-                  <Image
-                    src="/generated/services-workspace.png"
-                    alt="Modern office workspace"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="bg-card p-8 rounded-lg border border-border shadow-sm">
-                  <h3 className="font-serif text-xl font-semibold mb-6">What We Provide</h3>
-                  <ul className="space-y-4">
-                    <li className="flex items-start">
-                      <svg className="w-6 h-6 text-accent mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-foreground/70">Comprehensive financial assessment and restructuring strategy development</span>
-                    </li>
-                    <li className="flex items-start">
-                      <svg className="w-6 h-6 text-accent mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-foreground/70">Cash flow analysis and operational improvement planning</span>
-                    </li>
-                    <li className="flex items-start">
-                      <svg className="w-6 h-6 text-accent mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-foreground/70">Stakeholder communication and coordination throughout the process</span>
-                    </li>
-                    <li className="flex items-start">
-                      <svg className="w-6 h-6 text-accent mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-foreground/70">Implementation support and ongoing advisory guidance</span>
-                    </li>
-                  </ul>
+                <div className="group relative">
+                  <div className="absolute inset-0 bg-accent/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="relative bg-card p-8 rounded-xl border border-border shadow-lg hover:shadow-2xl hover:shadow-accent/10 hover:scale-[1.02] hover:border-accent/30 transition-all duration-500">
+                    <h3 className="font-serif text-xl font-semibold mb-6 group-hover:text-accent transition-colors duration-300">What We Provide</h3>
+                    <ul className="space-y-4">
+                      <li className="flex items-start">
+                        <svg className="w-6 h-6 text-accent mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span className="text-foreground/70">Comprehensive financial assessment and restructuring strategy development</span>
+                      </li>
+                      <li className="flex items-start">
+                        <svg className="w-6 h-6 text-accent mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span className="text-foreground/70">Cash flow analysis and operational improvement planning</span>
+                      </li>
+                      <li className="flex items-start">
+                        <svg className="w-6 h-6 text-accent mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span className="text-foreground/70">Stakeholder communication and coordination throughout the process</span>
+                      </li>
+                      <li className="flex items-start">
+                        <svg className="w-6 h-6 text-accent mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span className="text-foreground/70">Implementation support and ongoing advisory guidance</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
@@ -117,42 +112,37 @@ export default function Services() {
           <div className="container">
             <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
               <div className="order-2 md:order-1 space-y-8">
-                <div className="relative h-[300px] rounded-lg overflow-hidden shadow-lg">
-                  <Image
-                    src="/generated/services-advisory.png"
-                    alt="Professional business consultant advisory"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="bg-card p-8 rounded-lg border border-border shadow-sm">
-                  <h3 className="font-serif text-xl font-semibold mb-6">Key Benefits</h3>
-                  <ul className="space-y-4">
-                    <li className="flex items-start">
-                      <svg className="w-6 h-6 text-accent mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-foreground/70">Unified creditor coordination strategy across all obligations</span>
-                    </li>
-                    <li className="flex items-start">
-                      <svg className="w-6 h-6 text-accent mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-foreground/70">Professional representation with lenders and financial stakeholders</span>
-                    </li>
-                    <li className="flex items-start">
-                      <svg className="w-6 h-6 text-accent mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-foreground/70">Leveraging established relationships for favorable outcomes</span>
-                    </li>
-                    <li className="flex items-start">
-                      <svg className="w-6 h-6 text-accent mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-foreground/70">Reduced creditor pressure through strategic communication</span>
-                    </li>
-                  </ul>
+                <div className="group relative">
+                  <div className="absolute inset-0 bg-accent/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="relative bg-card p-8 rounded-xl border border-border shadow-lg hover:shadow-2xl hover:shadow-accent/10 hover:scale-[1.02] hover:border-accent/30 transition-all duration-500">
+                    <h3 className="font-serif text-xl font-semibold mb-6 group-hover:text-accent transition-colors duration-300">Key Benefits</h3>
+                    <ul className="space-y-4">
+                      <li className="flex items-start">
+                        <svg className="w-6 h-6 text-accent mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span className="text-foreground/70">Unified creditor coordination strategy across all obligations</span>
+                      </li>
+                      <li className="flex items-start">
+                        <svg className="w-6 h-6 text-accent mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span className="text-foreground/70">Professional representation with lenders and financial stakeholders</span>
+                      </li>
+                      <li className="flex items-start">
+                        <svg className="w-6 h-6 text-accent mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span className="text-foreground/70">Leveraging established relationships for favorable outcomes</span>
+                      </li>
+                      <li className="flex items-start">
+                        <svg className="w-6 h-6 text-accent mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span className="text-foreground/70">Reduced creditor pressure through strategic communication</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
               <div className="order-1 md:order-2">
@@ -197,42 +187,37 @@ export default function Services() {
                 </p>
               </div>
               <div className="space-y-8">
-                <div className="relative h-[300px] rounded-lg overflow-hidden shadow-lg">
-                  <Image
-                    src="/generated/services-documents.png"
-                    alt="Business documents and financial reports"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="bg-card p-8 rounded-lg border border-border shadow-sm">
-                  <h3 className="font-serif text-xl font-semibold mb-6">Focus Areas</h3>
-                  <ul className="space-y-4">
-                    <li className="flex items-start">
-                      <svg className="w-6 h-6 text-accent mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-foreground/70">Working capital optimization and payment prioritization</span>
-                    </li>
-                    <li className="flex items-start">
-                      <svg className="w-6 h-6 text-accent mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-foreground/70">Accounts receivable and collections acceleration</span>
-                    </li>
-                    <li className="flex items-start">
-                      <svg className="w-6 h-6 text-accent mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-foreground/70">Vendor payment negotiation and timing management</span>
-                    </li>
-                    <li className="flex items-start">
-                      <svg className="w-6 h-6 text-accent mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-foreground/70">Cash flow forecasting and scenario planning</span>
-                    </li>
-                  </ul>
+                <div className="group relative">
+                  <div className="absolute inset-0 bg-accent/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="relative bg-card p-8 rounded-xl border border-border shadow-lg hover:shadow-2xl hover:shadow-accent/10 hover:scale-[1.02] hover:border-accent/30 transition-all duration-500">
+                    <h3 className="font-serif text-xl font-semibold mb-6 group-hover:text-accent transition-colors duration-300">Focus Areas</h3>
+                    <ul className="space-y-4">
+                      <li className="flex items-start">
+                        <svg className="w-6 h-6 text-accent mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span className="text-foreground/70">Working capital optimization and payment prioritization</span>
+                      </li>
+                      <li className="flex items-start">
+                        <svg className="w-6 h-6 text-accent mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span className="text-foreground/70">Accounts receivable and collections acceleration</span>
+                      </li>
+                      <li className="flex items-start">
+                        <svg className="w-6 h-6 text-accent mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span className="text-foreground/70">Vendor payment negotiation and timing management</span>
+                      </li>
+                      <li className="flex items-start">
+                        <svg className="w-6 h-6 text-accent mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span className="text-foreground/70">Cash flow forecasting and scenario planning</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
@@ -299,39 +284,54 @@ export default function Services() {
                 Frequently Asked Questions
               </h2>
               <div className="space-y-6">
-                <div className="bg-card p-8 rounded-lg border border-border shadow-sm">
-                  <h3 className="font-serif text-xl font-semibold mb-3">How is business restructuring different from bankruptcy?</h3>
-                  <p className="text-foreground/70 leading-relaxed">
-                    Business restructuring focuses on stabilizing operations and coordinating with creditors outside of bankruptcy proceedings. We work to preserve business continuity through strategic planning, creditor coordination, and cash flow improvement rather than formal legal proceedings. Restructuring can often avoid bankruptcy while achieving financial stabilization.
-                  </p>
+                <div className="group relative">
+                  <div className="absolute inset-0 bg-accent/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="relative bg-card p-8 rounded-xl border border-border shadow-lg hover:shadow-2xl hover:shadow-accent/10 hover:scale-[1.02] hover:border-accent/30 transition-all duration-500">
+                    <h3 className="font-serif text-xl font-semibold mb-3 group-hover:text-accent transition-colors duration-300">How is business restructuring different from bankruptcy?</h3>
+                    <p className="text-foreground/70 leading-relaxed">
+                      Business restructuring focuses on stabilizing operations and coordinating with creditors outside of bankruptcy proceedings. We work to preserve business continuity through strategic planning, creditor coordination, and cash flow improvement rather than formal legal proceedings. Restructuring can often avoid bankruptcy while achieving financial stabilization.
+                    </p>
+                  </div>
                 </div>
 
-                <div className="bg-card p-8 rounded-lg border border-border shadow-sm">
-                  <h3 className="font-serif text-xl font-semibold mb-3">What types of creditors do you work with?</h3>
-                  <p className="text-foreground/70 leading-relaxed">
-                    We coordinate with all types of creditors including banks, merchant cash advance providers, equipment lenders, vendors, landlords, and other financial stakeholders. Our longstanding industry relationships and professional reputation enable productive dialogue across the full spectrum of creditor types.
-                  </p>
+                <div className="group relative">
+                  <div className="absolute inset-0 bg-accent/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="relative bg-card p-8 rounded-xl border border-border shadow-lg hover:shadow-2xl hover:shadow-accent/10 hover:scale-[1.02] hover:border-accent/30 transition-all duration-500">
+                    <h3 className="font-serif text-xl font-semibold mb-3 group-hover:text-accent transition-colors duration-300">What types of creditors do you work with?</h3>
+                    <p className="text-foreground/70 leading-relaxed">
+                      We coordinate with all types of creditors including banks, merchant cash advance providers, equipment lenders, vendors, landlords, and other financial stakeholders. Our longstanding industry relationships and professional reputation enable productive dialogue across the full spectrum of creditor types.
+                    </p>
+                  </div>
                 </div>
 
-                <div className="bg-card p-8 rounded-lg border border-border shadow-sm">
-                  <h3 className="font-serif text-xl font-semibold mb-3">How long does the restructuring process typically take?</h3>
-                  <p className="text-foreground/70 leading-relaxed">
-                    Timelines vary based on the complexity of the situation, number of creditors involved, and specific circumstances. Initial stabilization often occurs within weeks, while comprehensive restructuring may unfold over several months. We provide realistic timeline expectations during the initial consultation phase.
-                  </p>
+                <div className="group relative">
+                  <div className="absolute inset-0 bg-accent/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="relative bg-card p-8 rounded-xl border border-border shadow-lg hover:shadow-2xl hover:shadow-accent/10 hover:scale-[1.02] hover:border-accent/30 transition-all duration-500">
+                    <h3 className="font-serif text-xl font-semibold mb-3 group-hover:text-accent transition-colors duration-300">How long does the restructuring process typically take?</h3>
+                    <p className="text-foreground/70 leading-relaxed">
+                      Timelines vary based on the complexity of the situation, number of creditors involved, and specific circumstances. Initial stabilization often occurs within weeks, while comprehensive restructuring may unfold over several months. We provide realistic timeline expectations during the initial consultation phase.
+                    </p>
+                  </div>
                 </div>
 
-                <div className="bg-card p-8 rounded-lg border border-border shadow-sm">
-                  <h3 className="font-serif text-xl font-semibold mb-3">What makes your MCA advisory services unique?</h3>
-                  <p className="text-foreground/70 leading-relaxed">
-                    We have been pioneers in the merchant cash advance industry for over 20 years, developing deep expertise and professional relationships with MCA providers. This experience enables us to coordinate effectively with multiple advance providers, optimize daily remittances, and negotiate sustainable structures that other advisors cannot achieve.
-                  </p>
+                <div className="group relative">
+                  <div className="absolute inset-0 bg-accent/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="relative bg-card p-8 rounded-xl border border-border shadow-lg hover:shadow-2xl hover:shadow-accent/10 hover:scale-[1.02] hover:border-accent/30 transition-all duration-500">
+                    <h3 className="font-serif text-xl font-semibold mb-3 group-hover:text-accent transition-colors duration-300">What makes your MCA advisory services unique?</h3>
+                    <p className="text-foreground/70 leading-relaxed">
+                      We have been pioneers in the merchant cash advance industry for over 20 years, developing deep expertise and professional relationships with MCA providers. This experience enables us to coordinate effectively with multiple advance providers, optimize daily remittances, and negotiate sustainable structures that other advisors cannot achieve.
+                    </p>
+                  </div>
                 </div>
 
-                <div className="bg-card p-8 rounded-lg border border-border shadow-sm">
-                  <h3 className="font-serif text-xl font-semibold mb-3">Do you work with attorneys and other professional advisors?</h3>
-                  <p className="text-foreground/70 leading-relaxed">
-                    Yes, we frequently coordinate with attorneys, accountants, and other professional advisors to provide comprehensive support. Our relationships with restructuring attorneys and financial professionals enable seamless collaboration when additional expertise is needed for specific aspects of a restructuring engagement.
-                  </p>
+                <div className="group relative">
+                  <div className="absolute inset-0 bg-accent/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="relative bg-card p-8 rounded-xl border border-border shadow-lg hover:shadow-2xl hover:shadow-accent/10 hover:scale-[1.02] hover:border-accent/30 transition-all duration-500">
+                    <h3 className="font-serif text-xl font-semibold mb-3 group-hover:text-accent transition-colors duration-300">Do you work with attorneys and other professional advisors?</h3>
+                    <p className="text-foreground/70 leading-relaxed">
+                      Yes, we frequently coordinate with attorneys, accountants, and other professional advisors to provide comprehensive support. Our relationships with restructuring attorneys and financial professionals enable seamless collaboration when additional expertise is needed for specific aspects of a restructuring engagement.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>

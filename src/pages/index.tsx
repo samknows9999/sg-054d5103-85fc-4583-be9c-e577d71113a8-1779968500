@@ -250,22 +250,106 @@ export default function Home() {
                 </p>
               </div>
               <div className="space-y-8">
-                <div className="bg-card p-8 rounded-lg border border-border shadow-sm">
-                  <h3 className="font-serif text-xl font-semibold mb-3">Industry Pioneer</h3>
-                  <p className="text-foreground/70">
-                    Pioneers in the merchant cash advance industry for over 20 years, with specialized expertise in MCA restructuring and creditor coordination.
+                <div className="group relative">
+                  <div className="absolute inset-0 bg-accent/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="relative bg-card p-8 rounded-xl border border-border shadow-lg hover:shadow-2xl hover:shadow-accent/10 hover:scale-[1.02] hover:border-accent/30 transition-all duration-500">
+                    <h3 className="font-serif text-xl font-semibold mb-3 group-hover:text-accent transition-colors duration-300">Industry Pioneer</h3>
+                    <p className="text-foreground/70">
+                      Pioneers in the merchant cash advance industry for over 20 years, with specialized expertise in MCA restructuring and creditor coordination.
+                    </p>
+                  </div>
+                </div>
+                <div className="group relative">
+                  <div className="absolute inset-0 bg-accent/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="relative bg-card p-8 rounded-xl border border-border shadow-lg hover:shadow-2xl hover:shadow-accent/10 hover:scale-[1.02] hover:border-accent/30 transition-all duration-500">
+                    <h3 className="font-serif text-xl font-semibold mb-3 group-hover:text-accent transition-colors duration-300">Trusted Advisors</h3>
+                    <p className="text-foreground/70">
+                      We work diligently with all types of creditors, maintaining professional relationships that benefit our clients' restructuring outcomes.
+                    </p>
+                  </div>
+                </div>
+                <div className="group relative">
+                  <div className="absolute inset-0 bg-accent/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="relative bg-card p-8 rounded-xl border border-border shadow-lg hover:shadow-2xl hover:shadow-accent/10 hover:scale-[1.02] hover:border-accent/30 transition-all duration-500">
+                    <h3 className="font-serif text-xl font-semibold mb-3 group-hover:text-accent transition-colors duration-300">Hands-On Approach</h3>
+                    <p className="text-foreground/70">
+                      Direct involvement in every engagement, coordinating with banks, lenders, vendors, attorneys, and financial stakeholders.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20 md:py-32 bg-muted/30">
+          <div className="container">
+            <div className="max-w-3xl mx-auto text-center mb-16">
+              <h2 className="font-serif text-4xl md:text-5xl font-semibold mb-6 text-foreground">
+                Core Advisory Services
+              </h2>
+              <p className="text-xl text-foreground/70 leading-relaxed">
+                Comprehensive restructuring solutions built on two decades of experience and deep industry relationships.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="group relative">
+                <div className="absolute inset-0 bg-accent/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative bg-card backdrop-blur-sm border border-border shadow-lg rounded-xl p-8 hover:shadow-2xl hover:shadow-accent/10 hover:scale-[1.02] hover:border-accent/30 transition-all duration-500">
+                  <div className="w-14 h-14 rounded-lg bg-gradient-to-br from-accent/20 to-accent/5 flex items-center justify-center mb-6 group-hover:from-accent/30 group-hover:to-accent/10 transition-all duration-500">
+                    <Building2 className="w-7 h-7 text-accent" />
+                  </div>
+                  <h3 className="font-serif text-2xl font-semibold mb-4 text-foreground group-hover:text-accent transition-colors duration-300">
+                    Business Restructuring
+                  </h3>
+                  <p className="text-foreground/70 leading-relaxed">
+                    Strategic restructuring guidance to stabilize operations and achieve financial sustainability.
                   </p>
                 </div>
-                <div className="bg-card p-8 rounded-lg border border-border shadow-sm">
-                  <h3 className="font-serif text-xl font-semibold mb-3">Trusted Advisors</h3>
-                  <p className="text-foreground/70">
-                    We work diligently with all types of creditors, maintaining professional relationships that benefit our clients' restructuring outcomes.
+              </div>
+
+              <div className="group relative">
+                <div className="absolute inset-0 bg-accent/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative bg-card backdrop-blur-sm border border-border shadow-lg rounded-xl p-8 hover:shadow-2xl hover:shadow-accent/10 hover:scale-[1.02] hover:border-accent/30 transition-all duration-500">
+                  <div className="w-14 h-14 rounded-lg bg-gradient-to-br from-accent/20 to-accent/5 flex items-center justify-center mb-6 group-hover:from-accent/30 group-hover:to-accent/10 transition-all duration-500">
+                    <Users className="w-7 h-7 text-accent" />
+                  </div>
+                  <h3 className="font-serif text-2xl font-semibold mb-4 text-foreground group-hover:text-accent transition-colors duration-300">
+                    Creditor Coordination
+                  </h3>
+                  <p className="text-foreground/70 leading-relaxed">
+                    Expert management of relationships with banks, lenders, vendors, and financial stakeholders.
                   </p>
                 </div>
-                <div className="bg-card p-8 rounded-lg border border-border shadow-sm">
-                  <h3 className="font-serif text-xl font-semibold mb-3">Hands-On Approach</h3>
-                  <p className="text-foreground/70">
-                    Direct involvement in every engagement, coordinating with banks, lenders, vendors, attorneys, and financial stakeholders.
+              </div>
+
+              <div className="group relative">
+                <div className="absolute inset-0 bg-accent/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative bg-card backdrop-blur-sm border border-border shadow-lg rounded-xl p-8 hover:shadow-2xl hover:shadow-accent/10 hover:scale-[1.02] hover:border-accent/30 transition-all duration-500">
+                  <div className="w-14 h-14 rounded-lg bg-gradient-to-br from-accent/20 to-accent/5 flex items-center justify-center mb-6 group-hover:from-accent/30 group-hover:to-accent/10 transition-all duration-500">
+                    <TrendingUp className="w-7 h-7 text-accent" />
+                  </div>
+                  <h3 className="font-serif text-2xl font-semibold mb-4 text-foreground group-hover:text-accent transition-colors duration-300">
+                    Cash Flow Improvement
+                  </h3>
+                  <p className="text-foreground/70 leading-relaxed">
+                    Proven strategies for improving operational cash flow and achieving financial stability.
+                  </p>
+                </div>
+              </div>
+
+              <div className="group relative">
+                <div className="absolute inset-0 bg-accent/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative bg-card backdrop-blur-sm border border-border shadow-lg rounded-xl p-8 hover:shadow-2xl hover:shadow-accent/10 hover:scale-[1.02] hover:border-accent/30 transition-all duration-500">
+                  <div className="w-14 h-14 rounded-lg bg-gradient-to-br from-accent/20 to-accent/5 flex items-center justify-center mb-6 group-hover:from-accent/30 group-hover:to-accent/10 transition-all duration-500">
+                    <Shield className="w-7 h-7 text-accent" />
+                  </div>
+                  <h3 className="font-serif text-2xl font-semibold mb-4 text-foreground group-hover:text-accent transition-colors duration-300">
+                    MCA Advisory
+                  </h3>
+                  <p className="text-foreground/70 leading-relaxed">
+                    Specialized merchant cash advance restructuring with 20+ years of industry expertise.
                   </p>
                 </div>
               </div>
@@ -285,56 +369,65 @@ export default function Home() {
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
-              <Link href="/insights" className="group bg-card rounded-lg border border-border shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-300">
-                <div className="p-8">
-                  <div className="text-sm font-semibold text-accent mb-4">Business Restructuring</div>
-                  <h3 className="font-serif text-2xl font-semibold mb-4 group-hover:text-accent transition-colors">
-                    How Business Restructuring Improves Cash Flow
-                  </h3>
-                  <p className="text-foreground/70 mb-6 leading-relaxed">
-                    Strategic approaches to improving operational cash flow through creditor coordination and financial stabilization.
-                  </p>
-                  <div className="flex items-center text-accent font-semibold group-hover:gap-2 transition-all">
-                    Read Article
-                    <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
+              <Link href="/insights" className="group relative block">
+                <div className="absolute inset-0 bg-accent/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative bg-card rounded-xl border border-border shadow-lg overflow-hidden hover:shadow-2xl hover:shadow-accent/10 hover:scale-[1.02] hover:border-accent/30 transition-all duration-500">
+                  <div className="p-8">
+                    <div className="text-sm font-semibold text-accent mb-4">Business Restructuring</div>
+                    <h3 className="font-serif text-2xl font-semibold mb-4 group-hover:text-accent transition-colors duration-300">
+                      How Business Restructuring Improves Cash Flow
+                    </h3>
+                    <p className="text-foreground/70 mb-6 leading-relaxed">
+                      Strategic approaches to improving operational cash flow through creditor coordination and financial stabilization.
+                    </p>
+                    <div className="flex items-center text-accent font-semibold group-hover:gap-2 transition-all">
+                      Read Article
+                      <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
                   </div>
                 </div>
               </Link>
 
-              <Link href="/insights" className="group bg-card rounded-lg border border-border shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-300">
-                <div className="p-8">
-                  <div className="text-sm font-semibold text-accent mb-4">MCA Advisory</div>
-                  <h3 className="font-serif text-2xl font-semibold mb-4 group-hover:text-accent transition-colors">
-                    Understanding Merchant Cash Advance Restructuring
-                  </h3>
-                  <p className="text-foreground/70 mb-6 leading-relaxed">
-                    Expert guidance on navigating MCA obligations and coordinating with multiple advance providers.
-                  </p>
-                  <div className="flex items-center text-accent font-semibold group-hover:gap-2 transition-all">
-                    Read Article
-                    <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
+              <Link href="/insights" className="group relative block">
+                <div className="absolute inset-0 bg-accent/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative bg-card rounded-xl border border-border shadow-lg overflow-hidden hover:shadow-2xl hover:shadow-accent/10 hover:scale-[1.02] hover:border-accent/30 transition-all duration-500">
+                  <div className="p-8">
+                    <div className="text-sm font-semibold text-accent mb-4">MCA Advisory</div>
+                    <h3 className="font-serif text-2xl font-semibold mb-4 group-hover:text-accent transition-colors duration-300">
+                      Understanding Merchant Cash Advance Restructuring
+                    </h3>
+                    <p className="text-foreground/70 mb-6 leading-relaxed">
+                      Expert guidance on navigating MCA obligations and coordinating with multiple advance providers.
+                    </p>
+                    <div className="flex items-center text-accent font-semibold group-hover:gap-2 transition-all">
+                      Read Article
+                      <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
                   </div>
                 </div>
               </Link>
 
-              <Link href="/insights" className="group bg-card rounded-lg border border-border shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-300">
-                <div className="p-8">
-                  <div className="text-sm font-semibold text-accent mb-4">Financial Strategy</div>
-                  <h3 className="font-serif text-2xl font-semibold mb-4 group-hover:text-accent transition-colors">
-                    Working With Creditors During Financial Pressure
-                  </h3>
-                  <p className="text-foreground/70 mb-6 leading-relaxed">
-                    Building productive relationships with lenders and creditors through transparent communication and strategic coordination.
-                  </p>
-                  <div className="flex items-center text-accent font-semibold group-hover:gap-2 transition-all">
-                    Read Article
-                    <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
+              <Link href="/insights" className="group relative block">
+                <div className="absolute inset-0 bg-accent/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative bg-card rounded-xl border border-border shadow-lg overflow-hidden hover:shadow-2xl hover:shadow-accent/10 hover:scale-[1.02] hover:border-accent/30 transition-all duration-500">
+                  <div className="p-8">
+                    <div className="text-sm font-semibold text-accent mb-4">Financial Strategy</div>
+                    <h3 className="font-serif text-2xl font-semibold mb-4 group-hover:text-accent transition-colors duration-300">
+                      Working With Creditors During Financial Pressure
+                    </h3>
+                    <p className="text-foreground/70 mb-6 leading-relaxed">
+                      Building productive relationships with lenders and creditors through transparent communication and strategic coordination.
+                    </p>
+                    <div className="flex items-center text-accent font-semibold group-hover:gap-2 transition-all">
+                      Read Article
+                      <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
                   </div>
                 </div>
               </Link>
