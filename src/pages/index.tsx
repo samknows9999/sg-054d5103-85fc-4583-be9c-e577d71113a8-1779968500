@@ -205,6 +205,64 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="py-20 md:py-32 bg-white">
+          <div className="max-w-[1400px] mx-auto px-6">
+            <div className="text-center mb-16">
+              <div className="inline-block px-4 py-1 bg-accent/10 border border-accent/20 rounded-full mb-6">
+                <span className="text-sm font-semibold text-accent">Client Success</span>
+              </div>
+              <h2 className="font-serif text-4xl md:text-5xl font-semibold mb-6 text-foreground">
+                What Our Clients Say
+              </h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                Hear directly from business owners who have successfully navigated financial challenges with Regroup Partners.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+              <Card className="overflow-hidden bg-white border border-gray-200 hover:shadow-lg transition-shadow">
+                <div className="aspect-video relative bg-gray-900">
+                  <iframe
+                    src="https://www.youtube.com/embed/EGhrQgHy1IY?start=3&autoplay=1&mute=1&loop=1&playlist=EGhrQgHy1IY&controls=0&modestbranding=1&rel=0&playsinline=1"
+                    title="Client Testimonial 1"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="absolute inset-0 w-full h-full"
+                  />
+                </div>
+                <div className="p-8">
+                  <h3 className="font-serif text-xl font-semibold mb-3 text-foreground">
+                    Business Owner Success Story
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    Successful restructuring and creditor coordination leading to improved cash flow and business stabilization.
+                  </p>
+                </div>
+              </Card>
+
+              <Card className="overflow-hidden bg-white border border-gray-200 hover:shadow-lg transition-shadow">
+                <div className="aspect-video relative bg-gray-900">
+                  <iframe
+                    src="https://www.youtube.com/embed/GlEVh-3Jk1Y?start=1&autoplay=1&mute=1&loop=1&playlist=GlEVh-3Jk1Y&controls=0&modestbranding=1&rel=0&playsinline=1"
+                    title="Client Testimonial 2"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="absolute inset-0 w-full h-full"
+                  />
+                </div>
+                <div className="p-8">
+                  <h3 className="font-serif text-xl font-semibold mb-3 text-foreground">
+                    Financial Recovery Journey
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    Strategic advisory and hands-on coordination delivering measurable results through challenging financial circumstances.
+                  </p>
+                </div>
+              </Card>
+            </div>
+          </div>
+        </section>
+
         <section className="py-20 md:py-32 bg-gray-50">
           <div className="max-w-[1400px] mx-auto px-6">
             <div className="max-w-3xl mb-16">
