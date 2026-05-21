@@ -49,6 +49,14 @@ export default function Contact() {
 
         <section className="py-20 md:py-32 bg-white">
           <div className="max-w-[1400px] mx-auto px-6">
+            <div className="mb-16">
+              <img
+                src="/location-map.png"
+                alt="Regroup Partners - Boca Raton Location and Service Area"
+                className="w-full rounded-2xl shadow-2xl"
+              />
+            </div>
+
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
               <div>
                 <h2 className="font-serif text-3xl md:text-4xl font-semibold mb-6 text-foreground">
