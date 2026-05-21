@@ -20,7 +20,6 @@ export default function Home() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const heroOpacity = Math.max(0, 1 - scrollY / 500);
   const heroTransform = scrollY * 0.5;
 
   return (
@@ -49,13 +48,7 @@ export default function Home() {
             <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
           </div>
 
-          <div 
-            className="container relative z-10 pt-32 pb-20 md:pt-40 md:pb-32 transition-all duration-200"
-            style={{
-              opacity: heroOpacity,
-              transform: `translateY(${heroTransform * 0.3}px)`,
-            }}
-          >
+          <div className="container relative z-10 pt-32 pb-20 md:pt-40 md:pb-32">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-8">
                 <div className="inline-flex items-center gap-3">
