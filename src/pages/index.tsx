@@ -3,6 +3,9 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import Link from "next/link";
 import Image from "next/image";
+import { Building2, Users, TrendingUp, Shield } from "lucide-react";
+import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
