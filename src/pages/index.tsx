@@ -6,8 +6,23 @@ import Image from "next/image";
 import { Building2, Users, TrendingUp, Shield } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const heroOpacity = Math.max(0, 1 - scrollY / 500);
+  const heroTransform = scrollY * 0.5;
+
   return (
     <>
       <SEO
@@ -26,12 +41,21 @@ export default function Home() {
               fill
               className="object-cover"
               priority
+              style={{
+                transform: `translateY(${heroTransform}px)`,
+              }}
             />
             <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/85 to-background/70"></div>
             <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
           </div>
 
-          <div className="container relative z-10 pt-32 pb-20 md:pt-40 md:pb-32">
+          <div 
+            className="container relative z-10 pt-32 pb-20 md:pt-40 md:pb-32 transition-all duration-200"
+            style={{
+              opacity: heroOpacity,
+              transform: `translateY(${heroTransform * 0.3}px)`,
+            }}
+          >
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-8">
                 <div className="inline-flex items-center gap-3">
