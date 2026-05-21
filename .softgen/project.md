@@ -7,19 +7,19 @@ Premium website for Regroup Partners, a boutique business restructuring and fina
 Minimalist luxury aesthetic — institutional, sophisticated, discreet.
 
 **Color System (HSL):**
-- `--background: 60 15% 98%` (warm cream)
-- `--foreground: 220 10% 15%` (charcoal)
-- `--primary: 45 35% 55%` (muted gold — champagne/bronze)
-- `--accent: 45 35% 55%` (muted gold)
-- `--muted: 220 10% 90%` (cool gray)
-- `--card: 0 0% 100%` (pure white, elevated on cream)
-- `--border: 220 10% 85%`
+- `--background: 0 0% 100%` (pure white)
+- `--foreground: 0 0% 10%` (deep charcoal)
+- `--primary: 0 70% 45%` (sophisticated burgundy red)
+- `--accent: 0 70% 45%` (burgundy red)
+- `--muted: 0 0% 96%` (light gray)
+- `--card: 0 0% 100%` (pure white, elevated on white)
+- `--border: 0 0% 90%`
 
 **Typography:**
 - Display: Fraunces (400, 600, 700) — institutional serif authority
 - Body: Source Sans 3 (400, 600, 700) — professional clarity
 
-**Style:** Swiss typography precision, generous whitespace (80px+ vertical rhythm), elevated card designs with subtle shadows, restrained gold accent used sparingly, editorial-style asymmetric layouts, smooth micro-interactions.
+**Style:** Swiss typography precision, generous whitespace (80px+ vertical rhythm), elevated card designs with subtle shadows, sophisticated red accent used sparingly, editorial-style asymmetric layouts, smooth micro-interactions, glassmorphism header with backdrop blur.
 
 ## Features
 1. **Homepage:** Premium hero with institutional messaging, 21+ years credibility, services overview, industry relationships, insights preview, discreet CTA ("Confidential Business Review")
