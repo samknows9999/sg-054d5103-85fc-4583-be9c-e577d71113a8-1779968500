@@ -8,27 +8,54 @@ export default function About() {
   return (
     <>
       <SEO
-        title="About Regroup Partners | Business Restructuring Firm"
-        description="Women-owned boutique business restructuring and financial advisory firm with 21+ years of experience in creditor coordination and financial stabilization."
+        title="About Us | Regroup Partners"
+        description="Women-owned boutique business advisory firm with 21+ years of experience in restructuring, creditor coordination, and merchant cash advance solutions."
       />
 
       <Navigation />
 
       <main>
-        <section className="pt-32 pb-20 md:pt-40 md:pb-32">
-          <div className="container">
-            <div className="max-w-4xl mx-auto text-center mb-16">
-              <div className="inline-block px-4 py-1 bg-accent/10 border border-accent/20 rounded-full mb-6">
-                <span className="text-sm font-semibold text-accent">21+ Years Experience</span>
+        <section className="relative min-h-[70vh] flex items-center overflow-hidden">
+          <div className="absolute inset-0 z-0">
+            <Image
+              src="/generated/about-team-advisory.png"
+              alt="Professional advisory team"
+              fill
+              className="object-cover"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/85 to-background/75"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+          </div>
+
+          <div className="container relative z-10 pt-32 pb-20 md:pt-40 md:pb-24">
+            <div className="max-w-4xl">
+              <div className="inline-flex items-center gap-3 mb-8">
+                <div className="relative">
+                  <div className="absolute inset-0 bg-accent/30 blur-xl"></div>
+                  <div className="relative px-4 py-1.5 bg-accent/10 backdrop-blur-md border border-accent/30 rounded-full">
+                    <span className="text-sm font-semibold text-accent">21+ Years Experience</span>
+                  </div>
+                </div>
+                <div className="relative">
+                  <div className="absolute inset-0 bg-accent/30 blur-xl"></div>
+                  <div className="relative px-4 py-1.5 bg-accent/10 backdrop-blur-md border border-accent/30 rounded-full">
+                    <span className="text-sm font-semibold text-accent">Women-Owned</span>
+                  </div>
+                </div>
               </div>
-              <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-semibold mb-8 text-foreground">
-                Trusted Business Restructuring Advisors
+
+              <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-semibold mb-8 text-foreground leading-tight">
+                Experience, Relationships, Results
               </h1>
-              <p className="text-xl text-foreground/70 leading-relaxed">
-                A women-owned and operated professional business advisory firm specializing in financial restructuring, creditor coordination, and strategic business stabilization.
+
+              <p className="text-xl md:text-2xl text-foreground/70 leading-relaxed max-w-3xl">
+                A boutique business advisory firm bringing two decades of hands-on restructuring expertise and deep industry relationships to complex financial challenges.
               </p>
             </div>
           </div>
+
+          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent z-10"></div>
         </section>
 
         <section className="py-20 md:py-32 bg-muted/30">

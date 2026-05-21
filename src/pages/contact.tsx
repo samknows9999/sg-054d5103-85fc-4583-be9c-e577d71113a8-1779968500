@@ -31,41 +31,51 @@ export default function Contact() {
     <>
       <SEO
         title="Confidential Business Review | Regroup Partners"
-        description="Request a confidential consultation with our business restructuring and financial advisory team. Discreet, professional advisory services for businesses facing financial challenges."
+        description="Request a confidential business review with our experienced restructuring advisory team. Discreet, professional consultation for complex financial situations."
       />
 
       <Navigation />
 
       <main>
-        <section className="pt-32 pb-20 md:pt-40 md:pb-32">
-          <div className="container">
-            <div className="max-w-4xl mx-auto text-center mb-16">
-              <div className="inline-block px-4 py-1 bg-accent/10 border border-accent/20 rounded-full mb-6">
-                <span className="text-sm font-semibold text-accent">Confidential & Discreet</span>
+        <section className="relative min-h-[70vh] flex items-center overflow-hidden">
+          <div className="absolute inset-0 z-0">
+            <Image
+              src="/generated/contact-reception.png"
+              alt="Professional office reception"
+              fill
+              className="object-cover"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/85 to-background/75"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+          </div>
+
+          <div className="container relative z-10 pt-32 pb-20 md:pt-40 md:pb-24">
+            <div className="max-w-4xl">
+              <div className="relative inline-block mb-8">
+                <div className="absolute inset-0 bg-accent/30 blur-xl"></div>
+                <div className="relative px-4 py-1.5 bg-accent/10 backdrop-blur-md border border-accent/30 rounded-full">
+                  <span className="text-sm font-semibold text-accent">Discreet & Confidential</span>
+                </div>
               </div>
-              <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-semibold mb-8 text-foreground">
+
+              <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-semibold mb-8 text-foreground leading-tight">
                 Confidential Business Review
               </h1>
-              <p className="text-xl text-foreground/70 leading-relaxed">
-                Schedule a private consultation with our advisory team to discuss your business situation and explore strategic restructuring solutions.
+
+              <p className="text-xl md:text-2xl text-foreground/70 leading-relaxed max-w-3xl">
+                Connect with our experienced advisory team for a confidential discussion about your business challenges and restructuring needs.
               </p>
             </div>
           </div>
+
+          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent z-10"></div>
         </section>
 
         <section className="pb-20 md:pb-32">
           <div className="container">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
               <div>
-                <div className="relative h-[300px] rounded-lg overflow-hidden shadow-lg mb-8">
-                  <Image
-                    src="/generated/contact-reception.png"
-                    alt="Professional office reception space"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-
                 <h2 className="font-serif text-3xl md:text-4xl font-semibold mb-6 text-foreground">
                   What to Expect
                 </h2>

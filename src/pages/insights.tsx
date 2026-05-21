@@ -48,32 +48,45 @@ export default function Insights() {
     <>
       <SEO
         title="Insights & Expertise | Regroup Partners"
-        description="Thought leadership on business restructuring, financial stabilization, merchant cash advance advisory, and creditor coordination strategies from experienced professionals."
+        description="Thought leadership on business restructuring, financial stabilization, merchant cash advance advisory, and creditor coordination strategies."
       />
 
       <Navigation />
 
       <main>
-        <section className="pt-32 pb-20 md:pt-40 md:pb-32">
-          <div className="container">
-            <div className="max-w-4xl mx-auto text-center mb-16">
-              <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-semibold mb-8 text-foreground">
+        <section className="relative min-h-[70vh] flex items-center overflow-hidden">
+          <div className="absolute inset-0 z-0">
+            <Image
+              src="/generated/insights-editorial.png"
+              alt="Professional business library"
+              fill
+              className="object-cover"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/85 to-background/75"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+          </div>
+
+          <div className="container relative z-10 pt-32 pb-20 md:pt-40 md:pb-24">
+            <div className="max-w-4xl">
+              <div className="relative inline-block mb-8">
+                <div className="absolute inset-0 bg-accent/30 blur-xl"></div>
+                <div className="relative px-4 py-1.5 bg-accent/10 backdrop-blur-md border border-accent/30 rounded-full">
+                  <span className="text-sm font-semibold text-accent">Thought Leadership</span>
+                </div>
+              </div>
+
+              <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-semibold mb-8 text-foreground leading-tight">
                 Insights & Expertise
               </h1>
-              <p className="text-xl text-foreground/70 leading-relaxed">
-                Thought leadership on business restructuring, financial stabilization, and creditor coordination strategies from our advisory team.
+
+              <p className="text-xl md:text-2xl text-foreground/70 leading-relaxed max-w-3xl">
+                Strategic perspectives on business restructuring, financial stabilization, and creditor coordination from our advisory team.
               </p>
             </div>
-            <div className="relative h-[300px] md:h-[400px] rounded-lg overflow-hidden shadow-lg">
-              <Image
-                src="/generated/insights-editorial.png"
-                alt="Professional business library and editorial space"
-                fill
-                className="object-cover"
-                priority
-              />
-            </div>
           </div>
+
+          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent z-10"></div>
         </section>
 
         <section className="py-20 md:py-32 bg-muted/30">
