@@ -20,34 +20,40 @@ export function Navigation() {
             </span>
           </Link>
 
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center gap-8">
             <Link
               href="/"
-              className="text-white/90 hover:text-white font-normal text-sm transition-colors duration-200"
+              className="text-sm font-medium text-white hover:text-accent transition-colors"
             >
               Home
             </Link>
             <Link
               href="/about"
-              className="text-white/90 hover:text-white font-normal text-sm transition-colors duration-200"
+              className="text-sm font-medium text-white hover:text-accent transition-colors"
             >
               About
             </Link>
             <Link
               href="/services"
-              className="text-white/90 hover:text-white font-normal text-sm transition-colors duration-200"
+              className="text-sm font-medium text-white hover:text-accent transition-colors"
             >
               Services
             </Link>
             <Link
+              href="/team"
+              className="text-sm font-medium text-white hover:text-accent transition-colors"
+            >
+              Our Team
+            </Link>
+            <Link
               href="/insights"
-              className="text-white/90 hover:text-white font-normal text-sm transition-colors duration-200"
+              className="text-sm font-medium text-white hover:text-accent transition-colors"
             >
               Insights
             </Link>
             <Link
               href="/contact"
-              className="px-6 py-2 bg-accent text-white font-semibold text-sm rounded hover:bg-accent/90 transition-colors duration-200"
+              className="text-sm font-medium text-white hover:text-accent transition-colors"
             >
               Contact
             </Link>
@@ -67,39 +73,40 @@ export function Navigation() {
         </div>
 
         {isMobileMenuOpen && (
-          <div className="md:hidden py-4 space-y-4 border-t border-white/10">
+          <div className="md:hidden absolute top-full left-0 right-0 bg-black border-t border-gray-800 py-4">
             <Link
               href="/"
-              className="block px-4 py-2 text-white hover:text-accent transition-colors"
-              onClick={() => setIsMobileMenuOpen(false)}
+              className="block px-6 py-3 text-sm font-medium text-white hover:bg-gray-900 transition-colors"
             >
               Home
             </Link>
             <Link
               href="/about"
-              className="block px-4 py-2 text-white hover:text-accent transition-colors"
-              onClick={() => setIsMobileMenuOpen(false)}
+              className="block px-6 py-3 text-sm font-medium text-white hover:bg-gray-900 transition-colors"
             >
               About
             </Link>
             <Link
               href="/services"
-              className="block px-4 py-2 text-white hover:text-accent transition-colors"
-              onClick={() => setIsMobileMenuOpen(false)}
+              className="block px-6 py-3 text-sm font-medium text-white hover:bg-gray-900 transition-colors"
             >
               Services
             </Link>
             <Link
+              href="/team"
+              className="block px-6 py-3 text-sm font-medium text-white hover:bg-gray-900 transition-colors"
+            >
+              Our Team
+            </Link>
+            <Link
               href="/insights"
-              className="block px-4 py-2 text-white hover:text-accent transition-colors"
-              onClick={() => setIsMobileMenuOpen(false)}
+              className="block px-6 py-3 text-sm font-medium text-white hover:bg-gray-900 transition-colors"
             >
               Insights
             </Link>
             <Link
               href="/contact"
-              className="block px-4 py-2 text-accent font-semibold"
-              onClick={() => setIsMobileMenuOpen(false)}
+              className="block px-6 py-3 text-sm font-medium text-white hover:bg-gray-900 transition-colors"
             >
               Contact
             </Link>
