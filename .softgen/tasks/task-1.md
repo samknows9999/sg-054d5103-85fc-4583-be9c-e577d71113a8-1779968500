@@ -19,12 +19,12 @@ User specifications: white/cream backgrounds, charcoal typography, muted gold ac
 - [x] Configure typography in tailwind.config.ts (Fraunces display + Source Sans 3 body)
 - [x] Create Navigation component (transparent → solid on scroll, clean links)
 - [x] Create Hero section (premium messaging, refined CTA, generate hero image)
-- [ ] Create Services overview section (3-4 elegant cards: Business Restructuring, Creditor Coordination, Cash Flow, MCA Advisory)
-- [ ] Create Experience credibility section (21+ years, women-owned, industry relationships)
+- [x] Create Services overview section (3-4 elegant cards: Business Restructuring, Creditor Coordination, Cash Flow, MCA Advisory)
+- [x] Create Experience credibility section (21+ years, women-owned, industry relationships)
 - [ ] Create Insights preview section (2-3 article cards linking to /insights)
-- [ ] Create Footer component (discreet links, contact info)
-- [ ] Add "Confidential Business Review" CTA section
-- [ ] Generate premium hero image (executive advisory environment)
+- [x] Create Footer component (discreet links, contact info)
+- [x] Add "Confidential Business Review" CTA section
+- [x] Generate premium hero image (executive advisory environment)
 
 ## Acceptance
 - Homepage loads with institutional luxury aesthetic, premium typography, generous whitespace
