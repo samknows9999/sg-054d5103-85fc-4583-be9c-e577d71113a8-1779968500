@@ -1,8 +1,8 @@
 import { Navigation } from "@/components/Navigation";
+import { Hero } from "@/components/Hero";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import Link from "next/link";
-import Image from "next/image";
 
 export default function Insights() {
   const articles = [
@@ -53,50 +53,39 @@ export default function Insights() {
 
       <Navigation />
 
-      <main>
-        <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-background">
-          <div className="container relative z-10 pt-32 pb-20 md:pt-40 md:pb-24">
-            <div className="max-w-5xl mx-auto text-center">
-              <div className="inline-block px-4 py-1.5 bg-accent/10 border border-accent/30 rounded-full mb-8">
-                <span className="text-sm font-semibold text-accent">Thought Leadership</span>
-              </div>
+      <main className="pt-16">
+        <Hero
+          title="Insights & Expertise"
+          subtitle="Strategic perspectives on business restructuring, financial stabilization, and creditor coordination from our advisory team."
+          breadcrumbs={[
+            { label: "Home", href: "/" },
+            { label: "Insights" }
+          ]}
+          backgroundImage="/generated/insights-editorial.png"
+        />
 
-              <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-semibold mb-8 text-foreground leading-tight">
-                Insights & Expertise
-              </h1>
-
-              <p className="text-xl md:text-2xl text-foreground/70 leading-relaxed max-w-3xl mx-auto">
-                Strategic perspectives on business restructuring, financial stabilization, and creditor coordination from our advisory team.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section className="py-20 md:py-32">
-          <div className="container">
+        <section className="py-20 md:py-32 bg-white">
+          <div className="max-w-[1400px] mx-auto px-6">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {articles.map((article, index) => (
                 <Link
                   key={index}
                   href="/insights"
-                  className="group relative block"
+                  className="group block bg-white border border-gray-200 shadow-lg rounded-xl overflow-hidden hover:shadow-xl hover:border-accent/30 transition-all"
                 >
-                  <div className="absolute inset-0 bg-accent/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  <div className="relative bg-card backdrop-blur-sm border border-border shadow-lg rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-accent/10 hover:scale-[1.02] hover:border-accent/30 transition-all duration-500">
-                    <div className="p-8">
-                      <div className="text-sm font-semibold text-accent mb-4">{article.category}</div>
-                      <h3 className="font-serif text-2xl font-semibold mb-4 text-foreground group-hover:text-accent transition-colors duration-300">
-                        {article.title}
-                      </h3>
-                      <p className="text-foreground/70 mb-6 leading-relaxed">
-                        {article.excerpt}
-                      </p>
-                      <div className="flex items-center text-accent font-semibold group-hover:gap-2 transition-all">
-                        Read Article
-                        <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
-                      </div>
+                  <div className="p-8">
+                    <div className="text-sm font-semibold text-accent mb-4">{article.category}</div>
+                    <h3 className="font-serif text-2xl font-semibold mb-4 text-foreground group-hover:text-accent transition-colors">
+                      {article.title}
+                    </h3>
+                    <p className="text-foreground/70 mb-6 leading-relaxed">
+                      {article.excerpt}
+                    </p>
+                    <div className="flex items-center text-accent font-semibold">
+                      Read Article
+                      <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
                     </div>
                   </div>
                 </Link>
@@ -105,8 +94,8 @@ export default function Insights() {
           </div>
         </section>
 
-        <section className="py-20 md:py-32 bg-muted/30">
-          <div className="container">
+        <section className="py-20 md:py-32 bg-gray-50">
+          <div className="max-w-[1400px] mx-auto px-6">
             <div className="max-w-3xl mx-auto text-center mb-16">
               <h2 className="font-serif text-4xl md:text-5xl font-semibold mb-6 text-foreground">
                 Topics & Expertise
@@ -117,51 +106,39 @@ export default function Insights() {
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <div className="group relative">
-                <div className="absolute inset-0 bg-accent/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="relative bg-card backdrop-blur-sm border border-border shadow-lg rounded-xl p-8 text-center hover:shadow-2xl hover:shadow-accent/10 hover:scale-[1.02] hover:border-accent/30 transition-all duration-500">
-                  <div className="text-4xl font-serif font-bold text-accent mb-3 group-hover:scale-110 transition-transform duration-300">01</div>
-                  <h3 className="font-serif text-xl font-semibold mb-2 text-foreground group-hover:text-accent transition-colors duration-300">
-                    Business Restructuring
-                  </h3>
-                </div>
+              <div className="bg-white border border-gray-200 shadow-lg rounded-xl p-8 text-center hover:shadow-xl hover:border-accent/30 transition-all">
+                <div className="text-4xl font-serif font-bold text-accent mb-3">01</div>
+                <h3 className="font-serif text-xl font-semibold mb-2 text-foreground">
+                  Business Restructuring
+                </h3>
               </div>
 
-              <div className="group relative">
-                <div className="absolute inset-0 bg-accent/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="relative bg-card backdrop-blur-sm border border-border shadow-lg rounded-xl p-8 text-center hover:shadow-2xl hover:shadow-accent/10 hover:scale-[1.02] hover:border-accent/30 transition-all duration-500">
-                  <div className="text-4xl font-serif font-bold text-accent mb-3 group-hover:scale-110 transition-transform duration-300">02</div>
-                  <h3 className="font-serif text-xl font-semibold mb-2 text-foreground group-hover:text-accent transition-colors duration-300">
-                    Creditor Coordination
-                  </h3>
-                </div>
+              <div className="bg-white border border-gray-200 shadow-lg rounded-xl p-8 text-center hover:shadow-xl hover:border-accent/30 transition-all">
+                <div className="text-4xl font-serif font-bold text-accent mb-3">02</div>
+                <h3 className="font-serif text-xl font-semibold mb-2 text-foreground">
+                  Creditor Coordination
+                </h3>
               </div>
 
-              <div className="group relative">
-                <div className="absolute inset-0 bg-accent/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="relative bg-card backdrop-blur-sm border border-border shadow-lg rounded-xl p-8 text-center hover:shadow-2xl hover:shadow-accent/10 hover:scale-[1.02] hover:border-accent/30 transition-all duration-500">
-                  <div className="text-4xl font-serif font-bold text-accent mb-3 group-hover:scale-110 transition-transform duration-300">03</div>
-                  <h3 className="font-serif text-xl font-semibold mb-2 text-foreground group-hover:text-accent transition-colors duration-300">
-                    MCA Advisory
-                  </h3>
-                </div>
+              <div className="bg-white border border-gray-200 shadow-lg rounded-xl p-8 text-center hover:shadow-xl hover:border-accent/30 transition-all">
+                <div className="text-4xl font-serif font-bold text-accent mb-3">03</div>
+                <h3 className="font-serif text-xl font-semibold mb-2 text-foreground">
+                  MCA Advisory
+                </h3>
               </div>
 
-              <div className="group relative">
-                <div className="absolute inset-0 bg-accent/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="relative bg-card backdrop-blur-sm border border-border shadow-lg rounded-xl p-8 text-center hover:shadow-2xl hover:shadow-accent/10 hover:scale-[1.02] hover:border-accent/30 transition-all duration-500">
-                  <div className="text-4xl font-serif font-bold text-accent mb-3 group-hover:scale-110 transition-transform duration-300">04</div>
-                  <h3 className="font-serif text-xl font-semibold mb-2 text-foreground group-hover:text-accent transition-colors duration-300">
-                    Financial Strategy
-                  </h3>
-                </div>
+              <div className="bg-white border border-gray-200 shadow-lg rounded-xl p-8 text-center hover:shadow-xl hover:border-accent/30 transition-all">
+                <div className="text-4xl font-serif font-bold text-accent mb-3">04</div>
+                <h3 className="font-serif text-xl font-semibold mb-2 text-foreground">
+                  Financial Strategy
+                </h3>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="py-20 md:py-32 bg-muted/30">
-          <div className="container">
+        <section className="py-20 md:py-32 bg-white">
+          <div className="max-w-[1400px] mx-auto px-6">
             <div className="max-w-4xl mx-auto text-center">
               <h2 className="font-serif text-4xl md:text-5xl font-semibold mb-6 text-foreground">
                 Need Strategic Guidance?

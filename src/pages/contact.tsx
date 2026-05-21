@@ -1,8 +1,8 @@
 import { Navigation } from "@/components/Navigation";
+import { Hero } from "@/components/Hero";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { useState } from "react";
-import Image from "next/image";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -36,27 +36,19 @@ export default function Contact() {
 
       <Navigation />
 
-      <main>
-        <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-background">
-          <div className="container relative z-10 pt-32 pb-20 md:pt-40 md:pb-24">
-            <div className="max-w-5xl mx-auto text-center">
-              <div className="inline-block px-4 py-1.5 bg-accent/10 border border-accent/30 rounded-full mb-8">
-                <span className="text-sm font-semibold text-accent">Discreet & Confidential</span>
-              </div>
+      <main className="pt-16">
+        <Hero
+          title="Confidential Business Review"
+          subtitle="Connect with our experienced advisory team for a confidential discussion about your business challenges and restructuring needs."
+          breadcrumbs={[
+            { label: "Home", href: "/" },
+            { label: "Contact" }
+          ]}
+          backgroundImage="/generated/contact-reception.png"
+        />
 
-              <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-semibold mb-8 text-foreground leading-tight">
-                Confidential Business Review
-              </h1>
-
-              <p className="text-xl md:text-2xl text-foreground/70 leading-relaxed max-w-3xl mx-auto">
-                Connect with our experienced advisory team for a confidential discussion about your business challenges and restructuring needs.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section className="pb-20 md:pb-32">
-          <div className="container">
+        <section className="py-20 md:py-32 bg-white">
+          <div className="max-w-[1400px] mx-auto px-6">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
               <div>
                 <h2 className="font-serif text-3xl md:text-4xl font-semibold mb-6 text-foreground">
@@ -67,102 +59,90 @@ export default function Contact() {
                 </p>
 
                 <div className="space-y-6 mb-8">
-                  <div className="group relative">
-                    <div className="absolute inset-0 bg-accent/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <div className="relative bg-card backdrop-blur-sm border border-border shadow-lg rounded-xl p-6 hover:shadow-2xl hover:shadow-accent/10 hover:scale-[1.02] hover:border-accent/30 transition-all duration-500">
-                      <div className="flex items-start gap-4">
-                        <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-accent/20 to-accent/5 flex items-center justify-center flex-shrink-0 group-hover:from-accent/30 group-hover:to-accent/10 transition-all duration-500">
-                          <svg className="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                          </svg>
-                        </div>
-                        <div>
-                          <h3 className="font-semibold mb-1 text-foreground group-hover:text-accent transition-colors duration-300">Initial Consultation</h3>
-                          <p className="text-sm text-foreground/70">
-                            We'll discuss your situation, review your financial position, and explain how we can help.
-                          </p>
-                        </div>
+                  <div className="bg-white border border-gray-200 shadow-lg rounded-xl p-6 hover:shadow-xl hover:border-accent/30 transition-all">
+                    <div className="flex items-start gap-4">
+                      <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
+                        <svg className="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h3 className="font-semibold mb-1 text-foreground">Initial Consultation</h3>
+                        <p className="text-sm text-foreground/70">
+                          We'll discuss your situation, review your financial position, and explain how we can help.
+                        </p>
                       </div>
                     </div>
                   </div>
 
-                  <div className="group relative">
-                    <div className="absolute inset-0 bg-accent/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <div className="relative bg-card backdrop-blur-sm border border-border shadow-lg rounded-xl p-6 hover:shadow-2xl hover:shadow-accent/10 hover:scale-[1.02] hover:border-accent/30 transition-all duration-500">
-                      <div className="flex items-start gap-4">
-                        <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-accent/20 to-accent/5 flex items-center justify-center flex-shrink-0 group-hover:from-accent/30 group-hover:to-accent/10 transition-all duration-500">
-                          <svg className="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                          </svg>
-                        </div>
-                        <div>
-                          <h3 className="font-semibold mb-1 text-foreground group-hover:text-accent transition-colors duration-300">Strategic Assessment</h3>
-                          <p className="text-sm text-foreground/70">
-                            We'll analyze your creditor landscape and develop a comprehensive restructuring strategy.
-                          </p>
-                        </div>
+                  <div className="bg-white border border-gray-200 shadow-lg rounded-xl p-6 hover:shadow-xl hover:border-accent/30 transition-all">
+                    <div className="flex items-start gap-4">
+                      <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
+                        <svg className="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h3 className="font-semibold mb-1 text-foreground">Strategic Assessment</h3>
+                        <p className="text-sm text-foreground/70">
+                          We'll analyze your creditor landscape and develop a comprehensive restructuring strategy.
+                        </p>
                       </div>
                     </div>
                   </div>
 
-                  <div className="group relative">
-                    <div className="absolute inset-0 bg-accent/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <div className="relative bg-card backdrop-blur-sm border border-border shadow-lg rounded-xl p-6 hover:shadow-2xl hover:shadow-accent/10 hover:scale-[1.02] hover:border-accent/30 transition-all duration-500">
-                      <div className="flex items-start gap-4">
-                        <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-accent/20 to-accent/5 flex items-center justify-center flex-shrink-0 group-hover:from-accent/30 group-hover:to-accent/10 transition-all duration-500">
-                          <svg className="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                          </svg>
-                        </div>
-                        <div>
-                          <h3 className="font-semibold mb-1 text-foreground group-hover:text-accent transition-colors duration-300">Ongoing Support</h3>
-                          <p className="text-sm text-foreground/70">
-                            Direct access to our team throughout your restructuring process.
-                          </p>
-                        </div>
+                  <div className="bg-white border border-gray-200 shadow-lg rounded-xl p-6 hover:shadow-xl hover:border-accent/30 transition-all">
+                    <div className="flex items-start gap-4">
+                      <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
+                        <svg className="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h3 className="font-semibold mb-1 text-foreground">Ongoing Support</h3>
+                        <p className="text-sm text-foreground/70">
+                          Direct access to our team throughout your restructuring process.
+                        </p>
                       </div>
                     </div>
                   </div>
                 </div>
 
                 <div className="space-y-6">
-                  <div className="group relative">
-                    <div className="absolute inset-0 bg-accent/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <div className="relative bg-muted/50 backdrop-blur-sm border border-border shadow-lg rounded-xl p-6 hover:shadow-2xl hover:shadow-accent/10 hover:scale-[1.02] hover:border-accent/30 transition-all duration-500">
-                      <h3 className="font-serif text-xl font-semibold mb-4 text-foreground group-hover:text-accent transition-colors duration-300">Alternative Contact Methods</h3>
-                      <div className="space-y-4">
-                        <div className="flex items-center gap-3">
-                          <svg className="w-5 h-5 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                          </svg>
-                          <div>
-                            <div className="font-semibold text-foreground">Email</div>
-                            <a href="mailto:contact@regrouppartners.com" className="text-accent hover:underline">
-                              contact@regrouppartners.com
-                            </a>
-                          </div>
+                  <div className="bg-gray-50 border border-gray-200 shadow-lg rounded-xl p-6 hover:shadow-xl hover:border-accent/30 transition-all">
+                    <h3 className="font-serif text-xl font-semibold mb-4 text-foreground">Alternative Contact Methods</h3>
+                    <div className="space-y-4">
+                      <div className="flex items-center gap-3">
+                        <svg className="w-5 h-5 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                        <div>
+                          <div className="font-semibold text-foreground">Email</div>
+                          <a href="mailto:contact@regrouppartners.com" className="text-accent hover:underline">
+                            contact@regrouppartners.com
+                          </a>
                         </div>
+                      </div>
 
-                        <div className="flex items-center gap-3">
-                          <svg className="w-5 h-5 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                          </svg>
-                          <div>
-                            <div className="font-semibold text-foreground">Phone</div>
-                            <a href="tel:+1-555-REGROUP" className="text-accent hover:underline">
-                              +1 (555) REGROUP
-                            </a>
-                          </div>
+                      <div className="flex items-center gap-3">
+                        <svg className="w-5 h-5 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                        </svg>
+                        <div>
+                          <div className="font-semibold text-foreground">Phone</div>
+                          <a href="tel:+1-555-REGROUP" className="text-accent hover:underline">
+                            +1 (555) REGROUP
+                          </a>
                         </div>
+                      </div>
 
-                        <div className="flex items-center gap-3">
-                          <svg className="w-5 h-5 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                          </svg>
-                          <div>
-                            <div className="font-semibold text-foreground">Business Hours</div>
-                            <div className="text-foreground/70">Monday - Friday, 9:00 AM - 5:00 PM EST</div>
-                          </div>
+                      <div className="flex items-center gap-3">
+                        <svg className="w-5 h-5 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <div>
+                          <div className="font-semibold text-foreground">Business Hours</div>
+                          <div className="text-foreground/70">Monday - Friday, 9:00 AM - 5:00 PM EST</div>
                         </div>
                       </div>
                     </div>
@@ -170,7 +150,7 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="bg-card p-8 md:p-10 rounded-lg border border-border shadow-lg">
+              <div className="bg-white p-8 md:p-10 rounded-lg border border-gray-200 shadow-lg">
                 <h2 className="font-serif text-2xl md:text-3xl font-semibold mb-2 text-foreground">
                   Request a Consultation
                 </h2>
