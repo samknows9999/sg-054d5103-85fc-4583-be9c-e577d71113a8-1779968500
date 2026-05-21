@@ -60,7 +60,56 @@ export default function About() {
 
         <section className="py-20 md:py-32 bg-gray-50">
           <div className="max-w-[1400px] mx-auto px-6">
-            <div className="grid md:grid-cols-3 gap-8 mb-20">
+            <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center mb-20">
+              <div>
+                <div className="inline-block px-4 py-1 bg-accent/10 border border-accent/20 rounded-full mb-6">
+                  <span className="text-sm font-semibold text-accent">Leadership</span>
+                </div>
+                <h2 className="font-serif text-4xl md:text-5xl font-semibold mb-6 text-foreground">
+                  Meet Claudia Stefano
+                </h2>
+                <p className="text-lg text-accent font-semibold mb-4">
+                  Chief Strategy Officer
+                </p>
+                <p className="text-lg text-foreground/70 mb-6 leading-relaxed">
+                  With over 21 years of experience in business restructuring and financial advisory, Claudia Stefano leads Regroup Partners' strategic initiatives and client engagements.
+                </p>
+                <p className="text-lg text-foreground/70 mb-6 leading-relaxed">
+                  As a pioneer in merchant cash advance coordination and creditor relations, Claudia has built deep industry relationships with lenders, attorneys, and restructuring professionals nationwide.
+                </p>
+                <p className="text-lg text-foreground/70 mb-6 leading-relaxed">
+                  Her hands-on approach and institutional expertise have helped hundreds of businesses navigate complex financial challenges, from multi-creditor coordination to comprehensive business restructuring.
+                </p>
+                <Link
+                  href="/team"
+                  className="inline-flex items-center text-accent hover:text-accent/80 font-semibold transition-colors"
+                >
+                  View Full Profile
+                  <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              </div>
+
+              <div className="bg-white border border-gray-200 shadow-lg rounded-xl overflow-hidden">
+                <div className="aspect-video relative bg-gray-900">
+                  <iframe
+                    src="https://www.youtube.com/embed/mxoQirx632g?start=7&autoplay=1&mute=1&loop=1&playlist=mxoQirx632g&controls=0&modestbranding=1&rel=0&playsinline=1"
+                    title="Claudia Stefano - Chief Strategy Officer"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="absolute inset-0 w-full h-full"
+                  />
+                </div>
+                <div className="p-6 bg-white">
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    "Our approach is built on relationships, experience, and a deep understanding of what businesses need when facing financial complexity. We're not a call center—we're hands-on advisors who care about sustainable outcomes."
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
               <div className="bg-white border border-gray-200 shadow-lg rounded-xl p-8 text-center hover:shadow-xl hover:border-accent/30 transition-all">
                 <div className="text-5xl font-serif font-bold text-primary mb-2">21+</div>
                 <div className="text-foreground/70">Years of Experience</div>
