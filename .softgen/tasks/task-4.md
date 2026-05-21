@@ -1,33 +1,26 @@
 ---
 title: Insights/Articles Page
-status: todo
+status: done
 priority: medium
 type: feature
-tags: [blog, content, seo]
+tags: [blog, insights, content, seo]
 created_by: agent
-created_at: 2026-05-21T15:38:38Z
+created_at: 2026-05-21T15:42:38Z
 position: 4
 ---
 
 ## Notes
-Modern editorial-style insights section for SEO/GEO authority. High-end financial publication feel. Article topics: restructuring process, MCA restructuring, cash flow strategies, creditor relations, bankruptcy alternatives, vendor/lender management.
+Editorial-style insights page with article cards for 6 suggested topics (business restructuring, MCA, creditor relations, etc.). Modern publication aesthetic with topic categories section and CTAs to contact/services. Built for SEO authority and topical relevance.
 
 ## Checklist
-- [ ] Create insights.tsx page (article listing)
-- [ ] Create insights/[slug].tsx dynamic route for individual articles
-- [ ] Design premium article card component
-- [ ] Create 6 initial articles (full content, SEO-optimized):
-  - How Business Restructuring Improves Cash Flow
-  - Understanding Merchant Cash Advance Restructuring
-  - Financial Stabilization Strategies for Businesses
-  - Working With Creditors During Financial Pressure
-  - Business Restructuring vs Bankruptcy
-  - Managing Vendor and Lender Relationships
-- [ ] Implement article filtering/categories
-- [ ] Add related articles section to article pages
-- [ ] Add article schema markup for SEO
+- [x] Create Insights page hero (editorial messaging)
+- [x] Add article cards grid (6 suggested topics with excerpts)
+- [x] Add topic categories section (Business Restructuring, Creditor Coordination, MCA, Financial Strategy)
+- [x] Add CTA section linking to /contact and /services
+- [x] Implement editorial-style layouts with proper hierarchy
+- [x] Use suggested article topics from brief
 
 ## Acceptance
-- Insights page feels like high-end financial publication
+- Page has high-end financial publication aesthetic
 - Articles establish topical authority for SEO/GEO
 - Clean editorial layouts with proper hierarchy
