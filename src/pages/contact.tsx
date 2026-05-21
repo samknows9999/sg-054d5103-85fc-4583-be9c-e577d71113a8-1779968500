@@ -2,6 +2,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { useState } from "react";
+import Image from "next/image";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -56,6 +57,15 @@ export default function Contact() {
           <div className="container">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
               <div>
+                <div className="relative h-[300px] rounded-lg overflow-hidden shadow-lg mb-8">
+                  <Image
+                    src="/generated/contact-reception.png"
+                    alt="Professional office reception space"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+
                 <h2 className="font-serif text-3xl md:text-4xl font-semibold mb-6 text-foreground">
                   What to Expect
                 </h2>

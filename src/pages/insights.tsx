@@ -2,6 +2,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Insights() {
   const articles = [
@@ -62,6 +63,15 @@ export default function Insights() {
               <p className="text-xl text-foreground/70 leading-relaxed">
                 Thought leadership on business restructuring, financial stabilization, and creditor coordination strategies from our advisory team.
               </p>
+            </div>
+            <div className="relative h-[300px] md:h-[400px] rounded-lg overflow-hidden shadow-lg">
+              <Image
+                src="/generated/insights-editorial.png"
+                alt="Professional business library and editorial space"
+                fill
+                className="object-cover"
+                priority
+              />
             </div>
           </div>
         </section>

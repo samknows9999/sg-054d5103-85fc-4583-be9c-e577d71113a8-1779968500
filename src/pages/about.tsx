@@ -2,6 +2,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function About() {
   return (
@@ -33,7 +34,18 @@ export default function About() {
         <section className="py-20 md:py-32 bg-muted/30">
           <div className="container">
             <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
-              <div>
+              <div className="order-2 md:order-1">
+                <div className="relative h-[400px] md:h-[500px] rounded-lg overflow-hidden shadow-lg">
+                  <Image
+                    src="/generated/about-team-advisory.png"
+                    alt="Professional business advisory team meeting"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                </div>
+              </div>
+              <div className="order-1 md:order-2">
                 <h2 className="font-serif text-4xl md:text-5xl font-semibold mb-6 text-foreground">
                   Experience That Matters
                 </h2>
@@ -46,29 +58,6 @@ export default function About() {
                 <p className="text-lg text-foreground/70 leading-relaxed">
                   Our approach combines financial strategy, creditor coordination, and operational advisory to help businesses achieve sustainable stabilization and continuity.
                 </p>
-              </div>
-              <div className="space-y-6">
-                <div className="bg-card p-8 rounded-lg border border-border shadow-sm">
-                  <div className="text-4xl font-serif font-semibold text-accent mb-3">21+</div>
-                  <h3 className="font-serif text-xl font-semibold mb-2">Years of Experience</h3>
-                  <p className="text-foreground/70">
-                    Over two decades of hands-on restructuring and financial advisory experience
-                  </p>
-                </div>
-                <div className="bg-card p-8 rounded-lg border border-border shadow-sm">
-                  <div className="text-4xl font-serif font-semibold text-accent mb-3">100%</div>
-                  <h3 className="font-serif text-xl font-semibold mb-2">Women-Owned & Operated</h3>
-                  <p className="text-foreground/70">
-                    Professional business advisory firm led by experienced restructuring specialists
-                  </p>
-                </div>
-                <div className="bg-card p-8 rounded-lg border border-border shadow-sm">
-                  <div className="text-4xl font-serif font-semibold text-accent mb-3">20+</div>
-                  <h3 className="font-serif text-xl font-semibold mb-2">Years in MCA Industry</h3>
-                  <p className="text-foreground/70">
-                    Pioneers in merchant cash advance restructuring and creditor coordination
-                  </p>
-                </div>
               </div>
             </div>
           </div>
