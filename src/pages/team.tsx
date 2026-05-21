@@ -159,40 +159,143 @@ export default function TeamPage() {
 
         <section className="py-20 md:py-32 bg-gray-50">
           <div className="max-w-[1400px] mx-auto px-6">
-            <div className="max-w-3xl mx-auto text-center">
+            <div className="text-center mb-16">
+              <div className="inline-block px-4 py-1 bg-accent/10 border border-accent/20 rounded-full mb-6">
+                <span className="text-sm font-semibold text-accent">Our Team</span>
+              </div>
               <h2 className="font-serif text-4xl md:text-5xl font-semibold mb-6 text-foreground">
-                Building Relationships That Matter
+                Senior Advisory Team
               </h2>
-              <p className="text-lg text-gray-600 leading-relaxed mb-12">
-                At Regroup Partners, our success is measured by the long-term relationships we build with business 
-                owners, lenders, and professional advisors. Our team's hands-on approach and proven track record 
-                make us a trusted partner for businesses navigating financial complexity.
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                Our experienced professionals bring deep expertise across restructuring, finance, operations, and client relations.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto mt-16">
-              <Card className="p-8 bg-white border border-gray-200">
-                <div className="text-4xl font-serif font-bold text-accent mb-2">21+</div>
-                <div className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">Years</div>
-                <p className="text-gray-600 leading-relaxed">
-                  Of proven experience in business restructuring and financial advisory services
-                </p>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+              <Card className="overflow-hidden bg-white border border-gray-200 hover:shadow-lg transition-shadow">
+                <div className="aspect-[3/4] relative overflow-hidden bg-gray-100">
+                  <img
+                    src="/generated/team-member-1.png"
+                    alt="Michael Harrison"
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="font-serif text-xl font-semibold mb-1 text-foreground">
+                    Michael Harrison
+                  </h3>
+                  <p className="text-accent font-semibold mb-3">
+                    Senior Financial Advisor
+                  </p>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    15+ years in corporate finance and distressed debt advisory. Specializes in complex creditor negotiations and debt restructuring strategies for middle-market businesses.
+                  </p>
+                </div>
               </Card>
 
-              <Card className="p-8 bg-white border border-gray-200">
-                <div className="text-4xl font-serif font-bold text-accent mb-2">100%</div>
-                <div className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">Women-Owned</div>
-                <p className="text-gray-600 leading-relaxed">
-                  Women-owned and operated firm committed to excellence and professional integrity
-                </p>
+              <Card className="overflow-hidden bg-white border border-gray-200 hover:shadow-lg transition-shadow">
+                <div className="aspect-[3/4] relative overflow-hidden bg-gray-100">
+                  <img
+                    src="/generated/team-member-2.png"
+                    alt="Jennifer Martinez"
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="font-serif text-xl font-semibold mb-1 text-foreground">
+                    Jennifer Martinez
+                  </h3>
+                  <p className="text-accent font-semibold mb-3">
+                    Senior Restructuring Advisor
+                  </p>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    12+ years guiding businesses through operational and financial turnarounds. Expert in stakeholder management and developing sustainable restructuring plans.
+                  </p>
+                </div>
               </Card>
 
-              <Card className="p-8 bg-white border border-gray-200">
-                <div className="text-4xl font-serif font-bold text-accent mb-2">∞</div>
-                <div className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">Relationships</div>
-                <p className="text-gray-600 leading-relaxed">
-                  Established network across lenders, attorneys, and restructuring professionals
-                </p>
+              <Card className="overflow-hidden bg-white border border-gray-200 hover:shadow-lg transition-shadow">
+                <div className="aspect-[3/4] relative overflow-hidden bg-gray-100">
+                  <img
+                    src="/generated/team-member-3.png"
+                    alt="David Chen"
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="font-serif text-xl font-semibold mb-1 text-foreground">
+                    David Chen
+                  </h3>
+                  <p className="text-accent font-semibold mb-3">
+                    Financial Analysis Director
+                  </p>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    10+ years in financial modeling and cash flow analysis. Develops data-driven strategies for businesses facing liquidity challenges and alternative lending complexities.
+                  </p>
+                </div>
+              </Card>
+
+              <Card className="overflow-hidden bg-white border border-gray-200 hover:shadow-lg transition-shadow">
+                <div className="aspect-[3/4] relative overflow-hidden bg-gray-100">
+                  <img
+                    src="/generated/team-member-4.png"
+                    alt="Patricia Williams"
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="font-serif text-xl font-semibold mb-1 text-foreground">
+                    Patricia Williams
+                  </h3>
+                  <p className="text-accent font-semibold mb-3">
+                    Operations Director
+                  </p>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    14+ years optimizing business operations during restructuring engagements. Focuses on operational efficiency, vendor management, and cost reduction strategies.
+                  </p>
+                </div>
+              </Card>
+
+              <Card className="overflow-hidden bg-white border border-gray-200 hover:shadow-lg transition-shadow">
+                <div className="aspect-[3/4] relative overflow-hidden bg-gray-100">
+                  <img
+                    src="/generated/team-member-5.png"
+                    alt="Robert Sullivan"
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="font-serif text-xl font-semibold mb-1 text-foreground">
+                    Robert Sullivan
+                  </h3>
+                  <p className="text-accent font-semibold mb-3">
+                    Senior Business Consultant
+                  </p>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    13+ years advising businesses through financial transitions. Specializes in lender coordination, MCA portfolio management, and strategic business planning.
+                  </p>
+                </div>
+              </Card>
+
+              <Card className="overflow-hidden bg-white border border-gray-200 hover:shadow-lg transition-shadow">
+                <div className="aspect-[3/4] relative overflow-hidden bg-gray-100">
+                  <img
+                    src="/generated/team-member-6.png"
+                    alt="Amanda Foster"
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="font-serif text-xl font-semibold mb-1 text-foreground">
+                    Amanda Foster
+                  </h3>
+                  <p className="text-accent font-semibold mb-3">
+                    Client Relations Manager
+                  </p>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    9+ years managing client relationships and coordinating between business owners, creditors, and legal counsel. Ensures seamless communication throughout restructuring engagements.
+                  </p>
+                </div>
               </Card>
             </div>
           </div>
