@@ -80,76 +80,260 @@ export default function Home() {
         <section className="py-24 md:py-32 bg-white">
           <div className="container">
             <div className="max-w-3xl mx-auto text-center mb-16">
-              <div className="inline-block px-4 py-2 bg-blue-50 border border-blue-100 rounded-full mb-6">
-                <span className="text-sm font-bold text-blue-600 uppercase tracking-wide font-display">Core Services</span>
+              <div className="inline-block px-4 py-2 bg-blue-50 border border-blue-200 rounded-full mb-6">
+                <span className="text-sm font-display font-bold text-blue-600 uppercase tracking-wide">Core Advisory Services</span>
               </div>
               <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-black mb-6 text-gray-900 uppercase tracking-tight">
                 COMPREHENSIVE RESTRUCTURING SOLUTIONS
               </h2>
-              <p className="text-xl text-gray-600 leading-relaxed">
-                Built on two decades of experience and deep industry relationships
+              <p className="text-lg text-gray-600 leading-relaxed">
+                Strategic advisory services built on two decades of experience and deep industry relationships
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <div className="group relative">
-                <div className="absolute inset-0 bg-blue-500/10 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="relative bg-white border border-gray-200 shadow-lg rounded-xl p-8 hover:shadow-2xl hover:shadow-blue-500/10 hover:scale-[1.02] hover:border-blue-200 transition-all duration-500">
-                  <div className="w-14 h-14 rounded-lg bg-gradient-to-br from-blue-500/20 to-blue-500/5 flex items-center justify-center mb-6 group-hover:from-blue-500/30 group-hover:to-blue-500/10 transition-all duration-500">
-                    <Building2 className="w-7 h-7 text-blue-500" />
+            <div className="grid md:grid-cols-2 gap-8 mb-12">
+              {/* Business Restructuring Card */}
+              <div className="group relative overflow-hidden rounded-2xl h-[500px] shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-[1.02]">
+                <div className="absolute inset-0">
+                  <Image
+                    src="/generated/service-business-restructuring.png"
+                    alt="Business Restructuring Services"
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-b from-[#0F172A]/80 via-[#0F172A]/70 to-[#0F172A]/95"></div>
+                  <div className="absolute inset-0 bg-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </div>
+                
+                <div className="relative h-full p-10 flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className="w-16 h-16 rounded-xl bg-blue-500/20 backdrop-blur-sm border border-blue-400/30 flex items-center justify-center group-hover:bg-blue-500/30 transition-all duration-500">
+                        <Building2 className="w-8 h-8 text-blue-400" />
+                      </div>
+                      <div className="px-3 py-1 bg-blue-500/20 backdrop-blur-sm border border-blue-400/30 rounded-full">
+                        <span className="text-xs font-display font-bold text-blue-300 uppercase tracking-wide">Core Service</span>
+                      </div>
+                    </div>
+                    
+                    <h3 className="font-display text-3xl md:text-4xl font-black mb-4 text-white uppercase tracking-tight group-hover:text-blue-300 transition-colors duration-300">
+                      Business Restructuring
+                    </h3>
+                    
+                    <p className="text-gray-300 leading-relaxed mb-6">
+                      Strategic restructuring guidance to stabilize operations and achieve financial sustainability through comprehensive analysis and stakeholder coordination.
+                    </p>
                   </div>
-                  <h3 className="font-display text-xl font-bold mb-4 text-gray-900 group-hover:text-blue-600 transition-colors duration-300 uppercase tracking-wide">
-                    Business Restructuring
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    Strategic restructuring guidance to stabilize operations and achieve financial sustainability.
-                  </p>
+
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-2">
+                      <svg className="w-5 h-5 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-sm text-gray-300">21+ Years Proven Track Record</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <svg className="w-5 h-5 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-sm text-gray-300">Institutional-Grade Advisory</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <svg className="w-5 h-5 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-sm text-gray-300">Women-Owned & Operated</span>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              <div className="group relative">
-                <div className="absolute inset-0 bg-blue-500/10 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="relative bg-white border border-gray-200 shadow-lg rounded-xl p-8 hover:shadow-2xl hover:shadow-blue-500/10 hover:scale-[1.02] hover:border-blue-200 transition-all duration-500">
-                  <div className="w-14 h-14 rounded-lg bg-gradient-to-br from-blue-500/20 to-blue-500/5 flex items-center justify-center mb-6 group-hover:from-blue-500/30 group-hover:to-blue-500/10 transition-all duration-500">
-                    <Users className="w-7 h-7 text-blue-500" />
+              {/* Creditor Coordination Card */}
+              <div className="group relative overflow-hidden rounded-2xl h-[500px] shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-[1.02]">
+                <div className="absolute inset-0">
+                  <Image
+                    src="/generated/service-creditor-coordination.png"
+                    alt="Creditor Coordination Services"
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-b from-[#0F172A]/80 via-[#0F172A]/70 to-[#0F172A]/95"></div>
+                  <div className="absolute inset-0 bg-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </div>
+                
+                <div className="relative h-full p-10 flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className="w-16 h-16 rounded-xl bg-blue-500/20 backdrop-blur-sm border border-blue-400/30 flex items-center justify-center group-hover:bg-blue-500/30 transition-all duration-500">
+                        <Users className="w-8 h-8 text-blue-400" />
+                      </div>
+                      <div className="px-3 py-1 bg-blue-500/20 backdrop-blur-sm border border-blue-400/30 rounded-full">
+                        <span className="text-xs font-display font-bold text-blue-300 uppercase tracking-wide">Specialized</span>
+                      </div>
+                    </div>
+                    
+                    <h3 className="font-display text-3xl md:text-4xl font-black mb-4 text-white uppercase tracking-tight group-hover:text-blue-300 transition-colors duration-300">
+                      Creditor Coordination
+                    </h3>
+                    
+                    <p className="text-gray-300 leading-relaxed mb-6">
+                      Expert management of relationships with banks, lenders, vendors, and financial stakeholders leveraging longstanding industry connections.
+                    </p>
                   </div>
-                  <h3 className="font-display text-xl font-bold mb-4 text-gray-900 group-hover:text-blue-600 transition-colors duration-300 uppercase tracking-wide">
-                    Creditor Coordination
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    Expert management of relationships with banks, lenders, vendors, and financial stakeholders.
-                  </p>
+
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-2">
+                      <svg className="w-5 h-5 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-sm text-gray-300">Deep Lender Relationships</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <svg className="w-5 h-5 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-sm text-gray-300">Multi-Stakeholder Expertise</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <svg className="w-5 h-5 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-sm text-gray-300">Professional Representation</span>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              <div className="group relative">
-                <div className="absolute inset-0 bg-blue-500/10 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="relative bg-white border border-gray-200 shadow-lg rounded-xl p-8 hover:shadow-2xl hover:shadow-blue-500/10 hover:scale-[1.02] hover:border-blue-200 transition-all duration-500">
-                  <div className="w-14 h-14 rounded-lg bg-gradient-to-br from-blue-500/20 to-blue-500/5 flex items-center justify-center mb-6 group-hover:from-blue-500/30 group-hover:to-blue-500/10 transition-all duration-500">
-                    <TrendingUp className="w-7 h-7 text-blue-500" />
+              {/* Cash Flow Improvement Card */}
+              <div className="group relative overflow-hidden rounded-2xl h-[500px] shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-[1.02]">
+                <div className="absolute inset-0">
+                  <Image
+                    src="/generated/service-cash-flow.png"
+                    alt="Cash Flow Improvement Services"
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-b from-[#0F172A]/80 via-[#0F172A]/70 to-[#0F172A]/95"></div>
+                  <div className="absolute inset-0 bg-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </div>
+                
+                <div className="relative h-full p-10 flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className="w-16 h-16 rounded-xl bg-blue-500/20 backdrop-blur-sm border border-blue-400/30 flex items-center justify-center group-hover:bg-blue-500/30 transition-all duration-500">
+                        <TrendingUp className="w-8 h-8 text-blue-400" />
+                      </div>
+                      <div className="px-3 py-1 bg-blue-500/20 backdrop-blur-sm border border-blue-400/30 rounded-full">
+                        <span className="text-xs font-display font-bold text-blue-300 uppercase tracking-wide">Financial Advisory</span>
+                      </div>
+                    </div>
+                    
+                    <h3 className="font-display text-3xl md:text-4xl font-black mb-4 text-white uppercase tracking-tight group-hover:text-blue-300 transition-colors duration-300">
+                      Cash Flow Improvement
+                    </h3>
+                    
+                    <p className="text-gray-300 leading-relaxed mb-6">
+                      Proven strategies for improving operational cash flow and achieving financial stability through working capital optimization.
+                    </p>
                   </div>
-                  <h3 className="font-display text-xl font-bold mb-4 text-gray-900 group-hover:text-blue-600 transition-colors duration-300 uppercase tracking-wide">
-                    Cash Flow Improvement
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    Proven strategies for improving operational cash flow and achieving financial stability.
-                  </p>
+
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-2">
+                      <svg className="w-5 h-5 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-sm text-gray-300">Strategic Cash Management</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <svg className="w-5 h-5 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-sm text-gray-300">Operational Excellence</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <svg className="w-5 h-5 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-sm text-gray-300">Measurable Results</span>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              <div className="group relative">
-                <div className="absolute inset-0 bg-blue-500/10 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="relative bg-white border border-gray-200 shadow-lg rounded-xl p-8 hover:shadow-2xl hover:shadow-blue-500/10 hover:scale-[1.02] hover:border-blue-200 transition-all duration-500">
-                  <div className="w-14 h-14 rounded-lg bg-gradient-to-br from-blue-500/20 to-blue-500/5 flex items-center justify-center mb-6 group-hover:from-blue-500/30 group-hover:to-blue-500/10 transition-all duration-500">
-                    <Shield className="w-7 h-7 text-blue-500" />
-                  </div>
-                  <h3 className="font-display text-xl font-bold mb-4 text-gray-900 group-hover:text-blue-600 transition-colors duration-300 uppercase tracking-wide">
-                    MCA Advisory
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    Specialized merchant cash advance restructuring with 20+ years of industry expertise.
-                  </p>
+              {/* MCA Advisory Card */}
+              <div className="group relative overflow-hidden rounded-2xl h-[500px] shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-[1.02]">
+                <div className="absolute inset-0">
+                  <Image
+                    src="/generated/service-mca-advisory.png"
+                    alt="Merchant Cash Advance Advisory Services"
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-b from-[#0F172A]/80 via-[#0F172A]/70 to-[#0F172A]/95"></div>
+                  <div className="absolute inset-0 bg-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
+                
+                <div className="relative h-full p-10 flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className="w-16 h-16 rounded-xl bg-blue-500/20 backdrop-blur-sm border border-blue-400/30 flex items-center justify-center group-hover:bg-blue-500/30 transition-all duration-500">
+                        <Shield className="w-8 h-8 text-blue-400" />
+                      </div>
+                      <div className="px-3 py-1 bg-blue-500/20 backdrop-blur-sm border border-blue-400/30 rounded-full">
+                        <span className="text-xs font-display font-bold text-blue-300 uppercase tracking-wide">Industry Pioneer</span>
+                      </div>
+                    </div>
+                    
+                    <h3 className="font-display text-3xl md:text-4xl font-black mb-4 text-white uppercase tracking-tight group-hover:text-blue-300 transition-colors duration-300">
+                      MCA Advisory
+                    </h3>
+                    
+                    <p className="text-gray-300 leading-relaxed mb-6">
+                      Specialized merchant cash advance restructuring with 20+ years of industry expertise and nationwide provider relationships.
+                    </p>
+                  </div>
+
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-2">
+                      <svg className="w-5 h-5 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-sm text-gray-300">20+ Years MCA Industry Experience</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <svg className="w-5 h-5 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-sm text-gray-300">Nationwide Provider Network</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <svg className="w-5 h-5 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-sm text-gray-300">Multi-Provider Coordination</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Trust Badges Section */}
+            <div className="grid md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+              <div className="bg-gradient-to-br from-blue-50 to-white border border-blue-100 rounded-xl p-6 text-center hover:shadow-lg transition-all duration-300">
+                <div className="text-3xl font-display font-black text-blue-600 mb-2">21+</div>
+                <div className="text-sm font-semibold text-gray-700">Years of Experience</div>
+              </div>
+              <div className="bg-gradient-to-br from-blue-50 to-white border border-blue-100 rounded-xl p-6 text-center hover:shadow-lg transition-all duration-300">
+                <div className="text-3xl font-display font-black text-blue-600 mb-2">100%</div>
+                <div className="text-sm font-semibold text-gray-700">Women-Owned</div>
+              </div>
+              <div className="bg-gradient-to-br from-blue-50 to-white border border-blue-100 rounded-xl p-6 text-center hover:shadow-lg transition-all duration-300">
+                <div className="text-3xl font-display font-black text-blue-600 mb-2">20+</div>
+                <div className="text-sm font-semibold text-gray-700">Years MCA Industry</div>
+              </div>
+              <div className="bg-gradient-to-br from-blue-50 to-white border border-blue-100 rounded-xl p-6 text-center hover:shadow-lg transition-all duration-300">
+                <div className="text-3xl font-display font-black text-blue-600 mb-2">24/7</div>
+                <div className="text-sm font-semibold text-gray-700">Client Support</div>
               </div>
             </div>
           </div>
