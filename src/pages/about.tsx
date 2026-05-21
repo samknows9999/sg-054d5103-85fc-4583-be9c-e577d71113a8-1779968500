@@ -3,7 +3,7 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import Link from "next/link";
 import Image from "next/image";
-import { CheckCircle2, ArrowRight, Users, Shield, Building2 } from "lucide-react";
+import { CheckCircle2, ArrowRight } from "lucide-react";
 
 export default function About() {
   return (
@@ -100,187 +100,70 @@ export default function About() {
           </div>
         </section>
 
-        {/* How We Work Section */}
-        <section className="py-24 md:py-32 bg-white">
+        {/* Approach Section */}
+        <section className="py-24 md:py-32 bg-gray-50">
           <div className="container">
             <div className="max-w-3xl mx-auto text-center mb-16">
-              <div className="inline-block px-4 py-2 bg-blue-50 border border-blue-200 rounded-full mb-6">
-                <span className="text-sm font-display font-bold text-blue-600 uppercase tracking-wide">Our Approach</span>
+              <div className="inline-block px-4 py-2 bg-blue-50 border border-blue-100 rounded-full mb-6">
+                <span className="text-sm font-bold text-blue-600 uppercase tracking-wide font-display">Our Approach</span>
               </div>
               <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-black mb-6 text-gray-900 uppercase tracking-tight">
                 HOW WE WORK
               </h2>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                Direct involvement and strategic coordination throughout every engagement
+              <p className="text-xl text-gray-600 leading-relaxed">
+                Strategic advisory grounded in experience, relationships, and hands-on involvement
               </p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
-              {/* Hands-On Involvement Card */}
-              <div className="group relative overflow-hidden rounded-2xl h-[550px] shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-[1.02]">
-                <div className="absolute inset-0">
-                  <Image
-                    src="/generated/about-hands-on.png"
-                    alt="Hands-On Business Advisory"
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-b from-[#0F172A]/80 via-[#0F172A]/75 to-[#0F172A]/95"></div>
-                  <div className="absolute inset-0 bg-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                </div>
-                
-                <div className="relative h-full p-8 flex flex-col justify-between">
-                  <div>
-                    <div className="flex items-center gap-3 mb-6">
-                      <div className="w-14 h-14 rounded-xl bg-blue-500/20 backdrop-blur-sm border border-blue-400/30 flex items-center justify-center group-hover:bg-blue-500/30 transition-all duration-500">
-                        <Users className="w-7 h-7 text-blue-400" />
-                      </div>
-                      <div className="px-3 py-1 bg-blue-500/20 backdrop-blur-sm border border-blue-400/30 rounded-full">
-                        <span className="text-xs font-display font-bold text-blue-300 uppercase tracking-wide">Core Value</span>
-                      </div>
-                    </div>
-                    
-                    <h3 className="font-display text-2xl md:text-3xl font-black mb-4 text-white uppercase tracking-tight group-hover:text-blue-300 transition-colors duration-300 leading-tight">
-                      Hands-On Involvement
-                    </h3>
-                    
-                    <p className="text-gray-300 leading-relaxed mb-6">
-                      We stand behind our clients with direct personal involvement in every engagement, coordinating with all financial stakeholders throughout the restructuring process.
-                    </p>
+              <div className="group relative">
+                <div className="absolute inset-0 bg-blue-500/10 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative bg-white border border-gray-200 shadow-lg rounded-xl p-8 hover:shadow-2xl hover:shadow-blue-500/10 hover:scale-[1.02] hover:border-blue-200 transition-all duration-500">
+                  <div className="w-14 h-14 rounded-lg bg-gradient-to-br from-blue-500/20 to-blue-500/5 flex items-center justify-center mb-6 group-hover:from-blue-500/30 group-hover:to-blue-500/10 transition-all duration-500">
+                    <svg className="w-7 h-7 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
                   </div>
-
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-2">
-                      <svg className="w-5 h-5 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-sm text-gray-300">Direct Client Communication</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <svg className="w-5 h-5 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-sm text-gray-300">Active Stakeholder Coordination</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <svg className="w-5 h-5 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-sm text-gray-300">Comprehensive Strategic Guidance</span>
-                    </div>
-                  </div>
+                  <h3 className="font-display text-xl font-bold mb-4 text-gray-900 group-hover:text-blue-600 transition-colors duration-300 uppercase tracking-wide">
+                    Creditor Coordination
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    We work directly with banks, lenders, vendors, and all types of creditors to negotiate fair restructuring terms.
+                  </p>
                 </div>
               </div>
 
-              {/* Creditor Coordination Card */}
-              <div className="group relative overflow-hidden rounded-2xl h-[550px] shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-[1.02]">
-                <div className="absolute inset-0">
-                  <Image
-                    src="/generated/about-creditor-coordination.png"
-                    alt="Professional Creditor Coordination"
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-b from-[#0F172A]/80 via-[#0F172A]/75 to-[#0F172A]/95"></div>
-                  <div className="absolute inset-0 bg-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                </div>
-                
-                <div className="relative h-full p-8 flex flex-col justify-between">
-                  <div>
-                    <div className="flex items-center gap-3 mb-6">
-                      <div className="w-14 h-14 rounded-xl bg-blue-500/20 backdrop-blur-sm border border-blue-400/30 flex items-center justify-center group-hover:bg-blue-500/30 transition-all duration-500">
-                        <Shield className="w-7 h-7 text-blue-400" />
-                      </div>
-                      <div className="px-3 py-1 bg-blue-500/20 backdrop-blur-sm border border-blue-400/30 rounded-full">
-                        <span className="text-xs font-display font-bold text-blue-300 uppercase tracking-wide">Specialized Expertise</span>
-                      </div>
-                    </div>
-                    
-                    <h3 className="font-display text-2xl md:text-3xl font-black mb-4 text-white uppercase tracking-tight group-hover:text-blue-300 transition-colors duration-300 leading-tight">
-                      Professional Creditor Relations
-                    </h3>
-                    
-                    <p className="text-gray-300 leading-relaxed mb-6">
-                      We work diligently with all types of creditors including banks, lenders, vendors, and attorneys, maintaining professional relationships that benefit our clients.
-                    </p>
+              <div className="group relative">
+                <div className="absolute inset-0 bg-blue-500/10 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative bg-white border border-gray-200 shadow-lg rounded-xl p-8 hover:shadow-2xl hover:shadow-blue-500/10 hover:scale-[1.02] hover:border-blue-200 transition-all duration-500">
+                  <div className="w-14 h-14 rounded-lg bg-gradient-to-br from-blue-500/20 to-blue-500/5 flex items-center justify-center mb-6 group-hover:from-blue-500/30 group-hover:to-blue-500/10 transition-all duration-500">
+                    <svg className="w-7 h-7 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
                   </div>
-
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-2">
-                      <svg className="w-5 h-5 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-sm text-gray-300">Multi-Creditor Negotiation</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <svg className="w-5 h-5 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-sm text-gray-300">Transparent Communication</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <svg className="w-5 h-5 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-sm text-gray-300">Strategic Relationship Building</span>
-                    </div>
-                  </div>
+                  <h3 className="font-display text-xl font-bold mb-4 text-gray-900 group-hover:text-blue-600 transition-colors duration-300 uppercase tracking-wide">
+                    Industry Relationships
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    Our longstanding relationships with lenders, attorneys, and restructuring professionals add significant value to client engagements.
+                  </p>
                 </div>
               </div>
 
-              {/* Industry Relationships Card */}
-              <div className="group relative overflow-hidden rounded-2xl h-[550px] shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-[1.02]">
-                <div className="absolute inset-0">
-                  <Image
-                    src="/generated/about-industry-relationships.png"
-                    alt="Industry Relationships and Network"
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-b from-[#0F172A]/80 via-[#0F172A]/75 to-[#0F172A]/95"></div>
-                  <div className="absolute inset-0 bg-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                </div>
-                
-                <div className="relative h-full p-8 flex flex-col justify-between">
-                  <div>
-                    <div className="flex items-center gap-3 mb-6">
-                      <div className="w-14 h-14 rounded-xl bg-blue-500/20 backdrop-blur-sm border border-blue-400/30 flex items-center justify-center group-hover:bg-blue-500/30 transition-all duration-500">
-                        <Building2 className="w-7 h-7 text-blue-400" />
-                      </div>
-                      <div className="px-3 py-1 bg-blue-500/20 backdrop-blur-sm border border-blue-400/30 rounded-full">
-                        <span className="text-xs font-display font-bold text-blue-300 uppercase tracking-wide">Network Advantage</span>
-                      </div>
-                    </div>
-                    
-                    <h3 className="font-display text-2xl md:text-3xl font-black mb-4 text-white uppercase tracking-tight group-hover:text-blue-300 transition-colors duration-300 leading-tight">
-                      Deep Industry Connections
-                    </h3>
-                    
-                    <p className="text-gray-300 leading-relaxed mb-6">
-                      Our longstanding relationships with lenders, attorneys, and restructuring professionals provide significant value in complex financial situations.
-                    </p>
+              <div className="group relative">
+                <div className="absolute inset-0 bg-blue-500/10 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative bg-white border border-gray-200 shadow-lg rounded-xl p-8 hover:shadow-2xl hover:shadow-blue-500/10 hover:scale-[1.02] hover:border-blue-200 transition-all duration-500">
+                  <div className="w-14 h-14 rounded-lg bg-gradient-to-br from-blue-500/20 to-blue-500/5 flex items-center justify-center mb-6 group-hover:from-blue-500/30 group-hover:to-blue-500/10 transition-all duration-500">
+                    <svg className="w-7 h-7 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
                   </div>
-
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-2">
-                      <svg className="w-5 h-5 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-sm text-gray-300">Established Lender Network</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <svg className="w-5 h-5 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-sm text-gray-300">Legal Professional Partnerships</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <svg className="w-5 h-5 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-sm text-gray-300">Industry-Wide Reputation</span>
-                    </div>
-                  </div>
+                  <h3 className="font-display text-xl font-bold mb-4 text-gray-900 group-hover:text-blue-600 transition-colors duration-300 uppercase tracking-wide">
+                    Hands-On Involvement
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    Direct, personal involvement in every engagement—not a call center or outsourced service provider.
+                  </p>
                 </div>
               </div>
             </div>
