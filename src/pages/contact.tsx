@@ -2,7 +2,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { useState } from "react";
-import Image from "next/image";
+import { ArrowRight } from "lucide-react";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -36,151 +36,98 @@ export default function Contact() {
 
       <Navigation />
 
-      <main>
-        <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-background">
+      <main className="dark">
+        {/* Hero Section */}
+        <section className="relative bg-[#0F172A] text-white min-h-[70vh] flex items-center overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-[#1E293B] via-[#0F172A] to-[#020617] opacity-90"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_60%_50%,rgba(59,130,246,0.1),transparent_50%)]"></div>
+          
           <div className="container relative z-10 pt-32 pb-20 md:pt-40 md:pb-24">
-            <div className="max-w-5xl mx-auto text-center">
-              <div className="inline-block px-4 py-1.5 bg-accent/10 border border-accent/30 rounded-full mb-8">
-                <span className="text-sm font-semibold text-accent">Discreet & Confidential</span>
+            <div className="max-w-5xl mx-auto">
+              <div className="inline-block px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full mb-8">
+                <span className="text-sm font-medium text-blue-400">Discreet & Confidential</span>
               </div>
 
-              <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-semibold mb-8 text-foreground leading-tight">
-                Confidential Business Review
+              <h1 className="font-display text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-[1.1] mb-8">
+                Confidential Business<br />Review
               </h1>
 
-              <p className="text-xl md:text-2xl text-foreground/70 leading-relaxed max-w-3xl mx-auto">
+              <p className="text-xl md:text-2xl text-slate-300 leading-relaxed max-w-3xl">
                 Connect with our experienced advisory team for a confidential discussion about your business challenges and restructuring needs.
               </p>
             </div>
           </div>
         </section>
 
-        <section className="pb-20 md:pb-32">
+        {/* Contact Form Section */}
+        <section className="py-20 md:py-32 bg-white">
           <div className="container">
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+            <div className="grid lg:grid-cols-2 gap-16 items-start max-w-6xl mx-auto">
               <div>
-                <h2 className="font-serif text-3xl md:text-4xl font-semibold mb-6 text-foreground">
+                <h2 className="font-display text-3xl md:text-4xl font-bold mb-6 text-[#0F172A]">
                   What to Expect
                 </h2>
-                <p className="text-lg text-foreground/70 mb-8 leading-relaxed">
+                <p className="text-lg text-slate-600 mb-8 leading-relaxed">
                   Your initial consultation is confidential, pressure-free, and focused on understanding your specific situation.
                 </p>
 
-                <div className="space-y-6 mb-8">
-                  <div className="group relative">
-                    <div className="absolute inset-0 bg-accent/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <div className="relative bg-card backdrop-blur-sm border border-border shadow-lg rounded-xl p-6 hover:shadow-2xl hover:shadow-accent/10 hover:scale-[1.02] hover:border-accent/30 transition-all duration-500">
-                      <div className="flex items-start gap-4">
-                        <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-accent/20 to-accent/5 flex items-center justify-center flex-shrink-0 group-hover:from-accent/30 group-hover:to-accent/10 transition-all duration-500">
-                          <svg className="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                          </svg>
-                        </div>
-                        <div>
-                          <h3 className="font-semibold mb-1 text-foreground group-hover:text-accent transition-colors duration-300">Initial Consultation</h3>
-                          <p className="text-sm text-foreground/70">
-                            We'll discuss your situation, review your financial position, and explain how we can help.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
+                <div className="space-y-6 mb-12">
+                  <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
+                    <h3 className="font-display text-lg font-bold text-[#0F172A] mb-2">Initial Consultation</h3>
+                    <p className="text-slate-600">
+                      We'll discuss your situation, review your financial position, and explain how we can help.
+                    </p>
                   </div>
 
-                  <div className="group relative">
-                    <div className="absolute inset-0 bg-accent/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <div className="relative bg-card backdrop-blur-sm border border-border shadow-lg rounded-xl p-6 hover:shadow-2xl hover:shadow-accent/10 hover:scale-[1.02] hover:border-accent/30 transition-all duration-500">
-                      <div className="flex items-start gap-4">
-                        <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-accent/20 to-accent/5 flex items-center justify-center flex-shrink-0 group-hover:from-accent/30 group-hover:to-accent/10 transition-all duration-500">
-                          <svg className="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                          </svg>
-                        </div>
-                        <div>
-                          <h3 className="font-semibold mb-1 text-foreground group-hover:text-accent transition-colors duration-300">Strategic Assessment</h3>
-                          <p className="text-sm text-foreground/70">
-                            We'll analyze your creditor landscape and develop a comprehensive restructuring strategy.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
+                  <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
+                    <h3 className="font-display text-lg font-bold text-[#0F172A] mb-2">Strategic Assessment</h3>
+                    <p className="text-slate-600">
+                      We'll analyze your creditor landscape and develop a comprehensive restructuring strategy.
+                    </p>
                   </div>
 
-                  <div className="group relative">
-                    <div className="absolute inset-0 bg-accent/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <div className="relative bg-card backdrop-blur-sm border border-border shadow-lg rounded-xl p-6 hover:shadow-2xl hover:shadow-accent/10 hover:scale-[1.02] hover:border-accent/30 transition-all duration-500">
-                      <div className="flex items-start gap-4">
-                        <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-accent/20 to-accent/5 flex items-center justify-center flex-shrink-0 group-hover:from-accent/30 group-hover:to-accent/10 transition-all duration-500">
-                          <svg className="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                          </svg>
-                        </div>
-                        <div>
-                          <h3 className="font-semibold mb-1 text-foreground group-hover:text-accent transition-colors duration-300">Ongoing Support</h3>
-                          <p className="text-sm text-foreground/70">
-                            Direct access to our team throughout your restructuring process.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
+                  <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
+                    <h3 className="font-display text-lg font-bold text-[#0F172A] mb-2">Ongoing Support</h3>
+                    <p className="text-slate-600">
+                      Direct access to our team throughout your restructuring process.
+                    </p>
                   </div>
                 </div>
 
-                <div className="space-y-6">
-                  <div className="group relative">
-                    <div className="absolute inset-0 bg-accent/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <div className="relative bg-muted/50 backdrop-blur-sm border border-border shadow-lg rounded-xl p-6 hover:shadow-2xl hover:shadow-accent/10 hover:scale-[1.02] hover:border-accent/30 transition-all duration-500">
-                      <h3 className="font-serif text-xl font-semibold mb-4 text-foreground group-hover:text-accent transition-colors duration-300">Alternative Contact Methods</h3>
-                      <div className="space-y-4">
-                        <div className="flex items-center gap-3">
-                          <svg className="w-5 h-5 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                          </svg>
-                          <div>
-                            <div className="font-semibold text-foreground">Email</div>
-                            <a href="mailto:contact@regrouppartners.com" className="text-accent hover:underline">
-                              contact@regrouppartners.com
-                            </a>
-                          </div>
-                        </div>
-
-                        <div className="flex items-center gap-3">
-                          <svg className="w-5 h-5 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                          </svg>
-                          <div>
-                            <div className="font-semibold text-foreground">Phone</div>
-                            <a href="tel:+1-555-REGROUP" className="text-accent hover:underline">
-                              +1 (555) REGROUP
-                            </a>
-                          </div>
-                        </div>
-
-                        <div className="flex items-center gap-3">
-                          <svg className="w-5 h-5 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                          </svg>
-                          <div>
-                            <div className="font-semibold text-foreground">Business Hours</div>
-                            <div className="text-foreground/70">Monday - Friday, 9:00 AM - 5:00 PM EST</div>
-                          </div>
-                        </div>
-                      </div>
+                <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
+                  <h3 className="font-display text-xl font-bold text-[#0F172A] mb-4">Alternative Contact</h3>
+                  <div className="space-y-3">
+                    <div>
+                      <div className="text-sm font-semibold text-[#0F172A] mb-1">Email</div>
+                      <a href="mailto:contact@regrouppartners.com" className="text-blue-600 hover:text-blue-700">
+                        contact@regrouppartners.com
+                      </a>
+                    </div>
+                    <div>
+                      <div className="text-sm font-semibold text-[#0F172A] mb-1">Phone</div>
+                      <a href="tel:+1-555-REGROUP" className="text-blue-600 hover:text-blue-700">
+                        +1 (555) REGROUP
+                      </a>
+                    </div>
+                    <div>
+                      <div className="text-sm font-semibold text-[#0F172A] mb-1">Business Hours</div>
+                      <div className="text-slate-600">Monday - Friday, 9:00 AM - 5:00 PM EST</div>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-card p-8 md:p-10 rounded-lg border border-border shadow-lg">
-                <h2 className="font-serif text-2xl md:text-3xl font-semibold mb-2 text-foreground">
+              <div className="bg-slate-50 p-8 md:p-10 rounded-xl border border-slate-200">
+                <h2 className="font-display text-2xl md:text-3xl font-bold mb-2 text-[#0F172A]">
                   Request a Consultation
                 </h2>
-                <p className="text-foreground/70 mb-8">
-                  Complete this form and our advisory team will contact you within one business day.
+                <p className="text-slate-600 mb-8">
+                  Complete this form and we'll contact you within one business day.
                 </p>
 
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <label htmlFor="companyName" className="block text-sm font-semibold text-foreground mb-2">
+                    <label htmlFor="companyName" className="block text-sm font-semibold text-[#0F172A] mb-2">
                       Company Name *
                     </label>
                     <input
@@ -190,13 +137,13 @@ export default function Contact() {
                       required
                       value={formData.companyName}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
+                      className="w-full px-4 py-3 bg-white border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all"
                       placeholder="Your business name"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="contactName" className="block text-sm font-semibold text-foreground mb-2">
+                    <label htmlFor="contactName" className="block text-sm font-semibold text-[#0F172A] mb-2">
                       Contact Name *
                     </label>
                     <input
@@ -206,14 +153,14 @@ export default function Contact() {
                       required
                       value={formData.contactName}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
+                      className="w-full px-4 py-3 bg-white border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all"
                       placeholder="Your full name"
                     />
                   </div>
 
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
-                      <label htmlFor="email" className="block text-sm font-semibold text-foreground mb-2">
+                      <label htmlFor="email" className="block text-sm font-semibold text-[#0F172A] mb-2">
                         Email *
                       </label>
                       <input
@@ -223,13 +170,13 @@ export default function Contact() {
                         required
                         value={formData.email}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
+                        className="w-full px-4 py-3 bg-white border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all"
                         placeholder="you@company.com"
                       />
                     </div>
 
                     <div>
-                      <label htmlFor="phone" className="block text-sm font-semibold text-foreground mb-2">
+                      <label htmlFor="phone" className="block text-sm font-semibold text-[#0F172A] mb-2">
                         Phone *
                       </label>
                       <input
@@ -239,14 +186,14 @@ export default function Contact() {
                         required
                         value={formData.phone}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
+                        className="w-full px-4 py-3 bg-white border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all"
                         placeholder="(555) 123-4567"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label htmlFor="revenueRange" className="block text-sm font-semibold text-foreground mb-2">
+                    <label htmlFor="revenueRange" className="block text-sm font-semibold text-[#0F172A] mb-2">
                       Annual Revenue Range *
                     </label>
                     <select
@@ -255,7 +202,7 @@ export default function Contact() {
                       required
                       value={formData.revenueRange}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
+                      className="w-full px-4 py-3 bg-white border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all"
                     >
                       <option value="">Select revenue range</option>
                       <option value="under-500k">Under $500,000</option>
@@ -267,7 +214,7 @@ export default function Contact() {
                   </div>
 
                   <div>
-                    <label htmlFor="financialConcerns" className="block text-sm font-semibold text-foreground mb-2">
+                    <label htmlFor="financialConcerns" className="block text-sm font-semibold text-[#0F172A] mb-2">
                       Brief Description of Financial Situation *
                     </label>
                     <textarea
@@ -277,13 +224,13 @@ export default function Contact() {
                       value={formData.financialConcerns}
                       onChange={handleChange}
                       rows={4}
-                      className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all resize-none"
-                      placeholder="Please describe your business situation and financial concerns..."
+                      className="w-full px-4 py-3 bg-white border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all resize-none"
+                      placeholder="Please describe your business situation..."
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="preferredContact" className="block text-sm font-semibold text-foreground mb-2">
+                    <label htmlFor="preferredContact" className="block text-sm font-semibold text-[#0F172A] mb-2">
                       Preferred Contact Method *
                     </label>
                     <select
@@ -292,7 +239,7 @@ export default function Contact() {
                       required
                       value={formData.preferredContact}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
+                      className="w-full px-4 py-3 bg-white border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all"
                     >
                       <option value="">Select preference</option>
                       <option value="email">Email</option>
@@ -303,13 +250,14 @@ export default function Contact() {
 
                   <button
                     type="submit"
-                    className="w-full px-8 py-4 bg-accent text-white font-semibold rounded-lg hover:bg-accent/90 transition-colors duration-300"
+                    className="w-full inline-flex items-center justify-center px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all duration-300 group"
                   >
                     Submit Confidential Request
+                    <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </button>
 
-                  <p className="text-sm text-foreground/60 text-center">
-                    All information submitted is treated with strict confidentiality. We typically respond within one business day.
+                  <p className="text-sm text-slate-500 text-center">
+                    All information is treated with strict confidentiality. We typically respond within one business day.
                   </p>
                 </form>
               </div>
