@@ -5,21 +5,21 @@ export function Footer() {
 
   const footerLinks = {
     Company: [
-      { label: "About", href: "/about" },
-      { label: "Services", href: "/services" },
-      { label: "Insights", href: "/insights" },
-      { label: "Contact", href: "/contact" },
-    ],
+    { label: "About", href: "/about" },
+    { label: "Services", href: "/services" },
+    { label: "Insights", href: "/insights" },
+    { label: "Contact", href: "/contact" }],
+
     Services: [
-      { label: "Business Restructuring", href: "/services#restructuring" },
-      { label: "Creditor Coordination", href: "/services#creditor" },
-      { label: "Cash Flow Improvement", href: "/services#cashflow" },
-      { label: "MCA Advisory", href: "/services#mca" },
-    ],
+    { label: "Business Restructuring", href: "/services#restructuring" },
+    { label: "Creditor Coordination", href: "/services#creditor" },
+    { label: "Cash Flow Improvement", href: "/services#cashflow" },
+    { label: "MCA Advisory", href: "/services#mca" }],
+
     Legal: [
-      { label: "Privacy Policy", href: "/privacy" },
-      { label: "Terms of Service", href: "/terms" },
-    ],
+    { label: "Privacy Policy", href: "/privacy" },
+    { label: "Terms of Service", href: "/terms" }]
+
   };
 
   return (
@@ -28,11 +28,11 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
           <div className="col-span-1 md:col-span-2 lg:col-span-2">
             <Link href="/" className="inline-block mb-6">
-              <img 
-                src="/logo.jpg" 
-                alt="Regroup Partners" 
-                className="h-16 w-auto object-contain bg-white rounded-sm p-1"
-              />
+              <img
+                src="/LUGO.png"
+                alt="Regroup Partners"
+                className="h-16 w-auto object-contain bg-white rounded-sm p-1" />
+              
             </Link>
             <p className="text-sm text-foreground/80 leading-relaxed max-w-sm">
               Business Restructuring & Financial Advisory
@@ -53,23 +53,23 @@ export function Footer() {
             </p>
           </div>
 
-          {Object.entries(footerLinks).map(([category, links]) => (
-            <div key={category}>
+          {Object.entries(footerLinks).map(([category, links]) =>
+          <div key={category}>
               <h4 className="font-semibold text-foreground mb-4">{category}</h4>
               <ul className="space-y-3">
-                {links.map((link) => (
-                  <li key={link.href}>
+                {links.map((link) =>
+              <li key={link.href}>
                     <Link
-                      href={link.href}
-                      className="text-sm text-foreground/60 hover:text-primary transition-colors"
-                    >
+                  href={link.href}
+                  className="text-sm text-foreground/60 hover:text-primary transition-colors">
+                  
                       {link.label}
                     </Link>
                   </li>
-                ))}
+              )}
               </ul>
             </div>
-          ))}
+          )}
         </div>
 
         <div className="mt-12 pt-8 border-t border-border">
@@ -83,6 +83,6 @@ export function Footer() {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>);
+
 }
