@@ -4,7 +4,7 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Mail, Linkedin } from "lucide-react";
+import { Mail, Linkedin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -306,73 +306,85 @@ export default function TeamPage() {
 
         <section className="py-20 md:py-32 bg-gray-50 border-t border-gray-200">
           <div className="max-w-[1400px] mx-auto px-6">
-            <div className="max-w-5xl mx-auto">
-              <Card className="overflow-hidden border-0 shadow-2xl bg-white">
-                <div className="grid lg:grid-cols-2 gap-0">
-                  <div className="p-10 md:p-14 bg-[#000000] text-white flex flex-col justify-center relative overflow-hidden">
-                    <div className="relative z-10">
-                      <h2 className="font-serif text-3xl md:text-4xl font-semibold mb-4">
-                        Confidential Business Review
-                      </h2>
-                      <p className="text-xl text-accent font-medium mb-6">
-                        Submit your situation before pressure escalates.
-                      </p>
-                      <p className="text-gray-300 mb-10 leading-relaxed">
-                        If your business is facing MCA debits, UCC lien activity, creditor threats, lawsuits, or judgment risk, Regroup Partners can review the situation and determine whether our firm is the right fit.
-                      </p>
-                      
-                      <div className="mt-8 p-5 bg-white/5 rounded-sm border border-white/10">
-                        <p className="text-xs text-gray-400 leading-relaxed">
-                          <strong className="text-white font-semibold">Disclaimer:</strong> Regroup Partners is not a law firm and does not provide legal advice. Services are business advisory and restructuring services for business obligations, not consumer debt.
-                        </p>
-                      </div>
+            <div className="max-w-6xl mx-auto bg-[#0f1115] rounded-[2.5rem] p-8 md:p-12 lg:p-16 relative overflow-hidden shadow-2xl">
+              <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+                 <div className="absolute -top-[20%] -left-[10%] w-[50%] h-[50%] bg-accent/20 blur-[120px] rounded-full"></div>
+              </div>
+              
+              <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center relative z-10">
+                <div className="flex flex-col justify-center text-left">
+                  <h2 className="font-serif text-3xl md:text-5xl font-semibold mb-6 text-white leading-tight">
+                    Confidential Business Review
+                  </h2>
+                  <p className="text-xl text-accent font-medium mb-6">
+                    Submit your situation before pressure escalates.
+                  </p>
+                  <p className="text-gray-300 mb-10 leading-relaxed text-lg">
+                    If your business is facing MCA debits, UCC lien activity, creditor threats, lawsuits, or judgment risk, Regroup Partners can review the situation and determine whether our firm is the right fit.
+                  </p>
+                  
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 p-6 bg-white/5 rounded-2xl border border-white/10 mb-10 backdrop-blur-sm w-full max-w-md">
+                    <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center shrink-0">
+                      <Phone className="w-5 h-5 text-accent" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-gray-400 font-medium mb-1">Speak with an advisor immediately</p>
+                      <a href="tel:955-833-4958" className="text-2xl font-semibold text-white hover:text-accent transition-colors">
+                        955-833-4958
+                      </a>
                     </div>
                   </div>
-                  
-                  <div className="p-10 md:p-14 bg-white">
-                    <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
-                      <div className="space-y-2">
-                        <Label htmlFor="name" className="text-gray-700 font-medium">Name</Label>
-                        <Input id="name" placeholder="Full Name" className="bg-gray-50" />
-                      </div>
-                      
-                      <div className="space-y-2">
-                        <Label htmlFor="businessName" className="text-gray-700 font-medium">Business Name</Label>
-                        <Input id="businessName" placeholder="Company Name" className="bg-gray-50" />
-                      </div>
-                      
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                        <div className="space-y-2">
-                          <Label htmlFor="email" className="text-gray-700 font-medium">Email Address</Label>
-                          <Input id="email" type="email" placeholder="email@example.com" className="bg-gray-50" />
-                        </div>
-                        <div className="space-y-2">
-                          <Label htmlFor="phone" className="text-gray-700 font-medium">Phone Number</Label>
-                          <Input id="phone" type="tel" placeholder="(555) 000-0000" className="bg-gray-50" />
-                        </div>
-                      </div>
-                      
-                      <div className="space-y-2">
-                        <Label htmlFor="obligations" className="text-gray-700 font-medium">Number of MCA / Business Obligations</Label>
-                        <Input id="obligations" type="text" placeholder="e.g. 3 MCAs, 1 Vendor" className="bg-gray-50" />
-                      </div>
-                      
-                      <div className="space-y-2">
-                        <Label htmlFor="description" className="text-gray-700 font-medium">Brief Description of Situation</Label>
-                        <Textarea 
-                          id="description" 
-                          placeholder="Please briefly describe your current challenges..."
-                          className="min-h-[100px] resize-y bg-gray-50"
-                        />
-                      </div>
-                      
-                      <Button className="w-full bg-accent hover:bg-accent/90 text-white h-12 text-base font-medium mt-2">
-                        Submit Review Request
-                      </Button>
-                    </form>
+
+                  <div className="p-5 bg-white/5 rounded-xl border border-white/10">
+                    <p className="text-xs text-gray-400 leading-relaxed">
+                      <strong className="text-white font-semibold">Disclaimer:</strong> Regroup Partners is not a law firm and does not provide legal advice. Services are business advisory and restructuring services for business obligations, not consumer debt.
+                    </p>
                   </div>
                 </div>
-              </Card>
+                
+                <div className="bg-white rounded-[2rem] p-8 md:p-10 shadow-2xl shadow-black/40 relative">
+                  <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
+                    <div className="space-y-2 text-left">
+                      <Label htmlFor="name" className="text-gray-700 font-medium">Name</Label>
+                      <Input id="name" placeholder="Full Name" className="bg-gray-50 h-12 rounded-xl border-gray-200 focus-visible:ring-accent" />
+                    </div>
+                    
+                    <div className="space-y-2 text-left">
+                      <Label htmlFor="businessName" className="text-gray-700 font-medium">Business Name</Label>
+                      <Input id="businessName" placeholder="Company Name" className="bg-gray-50 h-12 rounded-xl border-gray-200 focus-visible:ring-accent" />
+                    </div>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                      <div className="space-y-2 text-left">
+                        <Label htmlFor="email" className="text-gray-700 font-medium">Email Address</Label>
+                        <Input id="email" type="email" placeholder="email@example.com" className="bg-gray-50 h-12 rounded-xl border-gray-200 focus-visible:ring-accent" />
+                      </div>
+                      <div className="space-y-2 text-left">
+                        <Label htmlFor="phone" className="text-gray-700 font-medium">Phone Number</Label>
+                        <Input id="phone" type="tel" placeholder="(555) 000-0000" className="bg-gray-50 h-12 rounded-xl border-gray-200 focus-visible:ring-accent" />
+                      </div>
+                    </div>
+                    
+                    <div className="space-y-2 text-left">
+                      <Label htmlFor="obligations" className="text-gray-700 font-medium">Number of MCA / Business Obligations</Label>
+                      <Input id="obligations" type="text" placeholder="e.g. 3 MCAs, 1 Vendor" className="bg-gray-50 h-12 rounded-xl border-gray-200 focus-visible:ring-accent" />
+                    </div>
+                    
+                    <div className="space-y-2 text-left">
+                      <Label htmlFor="description" className="text-gray-700 font-medium">Brief Description of Situation</Label>
+                      <Textarea 
+                        id="description" 
+                        placeholder="Please briefly describe your current challenges..."
+                        className="min-h-[120px] resize-y bg-gray-50 rounded-xl border-gray-200 p-4 focus-visible:ring-accent"
+                      />
+                    </div>
+                    
+                    <Button className="w-full bg-accent hover:bg-accent/90 text-white h-14 rounded-xl text-base font-semibold mt-6 shadow-[0_8px_25px_-8px_rgba(220,38,38,0.6)] transition-all hover:shadow-[0_8px_25px_-5px_rgba(220,38,38,0.8)] hover:-translate-y-0.5">
+                      Submit Review Request
+                    </Button>
+                  </form>
+                </div>
+              </div>
             </div>
           </div>
         </section>
