@@ -97,7 +97,8 @@ export default function Home() {
               {
                 icon: TrendingUp,
                 title: "Cash Flow Improvement",
-                description: "Operational optimization and financial strategies to enhance liquidity"
+                description: "Operational optimization and financial strategies to enhance liquidity",
+                href: "/cash-flow-improvement"
               },
               {
                 icon: Shield,

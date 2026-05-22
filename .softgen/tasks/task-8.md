@@ -1,6 +1,6 @@
 ---
 title: Cash Flow Improvement Page
-status: in_progress
+status: done
 priority: high
 type: feature
 tags:
@@ -20,6 +20,6 @@ position: 8
 
 ## Checklist
 - [x] Create cash-flow-improvement.tsx with 11 SEO-optimized sections
-- [ ] Add LocalBusiness & FAQ Schema JSON-LD
-- [ ] Update Navigation.tsx to include dropdown under Services
-- [ ] Update index.tsx to link the Cash Flow Improvement card to the new page
+- [x] Add LocalBusiness & FAQ Schema JSON-LD
+- [x] Update Navigation.tsx to include dropdown under Services
+- [x] Update index.tsx to link the Cash Flow Improvement card to the new page
