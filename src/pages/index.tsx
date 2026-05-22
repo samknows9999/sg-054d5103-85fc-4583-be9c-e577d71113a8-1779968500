@@ -361,7 +361,7 @@ export default function Home() {
 
               <div className="order-1 lg:order-2">
                 <div className="inline-flex items-center gap-3 px-4 py-2 bg-white/5 border border-white/10 rounded-full mb-6 backdrop-blur-sm">
-                  <span className="text-sm font-semibold text-primary tracking-widest uppercase" style={{ fontSize: "32px" }}>Why Choose Us</span>
+                  <span className="text-sm font-semibold text-primary tracking-widest uppercase" style={{ fontSize: "24px" }}>Why Choose Us</span>
                 </div>
                 <h2 className="font-serif text-4xl md:text-5xl font-bold mb-8 text-white leading-tight">
                   Not a call center. <br />
