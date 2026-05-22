@@ -25,15 +25,30 @@ export function Footer() {
   return (
     <footer className="bg-card border-t border-border mt-24">
       <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-          <div className="col-span-1">
-            <h3 className="font-serif font-semibold text-2xl text-foreground mb-4">
-              Regroup Partners
-            </h3>
-            <p className="text-sm text-foreground/60 leading-relaxed">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
+          <div className="col-span-1 md:col-span-2 lg:col-span-2">
+            <Link href="/" className="inline-block mb-6">
+              <img 
+                src="/logo.jpg" 
+                alt="Regroup Partners" 
+                className="h-16 w-auto object-contain bg-white rounded-sm p-1"
+              />
+            </Link>
+            <p className="text-sm text-foreground/80 leading-relaxed max-w-sm">
               Business Restructuring & Financial Advisory
             </p>
-            <p className="text-sm text-foreground/60 mt-4">
+            
+            <div className="mt-6 space-y-1.5 text-sm text-foreground/60">
+              <p>5255 North Federal Highway Suite 301</p>
+              <p>Boca Raton, FL 33487</p>
+              <p className="pt-3">
+                <a href="tel:954-833-4958" className="text-foreground hover:text-primary font-medium transition-colors text-base">
+                  (954) 833-4958
+                </a>
+              </p>
+            </div>
+
+            <p className="text-sm text-foreground/60 mt-8 font-medium">
               21+ Years Experience
             </p>
           </div>
