@@ -17,7 +17,7 @@ export function AsSeenOn() {
             <div className="bg-primary group-hover:bg-[#0A192F] transition-colors duration-300 text-white font-serif px-2 py-1 text-xl tracking-tight leading-none">
               U.S.
             </div>
-            <span className="font-serif text-3xl font-medium tracking-tight text-primary group-hover:text-[#0A192F] transition-colors duration-300">
+            <span className="font-serif text-3xl font-medium tracking-tight text-primary group-hover:text-[#0A192F] transition-colors duration-300" style={{ color: "#000000" }}>
               Business
             </span>
           </div>
@@ -27,7 +27,7 @@ export function AsSeenOn() {
             <div className="flex items-center gap-2">
               <TrendingUp className="text-primary group-hover:text-[#0A192F] transition-colors duration-300 w-8 h-8" />
               <div className="flex flex-col">
-                <span className="font-sans text-xl font-bold text-primary group-hover:text-[#0A192F] transition-colors duration-300 leading-none tracking-tight">
+                <span className="font-sans text-xl font-bold text-primary group-hover:text-[#0A192F] transition-colors duration-300 leading-none tracking-tight" style={{ color: "#000000" }}>
                   DAILY INVEST NEWS
                 </span>
                 <span className="text-[10px] text-primary/70 group-hover:text-[#0A192F]/70 transition-colors duration-300 tracking-wide uppercase mt-1">
@@ -50,13 +50,13 @@ export function AsSeenOn() {
           {/* Digital Journal */}
           <div className="flex items-center gap-1.5 select-none group cursor-pointer">
             <div className="w-4 h-6 bg-primary group-hover:bg-[#0A192F] transition-colors duration-300"></div>
-            <span className="font-serif text-2xl font-bold tracking-tighter text-primary group-hover:text-[#0A192F] transition-colors duration-300 uppercase">
+            <span className="font-serif text-2xl font-bold tracking-tighter text-primary group-hover:text-[#0A192F] transition-colors duration-300 uppercase" style={{ color: "#000000" }}>
               Digital Journal
             </span>
           </div>
 
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 }
