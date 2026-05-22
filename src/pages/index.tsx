@@ -28,7 +28,6 @@ export default function Home() {
         />
 
         <TrustBar />
-        <AsSeenOn />
 
         {/* Stats Strip - Slim Version */}
         <section className="py-6 bg-white border-b border-gray-200">
@@ -66,6 +65,8 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <AsSeenOn />
 
         {/* Advisory Services */}
         <section className="py-24 bg-gray-50 border-b border-gray-200">
