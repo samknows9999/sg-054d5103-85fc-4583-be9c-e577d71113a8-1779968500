@@ -168,12 +168,6 @@ export function Navigation() {
                 
                   — FAQ
                 </Link>
-                <Link
-                href="/contact"
-                className="block px-6 py-2 text-sm font-medium text-white/70 hover:text-accent transition-colors pl-10">
-                
-                  — Contact
-                </Link>
               </div>
 
               <div className="bg-gray-900/50 py-2 border-b border-white/5">
