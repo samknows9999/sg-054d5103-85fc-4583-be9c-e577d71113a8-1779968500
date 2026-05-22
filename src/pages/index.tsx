@@ -1,5 +1,6 @@
 import { Navigation } from "@/components/Navigation";
 import { Hero } from "@/components/Hero";
+import { AsSeenOn } from "@/components/AsSeenOn";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import Link from "next/link";
@@ -24,6 +25,8 @@ export default function Home() {
           breadcrumbs={[{ label: "Home" }]}
           backgroundImage="/generated/executive-advisory-hero.png"
         />
+
+        <AsSeenOn />
 
         <section className="py-20 bg-white border-y border-gray-200">
           <div className="max-w-[1400px] mx-auto px-6">

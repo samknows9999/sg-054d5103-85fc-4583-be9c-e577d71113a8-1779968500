@@ -1,5 +1,6 @@
 import { Navigation } from "@/components/Navigation";
 import { Hero } from "@/components/Hero";
+import { AsSeenOn } from "@/components/AsSeenOn";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import Link from "next/link";
@@ -25,6 +26,8 @@ export default function About() {
           ]}
           backgroundImage="/generated/about-team-advisory.png"
         />
+
+        <AsSeenOn />
 
         <section className="py-20 md:py-32 bg-white">
           <div className="max-w-[1400px] mx-auto px-6">
