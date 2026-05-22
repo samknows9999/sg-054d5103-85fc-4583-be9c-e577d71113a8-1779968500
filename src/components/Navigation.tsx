@@ -9,23 +9,6 @@ export function Navigation() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 w-full flex flex-col shadow-md">
-      {/* Announcement Bar */}
-      <div className="bg-primary px-6 py-2 border-b border-primary/20">
-        <div className="max-w-[1400px] mx-auto flex items-center justify-center md:justify-between text-white/90">
-          <div className="hidden md:flex items-center gap-3">
-            <span className="tracking-widest uppercase text-[10px] md:text-xs font-semibold">Trust</span>
-            <span className="text-white/40 text-xs">•</span>
-            <span className="tracking-widest uppercase text-[10px] md:text-xs font-semibold">Commitment</span>
-            <span className="text-white/40 text-xs">•</span>
-            <span className="tracking-widest uppercase text-[10px] md:text-xs font-semibold">Success</span>
-          </div>
-          <a href="tel:9548334958" className="flex items-center gap-2 hover:text-white transition-colors text-xs md:text-sm font-medium">
-            <Phone className="w-3.5 h-3.5" />
-            <span className="tracking-wider">(954) 833-4958</span>
-          </a>
-        </div>
-      </div>
-
       <nav className="bg-[#000000] border-b border-white/10 w-full relative">
         <div className="max-w-[1400px] mx-auto px-6">
           <div className="flex items-center justify-between h-16">
