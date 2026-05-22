@@ -14,7 +14,8 @@ import {
   TrendingDown, AlertCircle, Clock, CreditCard, Receipt, 
   Calculator, Shield, LineChart, Target, Building, 
   CheckCircle2, MapPin, Phone, Building2, HardHat, 
-  Stethoscope, Coffee, ShoppingBag, Truck, FileWarning, Wallet
+  Stethoscope, Coffee, ShoppingBag, Truck, FileWarning, Wallet,
+  Calendar, ShoppingCart, TrendingUp
 } from "lucide-react";
 
 // Data Arrays for Rendering
