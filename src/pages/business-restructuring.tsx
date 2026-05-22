@@ -5,18 +5,18 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { TrustBar } from "@/components/TrustBar";
 import { AsSeenOn } from "@/components/AsSeenOn";
-import { 
-  Accordion, 
-  AccordionContent, 
-  AccordionItem, 
-  AccordionTrigger 
-} from "@/components/ui/accordion";
-import { 
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger } from
+"@/components/ui/accordion";
+import {
   Building2, ArrowRight, TrendingDown, Clock, ShieldAlert,
   Wallet, FileWarning, BarChart3, AlertCircle, FileText,
-  Utensils, Truck, HardHat, Stethoscope, ShoppingBag, 
-  Store, Hotel, Wrench, CheckCircle2, ChevronRight, Check
-} from "lucide-react";
+  Utensils, Truck, HardHat, Stethoscope, ShoppingBag,
+  Store, Hotel, Wrench, CheckCircle2, ChevronRight, Check } from
+"lucide-react";
 import Link from "next/link";
 import Head from "next/head";
 
@@ -44,13 +44,13 @@ export default function BusinessRestructuring() {
               "areaServed": "US",
               "description": "Premium business restructuring and financial advisory firm serving businesses nationwide. Specialists in MCA debt restructuring and cash flow stabilization."
             })
-          }}
-        />
+          }} />
+        
       </Head>
       <SEO
         title="Business Restructuring Services | Regroup Partners"
-        description="Premium business restructuring services to stabilize cash flow, negotiate with creditors, and resolve MCA debt. Headquartered in Boca Raton, FL, serving businesses nationwide."
-      />
+        description="Premium business restructuring services to stabilize cash flow, negotiate with creditors, and resolve MCA debt. Headquartered in Boca Raton, FL, serving businesses nationwide." />
+      
 
       <Navigation />
 
@@ -68,8 +68,8 @@ export default function BusinessRestructuring() {
                 <span className="text-xs font-semibold text-white tracking-widest uppercase">Institutional Financial Advisory</span>
               </div>
               
-              <h1 className="font-serif text-5xl md:text-7xl font-bold mb-6 leading-[1.1] text-white shadow-sm">
-                Business Restructuring Services for Struggling Companies
+              <h1 className="font-serif text-5xl md:text-7xl font-bold mb-6 leading-[1.1] text-white shadow-sm">Strategic Business Restructuring
+
               </h1>
               
               <p className="text-xl md:text-2xl text-gray-300 mb-10 leading-relaxed max-w-2xl font-light">
@@ -129,12 +129,12 @@ export default function BusinessRestructuring() {
                     When cash flow is restricted by aggressive creditors or multiple daily ACH withdrawals, survival requires immediate, strategic intervention—not just another loan.
                   </p>
                   <ul className="space-y-3">
-                    {['Immediate Creditor Intervention', 'Cash Flow Protection', 'Sustainable Restructuring'].map((item, i) => (
-                      <li key={i} className="flex items-center gap-3 text-sm font-medium text-gray-200">
+                    {['Immediate Creditor Intervention', 'Cash Flow Protection', 'Sustainable Restructuring'].map((item, i) =>
+                    <li key={i} className="flex items-center gap-3 text-sm font-medium text-gray-200">
                         <CheckCircle2 className="w-5 h-5 text-primary" />
                         {item}
                       </li>
-                    ))}
+                    )}
                   </ul>
                 </div>
               </div>
@@ -172,23 +172,23 @@ export default function BusinessRestructuring() {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
-                { icon: Wallet, title: "Merchant Cash Advance Debt", desc: "Strategic restructuring of aggressive MCA obligations to reduce crippling daily remittances." },
-                { icon: TrendingDown, title: "Multiple Daily ACH Withdrawals", desc: "Intervention to halt cash flow hemorrhaging caused by stacked, unregulated daily debits." },
-                { icon: FileWarning, title: "Vendor Payment Pressure", desc: "Professional negotiation with critical vendors to structure sustainable repayment terms." },
-                { icon: Clock, title: "Payroll Cash Flow Issues", desc: "Emergency liquidity strategies to ensure your employees are paid and operations continue." },
-                { icon: Building2, title: "Business Loan Overload", desc: "Comprehensive reorganization of SBA, term loans, and equipment financing obligations." },
-                { icon: ShieldAlert, title: "Creditor Lawsuits & UCCs", desc: "Strategic coordination with legal counsel to manage frozen accounts, UCC liens, and litigation." },
-                { icon: BarChart3, title: "Revenue Decline", desc: "Operational restructuring designed to right-size expenses against shifting market realities." },
-                { icon: AlertCircle, title: "Accounts Receivable Problems", desc: "Addressing working capital gaps caused by slow-paying clients or disrupted supply chains." }
-              ].map((problem, i) => (
-                <Card key={i} className="bg-white p-8 border border-gray-100 hover:border-primary/30 hover:shadow-xl transition-all duration-300 group">
+              { icon: Wallet, title: "Merchant Cash Advance Debt", desc: "Strategic restructuring of aggressive MCA obligations to reduce crippling daily remittances." },
+              { icon: TrendingDown, title: "Multiple Daily ACH Withdrawals", desc: "Intervention to halt cash flow hemorrhaging caused by stacked, unregulated daily debits." },
+              { icon: FileWarning, title: "Vendor Payment Pressure", desc: "Professional negotiation with critical vendors to structure sustainable repayment terms." },
+              { icon: Clock, title: "Payroll Cash Flow Issues", desc: "Emergency liquidity strategies to ensure your employees are paid and operations continue." },
+              { icon: Building2, title: "Business Loan Overload", desc: "Comprehensive reorganization of SBA, term loans, and equipment financing obligations." },
+              { icon: ShieldAlert, title: "Creditor Lawsuits & UCCs", desc: "Strategic coordination with legal counsel to manage frozen accounts, UCC liens, and litigation." },
+              { icon: BarChart3, title: "Revenue Decline", desc: "Operational restructuring designed to right-size expenses against shifting market realities." },
+              { icon: AlertCircle, title: "Accounts Receivable Problems", desc: "Addressing working capital gaps caused by slow-paying clients or disrupted supply chains." }].
+              map((problem, i) =>
+              <Card key={i} className="bg-white p-8 border border-gray-100 hover:border-primary/30 hover:shadow-xl transition-all duration-300 group">
                   <div className="w-12 h-12 bg-gray-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary/10 transition-colors">
                     <problem.icon className="w-6 h-6 text-[#0A192F] group-hover:text-primary transition-colors" />
                   </div>
                   <h4 className="font-serif text-xl font-semibold text-[#0A192F] mb-3">{problem.title}</h4>
                   <p className="text-sm text-gray-600 leading-relaxed">{problem.desc}</p>
                 </Card>
-              ))}
+              )}
             </div>
           </div>
         </section>
@@ -210,23 +210,23 @@ export default function BusinessRestructuring() {
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {[
-                { icon: Utensils, name: "Restaurants & F&B", desc: "Managing thin margins, high overhead, and equipment debt." },
-                { icon: Truck, name: "Transportation & Logistics", desc: "Navigating fuel costs, MCA stacking, and fleet financing." },
-                { icon: HardHat, name: "Construction & Contracting", desc: "Resolving cash flow gaps between project milestones." },
-                { icon: Stethoscope, name: "Medical Practices", desc: "Addressing delayed insurance payouts and operational overhead." },
-                { icon: ShoppingBag, name: "E-commerce Brands", desc: "Restructuring inventory financing and aggressive marketing debt." },
-                { icon: Store, name: "Retail Businesses", desc: "Overcoming foot traffic decline and commercial lease pressure." },
-                { icon: Hotel, name: "Hospitality Businesses", desc: "Stabilizing seasonal cash flow drops and renovation debt." },
-                { icon: Wrench, name: "Auto Repair & Services", desc: "Managing tool financing, vendor payables, and working capital." }
-              ].map((industry, i) => (
-                <div key={i} className="group relative bg-gray-50 rounded-2xl p-8 overflow-hidden hover:bg-[#0A192F] transition-colors duration-500 border border-gray-100">
+              { icon: Utensils, name: "Restaurants & F&B", desc: "Managing thin margins, high overhead, and equipment debt." },
+              { icon: Truck, name: "Transportation & Logistics", desc: "Navigating fuel costs, MCA stacking, and fleet financing." },
+              { icon: HardHat, name: "Construction & Contracting", desc: "Resolving cash flow gaps between project milestones." },
+              { icon: Stethoscope, name: "Medical Practices", desc: "Addressing delayed insurance payouts and operational overhead." },
+              { icon: ShoppingBag, name: "E-commerce Brands", desc: "Restructuring inventory financing and aggressive marketing debt." },
+              { icon: Store, name: "Retail Businesses", desc: "Overcoming foot traffic decline and commercial lease pressure." },
+              { icon: Hotel, name: "Hospitality Businesses", desc: "Stabilizing seasonal cash flow drops and renovation debt." },
+              { icon: Wrench, name: "Auto Repair & Services", desc: "Managing tool financing, vendor payables, and working capital." }].
+              map((industry, i) =>
+              <div key={i} className="group relative bg-gray-50 rounded-2xl p-8 overflow-hidden hover:bg-[#0A192F] transition-colors duration-500 border border-gray-100">
                   <div className="relative z-10">
                     <industry.icon className="w-8 h-8 text-primary mb-5 group-hover:text-white transition-colors duration-500" />
                     <h4 className="font-serif text-xl font-bold text-[#0A192F] group-hover:text-white mb-2 transition-colors duration-500">{industry.name}</h4>
                     <p className="text-sm text-gray-600 group-hover:text-gray-300 transition-colors duration-500">{industry.desc}</p>
                   </div>
                 </div>
-              ))}
+              )}
             </div>
           </div>
         </section>
@@ -241,13 +241,13 @@ export default function BusinessRestructuring() {
 
             <div className="space-y-12 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-primary before:via-primary/50 before:to-transparent">
               {[
-                { step: "01", title: "Financial Assessment", desc: "Immediate diagnostic of your business's financial health, identifying critical cash flow hemorrhages and assessing all current creditor obligations." },
-                { step: "02", title: "Cash Flow Analysis & Protection", desc: "Implementing emergency strategies to preserve working capital, ensuring payroll is met and core operations continue uninterrupted." },
-                { step: "03", title: "Creditor Negotiation Strategy", desc: "Our team intercedes with your lenders, MCA providers, and vendors, directing all communication through our advisory firm." },
-                { step: "04", title: "Debt Restructuring Plan", desc: "Structuring and executing a comprehensive, sustainable repayment framework aligned with your actual operational revenue." },
-                { step: "05", title: "Business Stabilization", desc: "Long-term advisory to prevent future distress, optimize operational expenses, and rebuild a healthy balance sheet." }
-              ].map((phase, i) => (
-                <div key={i} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+              { step: "01", title: "Financial Assessment", desc: "Immediate diagnostic of your business's financial health, identifying critical cash flow hemorrhages and assessing all current creditor obligations." },
+              { step: "02", title: "Cash Flow Analysis & Protection", desc: "Implementing emergency strategies to preserve working capital, ensuring payroll is met and core operations continue uninterrupted." },
+              { step: "03", title: "Creditor Negotiation Strategy", desc: "Our team intercedes with your lenders, MCA providers, and vendors, directing all communication through our advisory firm." },
+              { step: "04", title: "Debt Restructuring Plan", desc: "Structuring and executing a comprehensive, sustainable repayment framework aligned with your actual operational revenue." },
+              { step: "05", title: "Business Stabilization", desc: "Long-term advisory to prevent future distress, optimize operational expenses, and rebuild a healthy balance sheet." }].
+              map((phase, i) =>
+              <div key={i} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
                   <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-[#0A192F] bg-primary text-white font-bold text-sm shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
                     {phase.step}
                   </div>
@@ -256,7 +256,7 @@ export default function BusinessRestructuring() {
                     <p className="text-sm text-gray-400 leading-relaxed">{phase.desc}</p>
                   </div>
                 </div>
-              ))}
+              )}
             </div>
           </div>
         </section>
@@ -269,17 +269,17 @@ export default function BusinessRestructuring() {
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
-                { loc: "Florida", title: "Business Restructuring Florida", desc: "Serving our home state from our Boca Raton headquarters, providing hands-on restructuring to Florida businesses." },
-                { loc: "California", title: "MCA Debt Relief California", desc: "Navigating complex California commercial regulations to deliver effective MCA relief to West Coast enterprises." },
-                { loc: "Texas", title: "Financial Restructuring Texas", desc: "Supporting the Texas business boom with strategic debt restructuring for logistics, energy, and retail sectors." },
-                { loc: "New York", title: "Business Debt Solutions NY", desc: "Standing up to aggressive NYC-based merchant cash advance funders on behalf of struggling commercial clients." }
-              ].map((geo, i) => (
-                <div key={i} className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
+              { loc: "Florida", title: "Business Restructuring Florida", desc: "Serving our home state from our Boca Raton headquarters, providing hands-on restructuring to Florida businesses." },
+              { loc: "California", title: "MCA Debt Relief California", desc: "Navigating complex California commercial regulations to deliver effective MCA relief to West Coast enterprises." },
+              { loc: "Texas", title: "Financial Restructuring Texas", desc: "Supporting the Texas business boom with strategic debt restructuring for logistics, energy, and retail sectors." },
+              { loc: "New York", title: "Business Debt Solutions NY", desc: "Standing up to aggressive NYC-based merchant cash advance funders on behalf of struggling commercial clients." }].
+              map((geo, i) =>
+              <div key={i} className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
                   <div className="text-xs font-bold text-primary uppercase tracking-wider mb-2">{geo.loc}</div>
                   <h4 className="font-serif text-lg font-semibold text-[#0A192F] mb-3">{geo.title}</h4>
                   <p className="text-sm text-gray-600">{geo.desc}</p>
                 </div>
-              ))}
+              )}
             </div>
           </div>
         </section>
@@ -403,7 +403,7 @@ export default function BusinessRestructuring() {
                       <div className="w-10 h-10 rounded-full bg-primary border-2 border-[#0A192F] flex items-center justify-center font-bold text-xs">RP</div>
                     </div>
                     <div className="text-sm text-gray-400">
-                      <strong className="text-white">Confidentiality guaranteed.</strong><br/>
+                      <strong className="text-white">Confidentiality guaranteed.</strong><br />
                       Discreet advisory team standing by.
                     </div>
                   </div>
@@ -453,8 +453,8 @@ export default function BusinessRestructuring() {
       </main>
 
       <Footer />
-    </>
-  );
+    </>);
+
 }
 
 // Quick helper icon for the CTA section to avoid importing Phone separately from lucide if not needed at top
@@ -470,9 +470,9 @@ function PhoneIcon(props: React.SVGProps<SVGSVGElement>) {
       stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
-      strokeLinejoin="round"
-    >
+      strokeLinejoin="round">
+      
       <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-    </svg>
-  )
+    </svg>);
+
 }
