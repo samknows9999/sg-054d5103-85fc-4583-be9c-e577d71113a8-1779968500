@@ -1,36 +1,57 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X, Phone } from "lucide-react";
 
 export function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      // Hide header when scrolling down past 80px, show when scrolling up
+      if (currentScrollY > lastScrollY && currentScrollY > 80) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+
+      lastScrollY = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 w-full flex flex-col shadow-md">
+    <header className={`fixed top-0 left-0 right-0 z-50 w-full flex flex-col shadow-md transition-transform duration-300 ease-in-out ${isVisible ? "translate-y-0" : "-translate-y-full"}`}>
       <nav className="bg-[#000000] border-b border-white/10 w-full relative">
         <div className="max-w-[1400px] mx-auto px-6">
           <div className="flex items-center justify-between h-20 md:h-24">
             <Link href="/" className="flex items-center group">
-              <img 
-                src="/logo.jpg" 
-                alt="Regroup Partners" 
-                className="h-14 md:h-16 w-auto object-contain"
-              />
+              <img
+                src="/logo.jpg"
+                alt="Regroup Partners"
+                className="h-14 md:h-16 w-auto object-contain" />
+              
             </Link>
 
             <div className="hidden md:flex items-center gap-8">
-              <Link
-                href="/"
-                className="text-sm font-medium text-white hover:text-accent transition-colors"
-              >
-                Home
-              </Link>
+              
+
+
+
+
+              
               <Link
                 href="/about"
-                className="text-sm font-medium text-white hover:text-accent transition-colors"
-              >
+                className="text-sm font-medium text-white hover:text-accent transition-colors">
+                
                 About
               </Link>
               
@@ -38,8 +59,8 @@ export function Navigation() {
               <div className="relative group py-2">
                 <Link
                   href="/services"
-                  className="text-sm font-medium text-white hover:text-accent transition-colors flex items-center gap-1"
-                >
+                  className="text-sm font-medium text-white hover:text-accent transition-colors flex items-center gap-1">
+                  
                   Services
                   <svg className="w-3 h-3 text-white/70 group-hover:text-accent transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -60,20 +81,20 @@ export function Navigation() {
 
               <Link
                 href="/team"
-                className="text-sm font-medium text-white hover:text-accent transition-colors"
-              >
+                className="text-sm font-medium text-white hover:text-accent transition-colors">
+                
                 Our Team
               </Link>
               <Link
                 href="/insights"
-                className="text-sm font-medium text-white hover:text-accent transition-colors"
-              >
+                className="text-sm font-medium text-white hover:text-accent transition-colors">
+                
                 Insights
               </Link>
               <Link
                 href="/contact"
-                className="text-sm font-medium text-white hover:text-accent transition-colors"
-              >
+                className="text-sm font-medium text-white hover:text-accent transition-colors">
+                
                 Contact
               </Link>
             </div>
@@ -81,72 +102,72 @@ export function Navigation() {
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="md:hidden p-2 text-white"
-              aria-label="Toggle menu"
-            >
-              {isMobileMenuOpen ? (
-                <X className="w-6 h-6" />
-              ) : (
-                <Menu className="w-6 h-6" />
-              )}
+              aria-label="Toggle menu">
+              
+              {isMobileMenuOpen ?
+              <X className="w-6 h-6" /> :
+
+              <Menu className="w-6 h-6" />
+              }
             </button>
           </div>
 
-          {isMobileMenuOpen && (
-            <div className="md:hidden absolute top-full left-0 right-0 bg-black border-t border-gray-800 py-4 shadow-xl">
+          {isMobileMenuOpen &&
+          <div className="md:hidden absolute top-full left-0 right-0 bg-black border-t border-gray-800 py-4 shadow-xl">
               <Link
-                href="/"
-                className="block px-6 py-3 text-sm font-medium text-white hover:bg-gray-900 transition-colors"
-              >
+              href="/"
+              className="block px-6 py-3 text-sm font-medium text-white hover:bg-gray-900 transition-colors">
+              
                 Home
               </Link>
               <Link
-                href="/about"
-                className="block px-6 py-3 text-sm font-medium text-white hover:bg-gray-900 transition-colors"
-              >
+              href="/about"
+              className="block px-6 py-3 text-sm font-medium text-white hover:bg-gray-900 transition-colors">
+              
                 About
               </Link>
               <div className="bg-gray-900/50 py-2 border-y border-white/5">
                 <Link
-                  href="/services"
-                  className="block px-6 py-2 text-sm font-medium text-white hover:text-accent transition-colors"
-                >
+                href="/services"
+                className="block px-6 py-2 text-sm font-medium text-white hover:text-accent transition-colors">
+                
                   Services Overview
                 </Link>
                 <Link
-                  href="/business-restructuring"
-                  className="block px-6 py-2 text-sm font-medium text-white/70 hover:text-accent transition-colors pl-10"
-                >
+                href="/business-restructuring"
+                className="block px-6 py-2 text-sm font-medium text-white/70 hover:text-accent transition-colors pl-10">
+                
                   — Business Restructuring
                 </Link>
                 <Link
-                  href="/creditor-coordination"
-                  className="block px-6 py-2 text-sm font-medium text-white/70 hover:text-accent transition-colors pl-10"
-                >
+                href="/creditor-coordination"
+                className="block px-6 py-2 text-sm font-medium text-white/70 hover:text-accent transition-colors pl-10">
+                
                   — Creditor Coordination
                 </Link>
               </div>
               <Link
-                href="/team"
-                className="block px-6 py-3 text-sm font-medium text-white hover:bg-gray-900 transition-colors"
-              >
+              href="/team"
+              className="block px-6 py-3 text-sm font-medium text-white hover:bg-gray-900 transition-colors">
+              
                 Our Team
               </Link>
               <Link
-                href="/insights"
-                className="block px-6 py-3 text-sm font-medium text-white hover:bg-gray-900 transition-colors"
-              >
+              href="/insights"
+              className="block px-6 py-3 text-sm font-medium text-white hover:bg-gray-900 transition-colors">
+              
                 Insights
               </Link>
               <Link
-                href="/contact"
-                className="block px-6 py-3 text-sm font-medium text-white hover:bg-gray-900 transition-colors"
-              >
+              href="/contact"
+              className="block px-6 py-3 text-sm font-medium text-white hover:bg-gray-900 transition-colors">
+              
                 Contact
               </Link>
             </div>
-          )}
+          }
         </div>
       </nav>
-    </header>
-  );
+    </header>);
+
 }
