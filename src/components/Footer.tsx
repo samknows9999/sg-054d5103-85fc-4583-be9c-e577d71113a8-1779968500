@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { MapPin, Phone, Mail, Linkedin, ArrowRight, Facebook, Twitter, Instagram, Youtube } from "lucide-react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -195,10 +196,31 @@ export function Footer() {
               Terms of Use
               <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-accent transition-all duration-300 ease-out group-hover:w-full"></span>
             </Link>
-            <Link href="/disclaimer" className="hover:text-accent transition-colors relative group">
-              Disclaimer
-              <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-accent transition-all duration-300 ease-out group-hover:w-full"></span>
-            </Link>
+            
+            <Dialog>
+              <DialogTrigger asChild>
+                <button className="hover:text-accent transition-colors relative group outline-none">
+                  Disclaimer
+                  <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-accent transition-all duration-300 ease-out group-hover:w-full"></span>
+                </button>
+              </DialogTrigger>
+              <DialogContent className="max-w-2xl bg-white rounded-xl shadow-2xl border-gray-100 p-8 sm:p-10">
+                <DialogHeader className="mb-4 text-left">
+                  <DialogTitle className="font-serif text-3xl text-black">Disclaimer</DialogTitle>
+                </DialogHeader>
+                <div className="text-gray-600 text-[15px] leading-relaxed space-y-6 text-left">
+                  <p>
+                    Regroup Partners does not provide services related to consumer debt or credit counseling. Our program may not be available in all states. We encourage you to read and understand all program materials before accepting our services. Please note that we do not charge upfront fees. We negotiate restructuring terms and agreements directly with creditors/lenders in conjunction with our clients. Regroup Partners is committed to diligently working towards the reduction of all business debts exclusively. Regroup Partners is not a licensed law firm. Regroup Partners co is licensed registered with the department of justice office of consumer protection consumer management. In accordance with the debt management service act (MCA 30-14, Part 20).
+                  </p>
+                  <div className="pt-6 border-t border-gray-100">
+                    <p className="font-medium text-black mb-1">Address:</p>
+                    <p>5255 North Federal Highway Suite 301<br />Boca Raton 33487</p>
+                    <p className="mt-4 text-black font-semibold text-lg">954-758-9861</p>
+                  </div>
+                </div>
+              </DialogContent>
+            </Dialog>
+
             <span className="hidden lg:inline text-gray-300">|</span>
             <span className="text-gray-500">Women-Owned Business Advisory Firm</span>
           </div>
