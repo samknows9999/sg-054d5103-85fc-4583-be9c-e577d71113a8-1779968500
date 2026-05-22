@@ -282,7 +282,7 @@ export default function CashFlowImprovement() {
         </section>
 
         {/* Section 6 & 7: Benefits & Industries */}
-        <section className="py-24 bg-gray-50 border-b border-gray-200">
+        <section id="industries" className="py-24 bg-gray-50 border-b border-gray-200">
           <div className="max-w-[1400px] mx-auto px-6">
             <div className="mb-24">
               <div className="text-center max-w-3xl mx-auto mb-16">
