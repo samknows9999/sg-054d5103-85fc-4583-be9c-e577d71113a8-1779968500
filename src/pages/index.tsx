@@ -30,33 +30,37 @@ export default function Home() {
         <TrustBar />
         <AsSeenOn />
 
-        {/* Stats Strip */}
-        <section className="py-16 md:py-24 bg-gray-50 border-b border-gray-200">
+        {/* Stats Strip - Slim Version */}
+        <section className="py-6 bg-white border-b border-gray-200">
           <div className="max-w-[1400px] mx-auto px-6">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gray-200">
               
-              <div className="bg-white p-10 rounded-2xl shadow-sm border border-gray-200 flex flex-col items-center justify-center text-center group hover:shadow-xl hover:-translate-y-1 transition-all duration-300 hover:border-primary/30">
-                <div className="text-6xl md:text-7xl font-serif font-bold text-[#0A192F] mb-4 group-hover:text-primary transition-colors">21+</div>
-                <div className="text-sm text-gray-500 uppercase tracking-widest font-semibold">Years Experience</div>
-                <div className="w-12 h-1 bg-gray-200 mt-6 group-hover:bg-primary transition-colors rounded-full"></div>
+              <div className="flex items-center justify-center gap-4 py-4 md:py-0 px-4 group">
+                <div className="text-4xl font-serif font-bold text-primary">21+</div>
+                <div className="flex flex-col">
+                  <span className="text-sm font-bold text-[#0A192F] uppercase tracking-wider">Years Experience</span>
+                  <span className="text-xs text-gray-500 uppercase tracking-widest mt-0.5">Professional Advisory</span>
+                </div>
               </div>
 
-              <Link href="/about#claudia-stefano" className="bg-white p-10 rounded-2xl shadow-sm border border-gray-200 flex flex-col items-center justify-center text-center group hover:shadow-xl hover:-translate-y-1 transition-all duration-300 hover:border-primary/30 cursor-pointer block">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                   <Users className="w-8 h-8 text-primary" />
+              <Link href="/about#claudia-stefano" className="flex items-center justify-center gap-4 py-4 md:py-0 px-4 group hover:bg-gray-50 transition-colors cursor-pointer rounded-lg md:rounded-none">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-colors">
+                  <Users className="w-5 h-5 text-primary group-hover:text-white transition-colors" />
                 </div>
-                <div className="text-2xl md:text-3xl font-serif font-bold text-[#0A192F] mb-3 group-hover:text-primary transition-colors leading-tight">Women-Owned<br/>& Operated</div>
-                <div className="text-sm text-gray-500 uppercase tracking-widest font-semibold">Professional Advisory</div>
-                <div className="w-12 h-1 bg-gray-200 mt-6 group-hover:bg-primary transition-colors rounded-full"></div>
+                <div className="flex flex-col">
+                  <span className="text-sm font-bold text-[#0A192F] uppercase tracking-wider group-hover:text-primary transition-colors">Women-Owned & Operated</span>
+                  <span className="text-xs text-primary uppercase tracking-widest mt-0.5 group-hover:text-[#0A192F] transition-colors">Meet Claudia Stefano →</span>
+                </div>
               </Link>
 
-              <div className="bg-white p-10 rounded-2xl shadow-sm border border-gray-200 flex flex-col items-center justify-center text-center group hover:shadow-xl hover:-translate-y-1 transition-all duration-300 hover:border-primary/30">
-                <div className="w-16 h-16 bg-[#0A192F]/5 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                   <Building2 className="w-8 h-8 text-[#0A192F] group-hover:text-primary transition-colors" />
+              <div className="flex items-center justify-center gap-4 py-4 md:py-0 px-4 group">
+                <div className="w-12 h-12 rounded-full bg-[#0A192F]/5 flex items-center justify-center">
+                  <Building2 className="w-5 h-5 text-[#0A192F]" />
                 </div>
-                <div className="text-2xl md:text-3xl font-serif font-bold text-[#0A192F] mb-3 group-hover:text-primary transition-colors leading-tight">Boutique Firm</div>
-                <div className="text-sm text-gray-500 uppercase tracking-widest font-semibold">Strategic Partnership</div>
-                <div className="w-12 h-1 bg-gray-200 mt-6 group-hover:bg-primary transition-colors rounded-full"></div>
+                <div className="flex flex-col">
+                  <span className="text-sm font-bold text-[#0A192F] uppercase tracking-wider">Boutique Firm</span>
+                  <span className="text-xs text-gray-500 uppercase tracking-widest mt-0.5">Strategic Partnership</span>
+                </div>
               </div>
 
             </div>
