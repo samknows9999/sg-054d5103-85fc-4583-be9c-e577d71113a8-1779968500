@@ -11,12 +11,12 @@ export function Navigation() {
     <header className="fixed top-0 left-0 right-0 z-50 w-full flex flex-col shadow-md">
       <nav className="bg-[#000000] border-b border-white/10 w-full relative">
         <div className="max-w-[1400px] mx-auto px-6">
-          <div className="flex items-center justify-between h-16">
+          <div className="flex items-center justify-between h-20 md:h-24">
             <Link href="/" className="flex items-center group">
               <img 
                 src="/logo.jpg" 
                 alt="Regroup Partners" 
-                className="h-10 w-auto object-contain"
+                className="h-14 md:h-16 w-auto object-contain"
               />
             </Link>
 
