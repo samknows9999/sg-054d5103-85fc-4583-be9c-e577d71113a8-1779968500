@@ -58,17 +58,11 @@ export function Navigation() {
                   <Link href="/about" className="block px-5 py-4 text-sm font-medium text-white/90 hover:text-accent hover:bg-white/5 border-b border-white/5 transition-colors">
                     Our Company
                   </Link>
-                  <Link href="/team" className="block px-5 py-4 text-sm font-medium text-white/90 hover:text-accent hover:bg-white/5 border-b border-white/5 transition-colors">
-                    Leadership Team
-                  </Link>
                   <Link href="/about" className="block px-5 py-4 text-sm font-medium text-white/90 hover:text-accent hover:bg-white/5 border-b border-white/5 transition-colors">
                     Why Choose Us
                   </Link>
                   <Link href="/faq" className="block px-5 py-4 text-sm font-medium text-white/90 hover:text-accent hover:bg-white/5 border-b border-white/5 transition-colors">
                     FAQ
-                  </Link>
-                  <Link href="/contact" className="block px-5 py-4 text-sm font-medium text-white/90 hover:text-accent hover:bg-white/5 transition-colors">
-                    Contact
                   </Link>
                 </div>
               </div>
@@ -161,12 +155,6 @@ export function Navigation() {
                 className="block px-6 py-2 text-sm font-medium text-white/70 hover:text-accent transition-colors pl-10">
                 
                   — Our Company
-                </Link>
-                <Link
-                href="/team"
-                className="block px-6 py-2 text-sm font-medium text-white/70 hover:text-accent transition-colors pl-10">
-                
-                  — Leadership Team
                 </Link>
                 <Link
                 href="/about"
