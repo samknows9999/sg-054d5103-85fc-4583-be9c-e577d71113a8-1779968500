@@ -114,10 +114,10 @@ export function Navigation() {
               </Link>
               
               <a
-                href="tel:955-833-4958"
+                href="tel:954-833-4958"
                 className="flex items-center gap-2 bg-accent text-white px-5 py-2 hover:bg-accent/90 transition-colors text-sm font-medium ml-2 rounded-sm">
                 <Phone className="w-4 h-4" />
-                955-833-4958
+                954-833-4958
               </a>
             </div>
 
@@ -215,10 +215,10 @@ export function Navigation() {
                 Contact
               </Link>
               <a
-              href="tel:955-833-4958"
+              href="tel:954-833-4958"
               className="flex items-center gap-2 px-6 py-4 mt-2 text-sm font-medium text-white bg-accent hover:bg-accent/90 transition-colors">
                 <Phone className="w-4 h-4" />
-                Call Now: 955-833-4958
+                Call Now: 954-833-4958
               </a>
             </div>
           }
