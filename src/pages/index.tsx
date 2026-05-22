@@ -76,6 +76,7 @@ export default function Home() {
                   icon: Users,
                   title: "Creditor Coordination",
                   description: "Expert coordination with banks, lenders, vendors, and stakeholders",
+                  href: "/creditor-coordination"
                 },
                 {
                   icon: TrendingUp,

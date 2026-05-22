@@ -50,6 +50,9 @@ export function Navigation() {
                   <Link href="/business-restructuring" className="block px-5 py-4 text-sm font-medium text-white/90 hover:text-accent hover:bg-white/5 border-b border-white/5 transition-colors">
                     Business Restructuring
                   </Link>
+                  <Link href="/creditor-coordination" className="block px-5 py-4 text-sm font-medium text-white/90 hover:text-accent hover:bg-white/5 border-b border-white/5 transition-colors">
+                    Creditor Coordination
+                  </Link>
                   <Link href="/services" className="block px-5 py-4 text-sm font-medium text-white/90 hover:text-accent hover:bg-white/5 transition-colors">
                     All Advisory Services
                   </Link>
@@ -115,6 +118,12 @@ export function Navigation() {
                   className="block px-6 py-2 text-sm font-medium text-white/70 hover:text-accent transition-colors pl-10"
                 >
                   — Business Restructuring
+                </Link>
+                <Link
+                  href="/creditor-coordination"
+                  className="block px-6 py-2 text-sm font-medium text-white/70 hover:text-accent transition-colors pl-10"
+                >
+                  — Creditor Coordination
                 </Link>
               </div>
               <Link
