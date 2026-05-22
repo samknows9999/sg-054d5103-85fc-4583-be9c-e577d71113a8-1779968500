@@ -1,88 +1,172 @@
 import Link from "next/link";
+import { MapPin, Phone, Mail, Linkedin, ArrowRight } from "lucide-react";
 
 export function Footer() {
-  const currentYear = 2026;
+  const currentYear = new Date().getFullYear();
 
-  const footerLinks = {
-    Company: [
-    { label: "About", href: "/about" },
-    { label: "Services", href: "/services" },
-    { label: "Insights", href: "/insights" },
-    { label: "Contact", href: "/contact" }],
-
-    Services: [
-    { label: "Business Restructuring", href: "/services#restructuring" },
-    { label: "Creditor Coordination", href: "/services#creditor" },
-    { label: "Cash Flow Improvement", href: "/services#cashflow" },
-    { label: "MCA Advisory", href: "/services#mca" }],
-
-    Legal: [
-    { label: "Privacy Policy", href: "/privacy" },
-    { label: "Terms of Service", href: "/terms" }]
-
-  };
+  const columns = [
+    {
+      title: "About",
+      links: [
+        { label: "About Regroup Partners", href: "/about" },
+        { label: "Leadership Team", href: "/team" },
+        { label: "Our Approach", href: "/about#approach" },
+        { label: "Industries We Serve", href: "/cash-flow-improvement#industries" },
+        { label: "Contact Us", href: "/contact" },
+      ]
+    },
+    {
+      title: "Services",
+      links: [
+        { label: "Business Restructuring", href: "/business-restructuring" },
+        { label: "Creditor Coordination", href: "/creditor-coordination" },
+        { label: "Cash Flow Improvement", href: "/cash-flow-improvement" },
+        { label: "MCA Negotiations", href: "/creditor-coordination" },
+        { label: "Financial Advisory", href: "/services" },
+      ]
+    },
+    {
+      title: "Resources",
+      links: [
+        { label: "Case Studies", href: "/insights" },
+        { label: "FAQs", href: "/faq" },
+        { label: "Business Insights", href: "/insights" },
+        { label: "Restructuring Articles", href: "/insights" },
+        { label: "Industry News", href: "/insights" },
+      ]
+    }
+  ];
 
   return (
-    <footer className="bg-card border-t border-border mt-24">
-      <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
-          <div className="col-span-1 md:col-span-2 lg:col-span-2">
-            <Link href="/" className="inline-block mb-6">
-              <img
-                src="/LUGO.png"
-                alt="Regroup Partners"
-                className="h-16 w-auto object-contain bg-white rounded-sm p-1" />
-              
-            </Link>
-            <p className="text-sm text-foreground/80 leading-relaxed max-w-sm">
-              Business Restructuring & Financial Advisory
-            </p>
-            
-            <div className="mt-6 space-y-1.5 text-sm text-foreground/60">
-              <p>5255 North Federal Highway Suite 301</p>
-              <p>Boca Raton, FL 33487</p>
-              <p className="pt-3">
-                <a href="tel:954-833-4958" className="text-foreground hover:text-primary font-medium transition-colors text-base">
-                  (954) 833-4958
-                </a>
-              </p>
-            </div>
-
-            <p className="text-sm text-foreground/60 mt-8 font-medium">
-              21+ Years Experience
-            </p>
+    <footer className="bg-white pt-24 pb-8 border-t border-gray-200 font-sans">
+      <div className="max-w-[1400px] mx-auto px-6 md:px-12">
+        
+        {/* Top Brand Banner */}
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end pb-12 mb-16 border-b border-gray-200 gap-8">
+          <Link href="/" className="inline-block">
+            <img 
+              src="/LUGO.png" 
+              alt="Regroup Partners" 
+              className="h-16 w-auto object-contain"
+            />
+          </Link>
+          <div className="text-left md:text-right max-w-md">
+            <h3 className="text-2xl font-serif text-black leading-tight">
+              Institutional-grade restructuring and financial advisory.
+            </h3>
           </div>
+        </div>
 
-          {Object.entries(footerLinks).map(([category, links]) =>
-          <div key={category}>
-              <h4 className="font-semibold text-foreground mb-4">{category}</h4>
-              <ul className="space-y-3">
-                {links.map((link) =>
-              <li key={link.href}>
-                    <Link
-                  href={link.href}
-                  className="text-sm text-foreground/60 hover:text-primary transition-colors">
-                  
+        {/* Mega Footer Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 lg:gap-12 mb-20">
+          
+          {/* Navigation Columns */}
+          {columns.map((column, idx) => (
+            <div key={idx}>
+              <h4 className="text-lg font-serif font-semibold text-black mb-8">
+                {column.title}
+              </h4>
+              <ul className="space-y-4">
+                {column.links.map((link, linkIdx) => (
+                  <li key={linkIdx}>
+                    <Link 
+                      href={link.href}
+                      className="group relative inline-flex items-center text-[15px] text-gray-600 hover:text-accent transition-colors duration-300"
+                    >
                       {link.label}
+                      <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-accent transition-all duration-300 ease-out group-hover:w-full"></span>
                     </Link>
                   </li>
-              )}
+                ))}
               </ul>
             </div>
-          )}
+          ))}
+
+          {/* Contact Column */}
+          <div>
+            <h4 className="text-lg font-serif font-semibold text-black mb-8">
+              Contact
+            </h4>
+            <ul className="space-y-6">
+              <li className="flex items-start gap-4 group cursor-default">
+                <MapPin className="w-5 h-5 text-gray-400 group-hover:text-accent transition-colors shrink-0 mt-1" />
+                <div className="text-[15px] text-gray-600 leading-relaxed">
+                  <span className="block text-black font-medium mb-1">Boca Raton Office</span>
+                  5255 North Federal Highway<br />
+                  Suite 301<br />
+                  Boca Raton, FL 33487
+                </div>
+              </li>
+              <li className="flex items-center gap-4">
+                <Phone className="w-5 h-5 text-gray-400 shrink-0" />
+                <a 
+                  href="tel:954-833-4958" 
+                  className="text-[15px] text-gray-600 hover:text-accent font-medium transition-colors relative group"
+                >
+                  (954) 833-4958
+                  <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-accent transition-all duration-300 ease-out group-hover:w-full"></span>
+                </a>
+              </li>
+              <li className="flex items-center gap-4">
+                <Mail className="w-5 h-5 text-gray-400 shrink-0" />
+                <a 
+                  href="mailto:info@regrouppartners.com" 
+                  className="text-[15px] text-gray-600 hover:text-accent transition-colors relative group"
+                >
+                  info@regrouppartners.com
+                  <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-accent transition-all duration-300 ease-out group-hover:w-full"></span>
+                </a>
+              </li>
+            </ul>
+
+            <div className="mt-10">
+              <Link 
+                href="/contact" 
+                className="group inline-flex items-center justify-between w-full bg-black text-white px-6 py-4 text-sm font-semibold hover:bg-accent transition-colors duration-300 shadow-md"
+              >
+                <span>Schedule Consultation</span>
+                <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+
+            <div className="mt-8 flex items-center gap-4">
+              <a 
+                href="#" 
+                className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-gray-500 hover:bg-accent hover:border-accent hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="w-4 h-4" />
+              </a>
+            </div>
+          </div>
+
         </div>
 
-        <div className="mt-12 pt-8 border-t border-border">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-sm text-foreground/60">
-              © {currentYear} Regroup Partners. All rights reserved.
-            </p>
-            <p className="text-sm text-foreground/60">
-              Women-Owned and Operated Professional Business Advisory Firm
-            </p>
+        {/* Bottom Bar */}
+        <div className="pt-8 border-t border-gray-200 flex flex-col lg:flex-row justify-between items-center gap-6">
+          <div className="text-sm text-gray-500 order-2 lg:order-1">
+            <p>© {currentYear} Regroup Partners. All rights reserved.</p>
+          </div>
+          
+          <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 text-sm text-gray-500 font-medium order-1 lg:order-2">
+            <Link href="/privacy" className="hover:text-accent transition-colors relative group">
+              Privacy Policy
+              <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-accent transition-all duration-300 ease-out group-hover:w-full"></span>
+            </Link>
+            <Link href="/terms" className="hover:text-accent transition-colors relative group">
+              Terms of Use
+              <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-accent transition-all duration-300 ease-out group-hover:w-full"></span>
+            </Link>
+            <Link href="/disclaimer" className="hover:text-accent transition-colors relative group">
+              Disclaimer
+              <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-accent transition-all duration-300 ease-out group-hover:w-full"></span>
+            </Link>
+            <span className="hidden lg:inline text-gray-300">|</span>
+            <span className="text-gray-500">Women-Owned Business Advisory Firm</span>
           </div>
         </div>
-      </div>
-    </footer>);
 
+      </div>
+    </footer>
+  );
 }
