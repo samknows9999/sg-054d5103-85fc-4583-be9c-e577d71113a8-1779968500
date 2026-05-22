@@ -63,7 +63,7 @@ export default function About() {
           </div>
         </section>
 
-        <section className="py-20 md:py-32 bg-gray-50">
+        <section id="claudia-stefano" className="py-20 md:py-32 bg-gray-50 scroll-mt-24">
           <div className="max-w-[1400px] mx-auto px-6">
             <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center mb-20">
               <div>

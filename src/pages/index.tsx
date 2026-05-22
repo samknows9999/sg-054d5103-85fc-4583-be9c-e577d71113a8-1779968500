@@ -31,23 +31,34 @@ export default function Home() {
         <AsSeenOn />
 
         {/* Stats Strip */}
-        <section className="py-16 bg-white border-b border-gray-200">
+        <section className="py-16 md:py-24 bg-gray-50 border-b border-gray-200">
           <div className="max-w-[1400px] mx-auto px-6">
-            <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-24 text-center">
-              <div>
-                <div className="text-5xl font-serif font-bold text-[#0A192F] mb-2">21+</div>
-                <div className="text-sm text-primary uppercase tracking-widest font-semibold">Years Experience</div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              
+              <div className="bg-white p-10 rounded-2xl shadow-sm border border-gray-200 flex flex-col items-center justify-center text-center group hover:shadow-xl hover:-translate-y-1 transition-all duration-300 hover:border-primary/30">
+                <div className="text-6xl md:text-7xl font-serif font-bold text-[#0A192F] mb-4 group-hover:text-primary transition-colors">21+</div>
+                <div className="text-sm text-gray-500 uppercase tracking-widest font-semibold">Years Experience</div>
+                <div className="w-12 h-1 bg-gray-200 mt-6 group-hover:bg-primary transition-colors rounded-full"></div>
               </div>
-              <div className="hidden md:block w-px h-16 bg-gray-200"></div>
-              <div>
-                <div className="text-lg font-serif font-bold text-[#0A192F] mb-2">Women-Owned & Operated</div>
-                <div className="text-sm text-gray-500 font-medium uppercase tracking-wider">Professional Advisory</div>
+
+              <Link href="/about#claudia-stefano" className="bg-white p-10 rounded-2xl shadow-sm border border-gray-200 flex flex-col items-center justify-center text-center group hover:shadow-xl hover:-translate-y-1 transition-all duration-300 hover:border-primary/30 cursor-pointer block">
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                   <Users className="w-8 h-8 text-primary" />
+                </div>
+                <div className="text-2xl md:text-3xl font-serif font-bold text-[#0A192F] mb-3 group-hover:text-primary transition-colors leading-tight">Women-Owned<br/>& Operated</div>
+                <div className="text-sm text-gray-500 uppercase tracking-widest font-semibold">Professional Advisory</div>
+                <div className="w-12 h-1 bg-gray-200 mt-6 group-hover:bg-primary transition-colors rounded-full"></div>
+              </Link>
+
+              <div className="bg-white p-10 rounded-2xl shadow-sm border border-gray-200 flex flex-col items-center justify-center text-center group hover:shadow-xl hover:-translate-y-1 transition-all duration-300 hover:border-primary/30">
+                <div className="w-16 h-16 bg-[#0A192F]/5 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                   <Building2 className="w-8 h-8 text-[#0A192F] group-hover:text-primary transition-colors" />
+                </div>
+                <div className="text-2xl md:text-3xl font-serif font-bold text-[#0A192F] mb-3 group-hover:text-primary transition-colors leading-tight">Boutique Firm</div>
+                <div className="text-sm text-gray-500 uppercase tracking-widest font-semibold">Strategic Partnership</div>
+                <div className="w-12 h-1 bg-gray-200 mt-6 group-hover:bg-primary transition-colors rounded-full"></div>
               </div>
-              <div className="hidden md:block w-px h-16 bg-gray-200"></div>
-              <div>
-                <div className="text-lg font-serif font-bold text-[#0A192F] mb-2">Boutique Firm</div>
-                <div className="text-sm text-gray-500 font-medium uppercase tracking-wider">Strategic Partnership</div>
-              </div>
+
             </div>
           </div>
         </section>
