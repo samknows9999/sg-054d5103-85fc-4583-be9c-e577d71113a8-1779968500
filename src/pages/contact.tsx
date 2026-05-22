@@ -12,7 +12,7 @@ export default function Contact() {
     phone: "",
     revenueRange: "",
     financialConcerns: "",
-    preferredContact: "",
+    preferredContact: ""
   });
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -23,7 +23,7 @@ export default function Contact() {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [e.target.name]: e.target.value
     });
   };
 
@@ -31,8 +31,8 @@ export default function Contact() {
     <>
       <SEO
         title="Confidential Business Review | Regroup Partners"
-        description="Request a confidential business review with our experienced restructuring advisory team. Discreet, professional consultation for complex financial situations."
-      />
+        description="Request a confidential business review with our experienced restructuring advisory team. Discreet, professional consultation for complex financial situations." />
+      
 
       <Navigation />
 
@@ -41,11 +41,11 @@ export default function Contact() {
           title="Confidential Business Review"
           subtitle="Connect with our experienced advisory team for a confidential discussion about your business challenges and restructuring needs."
           breadcrumbs={[
-            { label: "Home", href: "/" },
-            { label: "Contact" }
-          ]}
-          backgroundImage="/generated/contact-reception.png"
-        />
+          { label: "Home", href: "/" },
+          { label: "Contact" }]
+          }
+          backgroundImage="/generated/contact-reception.png" />
+        
 
         <section className="py-20 md:py-32 bg-white">
           <div className="max-w-[1400px] mx-auto px-6">
@@ -53,8 +53,8 @@ export default function Contact() {
               <img
                 src="/location-map.png"
                 alt="Regroup Partners - Boca Raton Location and Service Area"
-                className="w-full rounded-2xl shadow-2xl"
-              />
+                className="w-full rounded-2xl shadow-2xl" />
+              
             </div>
 
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
@@ -138,8 +138,8 @@ export default function Contact() {
                         </svg>
                         <div>
                           <div className="font-semibold text-foreground">Phone</div>
-                          <a href="tel:+1-555-REGROUP" className="text-accent hover:underline">
-                            +1 (555) REGROUP
+                          <a href="tel:+1-555-REGROUP" className="text-accent hover:underline">+1 (955) REGROUP
+
                           </a>
                         </div>
                       </div>
@@ -179,8 +179,8 @@ export default function Contact() {
                       value={formData.companyName}
                       onChange={handleChange}
                       className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
-                      placeholder="Your business name"
-                    />
+                      placeholder="Your business name" />
+                    
                   </div>
 
                   <div>
@@ -195,8 +195,8 @@ export default function Contact() {
                       value={formData.contactName}
                       onChange={handleChange}
                       className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
-                      placeholder="Your full name"
-                    />
+                      placeholder="Your full name" />
+                    
                   </div>
 
                   <div className="grid sm:grid-cols-2 gap-4">
@@ -212,8 +212,8 @@ export default function Contact() {
                         value={formData.email}
                         onChange={handleChange}
                         className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
-                        placeholder="you@company.com"
-                      />
+                        placeholder="you@company.com" />
+                      
                     </div>
 
                     <div>
@@ -228,8 +228,8 @@ export default function Contact() {
                         value={formData.phone}
                         onChange={handleChange}
                         className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
-                        placeholder="(555) 123-4567"
-                      />
+                        placeholder="(555) 123-4567" />
+                      
                     </div>
                   </div>
 
@@ -243,8 +243,8 @@ export default function Contact() {
                       required
                       value={formData.revenueRange}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
-                    >
+                      className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all">
+                      
                       <option value="">Select revenue range</option>
                       <option value="under-500k">Under $500,000</option>
                       <option value="500k-1m">$500,000 - $1M</option>
@@ -266,8 +266,8 @@ export default function Contact() {
                       onChange={handleChange}
                       rows={4}
                       className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all resize-none"
-                      placeholder="Please describe your business situation and financial concerns..."
-                    />
+                      placeholder="Please describe your business situation and financial concerns..." />
+                    
                   </div>
 
                   <div>
@@ -280,8 +280,8 @@ export default function Contact() {
                       required
                       value={formData.preferredContact}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
-                    >
+                      className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all">
+                      
                       <option value="">Select preference</option>
                       <option value="email">Email</option>
                       <option value="phone">Phone</option>
@@ -291,8 +291,8 @@ export default function Contact() {
 
                   <button
                     type="submit"
-                    className="w-full px-8 py-4 bg-accent text-white font-semibold rounded-lg hover:bg-accent/90 transition-colors duration-300"
-                  >
+                    className="w-full px-8 py-4 bg-accent text-white font-semibold rounded-lg hover:bg-accent/90 transition-colors duration-300">
+                    
                     Submit Confidential Request
                   </button>
 
@@ -307,6 +307,6 @@ export default function Contact() {
       </main>
 
       <Footer />
-    </>
-  );
+    </>);
+
 }
