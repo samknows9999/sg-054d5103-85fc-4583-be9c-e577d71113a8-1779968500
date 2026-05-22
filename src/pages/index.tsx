@@ -14,8 +14,8 @@ export default function Home() {
     <>
       <SEO
         title="Business Restructuring & Financial Advisory | Regroup Partners"
-        description="Boutique business restructuring and financial advisory firm with 21+ years experience. Specializing in creditor coordination, cash flow stabilization, and merchant cash advance restructuring."
-      />
+        description="Boutique business restructuring and financial advisory firm with 21+ years experience. Specializing in creditor coordination, cash flow stabilization, and merchant cash advance restructuring." />
+      
 
       <Navigation />
 
@@ -24,8 +24,8 @@ export default function Home() {
           title="Business Restructuring & Financial Advisory"
           subtitle="Helping businesses navigate financial complexity through strategic restructuring, creditor coordination, and cash flow stabilization."
           breadcrumbs={[{ label: "Home" }]}
-          backgroundImage="/generated/executive-advisory-hero.png"
-        />
+          backgroundImage="/generated/executive-advisory-hero.png" />
+        
 
         <TrustBar />
 
@@ -82,48 +82,48 @@ export default function Home() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
-                {
-                  icon: Building2,
-                  title: "Business Restructuring",
-                  description: "Strategic restructuring solutions to stabilize operations and improve financial position",
-                  href: "/business-restructuring"
-                },
-                {
-                  icon: Users,
-                  title: "Creditor Coordination",
-                  description: "Expert coordination with banks, lenders, vendors, and stakeholders",
-                  href: "/creditor-coordination"
-                },
-                {
-                  icon: TrendingUp,
-                  title: "Cash Flow Improvement",
-                  description: "Operational optimization and financial strategies to enhance liquidity",
-                },
-                {
-                  icon: Shield,
-                  title: "MCA Advisory",
-                  description: "Specialized merchant cash advance restructuring and coordination",
-                },
-              ].map((service, index) => {
-                const CardContent = (
-                  <Card className="p-8 bg-white hover:border-primary/30 border border-gray-100 hover:shadow-xl transition-all duration-300 h-full group">
+              {
+                icon: Building2,
+                title: "Business Restructuring",
+                description: "Strategic restructuring solutions to stabilize operations and improve financial position",
+                href: "/business-restructuring"
+              },
+              {
+                icon: Users,
+                title: "Creditor Coordination",
+                description: "Expert coordination with banks, lenders, vendors, and stakeholders",
+                href: "/creditor-coordination"
+              },
+              {
+                icon: TrendingUp,
+                title: "Cash Flow Improvement",
+                description: "Operational optimization and financial strategies to enhance liquidity"
+              },
+              {
+                icon: Shield,
+                title: "MCA Advisory",
+                description: "Specialized merchant cash advance restructuring and coordination"
+              }].
+              map((service, index) => {
+                const CardContent =
+                <Card className="p-8 bg-white hover:border-primary/30 border border-gray-100 hover:shadow-xl transition-all duration-300 h-full group">
                     <div className="w-14 h-14 bg-gray-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary/10 transition-colors">
                       <service.icon className="w-7 h-7 text-[#0A192F] group-hover:text-primary transition-colors" />
                     </div>
                     <h3 className="font-serif font-semibold text-2xl text-[#0A192F] mb-3 group-hover:text-primary transition-colors">{service.title}</h3>
                     <p className="text-sm text-gray-600 leading-relaxed">{service.description}</p>
-                  </Card>
-                );
+                  </Card>;
 
-                return service.href ? (
-                  <Link href={service.href} key={index} className="block h-full">
+
+                return service.href ?
+                <Link href={service.href} key={index} className="block h-full">
                     {CardContent}
-                  </Link>
-                ) : (
-                  <div key={index} className="h-full">
+                  </Link> :
+
+                <div key={index} className="h-full">
                     {CardContent}
-                  </div>
-                );
+                  </div>;
+
               })}
             </div>
 
@@ -131,8 +131,8 @@ export default function Home() {
               <Link href="/services">
                 <Button
                   variant="outline"
-                  className="border-[#0A192F] text-[#0A192F] hover:bg-[#0A192F] hover:text-white px-8 py-6 text-base"
-                >
+                  className="border-[#0A192F] text-[#0A192F] hover:bg-[#0A192F] hover:text-white px-8 py-6 text-base">
+                  
                   View All Services <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
               </Link>
@@ -281,8 +281,8 @@ export default function Home() {
                     title="Client Testimonial 1"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
-                    className="absolute inset-0 w-full h-full"
-                  />
+                    className="absolute inset-0 w-full h-full" />
+                  
                 </div>
                 <div className="p-8">
                   <h3 className="font-serif text-2xl font-semibold mb-3 text-[#0A192F]">
@@ -301,8 +301,8 @@ export default function Home() {
                     title="Client Testimonial 2"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
-                    className="absolute inset-0 w-full h-full"
-                  />
+                    className="absolute inset-0 w-full h-full" />
+                  
                 </div>
                 <div className="p-8">
                   <h3 className="font-serif text-2xl font-semibold mb-3 text-[#0A192F]">
@@ -361,7 +361,7 @@ export default function Home() {
 
               <div className="order-1 lg:order-2">
                 <div className="inline-flex items-center gap-3 px-4 py-2 bg-white/5 border border-white/10 rounded-full mb-6 backdrop-blur-sm">
-                  <span className="text-sm font-semibold text-primary tracking-widest uppercase">Why Choose Us</span>
+                  <span className="text-sm font-semibold text-primary tracking-widest uppercase" style={{ fontSize: "32px" }}>Why Choose Us</span>
                 </div>
                 <h2 className="font-serif text-4xl md:text-5xl font-bold mb-8 text-white leading-tight">
                   Not a call center. <br />
@@ -448,8 +448,8 @@ export default function Home() {
             <div className="text-center mt-12">
               <Link
                 href="/insights"
-                className="inline-flex items-center px-8 py-4 bg-[#0A192F] text-white font-semibold rounded-lg hover:bg-primary transition-colors duration-300 shadow-md"
-              >
+                className="inline-flex items-center px-8 py-4 bg-[#0A192F] text-white font-semibold rounded-lg hover:bg-primary transition-colors duration-300 shadow-md">
+                
                 View All Insights <ArrowRight className="w-4 h-4 ml-2" />
               </Link>
             </div>
@@ -488,8 +488,8 @@ export default function Home() {
                 <Link href="/contact" className="block w-full">
                   <Button
                     size="lg"
-                    className="w-full bg-primary hover:bg-primary/90 text-white py-8 text-lg font-semibold shadow-lg shadow-primary/20"
-                  >
+                    className="w-full bg-primary hover:bg-primary/90 text-white py-8 text-lg font-semibold shadow-lg shadow-primary/20">
+                    
                     Schedule Your Review
                   </Button>
                 </Link>
@@ -503,6 +503,6 @@ export default function Home() {
       </main>
 
       <Footer />
-    </>
-  );
+    </>);
+
 }
