@@ -317,6 +317,72 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Why Clients Choose Regroup Partners */}
+        <section className="py-24 md:py-32 bg-[#0A192F] text-white border-t border-[#112240] relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-[#061124] to-[#0A192F]"></div>
+          <div className="absolute top-0 right-0 -mr-40 -mt-40 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl mix-blend-screen pointer-events-none"></div>
+          
+          <div className="max-w-[1400px] mx-auto px-6 relative z-10">
+            <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+              
+              <div className="order-2 lg:order-1">
+                <div className="space-y-8">
+                  <div className="flex gap-6 items-start">
+                    <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-1 border border-primary/30">
+                      <Shield className="w-6 h-6 text-primary" />
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-serif font-semibold text-white mb-2">Intentionally Selective</h4>
+                      <p className="text-gray-400 leading-relaxed font-light">We only take on approximately 200 files per year. Not every business owner qualifies for our services, and that selectivity is part of how we protect the quality of the work we provide.</p>
+                    </div>
+                  </div>
+
+                  <div className="flex gap-6 items-start">
+                    <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-1 border border-primary/30">
+                      <Users className="w-6 h-6 text-primary" />
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-serif font-semibold text-white mb-2">Dedicated Teams</h4>
+                      <p className="text-gray-400 leading-relaxed font-light">When your business is under pressure, you should not feel like a number. You work fluidly with the same dedicated team day in and day out until the matter is resolved.</p>
+                    </div>
+                  </div>
+
+                  <div className="flex gap-6 items-start">
+                    <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-1 border border-primary/30">
+                      <Phone className="w-6 h-6 text-primary" />
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-serif font-semibold text-white mb-2">Direct Communication</h4>
+                      <p className="text-gray-400 leading-relaxed font-light">Your telephone calls are answered. Your emails are returned. We run our business with genuine concern for the pressure your business is facing.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="order-1 lg:order-2">
+                <div className="inline-flex items-center gap-3 px-4 py-2 bg-white/5 border border-white/10 rounded-full mb-6 backdrop-blur-sm">
+                  <span className="text-sm font-semibold text-primary tracking-widest uppercase">Why Choose Us</span>
+                </div>
+                <h2 className="font-serif text-4xl md:text-5xl font-bold mb-8 text-white leading-tight">
+                  Not a call center. <br />
+                  <span className="text-gray-400 font-light">A selective, hands-on business advisory firm.</span>
+                </h2>
+                
+                <div className="bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-sm relative">
+                  <div className="absolute top-0 left-0 w-1 h-full bg-primary rounded-l-2xl"></div>
+                  <p className="text-lg text-gray-300 leading-relaxed font-light italic">
+                    "Regroup Partners is intentionally selective. We are not a high-volume call center managing thousands of files with scripted responses and revolving representatives. This is not a run-of-the-mill debt company or a boiler-room operation."
+                  </p>
+                  <p className="mt-6 text-white font-semibold uppercase tracking-wider text-sm">
+                    Focus on Stabilization, Cash Flow, and Resolution
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
         {/* Insights */}
         <section className="py-24 md:py-32 bg-white">
           <div className="max-w-[1400px] mx-auto px-6">
