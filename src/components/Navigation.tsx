@@ -12,13 +12,12 @@ export function Navigation() {
       <nav className="bg-[#000000] border-b border-white/10 w-full relative">
         <div className="max-w-[1400px] mx-auto px-6">
           <div className="flex items-center justify-between h-16">
-            <Link href="/" className="flex items-center space-x-3 group">
-              <div className="w-8 h-8 rounded bg-accent flex items-center justify-center">
-                <span className="text-white font-serif font-bold text-lg">R</span>
-              </div>
-              <span className="text-white font-semibold text-lg">
-                Regroup Partners
-              </span>
+            <Link href="/" className="flex items-center group">
+              <img 
+                src="/logo.jpg" 
+                alt="Regroup Partners" 
+                className="h-10 w-auto object-contain"
+              />
             </Link>
 
             <div className="hidden md:flex items-center gap-8">
