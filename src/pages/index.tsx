@@ -101,6 +101,78 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Split Screen Lead Capture */}
+        <section className="bg-foreground text-white border-b border-gray-200">
+          <div className="flex flex-col lg:flex-row">
+            {/* Image Side */}
+            <div className="lg:w-1/2 relative min-h-[400px] lg:min-h-full flex items-center p-12 md:p-20 bg-[url('/generated/mca-restructuring-bg.png')] bg-cover bg-center">
+              <div className="absolute inset-0 bg-foreground/80 mix-blend-multiply"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-foreground/90 via-foreground/40 to-transparent"></div>
+              <div className="relative z-10 max-w-lg">
+                <div className="inline-block px-4 py-1 bg-white/10 border border-white/20 rounded-full mb-6">
+                  <span className="text-sm font-semibold text-white tracking-wide uppercase">Discreet & Confidential</span>
+                </div>
+                <h2 className="font-serif text-3xl md:text-4xl font-semibold mb-6 leading-tight">
+                  Navigate Financial Complexity With Confidence.
+                </h2>
+                <p className="text-gray-300 text-lg leading-relaxed">
+                  Partner with a specialized advisory firm that understands the intricacies of restructuring, creditor coordination, and cash flow stabilization.
+                </p>
+              </div>
+            </div>
+
+            {/* Form Side */}
+            <div className="lg:w-1/2 bg-white text-foreground p-12 md:p-24 flex flex-col justify-center">
+              <div className="max-w-lg mx-auto w-full">
+                <div className="mb-10">
+                  <h3 className="font-serif text-3xl font-semibold mb-4 text-foreground">Confidential Consultation</h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    Submit your details below for a discreet review of your business's financial position.
+                  </p>
+                </div>
+                
+                <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <label htmlFor="firstName" className="text-sm font-semibold text-foreground">First Name</label>
+                      <input id="firstName" type="text" className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" />
+                    </div>
+                    <div className="space-y-2">
+                      <label htmlFor="lastName" className="text-sm font-semibold text-foreground">Last Name</label>
+                      <input id="lastName" type="text" className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" />
+                    </div>
+                  </div>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <label htmlFor="email" className="text-sm font-semibold text-foreground">Work Email</label>
+                      <input id="email" type="email" className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" />
+                    </div>
+                    <div className="space-y-2">
+                      <label htmlFor="phone" className="text-sm font-semibold text-foreground">Phone Number</label>
+                      <input id="phone" type="tel" className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" />
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <label htmlFor="company" className="text-sm font-semibold text-foreground">Company Name</label>
+                    <input id="company" type="text" className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" />
+                  </div>
+
+                  <div className="space-y-2">
+                    <label htmlFor="message" className="text-sm font-semibold text-foreground">How can we help? (Optional)</label>
+                    <textarea id="message" rows={3} className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none"></textarea>
+                  </div>
+
+                  <Button type="submit" className="w-full py-6 text-base font-semibold bg-primary hover:bg-primary/90 text-white mt-4">
+                    Request Consultation
+                  </Button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className="py-20 md:py-32 bg-gray-50">
           <div className="max-w-[1400px] mx-auto px-6">
             <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
