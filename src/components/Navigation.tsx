@@ -34,12 +34,28 @@ export function Navigation() {
               >
                 About
               </Link>
-              <Link
-                href="/services"
-                className="text-sm font-medium text-white hover:text-accent transition-colors"
-              >
-                Services
-              </Link>
+              
+              {/* Dropdown for Services */}
+              <div className="relative group py-2">
+                <Link
+                  href="/services"
+                  className="text-sm font-medium text-white hover:text-accent transition-colors flex items-center gap-1"
+                >
+                  Services
+                  <svg className="w-3 h-3 text-white/70 group-hover:text-accent transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </Link>
+                <div className="absolute top-full left-0 mt-0 w-64 bg-[#0a0a0a] border border-white/10 rounded-b-md shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 overflow-hidden">
+                  <Link href="/business-restructuring" className="block px-5 py-4 text-sm font-medium text-white/90 hover:text-accent hover:bg-white/5 border-b border-white/5 transition-colors">
+                    Business Restructuring
+                  </Link>
+                  <Link href="/services" className="block px-5 py-4 text-sm font-medium text-white/90 hover:text-accent hover:bg-white/5 transition-colors">
+                    All Advisory Services
+                  </Link>
+                </div>
+              </div>
+
               <Link
                 href="/team"
                 className="text-sm font-medium text-white hover:text-accent transition-colors"
@@ -87,12 +103,20 @@ export function Navigation() {
               >
                 About
               </Link>
-              <Link
-                href="/services"
-                className="block px-6 py-3 text-sm font-medium text-white hover:bg-gray-900 transition-colors"
-              >
-                Services
-              </Link>
+              <div className="bg-gray-900/50 py-2 border-y border-white/5">
+                <Link
+                  href="/services"
+                  className="block px-6 py-2 text-sm font-medium text-white hover:text-accent transition-colors"
+                >
+                  Services Overview
+                </Link>
+                <Link
+                  href="/business-restructuring"
+                  className="block px-6 py-2 text-sm font-medium text-white/70 hover:text-accent transition-colors pl-10"
+                >
+                  — Business Restructuring
+                </Link>
+              </div>
               <Link
                 href="/team"
                 className="block px-6 py-3 text-sm font-medium text-white hover:bg-gray-900 transition-colors"

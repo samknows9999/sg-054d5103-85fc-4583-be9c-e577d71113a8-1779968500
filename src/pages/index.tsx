@@ -68,6 +68,7 @@ export default function Home() {
                   icon: Building2,
                   title: "Business Restructuring",
                   description: "Strategic restructuring solutions to stabilize operations and improve financial position",
+                  href: "/business-restructuring"
                 },
                 {
                   icon: Users,
@@ -84,13 +85,25 @@ export default function Home() {
                   title: "MCA Advisory",
                   description: "Specialized merchant cash advance restructuring and coordination",
                 },
-              ].map((service, index) => (
-                <Card key={index} className="p-8 bg-white hover:shadow-lg transition-shadow border border-gray-200">
-                  <service.icon className="w-10 h-10 text-primary mb-6" />
-                  <h3 className="font-semibold text-xl text-foreground mb-3">{service.title}</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">{service.description}</p>
-                </Card>
-              ))}
+              ].map((service, index) => {
+                const CardContent = (
+                  <Card className="p-8 bg-white hover:shadow-lg transition-shadow border border-gray-200 h-full group">
+                    <service.icon className="w-10 h-10 text-primary mb-6 group-hover:scale-110 transition-transform" />
+                    <h3 className="font-semibold text-xl text-foreground mb-3 group-hover:text-primary transition-colors">{service.title}</h3>
+                    <p className="text-sm text-gray-600 leading-relaxed">{service.description}</p>
+                  </Card>
+                );
+
+                return service.href ? (
+                  <Link href={service.href} key={index} className="block h-full">
+                    {CardContent}
+                  </Link>
+                ) : (
+                  <div key={index} className="h-full">
+                    {CardContent}
+                  </div>
+                );
+              })}
             </div>
 
             <div className="text-center mt-12">
