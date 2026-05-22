@@ -1,5 +1,6 @@
 import { Navigation } from "@/components/Navigation";
 import { Hero } from "@/components/Hero";
+import { TrustBar } from "@/components/TrustBar";
 import { AsSeenOn } from "@/components/AsSeenOn";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
@@ -27,6 +28,7 @@ export default function About() {
           backgroundImage="/generated/about-team-advisory.png"
         />
 
+        <TrustBar />
         <AsSeenOn />
 
         <section className="py-20 md:py-32 bg-white">
