@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { MapPin, Phone, Mail, Linkedin, ArrowRight } from "lucide-react";
+import { MapPin, Phone, Mail, Linkedin, ArrowRight, Facebook, Twitter, Instagram, Youtube } from "lucide-react";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -129,13 +129,51 @@ export function Footer() {
               </Link>
             </div>
 
-            <div className="mt-8 flex items-center gap-4">
+            <div className="mt-8 flex flex-wrap items-center gap-3">
               <a 
-                href="#" 
+                href="https://www.linkedin.com/company/regroup-partners/" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-gray-500 hover:bg-accent hover:border-accent hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-4 h-4" />
+              </a>
+              <a 
+                href="https://x.com/regrouppartners" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-gray-500 hover:bg-accent hover:border-accent hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
+                aria-label="X (Twitter)"
+              >
+                <Twitter className="w-4 h-4" />
+              </a>
+              <a 
+                href="https://www.facebook.com/RegroupPartners/" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-gray-500 hover:bg-accent hover:border-accent hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
+                aria-label="Facebook"
+              >
+                <Facebook className="w-4 h-4" />
+              </a>
+              <a 
+                href="https://www.instagram.com/regrouppartners/" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-gray-500 hover:bg-accent hover:border-accent hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
+                aria-label="Instagram"
+              >
+                <Instagram className="w-4 h-4" />
+              </a>
+              <a 
+                href="https://www.youtube.com/channel/UCny0JsZTbq5eBnbuzJZSJng" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-gray-500 hover:bg-accent hover:border-accent hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
+                aria-label="YouTube"
+              >
+                <Youtube className="w-4 h-4" />
               </a>
             </div>
           </div>
