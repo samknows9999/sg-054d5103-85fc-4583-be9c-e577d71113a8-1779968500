@@ -1,6 +1,6 @@
 ---
 title: MCA Advisory Services Page
-status: in_progress
+status: done
 priority: high
 type: feature
 tags:
@@ -20,8 +20,8 @@ position: 10
 - Link to MCA Advisory card on homepage
 
 ## Checklist
-- [ ] Generate MCA Advisory hero image
-- [ ] Create `mca-advisory.tsx` with all 12 sections
-- [ ] Add LocalBusiness and FAQ Schema markup
-- [ ] Update `Navigation.tsx` to include "MCA Advisory" in the Services dropdown
-- [ ] Update `index.tsx` to include "MCA Advisory" card in the Advisory Services section
+- [x] Generate MCA Advisory hero image
+- [x] Create `mca-advisory.tsx` with all 12 sections
+- [x] Add LocalBusiness and FAQ Schema markup
+- [x] Update `Navigation.tsx` to include "MCA Advisory" in the Services dropdown
+- [x] Update `index.tsx` to include "MCA Advisory" card in the Advisory Services section

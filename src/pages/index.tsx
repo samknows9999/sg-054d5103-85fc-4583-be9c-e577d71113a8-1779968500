@@ -103,7 +103,8 @@ export default function Home() {
               {
                 icon: Shield,
                 title: "MCA Advisory",
-                description: "Specialized merchant cash advance restructuring and coordination"
+                description: "Specialized merchant cash advance restructuring and coordination",
+                href: "/mca-advisory"
               }].
               map((service, index) => {
                 const CardContent =
