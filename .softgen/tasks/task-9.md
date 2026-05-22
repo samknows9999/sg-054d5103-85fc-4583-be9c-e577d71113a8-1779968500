@@ -1,6 +1,6 @@
 ---
 title: FAQ Page and About Navigation Update
-status: in_progress
+status: done
 priority: high
 type: feature
 tags:
@@ -18,7 +18,7 @@ position: 9
 - Update "About" navigation dropdown structure: About -> Our Company, Leadership Team, Why Choose Us, FAQ, Contact
 
 ## Checklist
-- [ ] Generate FAQ hero image
-- [ ] Update Navigation.tsx with the requested dropdown structure
-- [ ] Create faq.tsx with 5 SEO-optimized sections (Hero, Intro, Accordions, Internal Links, CTA)
-- [ ] Add FAQ Schema markup
+- [x] Generate FAQ hero image
+- [x] Update Navigation.tsx with the requested dropdown structure
+- [x] Create faq.tsx with 5 SEO-optimized sections (Hero, Intro, Accordions, Internal Links, CTA)
+- [x] Add FAQ Schema markup
