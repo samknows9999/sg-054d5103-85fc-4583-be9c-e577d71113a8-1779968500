@@ -10,19 +10,19 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
-import { 
-  ArrowRight, Shield, Phone, 
+import {
+  ArrowRight, Shield, Phone,
   MapPin, CheckCircle2, TrendingUp,
-  Building2, Users, FileWarning, Wallet
-} from "lucide-react";
+  Building2, Users, FileWarning, Wallet } from
+"lucide-react";
 
 export default function FAQPage() {
   return (
     <div className="min-h-screen bg-[#050505] font-sans selection:bg-accent/20">
-      <SEO 
+      <SEO
         title="Frequently Asked Questions | Regroup Partners"
-        description="Answers to common questions about business restructuring, creditor coordination, cash flow improvement, and financial advisory services in Boca Raton, FL."
-      />
+        description="Answers to common questions about business restructuring, creditor coordination, cash flow improvement, and financial advisory services in Boca Raton, FL." />
+      
       <Head>
         <script
           type="application/ld+json"
@@ -31,26 +31,26 @@ export default function FAQPage() {
               "@context": "https://schema.org",
               "@type": "FAQPage",
               "mainEntity": [
-                {
-                  "@type": "Question",
-                  "name": "What is business restructuring?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Business restructuring is a strategic process used to reorganize a company's financial and operational structure. It helps businesses reduce debt burdens, improve cash flow, and achieve long-term financial stability without necessarily resorting to bankruptcy."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "What is MCA debt restructuring?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "MCA debt restructuring involves negotiating with Merchant Cash Advance providers to modify repayment terms. The goal is to reduce daily ACH withdrawals, lower the total payback amount, or secure more favorable terms to alleviate immediate cash flow pressure on the business."
-                  }
+              {
+                "@type": "Question",
+                "name": "What is business restructuring?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Business restructuring is a strategic process used to reorganize a company's financial and operational structure. It helps businesses reduce debt burdens, improve cash flow, and achieve long-term financial stability without necessarily resorting to bankruptcy."
                 }
-              ]
+              },
+              {
+                "@type": "Question",
+                "name": "What is MCA debt restructuring?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "MCA debt restructuring involves negotiating with Merchant Cash Advance providers to modify repayment terms. The goal is to reduce daily ACH withdrawals, lower the total payback amount, or secure more favorable terms to alleviate immediate cash flow pressure on the business."
+                }
+              }]
+
             })
-          }}
-        />
+          }} />
+        
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -71,8 +71,8 @@ export default function FAQPage() {
               "telephone": "+19548334958",
               "url": "https://regrouppartners.com"
             })
-          }}
-        />
+          }} />
+        
       </Head>
 
       <Navigation />
@@ -82,11 +82,11 @@ export default function FAQPage() {
         <section className="relative min-h-[60vh] flex items-center bg-[#000000] overflow-hidden pt-12 pb-24">
           <div className="absolute inset-0 w-full h-full">
             <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/40 z-10"></div>
-            <img 
-              src="/generated/faq-hero.png" 
-              alt="Corporate financial advisory office" 
-              className="w-full h-full object-cover opacity-60"
-            />
+            <img
+              src="/generated/faq-hero.png"
+              alt="Corporate financial advisory office"
+              className="w-full h-full object-cover opacity-60" />
+            
           </div>
           
           <div className="max-w-[1400px] mx-auto px-6 relative z-20 w-full">
@@ -421,7 +421,7 @@ export default function FAQPage() {
                 </div>
 
                 <div className="flex items-center gap-6 opacity-80 grayscale">
-                  <img src="/logo.jpg" alt="Regroup Partners Logo" className="h-10 w-auto object-contain rounded-sm" />
+                  
                 </div>
               </div>
               
@@ -450,11 +450,11 @@ export default function FAQPage() {
                   
                   <div className="space-y-2.5 text-left">
                     <Label htmlFor="description" className="text-gray-900 font-semibold text-sm">Brief Description of Situation</Label>
-                    <Textarea 
-                      id="description" 
+                    <Textarea
+                      id="description"
                       placeholder="Please briefly describe your current challenges or questions..."
-                      className="min-h-[140px] resize-y bg-gray-50/50 rounded-xl border-gray-200 p-4 focus-visible:ring-accent focus-visible:border-accent text-base"
-                    />
+                      className="min-h-[140px] resize-y bg-gray-50/50 rounded-xl border-gray-200 p-4 focus-visible:ring-accent focus-visible:border-accent text-base" />
+                    
                   </div>
                   
                   <Button className="w-full bg-accent hover:bg-accent/90 text-white h-16 rounded-xl text-lg font-semibold mt-4 shadow-lg shadow-accent/20 transition-all hover:shadow-accent/40 hover:-translate-y-0.5">
@@ -468,6 +468,6 @@ export default function FAQPage() {
       </main>
 
       <Footer />
-    </div>
-  );
+    </div>);
+
 }
