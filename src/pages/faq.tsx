@@ -91,7 +91,7 @@ export default function FAQPage() {
           
           <div className="max-w-[1400px] mx-auto px-6 relative z-20 w-full">
             <div className="max-w-3xl">
-              <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-semibold mb-6 text-white leading-tight">
+              <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-semibold mb-6 text-white leading-tight" style={{ padding: "28px 0px" }}>
                 Frequently Asked <span className="text-accent italic">Questions</span>
               </h1>
               <p className="text-xl text-gray-300 mb-10 leading-relaxed max-w-2xl">
