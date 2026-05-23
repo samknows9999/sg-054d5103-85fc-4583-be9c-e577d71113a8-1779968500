@@ -34,10 +34,10 @@ export function Navigation() {
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 w-full flex flex-col transition-transform duration-300 ease-in-out ${isVisible ? "translate-y-0" : "-translate-y-full"}`}>
       {/* 
-        Using a consistent dark background when scrolled ensures white text is always visible,
-        regardless of whether the page underneath is light or dark.
+        Forcing a consistent dark background when scrolled ensures white text is always visible.
+        Using #061124 to perfectly match the hero section background.
       */}
-      <nav className={`w-full relative transition-all duration-300 ${scrolled ? "bg-[#030914]/95 backdrop-blur-xl border-b border-white/5 shadow-2xl" : "bg-transparent"}`}>
+      <nav className={`w-full relative transition-all duration-300 ${scrolled ? "bg-[#061124] !bg-[#061124] backdrop-blur-xl border-b border-white/5 shadow-2xl" : "bg-transparent"}`}>
         <div className="max-w-[1400px] mx-auto px-6">
           <div className="flex items-center justify-between h-16 md:h-20 transition-all duration-300">
             
