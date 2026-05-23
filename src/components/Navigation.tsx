@@ -33,7 +33,7 @@ export function Navigation() {
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 w-full flex flex-col transition-transform duration-300 ease-in-out ${isVisible ? "translate-y-0" : "-translate-y-full"}`}>
-      <nav className={`w-full relative transition-all duration-300 ${scrolled ? "bg-black/70 backdrop-blur-lg border-b border-white/10 shadow-lg" : "bg-black/30 backdrop-blur-md border-b border-white/5"}`}>
+      <nav className={`w-full relative transition-all duration-300 ${scrolled ? "bg-[#061124]/95 backdrop-blur-lg border-b border-white/10 shadow-lg" : "bg-transparent"}`}>
         <div className="max-w-[1400px] mx-auto px-6">
           <div className="flex items-center justify-between h-16 md:h-20 transition-all duration-300">
             <Link href="/" className="flex items-center group">
@@ -56,7 +56,7 @@ export function Navigation() {
                   <ChevronDown className="w-4 h-4 text-white/60 group-hover:text-white group-hover:rotate-180 transition-all duration-300" />
                 </Link>
                 <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                  <div className="bg-[#0a0a0a]/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl p-2 overflow-hidden flex flex-col gap-1">
+                  <div className="bg-[#061124]/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl p-2 overflow-hidden flex flex-col gap-1">
                     <Link href="/about" className="block px-4 py-2.5 text-sm font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">
                       Our Company
                     </Link>
@@ -80,7 +80,7 @@ export function Navigation() {
                   <ChevronDown className="w-4 h-4 text-white/60 group-hover:text-white group-hover:rotate-180 transition-all duration-300" />
                 </Link>
                 <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                  <div className="bg-[#0a0a0a]/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl p-2 overflow-hidden flex flex-col gap-1">
+                  <div className="bg-[#061124]/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl p-2 overflow-hidden flex flex-col gap-1">
                     <Link href="/business-restructuring" className="block px-4 py-2.5 text-sm font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">
                       Business Restructuring
                     </Link>
@@ -142,15 +142,15 @@ export function Navigation() {
           </div>
 
           {isMobileMenuOpen &&
-          <div className="md:hidden absolute top-full left-0 right-0 bg-black border-t border-gray-800 py-4 shadow-xl">
+          <div className="md:hidden absolute top-full left-0 right-0 bg-[#061124] border-t border-white/10 py-4 shadow-xl">
               <Link
               href="/"
-              className="block px-6 py-3 text-sm font-medium text-white hover:bg-gray-900 transition-colors">
+              className="block px-6 py-3 text-sm font-medium text-white hover:bg-white/5 transition-colors">
               
                 Home
               </Link>
               
-              <div className="bg-gray-900/50 py-2 border-y border-white/5">
+              <div className="bg-white/5 py-2 border-y border-white/5">
                 <Link
                 href="/about"
                 className="block px-6 py-2 text-sm font-medium text-white hover:text-accent transition-colors">
@@ -177,7 +177,7 @@ export function Navigation() {
                 </Link>
               </div>
 
-              <div className="bg-gray-900/50 py-2 border-b border-white/5">
+              <div className="bg-white/5 py-2 border-b border-white/5">
                 <Link
                 href="/services"
                 className="block px-6 py-2 text-sm font-medium text-white hover:text-accent transition-colors">
@@ -211,19 +211,19 @@ export function Navigation() {
               </div>
               <Link
               href="/team"
-              className="block px-6 py-3 text-sm font-medium text-white hover:bg-gray-900 transition-colors">
+              className="block px-6 py-3 text-sm font-medium text-white hover:bg-white/5 transition-colors">
               
                 Our Team
               </Link>
               <Link
               href="/insights"
-              className="block px-6 py-3 text-sm font-medium text-white hover:bg-gray-900 transition-colors">
+              className="block px-6 py-3 text-sm font-medium text-white hover:bg-white/5 transition-colors">
               
                 Insights
               </Link>
               <Link
               href="/contact"
-              className="block px-6 py-3 text-sm font-medium text-white hover:bg-gray-900 transition-colors">
+              className="block px-6 py-3 text-sm font-medium text-white hover:bg-white/5 transition-colors">
               
                 Contact
               </Link>
