@@ -125,12 +125,12 @@ export function Navigation() {
               </Link>
               <a
                 href="tel:954-833-4958"
-                className="flex items-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white px-6 py-2 rounded-full transition-all duration-300 text-[15px] font-medium shadow-sm">
+                className="text-[15px] font-medium text-white/80 hover:text-white transition-colors">
                 Log in
               </a>
               <Link
                 href="/contact"
-                className="flex items-center gap-2 bg-[#ff4a5a] text-white px-6 py-2 rounded-full hover:bg-[#ff4a5a]/90 transition-all duration-300 text-[15px] font-medium shadow-sm">
+                className="flex items-center gap-2 bg-primary text-white px-6 py-2.5 rounded-full hover:bg-primary/90 transition-all duration-300 text-[15px] font-semibold shadow-sm">
                 Get started for Free
               </Link>
             </div>
@@ -236,7 +236,7 @@ export function Navigation() {
               </Link>
               <a
               href="tel:954-833-4958"
-              className="flex items-center justify-center gap-2 px-6 py-4 mt-2 text-[15px] font-medium text-white bg-[#ff4a5a] hover:bg-[#ff4a5a]/90 transition-colors">
+              className="flex items-center justify-center gap-2 px-6 py-4 mt-2 text-[15px] font-semibold text-white bg-primary hover:bg-primary/90 transition-colors">
                 Get started for Free
               </a>
             </div>
