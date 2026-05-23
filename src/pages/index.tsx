@@ -210,7 +210,7 @@ export default function Home() {
                     <textarea id="message" rows={3} className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none"></textarea>
                   </div>
 
-                  <Button type="submit" className="w-full py-6 text-base font-semibold bg-primary hover:bg-primary/90 text-white mt-4 shadow-lg shadow-primary/20" style={{ backgroundColor: "#bababa", backgroundImage: "none", color: "#000000" }}>
+                  <Button type="submit" className="w-full py-6 text-base font-semibold bg-primary hover:bg-primary/90 text-white mt-4 shadow-lg shadow-primary/20" style={{ backgroundColor: "#525252", backgroundImage: "none", color: "#f3f4f6" }}>
                     Request Consultation
                   </Button>
                 </form>
