@@ -95,7 +95,7 @@ export default function CreditorCoordination() {
       />
       <Navigation />
       
-      <main className="pt-16 bg-[#061124]">
+      <main className="bg-[#061124]">
         {/* SECTION 1 - HERO */}
         <Hero
           title="Professional Creditor Coordination Services for Businesses Under Financial Pressure"

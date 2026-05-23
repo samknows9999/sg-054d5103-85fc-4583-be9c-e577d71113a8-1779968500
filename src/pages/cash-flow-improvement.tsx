@@ -106,7 +106,7 @@ export default function CashFlowImprovement() {
       />
       <Navigation />
 
-      <main className="pt-24 md:pt-32">
+      <main className="">
         {/* Section 1: Hero */}
         <section className="relative overflow-hidden bg-[#050505] text-white py-24 lg:py-32">
           <div className="absolute inset-0 z-0">

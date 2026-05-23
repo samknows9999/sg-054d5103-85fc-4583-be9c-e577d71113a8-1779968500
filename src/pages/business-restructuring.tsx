@@ -54,7 +54,7 @@ export default function BusinessRestructuring() {
 
       <Navigation />
 
-      <main className="pt-16">
+      <main className="">
         {/* SECTION 1: HERO */}
         <section className="relative min-h-[90vh] flex items-center bg-[#061124] text-white overflow-hidden pt-12 pb-24">
           <div className="absolute inset-0 bg-[url('/generated/business-restructuring-hero.png')] bg-cover bg-center opacity-30 mix-blend-luminosity"></div>
