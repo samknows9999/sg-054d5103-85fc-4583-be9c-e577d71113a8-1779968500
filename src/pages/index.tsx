@@ -143,32 +143,32 @@ export default function Home() {
         </section>
 
         {/* Split Screen Lead Capture */}
-        <section className="bg-[#0A192F] text-white border-b border-[#112240]">
+        <section className="bg-gray-50 border-b border-gray-200">
           <div className="flex flex-col lg:flex-row">
             {/* Image Side */}
             <div className="lg:w-1/2 relative min-h-[400px] lg:min-h-full flex items-center p-12 md:p-20 bg-[url('/generated/split-screen-premium-bg.png')] bg-cover bg-center">
-              <div className="absolute inset-0 bg-primary/20 mix-blend-multiply" style={{ backgroundColor: "#ffffff", backgroundImage: "none" }}></div>
-              <div className="absolute inset-0 bg-gradient-to-br from-[#0A192F]/95 via-[#0A192F]/80 to-primary/60" style={{ backgroundImage: "none", backgroundColor: "#9b9b9b", backgroundSize: "auto", borderRadius: "32px" }}></div>
+              <div className="absolute inset-0 bg-white/85 backdrop-blur-[2px]"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-white/60 to-gray-50/90"></div>
               {/* Decorative architectural border */}
-              <div className="absolute inset-6 md:inset-10 border border-white/10 rounded-sm pointer-events-none hidden md:block"></div>
+              <div className="absolute inset-6 md:inset-10 border border-[#0A192F]/10 rounded-sm pointer-events-none hidden md:block"></div>
               
               <div className="relative z-10 max-w-lg">
-                <div className="inline-flex items-center gap-3 px-5 py-2 bg-white/5 border border-white/10 backdrop-blur-md rounded-full mb-8">
-                  <div className="w-2 h-2 rounded-full bg-primary animate-pulse" style={{ backgroundColor: "#000000", backgroundImage: "none" }}></div>
-                  <span className="text-sm font-semibold text-white tracking-widest uppercase" style={{ color: "#000000" }}>Discreet & Confidential</span>
+                <div className="inline-flex items-center gap-3 px-5 py-2 bg-white border border-gray-200 shadow-sm rounded-full mb-8">
+                  <div className="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+                  <span className="text-sm font-semibold text-[#0A192F] tracking-widest uppercase">Discreet & Confidential</span>
                 </div>
-                <h2 className="font-serif text-3xl md:text-5xl font-semibold mb-6 leading-tight text-white drop-shadow-md">
+                <h2 className="font-serif text-3xl md:text-5xl font-semibold mb-6 leading-tight text-[#0A192F]">
                   Navigate Financial Complexity With Confidence.
                 </h2>
-                <div className="w-16 h-1 bg-primary mb-8" style={{ backgroundColor: "#000000", backgroundImage: "none" }}></div>
-                <p className="text-gray-300 text-lg md:text-xl leading-relaxed font-light" style={{ color: "#000000" }}>
+                <div className="w-16 h-1 bg-primary mb-8"></div>
+                <p className="text-gray-600 text-lg md:text-xl leading-relaxed font-light">
                   Partner with a specialized advisory firm that understands the intricacies of restructuring, creditor coordination, and cash flow stabilization.
                 </p>
               </div>
             </div>
 
             {/* Form Side */}
-            <div className="lg:w-1/2 bg-white text-[#0A192F] p-12 md:p-24 flex flex-col justify-center">
+            <div className="lg:w-1/2 bg-white text-[#0A192F] p-12 md:p-24 flex flex-col justify-center shadow-[-20px_0_40px_rgba(0,0,0,0.03)] relative z-10">
               <div className="max-w-lg mx-auto w-full">
                 <div className="mb-10">
                   <h3 className="font-serif text-3xl font-semibold mb-4 text-[#0A192F]">Confidential Consultation</h3>
@@ -210,7 +210,7 @@ export default function Home() {
                     <textarea id="message" rows={3} className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none"></textarea>
                   </div>
 
-                  <Button type="submit" className="w-full py-6 text-base font-semibold bg-primary hover:bg-primary/90 text-white mt-4 shadow-lg shadow-primary/20" style={{ backgroundColor: "#cc3322", backgroundImage: "none", color: "#f3f4f6" }}>
+                  <Button type="submit" className="w-full py-6 text-base font-semibold bg-primary hover:bg-primary/90 text-white mt-4 shadow-lg shadow-primary/20">
                     Request Consultation
                   </Button>
                 </form>
