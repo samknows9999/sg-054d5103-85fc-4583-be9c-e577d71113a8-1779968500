@@ -18,6 +18,9 @@ export function Hero({ title, subtitle, breadcrumbs, backgroundImage }: HeroProp
 
       }
       
+      {/* Top gradient to ensure header text is always visible regardless of image */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#030914]/95 via-[#030914]/40 to-transparent h-48" />
+      
       <div className="absolute inset-0 bg-gradient-to-r from-[#030914] via-[#030914]/80 to-transparent" />
       <div className="absolute inset-0 bg-gradient-to-t from-[#030914] via-transparent to-transparent" />
       
