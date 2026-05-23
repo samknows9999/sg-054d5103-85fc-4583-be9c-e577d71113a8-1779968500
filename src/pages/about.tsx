@@ -17,7 +17,7 @@ export default function About() {
 
       <Navigation />
 
-      <main className="pt-16">
+      <main className="">
         <Hero
           title="Experience, Relationships, Results"
           subtitle="A boutique business advisory firm bringing two decades of hands-on restructuring expertise and deep industry relationships to complex financial challenges."

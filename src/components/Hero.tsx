@@ -10,7 +10,7 @@ interface HeroProps {
 
 export function Hero({ title, subtitle, breadcrumbs, backgroundImage }: HeroProps) {
   return (
-    <section className="relative min-h-[60vh] flex items-center py-20 overflow-hidden bg-[#061124]">
+    <section className="relative min-h-[60vh] flex items-center pt-32 pb-20 md:pt-40 overflow-hidden bg-[#061124]">
       {backgroundImage &&
       <div
         className="absolute inset-0 bg-cover bg-center opacity-30 mix-blend-luminosity"
