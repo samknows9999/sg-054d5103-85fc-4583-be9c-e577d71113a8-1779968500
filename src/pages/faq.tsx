@@ -77,7 +77,7 @@ export default function FAQPage() {
 
       <Navigation />
 
-      <main className="pt-20 md:pt-24">
+      <main className="">
         {/* Section 1: Hero */}
         <section className="relative min-h-[60vh] flex items-center bg-[#000000] overflow-hidden pt-12 pb-24">
           <div className="absolute inset-0 w-full h-full">

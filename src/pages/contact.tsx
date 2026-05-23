@@ -36,7 +36,7 @@ export default function Contact() {
 
       <Navigation />
 
-      <main className="pt-16">
+      <main className="">
         <Hero
           title="Confidential Business Review"
           subtitle="Connect with our experienced advisory team for a confidential discussion about your business challenges and restructuring needs."

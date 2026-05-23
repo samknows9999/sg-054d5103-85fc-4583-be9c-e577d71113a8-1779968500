@@ -15,7 +15,7 @@ export default function Services() {
 
       <Navigation />
 
-      <main className="pt-16">
+      <main className="">
         <Hero
           title="Strategic Business Restructuring Services"
           subtitle="Expert guidance through financial complexity, creditor coordination, and operational stabilization with over two decades of proven experience."
