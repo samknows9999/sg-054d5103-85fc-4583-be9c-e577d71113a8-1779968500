@@ -240,19 +240,19 @@ export default function Home() {
                 </p>
               </div>
               <div className="space-y-6">
-                <div className="p-8 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-colors" style={{ backgroundColor: "#bababa", backgroundImage: "none" }}>
+                <div className="p-8 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-colors" style={{ backgroundColor: "#d1d5db", backgroundImage: "none" }}>
                   <h3 className="font-serif text-2xl font-semibold mb-3 text-white" style={{ color: "#000000" }}>Industry Pioneer</h3>
                   <p className="text-gray-400 font-light" style={{ color: "#1a1a1a" }}>
                     Pioneers in the merchant cash advance industry for over 20 years, with specialized expertise in MCA restructuring and creditor coordination.
                   </p>
                 </div>
-                <div className="p-8 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-colors" style={{ backgroundColor: "#bababa", backgroundImage: "none" }}>
+                <div className="p-8 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-colors" style={{ backgroundColor: "#d1d5db", backgroundImage: "none" }}>
                   <h3 className="font-serif text-2xl font-semibold mb-3 text-white" style={{ color: "#000000" }}>Trusted Advisors</h3>
                   <p className="text-gray-400 font-light" style={{ color: "#1a1a1a" }}>
                     We work diligently with all types of creditors, maintaining professional relationships that benefit our clients' restructuring outcomes.
                   </p>
                 </div>
-                <div className="p-8 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-colors" style={{ backgroundColor: "#bababa", backgroundImage: "none" }}>
+                <div className="p-8 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-colors" style={{ backgroundColor: "#d1d5db", backgroundImage: "none" }}>
                   <h3 className="font-serif text-2xl font-semibold mb-3 text-white" style={{ color: "#000000" }}>Hands-On Approach</h3>
                   <p className="text-gray-400 font-light" style={{ color: "#000000" }}>
                     Direct involvement in every engagement, coordinating with banks, lenders, vendors, attorneys, and financial stakeholders.
