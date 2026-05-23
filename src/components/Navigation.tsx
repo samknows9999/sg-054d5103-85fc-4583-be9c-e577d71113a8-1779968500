@@ -43,7 +43,7 @@ export function Navigation() {
             <div className="flex items-center gap-10 lg:gap-14">
               <Link href="/" className="flex items-center group">
                 <img
-                  src="/fff.png"
+                  src="/Logo_Regroup.png"
                   alt="Regroup Partners"
                   className={`w-auto object-contain transition-all duration-300 ${scrolled ? "h-10 md:h-12" : "h-12 md:h-14"}`} />
               </Link>
