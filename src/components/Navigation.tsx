@@ -14,7 +14,7 @@ export function Navigation() {
 
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      
+
       setScrolled(currentScrollY > 20);
 
       // Hide header when scrolling down past 80px, show when scrolling up
@@ -32,10 +32,10 @@ export function Navigation() {
   }, []);
 
   return (
-    <header 
+    <header
       className={`fixed top-0 left-0 right-0 z-50 w-full flex flex-col transition-transform duration-300 ease-in-out ${isVisible ? "translate-y-0" : "-translate-y-full"} ${scrolled ? "backdrop-blur-xl shadow-2xl" : ""}`}
-      style={{ backgroundColor: scrolled ? '#061124' : 'transparent' }}
-    >
+      style={{ backgroundColor: scrolled ? '#061124' : 'transparent' }}>
+      
       <nav className={`w-full relative transition-all duration-300 ${scrolled ? "border-b border-white/5" : ""}`}>
         <div className="max-w-[1400px] mx-auto px-6">
           <div className="flex items-center justify-between h-16 md:h-20 transition-all duration-300">
@@ -43,7 +43,7 @@ export function Navigation() {
             <div className="flex items-center gap-10 lg:gap-14">
               <Link href="/" className="flex items-center group">
                 <img
-                  src="/logo.jpg"
+                  src="/fff.png"
                   alt="Regroup Partners"
                   className={`w-auto object-contain transition-all duration-300 ${scrolled ? "h-10 md:h-12" : "h-12 md:h-14"}`} />
               </Link>
@@ -60,10 +60,10 @@ export function Navigation() {
                     <ChevronDown className="w-3.5 h-3.5 text-white/60 group-hover:text-white group-hover:rotate-180 transition-all duration-300" />
                   </Link>
                   <div className="absolute top-full left-0 pt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                    <div 
+                    <div
                       className="backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl p-2 overflow-hidden flex flex-col gap-1"
-                      style={{ backgroundColor: 'rgba(6, 17, 36, 0.95)' }}
-                    >
+                      style={{ backgroundColor: 'rgba(6, 17, 36, 0.95)' }}>
+                      
                       <Link href="/about" className="block px-4 py-2.5 text-sm font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">
                         Our Company
                       </Link>
@@ -87,10 +87,10 @@ export function Navigation() {
                     <ChevronDown className="w-3.5 h-3.5 text-white/60 group-hover:text-white group-hover:rotate-180 transition-all duration-300" />
                   </Link>
                   <div className="absolute top-full left-0 pt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                    <div 
+                    <div
                       className="backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl p-2 overflow-hidden flex flex-col gap-1"
-                      style={{ backgroundColor: 'rgba(6, 17, 36, 0.95)' }}
-                    >
+                      style={{ backgroundColor: 'rgba(6, 17, 36, 0.95)' }}>
+                      
                       <Link href="/business-restructuring" className="block px-4 py-2.5 text-sm font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">
                         Business Restructuring
                       </Link>
@@ -158,10 +158,10 @@ export function Navigation() {
           </div>
 
           {isMobileMenuOpen &&
-          <div 
+          <div
             className="md:hidden absolute top-full left-0 right-0 border-t border-white/10 py-4 shadow-xl"
-            style={{ backgroundColor: '#061124' }}
-          >
+            style={{ backgroundColor: '#061124' }}>
+            
               <Link
               href="/"
               className="block px-6 py-3 text-sm font-medium text-white hover:bg-white/5 transition-colors">
