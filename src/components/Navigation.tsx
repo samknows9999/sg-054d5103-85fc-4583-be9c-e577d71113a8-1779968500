@@ -139,8 +139,8 @@ export function Navigation() {
               </a>
               <Link
                 href="/contact"
-                className="flex items-center gap-2 bg-primary text-white px-6 py-2.5 rounded-full hover:bg-primary/90 transition-all duration-300 text-[15px] font-semibold shadow-sm">
-                Get started for Free
+                className="flex items-center gap-2 bg-primary text-white px-6 py-2.5 rounded-full hover:bg-primary/90 transition-all duration-300 text-[15px] font-semibold shadow-sm">Call Now
+
               </Link>
             </div>
 
