@@ -45,8 +45,8 @@ export function Hero({ title, subtitle, breadcrumbs, backgroundImage }: HeroProp
           )}
         </nav>
         
-        <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] max-w-4xl shadow-sm">Reduce Creditor Pressure
-
+        <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] max-w-4xl shadow-sm">
+          {title}
         </h1>
         
         {subtitle &&
