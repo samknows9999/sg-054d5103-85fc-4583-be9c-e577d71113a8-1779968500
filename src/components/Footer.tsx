@@ -6,37 +6,37 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   const columns = [
-    {
-      title: "About",
-      links: [
-        { label: "About Regroup Partners", href: "/about" },
-        { label: "Leadership Team", href: "/team" },
-        { label: "Our Approach", href: "/about#approach" },
-        { label: "Industries We Serve", href: "/cash-flow-improvement#industries" },
-        { label: "Contact Us", href: "/contact" },
-      ]
-    },
-    {
-      title: "Services",
-      links: [
-        { label: "Business Restructuring", href: "/business-restructuring" },
-        { label: "Creditor Coordination", href: "/creditor-coordination" },
-        { label: "Cash Flow Improvement", href: "/cash-flow-improvement" },
-        { label: "MCA Negotiations", href: "/creditor-coordination" },
-        { label: "Financial Advisory", href: "/services" },
-      ]
-    },
-    {
-      title: "Resources",
-      links: [
-        { label: "Case Studies", href: "/insights" },
-        { label: "FAQs", href: "/faq" },
-        { label: "Business Insights", href: "/insights" },
-        { label: "Restructuring Articles", href: "/insights" },
-        { label: "Industry News", href: "/insights" },
-      ]
-    }
-  ];
+  {
+    title: "About",
+    links: [
+    { label: "About Regroup Partners", href: "/about" },
+    { label: "Leadership Team", href: "/team" },
+    { label: "Our Approach", href: "/about#approach" },
+    { label: "Industries We Serve", href: "/cash-flow-improvement#industries" },
+    { label: "Contact Us", href: "/contact" }]
+
+  },
+  {
+    title: "Services",
+    links: [
+    { label: "Business Restructuring", href: "/business-restructuring" },
+    { label: "Creditor Coordination", href: "/creditor-coordination" },
+    { label: "Cash Flow Improvement", href: "/cash-flow-improvement" },
+    { label: "MCA Negotiations", href: "/creditor-coordination" },
+    { label: "Financial Advisory", href: "/services" }]
+
+  },
+  {
+    title: "Resources",
+    links: [
+    { label: "Case Studies", href: "/insights" },
+    { label: "FAQs", href: "/faq" },
+    { label: "Business Insights", href: "/insights" },
+    { label: "Restructuring Articles", href: "/insights" },
+    { label: "Industry News", href: "/insights" }]
+
+  }];
+
 
   return (
     <footer className="bg-white pt-24 pb-8 border-t border-gray-200 font-sans">
@@ -45,15 +45,15 @@ export function Footer() {
         {/* Top Brand Banner */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end pb-12 mb-16 border-b border-gray-200 gap-8">
           <Link href="/" className="inline-block">
-            <img 
-              src="/LUGO.png" 
-              alt="Regroup Partners" 
-              className="h-16 w-auto object-contain"
-            />
+            <img
+              src="/LUGO.png"
+              alt="Regroup Partners"
+              className="h-16 w-auto object-contain" />
+            
           </Link>
           <div className="text-left md:text-right max-w-md">
-            <h3 className="text-2xl font-serif text-black leading-tight">
-              Institutional-grade restructuring and financial advisory.
+            <h3 className="text-2xl font-serif text-black leading-tight">Helping Companies Restore Stability and Growth
+
             </h3>
           </div>
         </div>
@@ -62,26 +62,26 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 lg:gap-12 mb-20">
           
           {/* Navigation Columns */}
-          {columns.map((column, idx) => (
-            <div key={idx}>
+          {columns.map((column, idx) =>
+          <div key={idx}>
               <h4 className="text-lg font-serif font-semibold text-black mb-8">
                 {column.title}
               </h4>
               <ul className="space-y-4">
-                {column.links.map((link, linkIdx) => (
-                  <li key={linkIdx}>
-                    <Link 
-                      href={link.href}
-                      className="group relative inline-flex items-center text-[15px] text-gray-600 hover:text-accent transition-colors duration-300"
-                    >
+                {column.links.map((link, linkIdx) =>
+              <li key={linkIdx}>
+                    <Link
+                  href={link.href}
+                  className="group relative inline-flex items-center text-[15px] text-gray-600 hover:text-accent transition-colors duration-300">
+                  
                       {link.label}
                       <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-accent transition-all duration-300 ease-out group-hover:w-full"></span>
                     </Link>
                   </li>
-                ))}
+              )}
               </ul>
             </div>
-          ))}
+          )}
 
           {/* Contact Column */}
           <div>
@@ -100,20 +100,20 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-4">
                 <Phone className="w-5 h-5 text-gray-400 shrink-0" />
-                <a 
-                  href="tel:954-833-4958" 
-                  className="text-[15px] text-gray-600 hover:text-accent font-medium transition-colors relative group"
-                >
+                <a
+                  href="tel:954-833-4958"
+                  className="text-[15px] text-gray-600 hover:text-accent font-medium transition-colors relative group">
+                  
                   (954) 833-4958
                   <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-accent transition-all duration-300 ease-out group-hover:w-full"></span>
                 </a>
               </li>
               <li className="flex items-center gap-4">
                 <Mail className="w-5 h-5 text-gray-400 shrink-0" />
-                <a 
-                  href="mailto:info@regrouppartners.com" 
-                  className="text-[15px] text-gray-600 hover:text-accent transition-colors relative group"
-                >
+                <a
+                  href="mailto:info@regrouppartners.com"
+                  className="text-[15px] text-gray-600 hover:text-accent transition-colors relative group">
+                  
                   info@regrouppartners.com
                   <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-accent transition-all duration-300 ease-out group-hover:w-full"></span>
                 </a>
@@ -121,59 +121,59 @@ export function Footer() {
             </ul>
 
             <div className="mt-10">
-              <Link 
-                href="/contact" 
-                className="group inline-flex items-center justify-between w-full bg-black text-white px-6 py-4 text-sm font-semibold hover:bg-accent transition-colors duration-300 shadow-md"
-              >
+              <Link
+                href="/contact"
+                className="group inline-flex items-center justify-between w-full bg-black text-white px-6 py-4 text-sm font-semibold hover:bg-accent transition-colors duration-300 shadow-md">
+                
                 <span>Schedule Consultation</span>
                 <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
 
             <div className="mt-8 flex flex-wrap items-center gap-3">
-              <a 
-                href="https://www.linkedin.com/company/regroup-partners/" 
+              <a
+                href="https://www.linkedin.com/company/regroup-partners/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-gray-500 hover:bg-accent hover:border-accent hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
-                aria-label="LinkedIn"
-              >
+                aria-label="LinkedIn">
+                
                 <Linkedin className="w-4 h-4" />
               </a>
-              <a 
-                href="https://x.com/regrouppartners" 
+              <a
+                href="https://x.com/regrouppartners"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-gray-500 hover:bg-accent hover:border-accent hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
-                aria-label="X (Twitter)"
-              >
+                aria-label="X (Twitter)">
+                
                 <Twitter className="w-4 h-4" />
               </a>
-              <a 
-                href="https://www.facebook.com/RegroupPartners/" 
+              <a
+                href="https://www.facebook.com/RegroupPartners/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-gray-500 hover:bg-accent hover:border-accent hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
-                aria-label="Facebook"
-              >
+                aria-label="Facebook">
+                
                 <Facebook className="w-4 h-4" />
               </a>
-              <a 
-                href="https://www.instagram.com/regrouppartners/" 
+              <a
+                href="https://www.instagram.com/regrouppartners/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-gray-500 hover:bg-accent hover:border-accent hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
-                aria-label="Instagram"
-              >
+                aria-label="Instagram">
+                
                 <Instagram className="w-4 h-4" />
               </a>
-              <a 
-                href="https://www.youtube.com/channel/UCny0JsZTbq5eBnbuzJZSJng" 
+              <a
+                href="https://www.youtube.com/channel/UCny0JsZTbq5eBnbuzJZSJng"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-gray-500 hover:bg-accent hover:border-accent hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
-                aria-label="YouTube"
-              >
+                aria-label="YouTube">
+                
                 <Youtube className="w-4 h-4" />
               </a>
             </div>
@@ -227,6 +227,6 @@ export function Footer() {
         </div>
 
       </div>
-    </footer>
-  );
+    </footer>);
+
 }
