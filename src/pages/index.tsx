@@ -19,7 +19,7 @@ export default function Home() {
 
       <Navigation />
 
-      <main className="pt-16">
+      <main className="">
         <Hero
           title="Business Restructuring & Financial Advisory"
           subtitle="Helping businesses navigate financial complexity through strategic restructuring, creditor coordination, and cash flow stabilization."
