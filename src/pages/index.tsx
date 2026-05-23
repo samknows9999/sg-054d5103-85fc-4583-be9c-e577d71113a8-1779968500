@@ -148,7 +148,7 @@ export default function Home() {
             {/* Image Side */}
             <div className="lg:w-1/2 relative min-h-[400px] lg:min-h-full flex items-center p-12 md:p-20 bg-[url('/generated/split-screen-premium-bg.png')] bg-cover bg-center">
               <div className="absolute inset-0 bg-primary/20 mix-blend-multiply"></div>
-              <div className="absolute inset-0 bg-gradient-to-br from-[#0A192F]/95 via-[#0A192F]/80 to-primary/60" style={{ backgroundImage: "none", backgroundColor: "#bababa" }}></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-[#0A192F]/95 via-[#0A192F]/80 to-primary/60" style={{ backgroundImage: "none", backgroundColor: "#9b9b9b", backgroundSize: "auto" }}></div>
               {/* Decorative architectural border */}
               <div className="absolute inset-6 md:inset-10 border border-white/10 rounded-sm pointer-events-none hidden md:block"></div>
               
@@ -210,7 +210,7 @@ export default function Home() {
                     <textarea id="message" rows={3} className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none"></textarea>
                   </div>
 
-                  <Button type="submit" className="w-full py-6 text-base font-semibold bg-primary hover:bg-primary/90 text-white mt-4 shadow-lg shadow-primary/20">
+                  <Button type="submit" className="w-full py-6 text-base font-semibold bg-primary hover:bg-primary/90 text-white mt-4 shadow-lg shadow-primary/20" style={{ backgroundColor: "#bababa", backgroundImage: "none", color: "#000000" }}>
                     Request Consultation
                   </Button>
                 </form>
