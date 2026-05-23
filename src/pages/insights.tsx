@@ -53,7 +53,7 @@ export default function Insights() {
 
       <Navigation />
 
-      <main className="pt-16">
+      <main className="">
         <Hero
           title="Insights & Expertise"
           subtitle="Strategic perspectives on business restructuring, financial stabilization, and creditor coordination from our advisory team."
