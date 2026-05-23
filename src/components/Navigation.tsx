@@ -34,10 +34,13 @@ export function Navigation() {
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 w-full flex flex-col transition-transform duration-300 ease-in-out ${isVisible ? "translate-y-0" : "-translate-y-full"}`}>
       {/* 
-        Forcing a consistent dark background when scrolled ensures white text is always visible.
-        Using #061124 to perfectly match the hero section background.
+        Using inline styles to absolutely guarantee the background color applies 
+        correctly and never defaults to white due to CSS caching or class conflicts.
       */}
-      <nav className={`w-full relative transition-all duration-300 ${scrolled ? "bg-[#061124] !bg-[#061124] backdrop-blur-xl border-b border-white/5 shadow-2xl" : "bg-transparent"}`}>
+      <nav 
+        className={`w-full relative transition-all duration-300 ${scrolled ? "backdrop-blur-xl border-b border-white/5 shadow-2xl" : ""}`}
+        style={{ backgroundColor: scrolled ? '#061124' : 'transparent' }}
+      >
         <div className="max-w-[1400px] mx-auto px-6">
           <div className="flex items-center justify-between h-16 md:h-20 transition-all duration-300">
             
@@ -61,7 +64,10 @@ export function Navigation() {
                     <ChevronDown className="w-3.5 h-3.5 text-white/60 group-hover:text-white group-hover:rotate-180 transition-all duration-300" />
                   </Link>
                   <div className="absolute top-full left-0 pt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                    <div className="bg-[#061124]/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl p-2 overflow-hidden flex flex-col gap-1">
+                    <div 
+                      className="backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl p-2 overflow-hidden flex flex-col gap-1"
+                      style={{ backgroundColor: 'rgba(6, 17, 36, 0.95)' }}
+                    >
                       <Link href="/about" className="block px-4 py-2.5 text-sm font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">
                         Our Company
                       </Link>
@@ -85,7 +91,10 @@ export function Navigation() {
                     <ChevronDown className="w-3.5 h-3.5 text-white/60 group-hover:text-white group-hover:rotate-180 transition-all duration-300" />
                   </Link>
                   <div className="absolute top-full left-0 pt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                    <div className="bg-[#061124]/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl p-2 overflow-hidden flex flex-col gap-1">
+                    <div 
+                      className="backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl p-2 overflow-hidden flex flex-col gap-1"
+                      style={{ backgroundColor: 'rgba(6, 17, 36, 0.95)' }}
+                    >
                       <Link href="/business-restructuring" className="block px-4 py-2.5 text-sm font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">
                         Business Restructuring
                       </Link>
@@ -153,7 +162,10 @@ export function Navigation() {
           </div>
 
           {isMobileMenuOpen &&
-          <div className="md:hidden absolute top-full left-0 right-0 bg-[#061124] border-t border-white/10 py-4 shadow-xl">
+          <div 
+            className="md:hidden absolute top-full left-0 right-0 border-t border-white/10 py-4 shadow-xl"
+            style={{ backgroundColor: '#061124' }}
+          >
               <Link
               href="/"
               className="block px-6 py-3 text-sm font-medium text-white hover:bg-white/5 transition-colors">
