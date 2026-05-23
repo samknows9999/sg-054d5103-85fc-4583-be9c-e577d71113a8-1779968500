@@ -98,7 +98,7 @@ export default function CreditorCoordination() {
       <main className="bg-[#061124]">
         {/* SECTION 1 - HERO */}
         <Hero
-          title="Professional Creditor Coordination Services for Businesses Under Financial Pressure"
+          title="Supporting Businesses Through Financial Negotiations"
           subtitle="Helping businesses communicate with creditors, reduce financial pressure, stabilize cash flow, and create manageable repayment solutions."
           breadcrumbs={[
             { label: "Home", href: "/" },
