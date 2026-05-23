@@ -52,8 +52,8 @@ export function Footer() {
             
           </Link>
           <div className="text-left md:text-right max-w-md">
-            <h3 className="text-2xl font-serif text-black leading-tight" style={{ textAlign: "center" }}>Helping Companies Restore 
-Stability and Growth
+            <h3 className="text-2xl font-serif text-black leading-tight" style={{ textAlign: "center" }}>Helping Companies Restore Stability & Growth
+
             </h3>
           </div>
         </div>
