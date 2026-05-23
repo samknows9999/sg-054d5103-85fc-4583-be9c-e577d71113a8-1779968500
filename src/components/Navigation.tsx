@@ -33,7 +33,7 @@ export function Navigation() {
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 w-full flex flex-col transition-transform duration-300 ease-in-out ${isVisible ? "translate-y-0" : "-translate-y-full"}`}>
-      <nav className={`w-full relative transition-all duration-300 ${scrolled ? "bg-[#061124]/95 backdrop-blur-lg border-b border-white/10 shadow-lg" : "bg-transparent"}`}>
+      <nav className={`w-full relative transition-all duration-300 ${scrolled ? "bg-[#061124]/95 backdrop-blur-lg border-b border-white/10 shadow-lg" : "bg-black/30 backdrop-blur-md border-b border-white/5"}`}>
         <div className="max-w-[1400px] mx-auto px-6">
           <div className="flex items-center justify-between h-16 md:h-20 transition-all duration-300">
             <Link href="/" className="flex items-center group">
