@@ -154,14 +154,14 @@ export default function Home() {
               
               <div className="relative z-10 max-w-lg">
                 <div className="inline-flex items-center gap-3 px-5 py-2 bg-white/5 border border-white/10 backdrop-blur-md rounded-full mb-8">
-                  <div className="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
-                  <span className="text-sm font-semibold text-white tracking-widest uppercase">Discreet & Confidential</span>
+                  <div className="w-2 h-2 rounded-full bg-primary animate-pulse" style={{ backgroundColor: "#000000", backgroundImage: "none" }}></div>
+                  <span className="text-sm font-semibold text-white tracking-widest uppercase" style={{ color: "#000000" }}>Discreet & Confidential</span>
                 </div>
                 <h2 className="font-serif text-3xl md:text-5xl font-semibold mb-6 leading-tight text-white drop-shadow-md">
                   Navigate Financial Complexity With Confidence.
                 </h2>
-                <div className="w-16 h-1 bg-primary mb-8"></div>
-                <p className="text-gray-300 text-lg md:text-xl leading-relaxed font-light">
+                <div className="w-16 h-1 bg-primary mb-8" style={{ backgroundColor: "#000000", backgroundImage: "none" }}></div>
+                <p className="text-gray-300 text-lg md:text-xl leading-relaxed font-light" style={{ color: "#000000" }}>
                   Partner with a specialized advisory firm that understands the intricacies of restructuring, creditor coordination, and cash flow stabilization.
                 </p>
               </div>
