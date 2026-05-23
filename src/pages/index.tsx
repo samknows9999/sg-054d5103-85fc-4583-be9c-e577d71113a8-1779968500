@@ -148,7 +148,7 @@ export default function Home() {
             {/* Image Side */}
             <div className="lg:w-1/2 relative min-h-[400px] lg:min-h-full flex items-center p-12 md:p-20 bg-[url('/generated/split-screen-premium-bg.png')] bg-cover bg-center">
               <div className="absolute inset-0 bg-primary/20 mix-blend-multiply"></div>
-              <div className="absolute inset-0 bg-gradient-to-br from-[#0A192F]/95 via-[#0A192F]/80 to-primary/60"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-[#0A192F]/95 via-[#0A192F]/80 to-primary/60" style={{ backgroundImage: "linear-gradient(135deg, #e5e5e5 0%, rgba(10, 25, 47, 0.8) 50%, #a3a3a3 100%)", backgroundColor: "transparent" }}></div>
               {/* Decorative architectural border */}
               <div className="absolute inset-6 md:inset-10 border border-white/10 rounded-sm pointer-events-none hidden md:block"></div>
               
