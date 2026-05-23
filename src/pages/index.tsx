@@ -220,41 +220,41 @@ export default function Home() {
         </section>
 
         {/* Experience - Dark Mode */}
-        <section className="py-24 md:py-32 bg-[#061124] text-white relative overflow-hidden">
+        <section className="py-24 md:py-32 text-white relative overflow-hidden" style={{ backgroundColor: "#f3f4f6", backgroundImage: "none" }}>
           <div className="absolute top-0 right-0 -mr-40 -mt-40 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl mix-blend-screen pointer-events-none"></div>
           
           <div className="max-w-[1400px] mx-auto px-6 relative z-10">
             <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
               <div>
                 <div className="inline-flex items-center gap-3 px-4 py-2 bg-white/5 border border-white/10 rounded-full mb-8 backdrop-blur-sm">
-                  <span className="text-sm font-semibold text-white tracking-widest uppercase">21+ Years Experience</span>
+                  <span className="text-sm font-semibold text-white tracking-widest uppercase" style={{ color: "#000000" }}>21+ Years Experience</span>
                 </div>
-                <h2 className="font-serif text-4xl md:text-5xl font-bold mb-6 text-white leading-tight">
+                <h2 className="font-serif text-4xl md:text-5xl font-bold mb-6 text-white leading-tight" style={{ color: "#000000" }}>
                   Experience, Relationships, Results
                 </h2>
-                <p className="text-lg text-gray-300 mb-6 leading-relaxed font-light">
+                <p className="text-lg text-gray-300 mb-6 leading-relaxed font-light" style={{ color: "#000000" }}>
                   As a women-owned and operated professional business advisory firm, we bring more than two decades of hands-on restructuring experience and deep industry relationships.
                 </p>
-                <p className="text-lg text-gray-300 leading-relaxed font-light">
+                <p className="text-lg text-gray-300 leading-relaxed font-light" style={{ color: "#000000" }}>
                   We maintain longstanding relationships with lenders, attorneys, and restructuring professionals. Our value comes from our experience, reputation, and commitment to standing behind our clients through complex financial challenges.
                 </p>
               </div>
               <div className="space-y-6">
-                <div className="p-8 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-colors">
-                  <h3 className="font-serif text-2xl font-semibold mb-3 text-white">Industry Pioneer</h3>
-                  <p className="text-gray-400 font-light">
+                <div className="p-8 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-colors" style={{ backgroundColor: "#bababa", backgroundImage: "none" }}>
+                  <h3 className="font-serif text-2xl font-semibold mb-3 text-white" style={{ color: "#000000" }}>Industry Pioneer</h3>
+                  <p className="text-gray-400 font-light" style={{ color: "#1a1a1a" }}>
                     Pioneers in the merchant cash advance industry for over 20 years, with specialized expertise in MCA restructuring and creditor coordination.
                   </p>
                 </div>
-                <div className="p-8 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-colors">
-                  <h3 className="font-serif text-2xl font-semibold mb-3 text-white">Trusted Advisors</h3>
-                  <p className="text-gray-400 font-light">
+                <div className="p-8 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-colors" style={{ backgroundColor: "#bababa", backgroundImage: "none" }}>
+                  <h3 className="font-serif text-2xl font-semibold mb-3 text-white" style={{ color: "#000000" }}>Trusted Advisors</h3>
+                  <p className="text-gray-400 font-light" style={{ color: "#1a1a1a" }}>
                     We work diligently with all types of creditors, maintaining professional relationships that benefit our clients' restructuring outcomes.
                   </p>
                 </div>
-                <div className="p-8 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-colors">
-                  <h3 className="font-serif text-2xl font-semibold mb-3 text-white">Hands-On Approach</h3>
-                  <p className="text-gray-400 font-light">
+                <div className="p-8 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-colors" style={{ backgroundColor: "#bababa", backgroundImage: "none" }}>
+                  <h3 className="font-serif text-2xl font-semibold mb-3 text-white" style={{ color: "#000000" }}>Hands-On Approach</h3>
+                  <p className="text-gray-400 font-light" style={{ color: "#000000" }}>
                     Direct involvement in every engagement, coordinating with banks, lenders, vendors, attorneys, and financial stakeholders.
                   </p>
                 </div>
