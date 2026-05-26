@@ -289,11 +289,11 @@ export default function TeamPage() {
                   
                 </div>
                 <div className="p-6">
-                  <h3 className="font-serif text-xl font-semibold mb-1 text-foreground">
-                    Amanda Foster
+                  <h3 className="font-serif text-xl font-semibold mb-1 text-foreground">Laura Kaiser
+
                   </h3>
-                  <p className="text-accent font-semibold mb-3">
-                    Client Relations Manager
+                  <p className="text-accent font-semibold mb-3">Business Analyst
+
                   </p>
                   <p className="text-sm text-gray-600 leading-relaxed">
                     9+ years managing client relationships and coordinating between business owners, creditors, and legal counsel. Ensures seamless communication throughout restructuring engagements.
