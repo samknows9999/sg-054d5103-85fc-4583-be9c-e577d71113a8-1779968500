@@ -16,8 +16,8 @@ export default function TeamPage() {
       <SEO
         title="Our Team - Regroup Partners"
         description="Meet the experienced leadership team at Regroup Partners. Women-owned and operated with 21+ years of business restructuring expertise."
-        url="https://regrouppartners.com/team"
-      />
+        url="https://regrouppartners.com/team" />
+      
 
       <Navigation />
 
@@ -25,11 +25,11 @@ export default function TeamPage() {
         title="Our Team"
         subtitle="Experienced leadership delivering institutional-grade restructuring advisory and creditor coordination services."
         breadcrumbs={[
-          { label: "Home", href: "/" },
-          { label: "Our Team" }
-        ]}
-        backgroundImage="/generated/about-team-advisory.png"
-      />
+        { label: "Home", href: "/" },
+        { label: "Our Team" }]
+        }
+        backgroundImage="/generated/about-team-advisory.png" />
+      
 
       <main>
         <section className="py-20 md:py-32 bg-white">
@@ -56,8 +56,8 @@ export default function TeamPage() {
                       <img
                         src="/claudia-stefano.jpg"
                         alt="Claudia Stefano - Chief Strategy Officer"
-                        className="absolute inset-0 w-full h-full object-cover"
-                      />
+                        className="absolute inset-0 w-full h-full object-cover" />
+                      
                     </div>
                   </div>
 
@@ -180,8 +180,8 @@ export default function TeamPage() {
                   <img
                     src="/generated/team-member-1.png"
                     alt="Michael Harrison"
-                    className="absolute inset-0 w-full h-full object-cover"
-                  />
+                    className="absolute inset-0 w-full h-full object-cover" />
+                  
                 </div>
                 <div className="p-6">
                   <h3 className="font-serif text-xl font-semibold mb-1 text-foreground">
@@ -201,8 +201,8 @@ export default function TeamPage() {
                   <img
                     src="/generated/team-member-2.png"
                     alt="Jennifer Martinez"
-                    className="absolute inset-0 w-full h-full object-cover"
-                  />
+                    className="absolute inset-0 w-full h-full object-cover" />
+                  
                 </div>
                 <div className="p-6">
                   <h3 className="font-serif text-xl font-semibold mb-1 text-foreground">
@@ -222,12 +222,12 @@ export default function TeamPage() {
                   <img
                     src="/generated/team-member-3.png"
                     alt="David Chen"
-                    className="absolute inset-0 w-full h-full object-cover"
-                  />
+                    className="absolute inset-0 w-full h-full object-cover" />
+                  
                 </div>
                 <div className="p-6">
-                  <h3 className="font-serif text-xl font-semibold mb-1 text-foreground">
-                    David Chen
+                  <h3 className="font-serif text-xl font-semibold mb-1 text-foreground">William McCoy
+
                   </h3>
                   <p className="text-accent font-semibold mb-3">
                     Financial Analysis Director
@@ -243,8 +243,8 @@ export default function TeamPage() {
                   <img
                     src="/generated/team-member-4.png"
                     alt="Patricia Williams"
-                    className="absolute inset-0 w-full h-full object-cover"
-                  />
+                    className="absolute inset-0 w-full h-full object-cover" />
+                  
                 </div>
                 <div className="p-6">
                   <h3 className="font-serif text-xl font-semibold mb-1 text-foreground">
@@ -264,8 +264,8 @@ export default function TeamPage() {
                   <img
                     src="/generated/team-member-5.png"
                     alt="Robert Sullivan"
-                    className="absolute inset-0 w-full h-full object-cover"
-                  />
+                    className="absolute inset-0 w-full h-full object-cover" />
+                  
                 </div>
                 <div className="p-6">
                   <h3 className="font-serif text-xl font-semibold mb-1 text-foreground">
@@ -285,8 +285,8 @@ export default function TeamPage() {
                   <img
                     src="/generated/team-member-6.png"
                     alt="Amanda Foster"
-                    className="absolute inset-0 w-full h-full object-cover"
-                  />
+                    className="absolute inset-0 w-full h-full object-cover" />
+                  
                 </div>
                 <div className="p-6">
                   <h3 className="font-serif text-xl font-semibold mb-1 text-foreground">
@@ -375,11 +375,11 @@ export default function TeamPage() {
                   
                   <div className="space-y-2.5 text-left">
                     <Label htmlFor="description" className="text-gray-900 font-semibold text-sm">Brief Description of Situation</Label>
-                    <Textarea 
-                      id="description" 
+                    <Textarea
+                      id="description"
                       placeholder="Please briefly describe your current challenges..."
-                      className="min-h-[140px] resize-y bg-gray-50/50 rounded-xl border-gray-200 p-4 focus-visible:ring-accent focus-visible:border-accent text-base"
-                    />
+                      className="min-h-[140px] resize-y bg-gray-50/50 rounded-xl border-gray-200 p-4 focus-visible:ring-accent focus-visible:border-accent text-base" />
+                    
                   </div>
                   
                   <Button className="w-full bg-accent hover:bg-accent/90 text-white h-16 rounded-xl text-lg font-semibold mt-4 shadow-lg shadow-accent/20 transition-all hover:shadow-accent/40 hover:-translate-y-0.5">
@@ -393,6 +393,6 @@ export default function TeamPage() {
       </main>
 
       <Footer />
-    </>
-  );
+    </>);
+
 }
