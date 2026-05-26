@@ -205,8 +205,8 @@ export default function TeamPage() {
                   
                 </div>
                 <div className="p-6">
-                  <h3 className="font-serif text-xl font-semibold mb-1 text-foreground">
-                    Jennifer Martinez
+                  <h3 className="font-serif text-xl font-semibold mb-1 text-foreground">Carolyn Wade
+
                   </h3>
                   <p className="text-accent font-semibold mb-3">
                     Senior Restructuring Advisor
@@ -247,8 +247,8 @@ export default function TeamPage() {
                   
                 </div>
                 <div className="p-6">
-                  <h3 className="font-serif text-xl font-semibold mb-1 text-foreground">
-                    Patricia Williams
+                  <h3 className="font-serif text-xl font-semibold mb-1 text-foreground">Patricia Conolly
+
                   </h3>
                   <p className="text-accent font-semibold mb-3">
                     Operations Director
