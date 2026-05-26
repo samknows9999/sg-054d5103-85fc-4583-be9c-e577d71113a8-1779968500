@@ -38,13 +38,13 @@ export function Navigation() {
       
       <nav className={`w-full relative transition-all duration-300 ${scrolled ? "border-b border-white/5" : ""}`}>
         <div className="max-w-[1400px] mx-auto px-6">
-          <div className="flex items-center justify-between h-16 md:h-20 transition-all duration-300">
+          <div className="flex items-center justify-between h-20 md:h-24 transition-all duration-300">
             
-            <Link href="/" className="flex items-center group">
+            <Link href="/" className="flex items-center group py-2">
               <img
                 src="/Logo_Regroup.png"
                 alt="Regroup Partners"
-                className={`w-auto object-contain transition-all duration-300 ${scrolled ? "h-10 md:h-12" : "h-12 md:h-14"}`} />
+                className={`w-auto object-contain transition-all duration-300 ${scrolled ? "h-14 md:h-16" : "h-16 md:h-[80px]"}`} />
             </Link>
 
             <div className="hidden md:flex items-center gap-8">

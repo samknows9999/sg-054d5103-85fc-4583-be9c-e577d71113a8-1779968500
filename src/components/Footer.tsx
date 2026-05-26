@@ -48,7 +48,7 @@ export function Footer() {
             <img
               src="/LUGO.png"
               alt="Regroup Partners"
-              className="h-16 w-auto object-contain" />
+              className="h-20 md:h-28 w-auto object-contain" />
             
           </Link>
           <div className="text-left md:text-right max-w-md">
