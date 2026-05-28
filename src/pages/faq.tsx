@@ -68,7 +68,7 @@ export default function FAQPage() {
                 "postalCode": "33487",
                 "addressCountry": "US"
               },
-              "telephone": "+19548334958",
+              "telephone": "+19542342300",
               "url": "https://regrouppartners.com"
             })
           }} />
@@ -104,7 +104,7 @@ export default function FAQPage() {
                     Schedule Free Consultation
                   </Button>
                 </Link>
-                <a href="tel:954-833-4958" className="inline-flex">
+                <a href="tel:954-234-2300" className="inline-flex">
                   <Button variant="outline" className="w-full sm:w-auto border-white/20 text-white hover:bg-white/10 px-8 h-14 rounded-sm text-base font-medium backdrop-blur-sm">
                     Speak With a Specialist
                   </Button>
@@ -414,8 +414,8 @@ export default function FAQPage() {
                   </div>
                   <div>
                     <p className="text-sm text-gray-500 font-medium mb-1 uppercase tracking-wider">Speak with an advisor</p>
-                    <a href="tel:954-833-4958" className="text-2xl font-semibold text-white hover:text-accent transition-colors">
-                      954-833-4958
+                    <a href="tel:954-234-2300" className="text-2xl font-semibold text-white hover:text-accent transition-colors">
+                      954-234-2300
                     </a>
                   </div>
                 </div>

@@ -332,8 +332,8 @@ export default function TeamPage() {
                   </div>
                   <div>
                     <p className="text-sm text-gray-500 font-medium mb-1 uppercase tracking-wider">Speak with an advisor immediately</p>
-                    <a href="tel:955-833-4958" className="text-2xl font-semibold text-white hover:text-accent transition-colors">
-                      955-833-4958
+                    <a href="tel:954-234-2300" className="text-2xl font-semibold text-white hover:text-accent transition-colors">
+                      954-234-2300
                     </a>
                   </div>
                 </div>

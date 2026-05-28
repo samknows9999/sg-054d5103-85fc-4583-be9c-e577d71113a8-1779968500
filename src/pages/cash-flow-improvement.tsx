@@ -91,7 +91,7 @@ export default function CashFlowImprovement() {
       "postalCode": "33487",
       "addressCountry": "US"
     },
-    "telephone": "(954) 833-4958",
+    "telephone": "(954) 234-2300",
     "url": "https://regrouppartners.com/cash-flow-improvement"
   };
 
@@ -136,7 +136,7 @@ export default function CashFlowImprovement() {
                     Get Free Consultation
                   </Button>
                 </Link>
-                <a href="tel:954-833-4958">
+                <a href="tel:954-234-2300">
                   <Button variant="outline" className="w-full sm:w-auto bg-transparent border-white/30 text-white hover:bg-white/10 h-14 px-8 rounded-sm text-lg font-medium">
                     Speak With a Cash Flow Specialist
                   </Button>
@@ -408,8 +408,8 @@ export default function CashFlowImprovement() {
                     </div>
                     <div>
                       <p className="text-sm text-gray-400 font-medium mb-1">Speak with an advisor immediately</p>
-                      <a href="tel:954-833-4958" className="text-2xl font-semibold text-white hover:text-accent transition-colors">
-                        (954) 833-4958
+                      <a href="tel:954-234-2300" className="text-2xl font-semibold text-white hover:text-accent transition-colors">
+                        (954) 234-2300
                       </a>
                     </div>
                   </div>

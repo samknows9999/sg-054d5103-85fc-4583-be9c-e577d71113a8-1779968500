@@ -34,7 +34,7 @@ export default function BusinessRestructuring() {
               "image": "https://regrouppartners.com/og-image.png",
               "@id": "https://regrouppartners.com",
               "url": "https://regrouppartners.com/business-restructuring",
-              "telephone": "+19548334958",
+              "telephone": "+1-954-234-2300",
               "address": {
                 "@type": "PostalAddress",
                 "addressLocality": "Boca Raton",
@@ -82,7 +82,7 @@ export default function BusinessRestructuring() {
                     Get Free Consultation
                   </Button>
                 </Link>
-                <a href="tel:9548334958">
+                <a href="tel:954-234-2300">
                   <Button size="lg" variant="outline" className="w-full sm:w-auto bg-white/5 hover:bg-white/10 text-white border-white/20 px-8 py-7 text-lg font-semibold backdrop-blur-sm">
                     Speak With a Specialist
                   </Button>
@@ -391,8 +391,8 @@ export default function BusinessRestructuring() {
                     </div>
                     <div>
                       <div className="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-1">Call Us Directly</div>
-                      <a href="tel:9548334958" className="text-3xl font-serif font-bold text-white hover:text-primary transition-colors">
-                        (954) 833-4958
+                      <a href="tel:954-234-2300" className="text-3xl font-serif font-bold text-white hover:text-primary transition-colors">
+                        (954) 234-2300
                       </a>
                     </div>
                   </div>

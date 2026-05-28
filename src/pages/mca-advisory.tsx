@@ -111,7 +111,7 @@ export default function MCAAdvisory() {
     "name": "Regroup Partners",
     "image": "https://regrouppartners.com/logo.jpg",
     "url": "https://regrouppartners.com",
-    "telephone": "954-833-4958",
+    "telephone": "954-234-2300",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "5255 North Federal Highway Suite 301",
@@ -166,7 +166,7 @@ export default function MCAAdvisory() {
                     Get Free Consultation
                   </Button>
                 </Link>
-                <Link href="tel:9548334958">
+                <Link href="tel:954-234-2300">
                   <Button variant="outline" className="w-full sm:w-auto h-12 px-8 text-base bg-white/5 border-white/20 text-white hover:bg-white/10 backdrop-blur-sm">
                     Speak With an MCA Specialist
                   </Button>
@@ -498,7 +498,7 @@ export default function MCAAdvisory() {
                       </div>
                       <div>
                         <div className="text-sm text-gray-400 font-medium mb-1">Call for immediate advisory</div>
-                        <a href="tel:9548334958" className="text-2xl font-bold hover:text-accent transition-colors">954-833-4958</a>
+                        <a href="tel:954-234-2300" className="text-2xl font-bold hover:text-accent transition-colors">954-234-2300</a>
                       </div>
                     </div>
                   </div>

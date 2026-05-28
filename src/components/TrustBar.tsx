@@ -23,13 +23,13 @@ export function TrustBar() {
         </div>
         
         <a 
-          href="tel:9548334958" 
+          href="tel:954-234-2300" 
           className="flex items-center justify-center gap-3 hover:text-white group transition-all text-sm md:text-sm font-medium text-white/80 w-full md:w-auto"
         >
           <div className="w-8 h-8 rounded-full bg-primary border border-primary flex items-center justify-center transition-all shadow-sm">
             <Phone className="w-3.5 h-3.5 text-white" />
           </div>
-          <span className="tracking-widest">(954) 833-4958</span>
+          <span className="tracking-widest">(954) 234-2300</span>
         </a>
       </div>
     </div>
