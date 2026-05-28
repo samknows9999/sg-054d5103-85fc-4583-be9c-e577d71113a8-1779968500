@@ -11,6 +11,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
 import { 
   TrendingDown, AlertCircle, Clock, CreditCard, Receipt, 
   Calculator, Shield, LineChart, Target, Building, 
@@ -80,12 +81,20 @@ const faqs = [
 
 export default function CashFlowImprovement() {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     window.location.href = 'mailto:laura@regrouppartners.com,claudia@regrouppartners.com?subject=Cash Flow Assessment Request';
-    setTimeout(() => setIsSubmitting(false), 1000);
+    
+    setTimeout(() => {
+      setIsSubmitting(false);
+      toast({
+        title: "Assessment Request Sent",
+        description: "We'll analyze your situation and contact you promptly.",
+      });
+    }, 1000);
   };
 
   const schemaData = {

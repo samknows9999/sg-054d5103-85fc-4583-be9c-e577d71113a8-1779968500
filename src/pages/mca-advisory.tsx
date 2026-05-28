@@ -11,6 +11,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
 import { 
   Building2, LineChart, Shield, Target, Phone, MapPin, CheckCircle2, 
   ArrowRight, FileWarning, Wallet, TrendingDown, Clock, CreditCard, 
@@ -94,12 +95,20 @@ const faqs = [
 
 export default function MCAAdvisory() {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     window.location.href = 'mailto:laura@regrouppartners.com,claudia@regrouppartners.com?subject=MCA Advisory Consultation Request';
-    setTimeout(() => setIsSubmitting(false), 1000);
+    
+    setTimeout(() => {
+      setIsSubmitting(false);
+      toast({
+        title: "MCA Consultation Request Sent",
+        description: "Our MCA specialists will review your situation and contact you soon.",
+      });
+    }, 1000);
   };
 
   const faqSchema = {

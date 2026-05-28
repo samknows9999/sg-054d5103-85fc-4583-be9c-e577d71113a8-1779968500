@@ -10,15 +10,24 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
 
 export default function TeamPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     window.location.href = 'mailto:laura@regrouppartners.com,claudia@regrouppartners.com?subject=Business Review Request';
-    setTimeout(() => setIsSubmitting(false), 1000);
+    
+    setTimeout(() => {
+      setIsSubmitting(false);
+      toast({
+        title: "Business Review Request Submitted",
+        description: "Thank you for reaching out. We'll be in touch soon.",
+      });
+    }, 1000);
   };
 
   return (

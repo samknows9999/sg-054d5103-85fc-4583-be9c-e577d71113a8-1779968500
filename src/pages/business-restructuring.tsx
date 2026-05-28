@@ -6,6 +6,7 @@ import { Card } from "@/components/ui/card";
 import { TrustBar } from "@/components/TrustBar";
 import { AsSeenOn } from "@/components/AsSeenOn";
 import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
 import {
   Accordion,
   AccordionContent,
@@ -23,12 +24,20 @@ import Head from "next/head";
 
 export default function BusinessRestructuring() {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     window.location.href = 'mailto:laura@regrouppartners.com,claudia@regrouppartners.com?subject=Business Restructuring Consultation Request';
-    setTimeout(() => setIsSubmitting(false), 1000);
+    
+    setTimeout(() => {
+      setIsSubmitting(false);
+      toast({
+        title: "Request Submitted Successfully",
+        description: "Our restructuring team will contact you within one business day.",
+      });
+    }, 1000);
   };
 
   return (

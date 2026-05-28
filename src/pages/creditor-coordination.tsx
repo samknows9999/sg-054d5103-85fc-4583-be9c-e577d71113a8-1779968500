@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
 import { 
   Building2, Shield, TrendingUp, AlertTriangle, FileText, 
   Briefcase, MessageSquare, Clock, Phone, Scale, Lock, Users, Loader2
@@ -57,12 +58,20 @@ const faqs = [
 
 export default function CreditorCoordination() {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     window.location.href = 'mailto:laura@regrouppartners.com,claudia@regrouppartners.com?subject=Creditor Coordination Consultation Request';
-    setTimeout(() => setIsSubmitting(false), 1000);
+    
+    setTimeout(() => {
+      setIsSubmitting(false);
+      toast({
+        title: "Consultation Request Received",
+        description: "Our coordination team will reach out shortly to discuss your situation.",
+      });
+    }, 1000);
   };
 
   return (

@@ -11,6 +11,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
 import {
   ArrowRight, Shield, Phone,
   MapPin, CheckCircle2, TrendingUp,
@@ -19,12 +20,20 @@ import {
 
 export default function FAQPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     window.location.href = 'mailto:laura@regrouppartners.com,claudia@regrouppartners.com?subject=FAQ Consultation Request';
-    setTimeout(() => setIsSubmitting(false), 1000);
+    
+    setTimeout(() => {
+      setIsSubmitting(false);
+      toast({
+        title: "Question Submitted",
+        description: "Our team will get back to you with answers shortly.",
+      });
+    }, 1000);
   };
 
   return (
