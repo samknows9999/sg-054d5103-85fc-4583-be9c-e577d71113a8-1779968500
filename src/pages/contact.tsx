@@ -17,7 +17,19 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+    const emailBody = `
+Company Name: ${formData.companyName}
+Contact Name: ${formData.contactName}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Revenue Range: ${formData.revenueRange}
+Preferred Contact: ${formData.preferredContact}
+
+Financial Situation:
+${formData.financialConcerns}
+    `.trim();
+    
+    window.location.href = `mailto:laura@regrouppartners.com,claudia@regrouppartners.com?subject=Confidential Business Review Request&body=${encodeURIComponent(emailBody)}`;
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -126,8 +138,8 @@ export default function Contact() {
                         </svg>
                         <div>
                           <div className="font-semibold text-foreground">Email</div>
-                          <a href="mailto:contact@regrouppartners.com" className="text-accent hover:underline">
-                            contact@regrouppartners.com
+                          <a href="mailto:laura@regrouppartners.com,claudia@regrouppartners.com" className="text-accent hover:underline">
+                            laura@regrouppartners.com
                           </a>
                         </div>
                       </div>

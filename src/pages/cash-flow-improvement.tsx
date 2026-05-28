@@ -427,7 +427,7 @@ export default function CashFlowImprovement() {
                 </div>
                 
                 <div className="bg-white rounded-[2rem] p-8 md:p-10 shadow-2xl shadow-black/40 relative">
-                  <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
+                  <form className="space-y-5" onSubmit={(e) => { e.preventDefault(); window.location.href = 'mailto:laura@regrouppartners.com,claudia@regrouppartners.com?subject=Cash Flow Assessment Request'; }}>
                     <div className="space-y-2 text-left">
                       <Label htmlFor="name" className="text-gray-700 font-medium">Name</Label>
                       <Input id="name" placeholder="Full Name" className="bg-gray-50 h-12 rounded-xl border-gray-200 focus-visible:ring-accent" />

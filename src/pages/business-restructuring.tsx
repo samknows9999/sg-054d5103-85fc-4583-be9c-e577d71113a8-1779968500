@@ -414,7 +414,7 @@ export default function BusinessRestructuring() {
                 <h3 className="font-serif text-3xl font-semibold text-[#0A192F] mb-2">Request Consultation</h3>
                 <p className="text-gray-500 mb-8">Submit your details for a free, confidential review of your situation.</p>
                 
-                <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
+                <form className="space-y-5" onSubmit={(e) => { e.preventDefault(); window.location.href = 'mailto:laura@regrouppartners.com,claudia@regrouppartners.com?subject=Business Restructuring Consultation Request'; }}>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div className="space-y-2">
                       <label htmlFor="cta-first" className="text-sm font-semibold text-[#0A192F]">First Name</label>

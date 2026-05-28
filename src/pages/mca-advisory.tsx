@@ -519,7 +519,7 @@ export default function MCAAdvisory() {
                   <h3 className="text-2xl font-bold text-foreground mb-2">Request an Advisory Session</h3>
                   <p className="text-foreground/60 mb-8">Fill out the form below and a specialist will contact you confidentially.</p>
                   
-                  <form className="space-y-6">
+                  <form className="space-y-6" onSubmit={(e) => { e.preventDefault(); window.location.href = 'mailto:laura@regrouppartners.com,claudia@regrouppartners.com?subject=MCA Advisory Consultation Request'; }}>
                     <div className="grid grid-cols-2 gap-6">
                       <div className="space-y-2">
                         <Label htmlFor="firstName">First Name</Label>

@@ -346,7 +346,7 @@ export default function TeamPage() {
               </div>
               
               <div className="bg-white rounded-[2rem] p-8 md:p-12 shadow-2xl relative">
-                <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+                <form className="space-y-6" onSubmit={(e) => { e.preventDefault(); window.location.href = 'mailto:laura@regrouppartners.com,claudia@regrouppartners.com?subject=Business Review Request'; }}>
                   <div className="space-y-2.5 text-left">
                     <Label htmlFor="name" className="text-gray-900 font-semibold text-sm">Name</Label>
                     <Input id="name" placeholder="Full Name" className="bg-gray-50/50 h-14 rounded-xl border-gray-200 focus-visible:ring-accent focus-visible:border-accent text-base px-4" />

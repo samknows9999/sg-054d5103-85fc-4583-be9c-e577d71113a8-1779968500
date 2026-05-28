@@ -111,10 +111,10 @@ export function Footer() {
               <li className="flex items-center gap-4">
                 <Mail className="w-5 h-5 text-gray-400 shrink-0" />
                 <a
-                  href="mailto:info@regrouppartners.com"
+                  href="mailto:laura@regrouppartners.com,claudia@regrouppartners.com"
                   className="text-[15px] text-gray-600 hover:text-accent transition-colors relative group">
                   
-                  info@regrouppartners.com
+                  laura@regrouppartners.com
                   <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-accent transition-all duration-300 ease-out group-hover:w-full"></span>
                 </a>
               </li>
