@@ -10,13 +10,23 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
+import { useState } from "react";
 import {
   ArrowRight, Shield, Phone,
   MapPin, CheckCircle2, TrendingUp,
-  Building2, Users, FileWarning, Wallet } from
+  Building2, Users, FileWarning, Wallet, Loader2 } from
 "lucide-react";
 
 export default function FAQPage() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    window.location.href = 'mailto:laura@regrouppartners.com,claudia@regrouppartners.com?subject=FAQ Consultation Request';
+    setTimeout(() => setIsSubmitting(false), 1000);
+  };
+
   return (
     <div className="min-h-screen bg-[#050505] font-sans selection:bg-accent/20">
       <SEO
@@ -426,7 +436,7 @@ export default function FAQPage() {
               </div>
               
               <div className="bg-white rounded-[2rem] p-8 md:p-12 shadow-2xl relative">
-                <form className="space-y-6" onSubmit={(e) => { e.preventDefault(); window.location.href = 'mailto:laura@regrouppartners.com,claudia@regrouppartners.com?subject=FAQ Consultation Request'; }}>
+                <form className="space-y-6" onSubmit={handleFormSubmit}>
                   <div className="space-y-2.5 text-left">
                     <Label htmlFor="name" className="text-gray-900 font-semibold text-sm">Name</Label>
                     <Input id="name" placeholder="Full Name" className="bg-gray-50/50 h-14 rounded-xl border-gray-200 focus-visible:ring-accent focus-visible:border-accent text-base px-4" />
@@ -457,8 +467,15 @@ export default function FAQPage() {
                     
                   </div>
                   
-                  <Button className="w-full bg-accent hover:bg-accent/90 text-white h-16 rounded-xl text-lg font-semibold mt-4 shadow-lg shadow-accent/20 transition-all hover:shadow-accent/40 hover:-translate-y-0.5">
-                    Get Free Consultation
+                  <Button disabled={isSubmitting} className="w-full bg-accent hover:bg-accent/90 text-white h-16 rounded-xl text-lg font-semibold mt-4 shadow-lg shadow-accent/20 transition-all hover:shadow-accent/40 hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed">
+                    {isSubmitting ? (
+                      <span className="flex items-center justify-center gap-2">
+                        <Loader2 className="w-5 h-5 animate-spin" />
+                        Submitting...
+                      </span>
+                    ) : (
+                      "Get Free Consultation"
+                    )}
                   </Button>
                 </form>
               </div>

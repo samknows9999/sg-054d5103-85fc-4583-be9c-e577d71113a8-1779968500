@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { TrustBar } from "@/components/TrustBar";
 import { AsSeenOn } from "@/components/AsSeenOn";
+import { useState } from "react";
 import {
   Accordion,
   AccordionContent,
@@ -15,12 +16,21 @@ import {
   Building2, ArrowRight, TrendingDown, Clock, ShieldAlert,
   Wallet, FileWarning, BarChart3, AlertCircle, FileText,
   Utensils, Truck, HardHat, Stethoscope, ShoppingBag,
-  Store, Hotel, Wrench, CheckCircle2, ChevronRight, Check } from
+  Store, Hotel, Wrench, CheckCircle2, ChevronRight, Check, Loader2 } from
 "lucide-react";
 import Link from "next/link";
 import Head from "next/head";
 
 export default function BusinessRestructuring() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    window.location.href = 'mailto:laura@regrouppartners.com,claudia@regrouppartners.com?subject=Business Restructuring Consultation Request';
+    setTimeout(() => setIsSubmitting(false), 1000);
+  };
+
   return (
     <>
       <Head>
@@ -414,7 +424,7 @@ export default function BusinessRestructuring() {
                 <h3 className="font-serif text-3xl font-semibold text-[#0A192F] mb-2">Request Consultation</h3>
                 <p className="text-gray-500 mb-8">Submit your details for a free, confidential review of your situation.</p>
                 
-                <form className="space-y-5" onSubmit={(e) => { e.preventDefault(); window.location.href = 'mailto:laura@regrouppartners.com,claudia@regrouppartners.com?subject=Business Restructuring Consultation Request'; }}>
+                <form className="space-y-5" onSubmit={handleFormSubmit}>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div className="space-y-2">
                       <label htmlFor="cta-first" className="text-sm font-semibold text-[#0A192F]">First Name</label>
@@ -442,8 +452,15 @@ export default function BusinessRestructuring() {
                     <input id="cta-company" type="text" className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" />
                   </div>
 
-                  <Button type="submit" className="w-full py-7 text-lg font-semibold bg-primary hover:bg-primary/90 text-white mt-4 shadow-lg shadow-primary/20">
-                    Get Free Restructuring Strategy
+                  <Button type="submit" disabled={isSubmitting} className="w-full py-7 text-lg font-semibold bg-primary hover:bg-primary/90 text-white mt-4 shadow-lg shadow-primary/20 disabled:opacity-50 disabled:cursor-not-allowed">
+                    {isSubmitting ? (
+                      <span className="flex items-center justify-center gap-2">
+                        <Loader2 className="w-5 h-5 animate-spin" />
+                        Submitting...
+                      </span>
+                    ) : (
+                      "Get Free Restructuring Strategy"
+                    )}
                   </Button>
                 </form>
               </div>

@@ -8,9 +8,10 @@ import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
+import { useState } from "react";
 import { 
   Building2, Shield, TrendingUp, AlertTriangle, FileText, 
-  Briefcase, MessageSquare, Clock, Phone, Scale, Lock, Users
+  Briefcase, MessageSquare, Clock, Phone, Scale, Lock, Users, Loader2
 } from "lucide-react";
 
 const challenges = [
@@ -55,6 +56,15 @@ const faqs = [
 ];
 
 export default function CreditorCoordination() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    window.location.href = 'mailto:laura@regrouppartners.com,claudia@regrouppartners.com?subject=Creditor Coordination Consultation Request';
+    setTimeout(() => setIsSubmitting(false), 1000);
+  };
+
   return (
     <>
       <Head>
@@ -313,7 +323,7 @@ export default function CreditorCoordination() {
             </p>
             <div className="bg-white p-8 md:p-12 rounded-xl shadow-2xl max-w-2xl mx-auto text-left">
               <h3 className="text-2xl font-semibold text-[#0A192F] mb-6 text-center">Confidential Consultation</h3>
-              <form className="space-y-4" onSubmit={(e) => { e.preventDefault(); window.location.href = 'mailto:laura@regrouppartners.com,claudia@regrouppartners.com?subject=Creditor Coordination Consultation Request'; }}>
+              <form className="space-y-4" onSubmit={handleFormSubmit}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <input type="text" placeholder="First Name" className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded focus:ring-2 focus:ring-primary outline-none" />
                   <input type="text" placeholder="Last Name" className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded focus:ring-2 focus:ring-primary outline-none" />
@@ -323,8 +333,15 @@ export default function CreditorCoordination() {
                   <input type="tel" placeholder="Phone Number" className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded focus:ring-2 focus:ring-primary outline-none" />
                 </div>
                 <input type="text" placeholder="Company Name" className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded focus:ring-2 focus:ring-primary outline-none" />
-                <Button className="w-full py-6 text-lg font-semibold bg-primary hover:bg-primary/90 text-white mt-4">
-                  Get Free Business Consultation
+                <Button disabled={isSubmitting} className="w-full py-6 text-lg font-semibold bg-primary hover:bg-primary/90 text-white mt-4 disabled:opacity-50 disabled:cursor-not-allowed">
+                  {isSubmitting ? (
+                    <span className="flex items-center justify-center gap-2">
+                      <Loader2 className="w-5 h-5 animate-spin" />
+                      Submitting...
+                    </span>
+                  ) : (
+                    "Get Free Business Consultation"
+                  )}
                 </Button>
                 <div className="text-center mt-4">
                   <p className="text-sm text-gray-500">Or call us immediately at <a href="tel:954-234-2300" className="font-semibold text-[#0A192F] hover:text-primary">(954) 234-2300</a></p>

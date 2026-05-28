@@ -10,11 +10,12 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
+import { useState } from "react";
 import { 
   Building2, LineChart, Shield, Target, Phone, MapPin, CheckCircle2, 
   ArrowRight, FileWarning, Wallet, TrendingDown, Clock, CreditCard, 
   Receipt, Calculator, HardHat, Stethoscope, Coffee, ShoppingBag, Truck,
-  Briefcase
+  Briefcase, Loader2
 } from "lucide-react";
 
 // Data Arrays
@@ -92,6 +93,15 @@ const faqs = [
 ];
 
 export default function MCAAdvisory() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    window.location.href = 'mailto:laura@regrouppartners.com,claudia@regrouppartners.com?subject=MCA Advisory Consultation Request';
+    setTimeout(() => setIsSubmitting(false), 1000);
+  };
+
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -519,7 +529,7 @@ export default function MCAAdvisory() {
                   <h3 className="text-2xl font-bold text-foreground mb-2">Request an Advisory Session</h3>
                   <p className="text-foreground/60 mb-8">Fill out the form below and a specialist will contact you confidentially.</p>
                   
-                  <form className="space-y-6" onSubmit={(e) => { e.preventDefault(); window.location.href = 'mailto:laura@regrouppartners.com,claudia@regrouppartners.com?subject=MCA Advisory Consultation Request'; }}>
+                  <form className="space-y-6" onSubmit={handleFormSubmit}>
                     <div className="grid grid-cols-2 gap-6">
                       <div className="space-y-2">
                         <Label htmlFor="firstName">First Name</Label>
@@ -552,8 +562,15 @@ export default function MCAAdvisory() {
                       <Textarea id="message" placeholder="How can our advisory team assist you?" className="min-h-[120px] bg-gray-50 border-gray-200 resize-none" />
                     </div>
                     
-                    <Button className="w-full h-14 text-base font-bold bg-accent hover:bg-accent/90 text-white shadow-lg shadow-accent/20">
-                      Get Free MCA Consultation
+                    <Button disabled={isSubmitting} className="w-full h-14 text-base font-bold bg-accent hover:bg-accent/90 text-white shadow-lg shadow-accent/20 disabled:opacity-50 disabled:cursor-not-allowed">
+                      {isSubmitting ? (
+                        <span className="flex items-center justify-center gap-2">
+                          <Loader2 className="w-5 h-5 animate-spin" />
+                          Submitting...
+                        </span>
+                      ) : (
+                        "Get Free MCA Consultation"
+                      )}
                     </Button>
                   </form>
                 </div>

@@ -3,6 +3,7 @@ import { Hero } from "@/components/Hero";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { useState } from "react";
+import { Loader2 } from "lucide-react";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -14,9 +15,11 @@ export default function Contact() {
     financialConcerns: "",
     preferredContact: ""
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
     const emailBody = `
 Company Name: ${formData.companyName}
 Contact Name: ${formData.contactName}
@@ -28,8 +31,9 @@ Preferred Contact: ${formData.preferredContact}
 Financial Situation:
 ${formData.financialConcerns}
     `.trim();
-
+    
     window.location.href = `mailto:laura@regrouppartners.com,claudia@regrouppartners.com?subject=Confidential Business Review Request&body=${encodeURIComponent(emailBody)}`;
+    setTimeout(() => setIsSubmitting(false), 1000);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -303,9 +307,16 @@ ${formData.financialConcerns}
 
                   <button
                     type="submit"
-                    className="w-full px-8 py-4 bg-accent text-white font-semibold rounded-lg hover:bg-accent/90 transition-colors duration-300">
-                    
-                    Submit Confidential Request
+                    disabled={isSubmitting}
+                    className="w-full px-8 py-4 bg-accent text-white font-semibold rounded-lg hover:bg-accent/90 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2">
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="w-5 h-5 animate-spin" />
+                        Submitting...
+                      </>
+                    ) : (
+                      "Submit Confidential Request"
+                    )}
                   </button>
 
                   <p className="text-sm text-foreground/60 text-center">

@@ -10,12 +10,13 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
+import { useState } from "react";
 import { 
   TrendingDown, AlertCircle, Clock, CreditCard, Receipt, 
   Calculator, Shield, LineChart, Target, Building, 
   CheckCircle2, MapPin, Phone, Building2, HardHat, 
   Stethoscope, Coffee, ShoppingBag, Truck, FileWarning, Wallet,
-  Calendar, ShoppingCart, TrendingUp
+  Calendar, ShoppingCart, TrendingUp, Loader2
 } from "lucide-react";
 
 // Data Arrays for Rendering
@@ -78,6 +79,15 @@ const faqs = [
 ];
 
 export default function CashFlowImprovement() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    window.location.href = 'mailto:laura@regrouppartners.com,claudia@regrouppartners.com?subject=Cash Flow Assessment Request';
+    setTimeout(() => setIsSubmitting(false), 1000);
+  };
+
   const schemaData = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
@@ -427,7 +437,7 @@ export default function CashFlowImprovement() {
                 </div>
                 
                 <div className="bg-white rounded-[2rem] p-8 md:p-10 shadow-2xl shadow-black/40 relative">
-                  <form className="space-y-5" onSubmit={(e) => { e.preventDefault(); window.location.href = 'mailto:laura@regrouppartners.com,claudia@regrouppartners.com?subject=Cash Flow Assessment Request'; }}>
+                  <form className="space-y-5" onSubmit={handleFormSubmit}>
                     <div className="space-y-2 text-left">
                       <Label htmlFor="name" className="text-gray-700 font-medium">Name</Label>
                       <Input id="name" placeholder="Full Name" className="bg-gray-50 h-12 rounded-xl border-gray-200 focus-visible:ring-accent" />
@@ -454,8 +464,15 @@ export default function CashFlowImprovement() {
                         className="min-h-[120px] resize-y bg-gray-50 rounded-xl border-gray-200 p-4 focus-visible:ring-accent"
                       />
                     </div>
-                    <Button className="w-full bg-accent hover:bg-accent/90 text-white h-14 rounded-xl text-base font-semibold mt-6 shadow-[0_8px_25px_-8px_rgba(220,38,38,0.6)] transition-all hover:shadow-[0_8px_25px_-5px_rgba(220,38,38,0.8)] hover:-translate-y-0.5">
-                      Get Free Cash Flow Assessment
+                    <Button disabled={isSubmitting} className="w-full bg-accent hover:bg-accent/90 text-white h-14 rounded-xl text-base font-semibold mt-6 shadow-[0_8px_25px_-8px_rgba(220,38,38,0.6)] transition-all hover:shadow-[0_8px_25px_-5px_rgba(220,38,38,0.8)] hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed">
+                      {isSubmitting ? (
+                        <span className="flex items-center justify-center gap-2">
+                          <Loader2 className="w-5 h-5 animate-spin" />
+                          Submitting...
+                        </span>
+                      ) : (
+                        "Get Free Cash Flow Assessment"
+                      )}
                     </Button>
                   </form>
                 </div>

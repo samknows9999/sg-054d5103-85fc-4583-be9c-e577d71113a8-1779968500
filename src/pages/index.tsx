@@ -5,11 +5,21 @@ import { AsSeenOn } from "@/components/AsSeenOn";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import Link from "next/link";
-import { Building2, Users, TrendingUp, Shield, Phone, ArrowRight } from "lucide-react";
+import { Building2, Users, TrendingUp, Shield, Phone, ArrowRight, Loader2 } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
 
 export default function Home() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    window.location.href = 'mailto:laura@regrouppartners.com,claudia@regrouppartners.com?subject=Confidential Consultation Request';
+    setTimeout(() => setIsSubmitting(false), 1000);
+  };
+
   return (
     <>
       <SEO
@@ -177,7 +187,7 @@ export default function Home() {
                   </p>
                 </div>
                 
-                <form className="space-y-6" onSubmit={(e) => { e.preventDefault(); window.location.href = 'mailto:laura@regrouppartners.com,claudia@regrouppartners.com?subject=Confidential Consultation Request'; }}>
+                <form className="space-y-6" onSubmit={handleFormSubmit}>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <label htmlFor="firstName" className="text-sm font-semibold text-[#0A192F]">First Name</label>
@@ -210,8 +220,15 @@ export default function Home() {
                     <textarea id="message" rows={3} className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none"></textarea>
                   </div>
 
-                  <Button type="submit" className="w-full py-6 text-base font-semibold bg-primary hover:bg-primary/90 text-white mt-4 shadow-lg shadow-primary/20">
-                    Request Consultation
+                  <Button type="submit" disabled={isSubmitting} className="w-full py-6 text-base font-semibold bg-primary hover:bg-primary/90 text-white mt-4 shadow-lg shadow-primary/20 disabled:opacity-50 disabled:cursor-not-allowed">
+                    {isSubmitting ? (
+                      <span className="flex items-center justify-center gap-2">
+                        <Loader2 className="w-5 h-5 animate-spin" />
+                        Submitting...
+                      </span>
+                    ) : (
+                      "Request Consultation"
+                    )}
                   </Button>
                 </form>
               </div>
