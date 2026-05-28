@@ -313,7 +313,7 @@ export default function CreditorCoordination() {
             </p>
             <div className="bg-white p-8 md:p-12 rounded-xl shadow-2xl max-w-2xl mx-auto text-left">
               <h3 className="text-2xl font-semibold text-[#0A192F] mb-6 text-center">Confidential Consultation</h3>
-              <form className="space-y-4">
+              <form className="space-y-4" onSubmit={(e) => { e.preventDefault(); window.location.href = 'mailto:laura@regrouppartners.com,claudia@regrouppartners.com?subject=Creditor Coordination Consultation Request'; }}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <input type="text" placeholder="First Name" className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded focus:ring-2 focus:ring-primary outline-none" />
                   <input type="text" placeholder="Last Name" className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded focus:ring-2 focus:ring-primary outline-none" />
