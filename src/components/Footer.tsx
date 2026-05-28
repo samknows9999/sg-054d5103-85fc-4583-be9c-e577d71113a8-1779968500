@@ -114,7 +114,7 @@ export function Footer() {
                   href="mailto:laura@regrouppartners.com,claudia@regrouppartners.com"
                   className="text-[15px] text-gray-600 hover:text-accent transition-colors relative group">
                   
-                  laura@regrouppartners.com
+                  info@regrouppartners.com
                   <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-accent transition-all duration-300 ease-out group-hover:w-full"></span>
                 </a>
               </li>
