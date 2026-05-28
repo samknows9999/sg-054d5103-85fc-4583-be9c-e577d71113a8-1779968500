@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { useState } from "react";
 import { Loader2 } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -16,6 +17,7 @@ export default function Contact() {
     preferredContact: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -33,7 +35,14 @@ ${formData.financialConcerns}
     `.trim();
     
     window.location.href = `mailto:laura@regrouppartners.com,claudia@regrouppartners.com?subject=Confidential Business Review Request&body=${encodeURIComponent(emailBody)}`;
-    setTimeout(() => setIsSubmitting(false), 1000);
+    
+    setTimeout(() => {
+      setIsSubmitting(false);
+      toast({
+        title: "Request Submitted Successfully",
+        description: "Thank you for contacting us. We'll respond within one business day.",
+      });
+    }, 1000);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {

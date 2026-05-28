@@ -9,15 +9,24 @@ import { Building2, Users, TrendingUp, Shield, Phone, ArrowRight, Loader2 } from
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
 
 export default function Home() {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     window.location.href = 'mailto:laura@regrouppartners.com,claudia@regrouppartners.com?subject=Confidential Consultation Request';
-    setTimeout(() => setIsSubmitting(false), 1000);
+    
+    setTimeout(() => {
+      setIsSubmitting(false);
+      toast({
+        title: "Consultation Request Sent",
+        description: "We'll contact you shortly to discuss your business needs.",
+      });
+    }, 1000);
   };
 
   return (
