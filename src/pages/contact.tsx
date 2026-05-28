@@ -28,7 +28,7 @@ Preferred Contact: ${formData.preferredContact}
 Financial Situation:
 ${formData.financialConcerns}
     `.trim();
-    
+
     window.location.href = `mailto:laura@regrouppartners.com,claudia@regrouppartners.com?subject=Confidential Business Review Request&body=${encodeURIComponent(emailBody)}`;
   };
 
@@ -138,8 +138,8 @@ ${formData.financialConcerns}
                         </svg>
                         <div>
                           <div className="font-semibold text-foreground">Email</div>
-                          <a href="mailto:laura@regrouppartners.com,claudia@regrouppartners.com" className="text-accent hover:underline">
-                            laura@regrouppartners.com
+                          <a href="mailto:laura@regrouppartners.com,claudia@regrouppartners.com" className="text-accent hover:underline">info@regrouppartners.com
+
                           </a>
                         </div>
                       </div>
