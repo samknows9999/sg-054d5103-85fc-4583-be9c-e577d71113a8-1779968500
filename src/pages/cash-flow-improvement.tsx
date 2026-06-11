@@ -83,18 +83,50 @@ export default function CashFlowImprovement() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    window.location.href = 'mailto:laura@regrouppartners.com,claudia@regrouppartners.com?subject=Cash Flow Assessment Request';
     
-    setTimeout(() => {
-      setIsSubmitting(false);
-      toast({
-        title: "Assessment Request Sent",
-        description: "We'll analyze your situation and contact you promptly.",
+    const formData = new FormData(e.target as HTMLFormElement);
+    const emailBody = `
+Cash Flow Assessment Request
+
+Name: ${formData.get("name")}
+Business Name: ${formData.get("businessName")}
+Email: ${formData.get("email")}
+Phone: ${formData.get("phone")}
+Description: ${formData.get("description")}
+    `.trim();
+    
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          subject: "Cash Flow Assessment Request",
+          message: emailBody,
+          from: formData.get("email") as string
+        })
       });
-    }, 1000);
+
+      if (response.ok) {
+        toast({
+          title: "Assessment Request Sent",
+          description: "We'll analyze your situation and contact you promptly.",
+        });
+        (e.target as HTMLFormElement).reset();
+      } else {
+        throw new Error("Failed to send");
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to submit request. Please try again or call us directly.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const schemaData = {

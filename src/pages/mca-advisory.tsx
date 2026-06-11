@@ -97,18 +97,51 @@ export default function MCAAdvisory() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    window.location.href = 'mailto:laura@regrouppartners.com,claudia@regrouppartners.com?subject=MCA Advisory Consultation Request';
     
-    setTimeout(() => {
-      setIsSubmitting(false);
-      toast({
-        title: "MCA Consultation Request Sent",
-        description: "Our MCA specialists will review your situation and contact you soon.",
+    const formData = new FormData(e.target as HTMLFormElement);
+    const emailBody = `
+MCA Advisory Consultation Request
+
+First Name: ${formData.get("firstName")}
+Last Name: ${formData.get("lastName")}
+Company: ${formData.get("company")}
+Email: ${formData.get("email")}
+Phone: ${formData.get("phone")}
+Message: ${formData.get("message")}
+    `.trim();
+    
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          subject: "MCA Advisory Consultation Request",
+          message: emailBody,
+          from: formData.get("email") as string
+        })
       });
-    }, 1000);
+
+      if (response.ok) {
+        toast({
+          title: "MCA Consultation Request Sent",
+          description: "Our MCA specialists will review your situation and contact you soon.",
+        });
+        (e.target as HTMLFormElement).reset();
+      } else {
+        throw new Error("Failed to send");
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to submit request. Please try again or call us directly.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const faqSchema = {

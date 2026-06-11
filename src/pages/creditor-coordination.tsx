@@ -60,18 +60,50 @@ export default function CreditorCoordination() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    window.location.href = 'mailto:laura@regrouppartners.com,claudia@regrouppartners.com?subject=Creditor Coordination Consultation Request';
     
-    setTimeout(() => {
-      setIsSubmitting(false);
-      toast({
-        title: "Consultation Request Received",
-        description: "Our coordination team will reach out shortly to discuss your situation.",
+    const formData = new FormData(e.target as HTMLFormElement);
+    const emailBody = `
+Creditor Coordination Consultation Request
+
+First Name: ${formData.get("firstName")}
+Last Name: ${formData.get("lastName")}
+Email: ${formData.get("email")}
+Phone: ${formData.get("phone")}
+Company: ${formData.get("company")}
+    `.trim();
+    
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          subject: "Creditor Coordination Consultation Request",
+          message: emailBody,
+          from: formData.get("email") as string
+        })
       });
-    }, 1000);
+
+      if (response.ok) {
+        toast({
+          title: "Consultation Request Received",
+          description: "Our coordination team will reach out shortly to discuss your situation.",
+        });
+        (e.target as HTMLFormElement).reset();
+      } else {
+        throw new Error("Failed to send");
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to submit request. Please try again or call us directly.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (

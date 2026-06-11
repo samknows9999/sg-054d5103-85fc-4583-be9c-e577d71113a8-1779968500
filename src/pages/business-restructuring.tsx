@@ -26,18 +26,50 @@ export default function BusinessRestructuring() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    window.location.href = 'mailto:laura@regrouppartners.com,claudia@regrouppartners.com?subject=Business Restructuring Consultation Request';
     
-    setTimeout(() => {
-      setIsSubmitting(false);
-      toast({
-        title: "Request Submitted Successfully",
-        description: "Our restructuring team will contact you within one business day.",
+    const formData = new FormData(e.target as HTMLFormElement);
+    const emailBody = `
+Business Restructuring Consultation Request
+
+First Name: ${formData.get("cta-first")}
+Last Name: ${formData.get("cta-last")}
+Email: ${formData.get("cta-email")}
+Phone: ${formData.get("cta-phone")}
+Company: ${formData.get("cta-company")}
+    `.trim();
+    
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          subject: "Business Restructuring Consultation Request",
+          message: emailBody,
+          from: formData.get("cta-email") as string
+        })
       });
-    }, 1000);
+
+      if (response.ok) {
+        toast({
+          title: "Request Submitted Successfully",
+          description: "Our restructuring team will contact you within one business day.",
+        });
+        (e.target as HTMLFormElement).reset();
+      } else {
+        throw new Error("Failed to send");
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to submit request. Please try again or call us directly.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (

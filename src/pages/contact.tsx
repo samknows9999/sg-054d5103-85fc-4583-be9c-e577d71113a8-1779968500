@@ -19,9 +19,10 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    
     const emailBody = `
 Company Name: ${formData.companyName}
 Contact Name: ${formData.contactName}
@@ -34,15 +35,43 @@ Financial Situation:
 ${formData.financialConcerns}
     `.trim();
     
-    window.location.href = `mailto:laura@regrouppartners.com,claudia@regrouppartners.com?subject=Confidential Business Review Request&body=${encodeURIComponent(emailBody)}`;
-    
-    setTimeout(() => {
-      setIsSubmitting(false);
-      toast({
-        title: "Request Submitted Successfully",
-        description: "Thank you for contacting us. We'll respond within one business day.",
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          subject: "Confidential Business Review Request",
+          message: emailBody,
+          from: formData.email
+        })
       });
-    }, 1000);
+
+      if (response.ok) {
+        toast({
+          title: "Request Submitted Successfully",
+          description: "Thank you for contacting us. We'll respond within one business day.",
+        });
+        setFormData({
+          companyName: "",
+          contactName: "",
+          email: "",
+          phone: "",
+          revenueRange: "",
+          financialConcerns: "",
+          preferredContact: ""
+        });
+      } else {
+        throw new Error("Failed to send");
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to submit request. Please try again or call us directly.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
