@@ -11,22 +11,22 @@ export default async function handler(
     return res.status(405).json({ message: "Method not allowed" });
   }
 
+  const { subject, message, from } = req.body;
+
+  if (!subject || !message) {
+    return res.status(400).json({ message: "Missing required fields" });
+  }
+
   try {
-    const { subject, message, from } = req.body;
-
-    if (!subject || !message) {
-      return res.status(400).json({ message: "Missing required fields" });
-    }
-
-    const data = await resend.emails.send({
-      from: "Regroup Partners Website <noreply@regrouppartners.com>",
-      to: ["claudia@regrouppartners.com"],
+    await resend.emails.send({
+      from: "website@regrouppartners.com",
+      to: "claudia@regrouppartners.com",
       subject: subject,
       text: message,
       replyTo: from || undefined,
     });
 
-    return res.status(200).json({ message: "Email sent successfully", data });
+    return res.status(200).json({ message: "Email sent successfully" });
   } catch (error) {
     console.error("Error sending email:", error);
     return res.status(500).json({ message: "Failed to send email" });
