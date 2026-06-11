@@ -2,10 +2,13 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, Phone, ChevronDown } from "lucide-react";
+import { Menu, X, Phone, ChevronDown, Search } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { SearchModal } from "@/components/SearchModal";
 
 export function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [scrolled, setScrolled] = useState(false);
 
@@ -49,6 +52,15 @@ export function Navigation() {
 
             <div className="hidden md:flex items-center gap-8">
               
+              {/* Search Icon */}
+              <button
+                onClick={() => setIsSearchOpen(true)}
+                className="p-2 hover:bg-white/10 rounded-lg transition-colors"
+                aria-label="Search"
+              >
+                <Search className="w-5 h-5 text-white/90 hover:text-white" />
+              </button>
+
               {/* Dropdown for About */}
               <div className="relative group py-6">
                 <Link
@@ -134,17 +146,30 @@ export function Navigation() {
               </a>
             </div>
 
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-2 text-white"
-              aria-label="Toggle menu">
-              
-              {isMobileMenuOpen ?
-              <X className="w-6 h-6" /> :
+            {/* Mobile Menu Button */}
+            <div className="flex md:hidden items-center gap-2">
+              {/* Mobile Search Icon */}
+              <button
+                onClick={() => setIsSearchOpen(true)}
+                className="p-2 hover:bg-white/10 rounded-lg transition-colors"
+                aria-label="Search"
+              >
+                <Search className="w-5 h-5 text-white/90 hover:text-white" />
+              </button>
 
-              <Menu className="w-6 h-6" />
-              }
-            </button>
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="text-white hover:bg-white/10"
+              >
+                {isMobileMenuOpen ?
+                <X className="w-6 h-6" /> :
+
+                <Menu className="w-6 h-6" />
+                }
+              </Button>
+            </div>
           </div>
 
           {isMobileMenuOpen &&
@@ -245,6 +270,9 @@ export function Navigation() {
           }
         </div>
       </nav>
-    </header>);
 
+      {/* Search Modal */}
+      <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
+    </header>
+  );
 }
