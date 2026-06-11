@@ -22,18 +22,53 @@ export default function FAQPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    window.location.href = 'mailto:laura@regrouppartners.com,claudia@regrouppartners.com?subject=FAQ Consultation Request';
     
-    setTimeout(() => {
-      setIsSubmitting(false);
-      toast({
-        title: "Question Submitted",
-        description: "Our team will get back to you with answers shortly.",
+    const formData = new FormData(e.target as HTMLFormElement);
+    const emailBody = `
+New Website Lead - FAQ Page
+
+Name: ${formData.get("name")}
+Business Name: ${formData.get("businessName")}
+Email: ${formData.get("email")}
+Phone: ${formData.get("phone")}
+Description: ${formData.get("description")}
+
+Page URL: ${window.location.href}
+Date & Time: ${new Date().toLocaleString()}
+    `.trim();
+    
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          subject: "New Website Lead - FAQ Page",
+          message: emailBody,
+          from: formData.get("email") as string
+        })
       });
-    }, 1000);
+
+      if (response.ok) {
+        toast({
+          title: "Thank you for contacting REgroup Partners.",
+          description: "A member of our team will reach out shortly.",
+        });
+        (e.target as HTMLFormElement).reset();
+      } else {
+        throw new Error("Failed to send");
+      }
+    } catch (error) {
+      toast({
+        title: "Submission Error",
+        description: "There was an issue submitting your request. Please try again or contact us directly.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -448,22 +483,22 @@ export default function FAQPage() {
                 <form className="space-y-6" onSubmit={handleFormSubmit}>
                   <div className="space-y-2.5 text-left">
                     <Label htmlFor="name" className="text-gray-900 font-semibold text-sm">Name</Label>
-                    <Input id="name" placeholder="Full Name" className="bg-gray-50/50 h-14 rounded-xl border-gray-200 focus-visible:ring-accent focus-visible:border-accent text-base px-4" />
+                    <Input id="name" name="name" placeholder="Full Name" required className="bg-gray-50/50 h-14 rounded-xl border-gray-200 focus-visible:ring-accent focus-visible:border-accent text-base px-4" />
                   </div>
                   
                   <div className="space-y-2.5 text-left">
                     <Label htmlFor="businessName" className="text-gray-900 font-semibold text-sm">Business Name</Label>
-                    <Input id="businessName" placeholder="Company Name" className="bg-gray-50/50 h-14 rounded-xl border-gray-200 focus-visible:ring-accent focus-visible:border-accent text-base px-4" />
+                    <Input id="businessName" name="businessName" placeholder="Company Name" required className="bg-gray-50/50 h-14 rounded-xl border-gray-200 focus-visible:ring-accent focus-visible:border-accent text-base px-4" />
                   </div>
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2.5 text-left">
                       <Label htmlFor="email" className="text-gray-900 font-semibold text-sm">Email Address</Label>
-                      <Input id="email" type="email" placeholder="email@example.com" className="bg-gray-50/50 h-14 rounded-xl border-gray-200 focus-visible:ring-accent focus-visible:border-accent text-base px-4" />
+                      <Input id="email" name="email" type="email" placeholder="email@example.com" required className="bg-gray-50/50 h-14 rounded-xl border-gray-200 focus-visible:ring-accent focus-visible:border-accent text-base px-4" />
                     </div>
                     <div className="space-y-2.5 text-left">
                       <Label htmlFor="phone" className="text-gray-900 font-semibold text-sm">Phone Number</Label>
-                      <Input id="phone" type="tel" placeholder="(555) 000-0000" className="bg-gray-50/50 h-14 rounded-xl border-gray-200 focus-visible:ring-accent focus-visible:border-accent text-base px-4" />
+                      <Input id="phone" name="phone" type="tel" placeholder="(555) 000-0000" required className="bg-gray-50/50 h-14 rounded-xl border-gray-200 focus-visible:ring-accent focus-visible:border-accent text-base px-4" />
                     </div>
                   </div>
                   
@@ -471,6 +506,7 @@ export default function FAQPage() {
                     <Label htmlFor="description" className="text-gray-900 font-semibold text-sm">Brief Description of Situation</Label>
                     <Textarea
                       id="description"
+                      name="description"
                       placeholder="Please briefly describe your current challenges or questions..."
                       className="min-h-[140px] resize-y bg-gray-50/50 rounded-xl border-gray-200 p-4 focus-visible:ring-accent focus-visible:border-accent text-base" />
                     

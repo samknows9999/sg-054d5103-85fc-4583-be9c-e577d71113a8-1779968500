@@ -15,18 +15,54 @@ export default function Home() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    window.location.href = 'mailto:laura@regrouppartners.com,claudia@regrouppartners.com?subject=Confidential Consultation Request';
     
-    setTimeout(() => {
-      setIsSubmitting(false);
-      toast({
-        title: "Consultation Request Sent",
-        description: "We'll contact you shortly to discuss your business needs.",
+    const formData = new FormData(e.target as HTMLFormElement);
+    const emailBody = `
+New Website Lead - Homepage Consultation
+
+First Name: ${formData.get("firstName")}
+Last Name: ${formData.get("lastName")}
+Email: ${formData.get("email")}
+Phone: ${formData.get("phone")}
+Company: ${formData.get("company")}
+Message: ${formData.get("message")}
+
+Page URL: ${window.location.href}
+Date & Time: ${new Date().toLocaleString()}
+    `.trim();
+    
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          subject: "New Website Lead - Homepage",
+          message: emailBody,
+          from: formData.get("email") as string
+        })
       });
-    }, 1000);
+
+      if (response.ok) {
+        toast({
+          title: "Thank you for contacting REgroup Partners.",
+          description: "A member of our team will reach out shortly.",
+        });
+        (e.target as HTMLFormElement).reset();
+      } else {
+        throw new Error("Failed to send");
+      }
+    } catch (error) {
+      toast({
+        title: "Submission Error",
+        description: "There was an issue submitting your request. Please try again or contact us directly.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -200,33 +236,33 @@ export default function Home() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <label htmlFor="firstName" className="text-sm font-semibold text-[#0A192F]">First Name</label>
-                      <input id="firstName" type="text" className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" />
+                      <input id="firstName" name="firstName" type="text" required className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" />
                     </div>
                     <div className="space-y-2">
                       <label htmlFor="lastName" className="text-sm font-semibold text-[#0A192F]">Last Name</label>
-                      <input id="lastName" type="text" className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" />
+                      <input id="lastName" name="lastName" type="text" required className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" />
                     </div>
                   </div>
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <label htmlFor="email" className="text-sm font-semibold text-[#0A192F]">Work Email</label>
-                      <input id="email" type="email" className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" />
+                      <input id="email" name="email" type="email" required className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" />
                     </div>
                     <div className="space-y-2">
                       <label htmlFor="phone" className="text-sm font-semibold text-[#0A192F]">Phone Number</label>
-                      <input id="phone" type="tel" className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" />
+                      <input id="phone" name="phone" type="tel" required className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" />
                     </div>
                   </div>
 
                   <div className="space-y-2">
                     <label htmlFor="company" className="text-sm font-semibold text-[#0A192F]">Company Name</label>
-                    <input id="company" type="text" className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" />
+                    <input id="company" name="company" type="text" required className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" />
                   </div>
 
                   <div className="space-y-2">
                     <label htmlFor="message" className="text-sm font-semibold text-[#0A192F]">How can we help? (Optional)</label>
-                    <textarea id="message" rows={3} className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none"></textarea>
+                    <textarea id="message" name="message" rows={3} className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none"></textarea>
                   </div>
 
                   <Button type="submit" disabled={isSubmitting} className="w-full py-6 text-base font-semibold bg-primary hover:bg-primary/90 text-white mt-4 shadow-lg shadow-primary/20 disabled:opacity-50 disabled:cursor-not-allowed">
