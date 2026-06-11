@@ -9,8 +9,8 @@ interface SEOProps {
 
 // SEO elements that can be used in _document.tsx (returns JSX without Head wrapper)
 export function SEOElements({
-  title = "Hello World",
-  description = "Welcome to my app",
+  title = "Regroup Partners | Business Restructuring & Financial Advisory Services",
+  description = "Regroup Partners provides confidential business restructuring, financial advisory, credit coordination, and turnaround consulting services. Helping businesses navigate financial challenges with over 21 years of experience.",
   image = "/og-image.png",
   url,
 }: SEOProps) {

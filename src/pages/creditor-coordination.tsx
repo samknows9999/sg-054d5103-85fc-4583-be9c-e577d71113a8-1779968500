@@ -57,12 +57,17 @@ const faqs = [
 ];
 
 export default function CreditorCoordination() {
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
+
+  const phases = [
+  ];
 
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setShowSuccess(false);
     
     const formData = new FormData(e.target as HTMLFormElement);
     const emailBody = `
@@ -87,11 +92,9 @@ Company: ${formData.get("company")}
       });
 
       if (response.ok) {
-        toast({
-          title: "Consultation Request Received",
-          description: "Our coordination team will reach out shortly to discuss your situation.",
-        });
+        setShowSuccess(true);
         (e.target as HTMLFormElement).reset();
+        setTimeout(() => setShowSuccess(false), 8000);
       } else {
         throw new Error("Failed to send");
       }
@@ -365,6 +368,20 @@ Company: ${formData.get("company")}
             <div className="bg-white p-8 md:p-12 rounded-xl shadow-2xl max-w-2xl mx-auto text-left">
               <h3 className="text-2xl font-semibold text-[#0A192F] mb-6 text-center">Confidential Consultation</h3>
               <form className="space-y-4" onSubmit={handleFormSubmit}>
+                {showSuccess && (
+                  <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
+                    <div className="flex items-start gap-3">
+                      <svg className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      <div>
+                        <h3 className="font-semibold text-green-900 mb-1">Thank you for contacting REgroup Partners.</h3>
+                        <p className="text-sm text-green-800">A member of our team will reach out shortly.</p>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <input type="text" placeholder="First Name" className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded focus:ring-2 focus:ring-primary outline-none" />
                   <input type="text" placeholder="Last Name" className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded focus:ring-2 focus:ring-primary outline-none" />

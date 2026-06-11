@@ -12,12 +12,14 @@ import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 
 export default function Home() {
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
 
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setShowSuccess(false);
     
     const formData = new FormData(e.target as HTMLFormElement);
     const emailBody = `
@@ -46,11 +48,9 @@ Date & Time: ${new Date().toLocaleString()}
       });
 
       if (response.ok) {
-        toast({
-          title: "Thank you for contacting REgroup Partners.",
-          description: "A member of our team will reach out shortly.",
-        });
+        setShowSuccess(true);
         (e.target as HTMLFormElement).reset();
+        setTimeout(() => setShowSuccess(false), 8000);
       } else {
         throw new Error("Failed to send");
       }
@@ -233,6 +233,20 @@ Date & Time: ${new Date().toLocaleString()}
                 </div>
                 
                 <form className="space-y-6" onSubmit={handleFormSubmit}>
+                  {showSuccess && (
+                    <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
+                      <div className="flex items-start gap-3">
+                        <svg className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <div>
+                          <h3 className="font-semibold text-green-900 mb-1">Thank you for contacting REgroup Partners.</h3>
+                          <p className="text-sm text-green-800">A member of our team will reach out shortly.</p>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <label htmlFor="firstName" className="text-sm font-semibold text-[#0A192F]">First Name</label>

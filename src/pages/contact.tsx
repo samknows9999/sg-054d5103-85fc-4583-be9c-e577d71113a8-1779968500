@@ -7,6 +7,9 @@ import { Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 export default function Contact() {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
   const [formData, setFormData] = useState({
     companyName: "",
     contactName: "",
@@ -16,12 +19,11 @@ export default function Contact() {
     financialConcerns: "",
     preferredContact: ""
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setShowSuccess(false);
     
     const emailBody = `
 Company Name: ${formData.companyName}
@@ -47,10 +49,7 @@ ${formData.financialConcerns}
       });
 
       if (response.ok) {
-        toast({
-          title: "Request Submitted Successfully",
-          description: "Thank you for contacting us. We'll respond within one business day.",
-        });
+        setShowSuccess(true);
         setFormData({
           companyName: "",
           contactName: "",
@@ -60,6 +59,7 @@ ${formData.financialConcerns}
           financialConcerns: "",
           preferredContact: ""
         });
+        setTimeout(() => setShowSuccess(false), 8000);
       } else {
         throw new Error("Failed to send");
       }
@@ -221,145 +221,161 @@ ${formData.financialConcerns}
                 </p>
 
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  <div>
-                    <label htmlFor="companyName" className="block text-sm font-semibold text-foreground mb-2">
-                      Company Name *
-                    </label>
-                    <input
-                      type="text"
-                      id="companyName"
-                      name="companyName"
-                      required
-                      value={formData.companyName}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
-                      placeholder="Your business name" />
-                    
-                  </div>
+                  {showSuccess && (
+                    <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
+                      <div className="flex items-start gap-3">
+                        <svg className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <div>
+                          <h3 className="font-semibold text-green-900 mb-1">Thank you for contacting REgroup Partners.</h3>
+                          <p className="text-sm text-green-800">A member of our team will reach out shortly.</p>
+                        </div>
+                      </div>
+                    </div>
+                  )}
 
-                  <div>
-                    <label htmlFor="contactName" className="block text-sm font-semibold text-foreground mb-2">
-                      Contact Name *
-                    </label>
-                    <input
-                      type="text"
-                      id="contactName"
-                      name="contactName"
-                      required
-                      value={formData.contactName}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
-                      placeholder="Your full name" />
-                    
-                  </div>
-
-                  <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="space-y-2">
                     <div>
-                      <label htmlFor="email" className="block text-sm font-semibold text-foreground mb-2">
-                        Email *
+                      <label htmlFor="companyName" className="block text-sm font-semibold text-foreground mb-2">
+                        Company Name *
                       </label>
                       <input
-                        type="email"
-                        id="email"
-                        name="email"
+                        type="text"
+                        id="companyName"
+                        name="companyName"
                         required
-                        value={formData.email}
+                        value={formData.companyName}
                         onChange={handleChange}
                         className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
-                        placeholder="you@company.com" />
+                        placeholder="Your business name" />
                       
                     </div>
 
                     <div>
-                      <label htmlFor="phone" className="block text-sm font-semibold text-foreground mb-2">
-                        Phone *
+                      <label htmlFor="contactName" className="block text-sm font-semibold text-foreground mb-2">
+                        Contact Name *
                       </label>
                       <input
-                        type="tel"
-                        id="phone"
-                        name="phone"
+                        type="text"
+                        id="contactName"
+                        name="contactName"
                         required
-                        value={formData.phone}
+                        value={formData.contactName}
                         onChange={handleChange}
                         className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
-                        placeholder="(555) 123-4567" />
+                        placeholder="Your full name" />
                       
                     </div>
-                  </div>
 
-                  <div>
-                    <label htmlFor="revenueRange" className="block text-sm font-semibold text-foreground mb-2">
-                      Annual Revenue Range *
-                    </label>
-                    <select
-                      id="revenueRange"
-                      name="revenueRange"
-                      required
-                      value={formData.revenueRange}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all">
+                    <div className="grid sm:grid-cols-2 gap-4">
+                      <div>
+                        <label htmlFor="email" className="block text-sm font-semibold text-foreground mb-2">
+                          Email *
+                        </label>
+                        <input
+                          type="email"
+                          id="email"
+                          name="email"
+                          required
+                          value={formData.email}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
+                          placeholder="you@company.com" />
+                        
+                      </div>
+
+                      <div>
+                        <label htmlFor="phone" className="block text-sm font-semibold text-foreground mb-2">
+                          Phone *
+                        </label>
+                        <input
+                          type="tel"
+                          id="phone"
+                          name="phone"
+                          required
+                          value={formData.phone}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
+                          placeholder="(555) 123-4567" />
+                        
+                      </div>
+                    </div>
+
+                    <div>
+                      <label htmlFor="revenueRange" className="block text-sm font-semibold text-foreground mb-2">
+                        Annual Revenue Range *
+                      </label>
+                      <select
+                        id="revenueRange"
+                        name="revenueRange"
+                        required
+                        value={formData.revenueRange}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all">
+                        
+                        <option value="">Select revenue range</option>
+                        <option value="under-500k">Under $500,000</option>
+                        <option value="500k-1m">$500,000 - $1M</option>
+                        <option value="1m-5m">$1M - $5M</option>
+                        <option value="5m-10m">$5M - $10M</option>
+                        <option value="10m-plus">$10M+</option>
+                      </select>
+                    </div>
+
+                    <div>
+                      <label htmlFor="financialConcerns" className="block text-sm font-semibold text-foreground mb-2">
+                        Brief Description of Financial Situation *
+                      </label>
+                      <textarea
+                        id="financialConcerns"
+                        name="financialConcerns"
+                        required
+                        value={formData.financialConcerns}
+                        onChange={handleChange}
+                        rows={4}
+                        className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all resize-none"
+                        placeholder="Please describe your business situation and financial concerns..." />
                       
-                      <option value="">Select revenue range</option>
-                      <option value="under-500k">Under $500,000</option>
-                      <option value="500k-1m">$500,000 - $1M</option>
-                      <option value="1m-5m">$1M - $5M</option>
-                      <option value="5m-10m">$5M - $10M</option>
-                      <option value="10m-plus">$10M+</option>
-                    </select>
+                    </div>
+
+                    <div>
+                      <label htmlFor="preferredContact" className="block text-sm font-semibold text-foreground mb-2">
+                        Preferred Contact Method *
+                      </label>
+                      <select
+                        id="preferredContact"
+                        name="preferredContact"
+                        required
+                        value={formData.preferredContact}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all">
+                        
+                        <option value="">Select preference</option>
+                        <option value="email">Email</option>
+                        <option value="phone">Phone</option>
+                        <option value="either">Either Email or Phone</option>
+                      </select>
+                    </div>
+
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full px-8 py-4 bg-accent text-white font-semibold rounded-lg hover:bg-accent/90 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2">
+                      {isSubmitting ? (
+                        <>
+                          <Loader2 className="w-5 h-5 animate-spin" />
+                          Submitting...
+                        </>
+                      ) : (
+                        "Submit Confidential Request"
+                      )}
+                    </button>
+
+                    <p className="text-sm text-foreground/60 text-center">
+                      All information submitted is treated with strict confidentiality. We typically respond within one business day.
+                    </p>
                   </div>
-
-                  <div>
-                    <label htmlFor="financialConcerns" className="block text-sm font-semibold text-foreground mb-2">
-                      Brief Description of Financial Situation *
-                    </label>
-                    <textarea
-                      id="financialConcerns"
-                      name="financialConcerns"
-                      required
-                      value={formData.financialConcerns}
-                      onChange={handleChange}
-                      rows={4}
-                      className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all resize-none"
-                      placeholder="Please describe your business situation and financial concerns..." />
-                    
-                  </div>
-
-                  <div>
-                    <label htmlFor="preferredContact" className="block text-sm font-semibold text-foreground mb-2">
-                      Preferred Contact Method *
-                    </label>
-                    <select
-                      id="preferredContact"
-                      name="preferredContact"
-                      required
-                      value={formData.preferredContact}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all">
-                      
-                      <option value="">Select preference</option>
-                      <option value="email">Email</option>
-                      <option value="phone">Phone</option>
-                      <option value="either">Either Email or Phone</option>
-                    </select>
-                  </div>
-
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full px-8 py-4 bg-accent text-white font-semibold rounded-lg hover:bg-accent/90 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2">
-                    {isSubmitting ? (
-                      <>
-                        <Loader2 className="w-5 h-5 animate-spin" />
-                        Submitting...
-                      </>
-                    ) : (
-                      "Submit Confidential Request"
-                    )}
-                  </button>
-
-                  <p className="text-sm text-foreground/60 text-center">
-                    All information submitted is treated with strict confidentiality. We typically respond within one business day.
-                  </p>
                 </form>
               </div>
             </div>
