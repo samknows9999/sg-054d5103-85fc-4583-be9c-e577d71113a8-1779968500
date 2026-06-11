@@ -17,8 +17,6 @@ export default function TeamPage() {
   const { toast } = useToast();
   const [showSuccess, setShowSuccess] = useState(false);
 
-  const teamMembers = [
-
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
