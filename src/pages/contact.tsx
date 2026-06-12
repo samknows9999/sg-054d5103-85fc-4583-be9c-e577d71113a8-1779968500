@@ -50,7 +50,8 @@ ${formData.financialConcerns}
         body: JSON.stringify({
           subject: "Confidential Business Review Request",
           message: emailBody,
-          from: formData.email
+          from: formData.email,
+          customerName: formData.contactName
         })
       });
 

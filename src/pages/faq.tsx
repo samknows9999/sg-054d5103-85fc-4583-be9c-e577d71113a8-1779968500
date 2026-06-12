@@ -49,7 +49,8 @@ Date & Time: ${new Date().toLocaleString()}
         body: JSON.stringify({
           subject: "New Website Lead - FAQ Page",
           message: emailBody,
-          from: formData.get("email") as string
+          from: formData.get("email") as string,
+          customerName: formData.get("name") as string
         })
       });
 

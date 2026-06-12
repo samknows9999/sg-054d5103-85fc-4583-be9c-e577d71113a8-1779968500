@@ -117,7 +117,8 @@ Description: ${formData.get("description")}
         body: JSON.stringify({
           subject: "Cash Flow Assessment Request",
           message: emailBody,
-          from: formData.get("email") as string
+          from: formData.get("email") as string,
+          customerName: formData.get("name") as string
         })
       });
 

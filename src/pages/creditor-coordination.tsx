@@ -87,7 +87,8 @@ Company: ${formData.get("company")}
         body: JSON.stringify({
           subject: "Creditor Coordination Consultation Request",
           message: emailBody,
-          from: formData.get("email") as string
+          from: formData.get("email") as string,
+          customerName: `${formData.get("firstName")} ${formData.get("lastName")}`
         })
       });
 
