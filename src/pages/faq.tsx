@@ -15,7 +15,7 @@ import { useToast } from "@/hooks/use-toast";
 import {
   ArrowRight, Shield, Phone,
   MapPin, CheckCircle2, TrendingUp,
-  Building2, Users, FileWarning, Wallet, Loader2 } from
+  Building2, Users, FileWarning, Wallet, Loader2, MessageSquare, HelpCircle } from
 "lucide-react";
 
 export default function FAQPage() {
@@ -75,7 +75,9 @@ Date & Time: ${new Date().toLocaleString()}
     <div className="min-h-screen bg-[#050505] font-sans selection:bg-accent/20">
       <SEO
         title="Frequently Asked Questions | Regroup Partners"
-        description="Answers to common questions about business restructuring, creditor coordination, cash flow improvement, and financial advisory services in Boca Raton, FL." />
+        description="Answers to common questions about business restructuring, creditor coordination, cash flow improvement, and financial advisory services in Boca Raton, FL."
+        url="/faq"
+      />
       
       <Head>
         <script

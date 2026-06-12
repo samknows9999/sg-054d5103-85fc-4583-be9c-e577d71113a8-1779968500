@@ -1,10 +1,15 @@
 import { Navigation } from "@/components/Navigation";
-import { Hero } from "@/components/Hero";
 import { Footer } from "@/components/Footer";
-import { SEO } from "@/components/SEO";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { useState } from "react";
-import { Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { SEO } from "@/components/SEO";
+import { Loader2 } from "lucide-react";
 
 export default function Contact() {
   const { toast } = useToast();
@@ -83,9 +88,11 @@ ${formData.financialConcerns}
 
   return (
     <>
-      <SEO
-        title="Confidential Business Review | Regroup Partners"
-        description="Request a confidential business review with our experienced restructuring advisory team. Discreet, professional consultation for complex financial situations." />
+      <SEO 
+        title="Contact Regroup Partners | Confidential Business Consultation"
+        description="Schedule a confidential business review with our restructuring experts. Get professional guidance on financial challenges, MCA obligations, and creditor coordination."
+        url="/contact"
+      />
       
 
       <Navigation />

@@ -16,7 +16,7 @@ import {
   Building2, LineChart, Shield, Target, Phone, MapPin, CheckCircle2, 
   ArrowRight, FileWarning, Wallet, TrendingDown, Clock, CreditCard, 
   Receipt, Calculator, HardHat, Stethoscope, Coffee, ShoppingBag, Truck,
-  Briefcase, Loader2
+  Briefcase, Loader2, TrendingUp, Users, AlertCircle, FileText, DollarSign, Scale, BarChart3
 } from "lucide-react";
 
 // Data Arrays
@@ -178,8 +178,9 @@ Message: ${formData.get("message")}
   return (
     <div className="min-h-screen bg-white font-sans text-foreground">
       <SEO 
-        title="MCA Advisory Services | Regroup Partners" 
-        description="Professional MCA advisory and business restructuring. Helping businesses manage Merchant Cash Advance debt, improve cash flow, and regain financial stability."
+        title="MCA Advisory Services | Merchant Cash Advance Consulting"
+        description="Expert MCA advisory and restructuring services. Specialized guidance for businesses dealing with Merchant Cash Advance obligations, debt consolidation, and cash flow recovery."
+        url="/mca-advisory"
       />
       <Head>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />

@@ -1,8 +1,10 @@
 import { Navigation } from "@/components/Navigation";
-import { Hero } from "@/components/Hero";
 import { Footer } from "@/components/Footer";
-import { SEO } from "@/components/SEO";
+import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Calendar, Clock, ArrowRight, FileText, TrendingUp, Users } from "lucide-react";
 import Link from "next/link";
+import { SEO } from "@/components/SEO";
 
 export default function Insights() {
   const articles = [
@@ -46,9 +48,10 @@ export default function Insights() {
 
   return (
     <>
-      <SEO
-        title="Insights & Expertise | Regroup Partners"
-        description="Thought leadership on business restructuring, financial stabilization, merchant cash advance advisory, and creditor coordination strategies."
+      <SEO 
+        title="Business Restructuring Insights & Resources | Regroup Partners"
+        description="Expert insights, articles, and resources on business restructuring, financial recovery, MCA obligations, and creditor coordination strategies from industry professionals."
+        url="/insights"
       />
 
       <Navigation />

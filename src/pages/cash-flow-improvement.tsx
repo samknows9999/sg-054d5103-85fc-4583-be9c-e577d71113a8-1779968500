@@ -17,7 +17,8 @@ import {
   Calculator, Shield, LineChart, Target, Building, 
   CheckCircle2, MapPin, Phone, Building2, HardHat, 
   Stethoscope, Coffee, ShoppingBag, Truck, FileWarning, Wallet,
-  Calendar, ShoppingCart, TrendingUp, Loader2
+  Calendar, ShoppingCart, TrendingUp, Loader2,
+  DollarSign, BarChart3, ArrowRight, Briefcase, Users, FileText
 } from "lucide-react";
 
 // Data Arrays for Rendering
@@ -161,8 +162,9 @@ Description: ${formData.get("description")}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
       </Head>
       <SEO 
-        title="Improve Business Cash Flow | Financial Recovery | Regroup Partners" 
-        description="Expert business cash flow improvement and working capital management. Regroup Partners helps businesses nationwide reduce financial pressure and stabilize operations." 
+        title="Cash Flow Improvement Services | Financial Stabilization Experts"
+        description="Strategic cash flow improvement and working capital management. Expert financial analysis, optimization strategies, and liquidity solutions for businesses in transition."
+        url="/cash-flow-improvement"
       />
       <Navigation />
 

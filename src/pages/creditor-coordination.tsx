@@ -12,7 +12,7 @@ import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { 
   Building2, Shield, TrendingUp, AlertTriangle, FileText, 
-  Briefcase, MessageSquare, Clock, Phone, Scale, Lock, Users, Loader2
+  Briefcase, MessageSquare, Clock, Phone, Scale, Lock, Users, Loader2, Handshake, CheckCircle2
 } from "lucide-react";
 
 const challenges = [
@@ -144,8 +144,9 @@ Company: ${formData.get("company")}
         />
       </Head>
       <SEO 
-        title="Professional Creditor Coordination Services | Regroup Partners" 
-        description="Reduce financial pressure and stabilize cash flow with expert creditor coordination and business debt management services. Nationwide support based in Boca Raton, FL."
+        title="Creditor Coordination Services | Financial Stability & Vendor Relations"
+        description="Professional creditor coordination and negotiation services. Expert guidance managing vendor relationships, payment negotiations, and debt restructuring strategies."
+        url="/creditor-coordination"
       />
       <Navigation />
       

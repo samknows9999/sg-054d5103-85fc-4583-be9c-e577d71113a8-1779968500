@@ -5,7 +5,7 @@ import { AsSeenOn } from "@/components/AsSeenOn";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import Link from "next/link";
-import { Building2, Users, TrendingUp, Shield, Phone, ArrowRight, Loader2 } from "lucide-react";
+import { Building2, Users, TrendingUp, Shield, Phone, ArrowRight, Loader2, Briefcase, Mail } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
@@ -67,9 +67,11 @@ Date & Time: ${new Date().toLocaleString()}
 
   return (
     <>
-      <SEO
-        title="Business Restructuring & Financial Advisory | Regroup Partners"
-        description="Boutique business restructuring and financial advisory firm with 21+ years experience. Specializing in creditor coordination, cash flow stabilization, and merchant cash advance restructuring." />
+      <SEO 
+        title="Business Restructuring & Financial Advisory Services | Regroup Partners"
+        description="Leading business restructuring and financial advisory firm. 21+ years of experience helping businesses navigate financial challenges, MCA obligations, and creditor coordination."
+        url="/"
+      />
       
 
       <Navigation />

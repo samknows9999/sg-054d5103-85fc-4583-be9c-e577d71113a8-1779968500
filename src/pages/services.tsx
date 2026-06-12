@@ -1,16 +1,30 @@
 import { Navigation } from "@/components/Navigation";
-import { Hero } from "@/components/Hero";
 import { Footer } from "@/components/Footer";
-import { SEO } from "@/components/SEO";
+import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { 
+  Shield, 
+  TrendingUp, 
+  Users, 
+  Handshake,
+  DollarSign,
+  BarChart3,
+  FileText,
+  Target,
+  ArrowRight,
+  CheckCircle2
+} from "lucide-react";
 import Link from "next/link";
+import { SEO } from "@/components/SEO";
 import Image from "next/image";
 
 export default function Services() {
   return (
     <>
-      <SEO
-        title="Business Restructuring Services | Regroup Partners"
-        description="Comprehensive business restructuring, creditor coordination, cash flow improvement, and merchant cash advance advisory services from experienced professionals."
+      <SEO 
+        title="Business Restructuring & Financial Advisory Services | Regroup Partners"
+        description="Comprehensive business restructuring, MCA advisory, creditor coordination, and cash flow improvement services. Expert financial guidance for businesses in transition."
+        url="/services"
       />
 
       <Navigation />

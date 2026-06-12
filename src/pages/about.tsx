@@ -3,6 +3,7 @@ import { Hero } from "@/components/Hero";
 import { TrustBar } from "@/components/TrustBar";
 import { AsSeenOn } from "@/components/AsSeenOn";
 import { Footer } from "@/components/Footer";
+import { Shield, Award, Users, TrendingUp, Target, Heart, CheckCircle2 } from "lucide-react";
 import { SEO } from "@/components/SEO";
 import Link from "next/link";
 import Image from "next/image";
@@ -10,9 +11,10 @@ import Image from "next/image";
 export default function About() {
   return (
     <>
-      <SEO
-        title="About Us | Regroup Partners"
-        description="Women-owned boutique business advisory firm with 21+ years of experience in restructuring, creditor coordination, and merchant cash advance solutions."
+      <SEO 
+        title="About Regroup Partners | 21+ Years of Business Restructuring Experience"
+        description="Women-owned business restructuring firm with over 21 years of experience. Expert financial advisory, creditor coordination, and turnaround consulting services nationwide."
+        url="/about"
       />
 
       <Navigation />

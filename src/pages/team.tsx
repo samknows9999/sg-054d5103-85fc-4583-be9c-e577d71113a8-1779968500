@@ -1,16 +1,14 @@
 import { Navigation } from "@/components/Navigation";
-import { Hero } from "@/components/Hero";
 import { Footer } from "@/components/Footer";
-import { SEO } from "@/components/SEO";
 import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Mail, Linkedin, Phone, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { Shield, Award, Users as UsersIcon, TrendingUp, Linkedin, Mail, Briefcase, Target, CheckCircle2, Loader2 } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { SEO } from "@/components/SEO";
 
 export default function TeamPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -68,10 +66,11 @@ Date & Time: ${new Date().toLocaleString()}
 
   return (
     <>
-      <SEO
-        title="Our Team - Regroup Partners"
-        description="Meet the experienced leadership team at Regroup Partners. Women-owned and operated with 21+ years of business restructuring expertise."
-        url="https://regrouppartners.com/team" />
+      <SEO 
+        title="Meet Our Team | Business Restructuring & Financial Advisory Experts"
+        description="Experienced business restructuring professionals with 21+ years of expertise. Meet the team behind successful turnarounds and financial recovery solutions."
+        url="/team"
+      />
       
 
       <Navigation />

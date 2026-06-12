@@ -5,33 +5,45 @@ interface SEOProps {
   description?: string;
   image?: string;
   url?: string;
+  canonical?: string;
 }
 
 // SEO elements that can be used in _document.tsx (returns JSX without Head wrapper)
 export function SEOElements({
   title = "Regroup Partners | Business Restructuring & Financial Advisory Services",
-  description = "Regroup Partners provides confidential business restructuring, financial advisory, credit coordination, and turnaround consulting services. Helping businesses navigate financial challenges with over 21 years of experience.",
+  description = "Expert business restructuring and financial advisory services. 21+ years helping businesses navigate financial challenges, creditor coordination, and MCA obligations.",
   image = "/og-image.png",
   url,
+  canonical,
 }: SEOProps) {
+  const siteUrl = "https://regrouppartners.com";
+  const fullUrl = url ? `${siteUrl}${url}` : siteUrl;
+  const canonicalUrl = canonical || fullUrl;
+
   return (
     <>
       <title>{title}</title>
       <meta name="description" content={description} />
       <link rel="icon" href="/favicon.ico" />
+      <link rel="canonical" href={canonicalUrl} />
 
       {/* Open Graph */}
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      {image && <meta property="og:image" content={image} />}
-      {url && <meta property="og:url" content={url} />}
+      <meta property="og:image" content={`${siteUrl}${image}`} />
+      <meta property="og:url" content={fullUrl} />
       <meta property="og:type" content="website" />
+      <meta property="og:site_name" content="Regroup Partners" />
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
-      {image && <meta name="twitter:image" content={image} />}
+      <meta name="twitter:image" content={`${siteUrl}${image}`} />
+      
+      {/* Additional SEO */}
+      <meta name="robots" content="index, follow" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
     </>
   );
 }
@@ -39,29 +51,40 @@ export function SEOElements({
 // SEO component for use in pages/_app.tsx or individual pages (uses next/head)
 // Note: Flattened structure (no fragment) for better Next.js Head compatibility during hot reload
 export function SEO({
-  title = "Hello World",
-  description = "Welcome to my app",
+  title = "Regroup Partners | Business Restructuring & Financial Advisory Services",
+  description = "Expert business restructuring and financial advisory services. 21+ years helping businesses navigate financial challenges, creditor coordination, and MCA obligations.",
   image = "/og-image.png",
   url,
+  canonical,
 }: SEOProps) {
+  const siteUrl = "https://regrouppartners.com";
+  const fullUrl = url ? `${siteUrl}${url}` : siteUrl;
+  const canonicalUrl = canonical || fullUrl;
+
   return (
     <Head>
       <title>{title}</title>
       <meta name="description" content={description} />
       <link rel="icon" href="/favicon.ico" />
+      <link rel="canonical" href={canonicalUrl} />
 
       {/* Open Graph */}
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      {image && <meta property="og:image" content={image} />}
-      {url && <meta property="og:url" content={url} />}
+      <meta property="og:image" content={`${siteUrl}${image}`} />
+      <meta property="og:url" content={fullUrl} />
       <meta property="og:type" content="website" />
+      <meta property="og:site_name" content="Regroup Partners" />
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
-      {image && <meta name="twitter:image" content={image} />}
+      <meta name="twitter:image" content={`${siteUrl}${image}`} />
+      
+      {/* Additional SEO */}
+      <meta name="robots" content="index, follow" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
     </Head>
   );
 }
