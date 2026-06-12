@@ -1,4 +1,5 @@
 import { Navigation } from "@/components/Navigation";
+import { Hero } from "@/components/Hero";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";

@@ -1,11 +1,13 @@
 import { Navigation } from "@/components/Navigation";
+import { Hero } from "@/components/Hero";
 import { Footer } from "@/components/Footer";
 import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Shield, Award, Users as UsersIcon, TrendingUp, Linkedin, Mail, Briefcase, Target, CheckCircle2, Loader2 } from "lucide-react";
+import { Shield, Award, Users as UsersIcon, TrendingUp, Linkedin, Mail, Phone, Briefcase, Target, CheckCircle2, Loader2 } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { SEO } from "@/components/SEO";
