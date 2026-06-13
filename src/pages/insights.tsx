@@ -10,10 +10,10 @@ import { SEO } from "@/components/SEO";
 export default function Insights() {
   const articles = [
     {
-      category: "Business Restructuring",
-      title: "How Business Restructuring Improves Cash Flow",
-      excerpt: "Strategic approaches to improving operational cash flow through creditor coordination, payment prioritization, and financial stabilization during business restructuring.",
-      slug: "#",
+      category: "Restructuring vs Bankruptcy",
+      title: "Business Restructuring vs Bankruptcy: Key Differences",
+      excerpt: "Understanding when business restructuring offers a path to stabilization outside of formal bankruptcy proceedings and the advantages of creditor coordination.",
+      slug: "/insights/business-restructuring-vs-bankruptcy",
     },
     {
       category: "MCA Advisory",
@@ -28,9 +28,9 @@ export default function Insights() {
       slug: "#",
     },
     {
-      category: "Restructuring vs Bankruptcy",
-      title: "Business Restructuring vs Bankruptcy: Key Differences",
-      excerpt: "Understanding when business restructuring offers a path to stabilization outside of formal bankruptcy proceedings and the advantages of creditor coordination.",
+      category: "Business Restructuring",
+      title: "How Business Restructuring Improves Cash Flow",
+      excerpt: "Strategic approaches to improving operational cash flow through creditor coordination, payment prioritization, and financial stabilization during business restructuring.",
       slug: "#",
     },
     {
@@ -74,7 +74,7 @@ export default function Insights() {
               {articles.map((article, index) => (
                 <Link
                   key={index}
-                  href="/insights"
+                  href={article.slug}
                   className="group block bg-white border border-gray-200 shadow-lg rounded-xl overflow-hidden hover:shadow-xl hover:border-accent/30 transition-all"
                 >
                   <div className="p-8">

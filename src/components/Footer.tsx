@@ -22,7 +22,7 @@ export function Footer() {
     { label: "Business Restructuring", href: "/business-restructuring" },
     { label: "Creditor Coordination", href: "/creditor-coordination" },
     { label: "Cash Flow Improvement", href: "/cash-flow-improvement" },
-    { label: "MCA Negotiations", href: "/creditor-coordination" },
+    { label: "MCA Negotiations", href: "/mca-advisory" },
     { label: "Financial Advisory", href: "/services" }]
 
   },
@@ -33,7 +33,7 @@ export function Footer() {
     { label: "FAQs", href: "/faq" },
     { label: "Business Insights", href: "/insights" },
     { label: "Restructuring Articles", href: "/insights" },
-    { label: "Industry News", href: "/insights" }]
+    { label: "Media Mentions", href: "/media-mentions" }]
 
   }];
 

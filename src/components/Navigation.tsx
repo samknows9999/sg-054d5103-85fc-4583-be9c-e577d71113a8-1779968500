@@ -81,6 +81,9 @@ export function Navigation() {
                     <Link href="/about" className="block px-4 py-2.5 text-sm font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">
                       Why Choose Us
                     </Link>
+                    <Link href="/media-mentions" className="block px-4 py-2.5 text-sm font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">
+                      Media Mentions
+                    </Link>
                     <Link href="/faq" className="block px-4 py-2.5 text-sm font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">
                       FAQ
                     </Link>
@@ -202,6 +205,12 @@ export function Navigation() {
                 className="block px-6 py-2 text-sm font-medium text-white/70 hover:text-accent transition-colors pl-10">
                 
                   — Why Choose Us
+                </Link>
+                <Link
+                href="/media-mentions"
+                className="block px-6 py-2 text-sm font-medium text-white/70 hover:text-accent transition-colors pl-10">
+                
+                  — Media Mentions
                 </Link>
                 <Link
                 href="/faq"
