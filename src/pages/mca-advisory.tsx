@@ -164,7 +164,7 @@ Message: ${formData.get("message")}
     "name": "Regroup Partners",
     "image": "https://regrouppartners.com/logo.jpg",
     "url": "https://regrouppartners.com",
-    "telephone": "954-234-2300",
+    "telephone": "954-354-1800",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "5255 North Federal Highway Suite 301",

@@ -153,7 +153,8 @@ Description: ${formData.get("description")}
       "postalCode": "33487",
       "addressCountry": "US"
     },
-    "telephone": "(954) 234-2300",
+    "telephone": "(954) 354-1800",
+    "priceRange": "$$",
     "url": "https://regrouppartners.com/cash-flow-improvement"
   };
 

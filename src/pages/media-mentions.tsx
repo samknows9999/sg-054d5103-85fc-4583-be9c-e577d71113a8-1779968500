@@ -87,7 +87,7 @@ export default function MediaMentions() {
     },
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "954-234-2300",
+      "telephone": "954-354-1800",
       "contactType": "customer service"
     }
   };

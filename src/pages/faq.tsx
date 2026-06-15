@@ -125,7 +125,7 @@ Date & Time: ${new Date().toLocaleString()}
                 "postalCode": "33487",
                 "addressCountry": "US"
               },
-              "telephone": "+19542342300",
+              "telephone": "+19543541800",
               "url": "https://regrouppartners.com"
             })
           }} />
