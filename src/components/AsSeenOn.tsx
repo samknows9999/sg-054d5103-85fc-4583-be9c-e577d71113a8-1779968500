@@ -1,4 +1,6 @@
 import React from 'react';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
 
 const publications = [
   {
@@ -108,6 +110,17 @@ export function AsSeenOn() {
               </div>
             </a>
           ))}
+        </div>
+
+        {/* View All Media Mentions Button */}
+        <div className="text-center mt-8">
+          <Link href="/media-mentions">
+            <Button
+              variant="outline"
+              className="border-[#0A192F] text-[#0A192F] hover:bg-[#0A192F] hover:text-white px-8 py-6 text-base font-semibold">
+              View All Media Mentions
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
