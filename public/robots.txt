@@ -1,0 +1,6 @@
+# robots.txt for Regroup Partners
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://regrouppartners.com/sitemap.xml
