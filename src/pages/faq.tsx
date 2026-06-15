@@ -161,7 +161,7 @@ Date & Time: ${new Date().toLocaleString()}
                     Schedule Free Consultation
                   </Button>
                 </Link>
-                <a href="tel:954-234-2300" className="inline-flex">
+                <a href="tel:+19543541800" className="inline-flex">
                   <Button variant="outline" className="w-full sm:w-auto border-white/20 text-white hover:bg-white/10 px-8 h-14 rounded-sm text-base font-medium backdrop-blur-sm">
                     Speak With a Specialist
                   </Button>
@@ -471,8 +471,8 @@ Date & Time: ${new Date().toLocaleString()}
                   </div>
                   <div>
                     <p className="text-sm text-gray-500 font-medium mb-1 uppercase tracking-wider">Speak with an advisor</p>
-                    <a href="tel:954-234-2300" className="text-2xl font-semibold text-white hover:text-accent transition-colors">
-                      954-234-2300
+                    <a href="tel:+19543541800" className="font-semibold text-accent hover:underline">
+                      (954) 354-1800
                     </a>
                   </div>
                 </div>

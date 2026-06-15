@@ -389,8 +389,9 @@ Date & Time: ${new Date().toLocaleString()}
                   </div>
                   <div>
                     <p className="text-sm text-gray-500 font-medium mb-1 uppercase tracking-wider">Speak with an advisor immediately</p>
-                    <a href="tel:954-234-2300" className="text-2xl font-semibold text-white hover:text-accent transition-colors">
-                      954-234-2300
+                    <a href="tel:+19543541800" className="inline-flex items-center gap-2 px-6 py-3 bg-accent hover:bg-accent/90 text-white font-semibold rounded-lg transition-colors">
+                      <Phone className="w-4 h-4" />
+                      Call (954) 354-1800
                     </a>
                   </div>
                 </div>
