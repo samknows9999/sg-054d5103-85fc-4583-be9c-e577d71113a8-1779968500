@@ -101,10 +101,10 @@ export function Footer() {
               <li className="flex items-center gap-4">
                 <Phone className="w-5 h-5 text-gray-400 shrink-0" />
                 <a
-                  href="tel:954-234-2300"
+                  href="tel:+19543541800"
                   className="text-lg font-serif font-bold text-black hover:text-accent tracking-wide transition-colors relative group">
                   
-                  (954) 234-2300
+                  (954) 354-1800
                   <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-accent transition-all duration-300 ease-out group-hover:w-full"></span>
                 </a>
               </li>
@@ -215,7 +215,7 @@ export function Footer() {
                   <div className="pt-6 border-t border-gray-100">
                     <p className="font-medium text-black mb-1">Address:</p>
                     <p>5255 North Federal Highway Suite 301<br />Boca Raton 33487</p>
-                    <p className="mt-4 text-black font-serif font-bold text-2xl tracking-wide">954-234-2300</p>
+                    <p className="mt-4 text-black font-serif font-bold text-2xl tracking-wide">954-354-1800</p>
                   </div>
                 </div>
               </DialogContent>

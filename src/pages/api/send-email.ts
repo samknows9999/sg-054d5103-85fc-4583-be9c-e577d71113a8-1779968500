@@ -79,7 +79,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                 <tr>
                   <td style="padding: 0;">
                     <p style="margin: 0 0 10px; color: #0A192F; font-size: 15px; line-height: 1.5;">
-                      <strong>Phone:</strong> <a href="tel:+19542342300" style="color: #8B1538; text-decoration: none;">(954) 234-2300</a>
+                      <strong>Phone:</strong> <a href="tel:+19543541800" style="color: #8B1538; text-decoration: none;">(954) 354-1800</a>
                     </p>
                     <p style="margin: 0; color: #0A192F; font-size: 15px; line-height: 1.5;">
                       <strong>Email:</strong> <a href="mailto:claudia@regrouppartners.com" style="color: #8B1538; text-decoration: none;">claudia@regrouppartners.com</a>

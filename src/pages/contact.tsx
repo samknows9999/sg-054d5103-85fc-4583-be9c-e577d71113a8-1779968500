@@ -201,8 +201,8 @@ ${formData.financialConcerns}
                         </svg>
                         <div>
                           <div className="font-semibold text-foreground">Phone</div>
-                          <a href="tel:954-234-2300" className="text-accent hover:underline">
-                            +1 (954) 234-2300
+                          <a href="tel:+19543541800" className="text-accent hover:underline">
+                            +1 (954) 354-1800
                           </a>
                         </div>
                       </div>

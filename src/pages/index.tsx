@@ -557,8 +557,8 @@ Date & Time: ${new Date().toLocaleString()}
                     </div>
                     <div>
                       <div className="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-1">Call Us Directly</div>
-                      <a href="tel:954-234-2300" className="text-3xl font-serif font-bold text-white hover:text-primary transition-colors">
-                        (954) 234-2300
+                      <a href="tel:+19543541800" className="text-3xl font-serif font-bold text-white hover:text-primary transition-colors">
+                        (954) 354-1800
                       </a>
                     </div>
                   </div>

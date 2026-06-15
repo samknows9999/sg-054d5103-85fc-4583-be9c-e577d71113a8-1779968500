@@ -404,7 +404,7 @@ Company: ${formData.get("company")}
                   )}
                 </Button>
                 <div className="text-center mt-4">
-                  <p className="text-sm text-gray-500">Or call us immediately at <a href="tel:954-234-2300" className="font-semibold text-[#0A192F] hover:text-primary">(954) 234-2300</a></p>
+                  <p className="text-sm text-gray-500">Or call us immediately at <a href="tel:+19543541800" className="font-semibold text-[#0A192F] hover:text-primary">(954) 354-1800</a></p>
                 </div>
               </form>
             </div>
