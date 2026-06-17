@@ -34,6 +34,9 @@ export default function Document() {
             data-softgen-visual-editor="true"
           />
         )}
+
+        {/* CallRail Tracking Script */}
+        <script type="text/javascript" src="//cdn.callrail.com/companies/476987961/c7fef4f6f5bf2aa2bdc1/12/swap.js"></script>
       </body>
     </Html>
   );
