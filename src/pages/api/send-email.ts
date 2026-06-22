@@ -1,19 +1,55 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { Resend } from "resend";
+import { checkRateLimit } from "@/lib/rate-limiter";
+import { checkForSpam } from "@/lib/spam-detection";
+import { verifyRecaptcha } from "@/lib/recaptcha";
+import { logBlockedSubmission, logSuccessfulSubmission } from "@/lib/submission-logger";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
+
+// Helper to get client IP
+function getClientIP(req: NextApiRequest): string {
+  const forwarded = req.headers['x-forwarded-for'];
+  const ip = forwarded 
+    ? (typeof forwarded === 'string' ? forwarded.split(',')[0] : forwarded[0])
+    : req.socket.remoteAddress || 'unknown';
+  return ip;
+}
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== "POST") {
     return res.status(405).json({ message: "Method not allowed" });
   }
 
-  const { subject, message, from, customerName } = req.body;
+  const clientIP = getClientIP(req);
+  console.log(`[EMAIL API] Received request from IP: ${clientIP}`);
 
-  console.log("[EMAIL API] Received request:", { subject, from, customerName, hasMessage: !!message });
+  const { 
+    subject, 
+    message, 
+    from, 
+    customerName, 
+    companyName, 
+    phone,
+    recaptchaToken,
+    honeypot 
+  } = req.body;
 
+  // HONEYPOT CHECK - Silent rejection
+  if (honeypot) {
+    console.log(`[SPAM BLOCK] Honeypot triggered from IP: ${clientIP}, Email: ${from}`);
+    logBlockedSubmission(clientIP, from || 'unknown', req.body, 'Honeypot field filled');
+    // Return success to fool bots
+    return res.status(200).json({ message: "Request received" });
+  }
+
+  // Basic validation
   if (!subject || !message || !from) {
-    console.error("[EMAIL API] Missing required fields:", { subject: !!subject, message: !!message, from: !!from });
+    console.error("[EMAIL API] Missing required fields:", { 
+      subject: !!subject, 
+      message: !!message, 
+      from: !!from 
+    });
     return res.status(400).json({ message: "Missing required fields" });
   }
 
@@ -22,22 +58,88 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return res.status(500).json({ message: "Email service not configured" });
   }
 
-  // Extract first name for personalization
-  const firstName = customerName ? customerName.split(' ')[0] : 'Valued Client';
-
   try {
-    console.log("[EMAIL API] Sending notification to Claudia...");
+    // 1. RECAPTCHA VERIFICATION
+    if (!recaptchaToken) {
+      console.log(`[SPAM BLOCK] Missing reCAPTCHA token from IP: ${clientIP}`);
+      logBlockedSubmission(clientIP, from, req.body, 'Missing reCAPTCHA token');
+      return res.status(400).json({ message: "Security verification failed. Please refresh and try again." });
+    }
+
+    const recaptchaResult = await verifyRecaptcha(recaptchaToken);
+    if (!recaptchaResult.valid) {
+      console.log(`[SPAM BLOCK] reCAPTCHA failed from IP: ${clientIP}, Score: ${recaptchaResult.score}`);
+      logBlockedSubmission(
+        clientIP, 
+        from, 
+        req.body, 
+        `reCAPTCHA verification failed: ${recaptchaResult.error}`,
+        undefined,
+        recaptchaResult.score
+      );
+      return res.status(400).json({ 
+        message: "Security verification failed. You may be identified as a bot. Please try again or contact us directly." 
+      });
+    }
+
+    // 2. RATE LIMITING
+    const rateLimitResult = await checkRateLimit(clientIP, from);
+    if (!rateLimitResult.allowed) {
+      console.log(`[SPAM BLOCK] Rate limit exceeded from IP: ${clientIP}, Email: ${from}`);
+      logBlockedSubmission(
+        clientIP, 
+        from, 
+        req.body, 
+        'Rate limit exceeded',
+        undefined,
+        recaptchaResult.score
+      );
+      return res.status(429).json({ 
+        message: rateLimitResult.reason,
+        retryAfter: rateLimitResult.retryAfter
+      });
+    }
+
+    // 3. SPAM CONTENT DETECTION
+    const spamCheck = checkForSpam({
+      email: from,
+      companyName,
+      contactName: customerName,
+      financialConcerns: message,
+      phone
+    });
+
+    if (spamCheck.isSpam) {
+      console.log(`[SPAM BLOCK] Spam detected from IP: ${clientIP}, Email: ${from}`);
+      console.log(`[SPAM BLOCK] Reasons: ${spamCheck.reasons.join(', ')}, Score: ${spamCheck.score}`);
+      logBlockedSubmission(
+        clientIP,
+        from,
+        req.body,
+        spamCheck.reasons.join('; '),
+        spamCheck.score,
+        recaptchaResult.score
+      );
+      return res.status(400).json({ 
+        message: "Your submission was flagged by our spam filters. Please ensure all information is accurate and try again, or contact us directly." 
+      });
+    }
+
+    // Extract first name for personalization
+    const firstName = customerName ? customerName.split(' ')[0] : 'Valued Client';
+
+    console.log("[EMAIL API] All anti-spam checks passed. Sending emails...");
+
     // Send notification email to Claudia with form details
     const claudiaEmail = await resend.emails.send({
       from: "website@regrouppartners.com",
       to: "claudia@regrouppartners.com",
       replyTo: from,
       subject: subject,
-      text: message,
+      text: `${message}\n\n--- Security Info ---\nIP: ${clientIP}\nreCAPTCHA Score: ${recaptchaResult.score}\nSpam Score: ${spamCheck.score}`,
     });
     console.log("[EMAIL API] Notification sent to Claudia:", claudiaEmail);
 
-    console.log("[EMAIL API] Sending confirmation to customer:", from);
     // Send branded HTML confirmation email to the customer
     const customerEmail = await resend.emails.send({
       from: "Regroup Partners <noreply@regrouppartners.com>",
@@ -124,10 +226,23 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     });
     console.log("[EMAIL API] Confirmation sent to customer:", customerEmail);
 
+    // Log successful submission
+    logSuccessfulSubmission(clientIP, from, req.body, recaptchaResult.score);
+
     return res.status(200).json({ message: "Emails sent successfully" });
   } catch (error) {
     console.error("[EMAIL API] Error sending email:", error);
-    console.error("[EMAIL API] Error details:", JSON.stringify(error, null, 2));
-    return res.status(500).json({ message: "Failed to send email", error: error instanceof Error ? error.message : "Unknown error" });
+    logBlockedSubmission(
+      clientIP, 
+      from, 
+      req.body, 
+      `Server error: ${error instanceof Error ? error.message : 'Unknown'}`,
+      undefined,
+      undefined
+    );
+    return res.status(500).json({ 
+      message: "Failed to send email", 
+      error: error instanceof Error ? error.message : "Unknown error" 
+    });
   }
 }
