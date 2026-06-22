@@ -59,27 +59,28 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   try {
-    // 1. RECAPTCHA VERIFICATION
-    if (!recaptchaToken) {
-      console.log(`[SPAM BLOCK] Missing reCAPTCHA token from IP: ${clientIP}`);
-      logBlockedSubmission(clientIP, from, req.body, 'Missing reCAPTCHA token');
-      return res.status(400).json({ message: "Security verification failed. Please refresh and try again." });
-    }
-
-    const recaptchaResult = await verifyRecaptcha(recaptchaToken);
-    if (!recaptchaResult.valid) {
-      console.log(`[SPAM BLOCK] reCAPTCHA failed from IP: ${clientIP}, Score: ${recaptchaResult.score}`);
-      logBlockedSubmission(
-        clientIP, 
-        from, 
-        req.body, 
-        `reCAPTCHA verification failed: ${recaptchaResult.error}`,
-        undefined,
-        recaptchaResult.score
-      );
-      return res.status(400).json({ 
-        message: "Security verification failed. You may be identified as a bot. Please try again or contact us directly." 
-      });
+    // 1. RECAPTCHA VERIFICATION (OPTIONAL - skip if not configured)
+    let recaptchaScore = undefined;
+    if (recaptchaToken && process.env.RECAPTCHA_SECRET_KEY) {
+      const recaptchaResult = await verifyRecaptcha(recaptchaToken);
+      if (!recaptchaResult.valid) {
+        console.log(`[SPAM BLOCK] reCAPTCHA failed from IP: ${clientIP}, Score: ${recaptchaResult.score}`);
+        logBlockedSubmission(
+          clientIP, 
+          from, 
+          req.body, 
+          `reCAPTCHA verification failed: ${recaptchaResult.error}`,
+          undefined,
+          recaptchaResult.score
+        );
+        return res.status(400).json({ 
+          message: "Security verification failed. You may be identified as a bot. Please try again or contact us directly." 
+        });
+      }
+      recaptchaScore = recaptchaResult.score;
+      console.log(`[SECURITY] reCAPTCHA passed with score: ${recaptchaScore}`);
+    } else {
+      console.log(`[SECURITY] reCAPTCHA skipped (not configured or no token provided)`);
     }
 
     // 2. RATE LIMITING
@@ -92,7 +93,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         req.body, 
         'Rate limit exceeded',
         undefined,
-        recaptchaResult.score
+        recaptchaScore
       );
       return res.status(429).json({ 
         message: rateLimitResult.reason,
@@ -118,7 +119,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         req.body,
         spamCheck.reasons.join('; '),
         spamCheck.score,
-        recaptchaResult.score
+        recaptchaScore
       );
       return res.status(400).json({ 
         message: "Your submission was flagged by our spam filters. Please ensure all information is accurate and try again, or contact us directly." 
@@ -136,7 +137,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       to: "claudia@regrouppartners.com",
       replyTo: from,
       subject: subject,
-      text: `${message}\n\n--- Security Info ---\nIP: ${clientIP}\nreCAPTCHA Score: ${recaptchaResult.score}\nSpam Score: ${spamCheck.score}`,
+      text: `${message}\n\n--- Security Info ---\nIP: ${clientIP}\nreCAPTCHA Score: ${recaptchaScore}\nSpam Score: ${spamCheck.score}`,
     });
     console.log("[EMAIL API] Notification sent to Claudia:", claudiaEmail);
 
@@ -227,7 +228,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     console.log("[EMAIL API] Confirmation sent to customer:", customerEmail);
 
     // Log successful submission
-    logSuccessfulSubmission(clientIP, from, req.body, recaptchaResult.score);
+    logSuccessfulSubmission(clientIP, from, req.body, recaptchaScore);
 
     return res.status(200).json({ message: "Emails sent successfully" });
   } catch (error) {

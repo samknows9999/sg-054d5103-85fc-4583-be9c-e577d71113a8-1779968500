@@ -28,19 +28,16 @@ export default function Contact() {
     setIsSubmitting(true);
     setShowSuccess(false);
 
-    if (!executeRecaptcha) {
-      toast({
-        title: "Error",
-        description: "reCAPTCHA not loaded. Please refresh the page.",
-        variant: "destructive"
-      });
-      setIsSubmitting(false);
-      return;
-    }
-
     try {
-      // Get reCAPTCHA token
-      const recaptchaToken = await executeRecaptcha("contact_form");
+      // Get reCAPTCHA token if available (optional)
+      let recaptchaToken = undefined;
+      if (executeRecaptcha) {
+        try {
+          recaptchaToken = await executeRecaptcha("contact_form");
+        } catch (error) {
+          console.warn("reCAPTCHA not available, proceeding without it");
+        }
+      }
 
       const emailBody = `
 Company Name: ${formData.companyName}
