@@ -1,7 +1,7 @@
 import { Navigation } from "@/components/Navigation";
 import { Hero } from "@/components/Hero";
 import { Footer } from "@/components/Footer";
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { SEO } from "@/components/SEO";
 import { Loader2 } from "lucide-react";
@@ -12,6 +12,7 @@ export default function Contact() {
   const { executeRecaptcha } = useGoogleReCaptcha();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
+  const formStartTime = useRef<number>(0);
   const [formData, setFormData] = useState({
     companyName: "",
     contactName: "",
@@ -23,8 +24,40 @@ export default function Contact() {
     website: "" // Honeypot field
   });
 
+  // Track when form is first interacted with
+  useEffect(() => {
+    const handleFirstInteraction = () => {
+      if (formStartTime.current === 0) {
+        formStartTime.current = Date.now();
+      }
+    };
+
+    // Track first interaction
+    const form = document.querySelector('form');
+    form?.addEventListener('focus', handleFirstInteraction, true);
+    form?.addEventListener('input', handleFirstInteraction, true);
+
+    return () => {
+      form?.removeEventListener('focus', handleFirstInteraction, true);
+      form?.removeEventListener('input', handleFirstInteraction, true);
+    };
+  }, []);
+
   const handleSubmit = useCallback(async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Check minimum form completion time (5 seconds)
+    const timeTaken = Date.now() - formStartTime.current;
+    if (timeTaken < 5000) {
+      console.log(`[SPAM BLOCK] Form submitted too quickly: ${timeTaken}ms`);
+      toast({
+        title: "Please Slow Down",
+        description: "Please take a moment to review your submission.",
+        variant: "destructive"
+      });
+      return;
+    }
+
     setIsSubmitting(true);
     setShowSuccess(false);
 
@@ -49,6 +82,8 @@ Preferred Contact: ${formData.preferredContact}
 
 Financial Situation:
 ${formData.financialConcerns}
+
+Form Completion Time: ${Math.round(timeTaken / 1000)}s
       `.trim();
       
       const response = await fetch("/api/send-email", {

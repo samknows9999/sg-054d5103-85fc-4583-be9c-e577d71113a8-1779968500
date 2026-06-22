@@ -110,9 +110,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       phone
     });
 
-    if (spamCheck.isSpam) {
+    // CRITICAL: Block if spam score > 10
+    if (spamCheck.isSpam || spamCheck.score > 10) {
       console.log(`[SPAM BLOCK] Spam detected from IP: ${clientIP}, Email: ${from}`);
-      console.log(`[SPAM BLOCK] Reasons: ${spamCheck.reasons.join(', ')}, Score: ${spamCheck.score}`);
+      console.log(`[SPAM BLOCK] Spam Score: ${spamCheck.score}, Reasons: ${spamCheck.reasons.join(', ')}`);
       logBlockedSubmission(
         clientIP,
         from,
@@ -122,7 +123,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         recaptchaScore
       );
       return res.status(400).json({ 
-        message: "Your submission was flagged by our spam filters. Please ensure all information is accurate and try again, or contact us directly." 
+        message: "Your submission was flagged by our security system. Please ensure all information is accurate and try again, or contact us directly at (954) 354-1800." 
       });
     }
 
