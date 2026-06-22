@@ -1,19 +1,15 @@
 import { Navigation } from "@/components/Navigation";
 import { Hero } from "@/components/Hero";
 import { Footer } from "@/components/Footer";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { SEO } from "@/components/SEO";
 import { Loader2 } from "lucide-react";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
 export default function Contact() {
   const { toast } = useToast();
+  const { executeRecaptcha } = useGoogleReCaptcha();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
   const [formData, setFormData] = useState({
@@ -23,15 +19,30 @@ export default function Contact() {
     phone: "",
     revenueRange: "",
     financialConcerns: "",
-    preferredContact: ""
+    preferredContact: "",
+    website: "" // Honeypot field
   });
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = useCallback(async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     setShowSuccess(false);
-    
-    const emailBody = `
+
+    if (!executeRecaptcha) {
+      toast({
+        title: "Error",
+        description: "reCAPTCHA not loaded. Please refresh the page.",
+        variant: "destructive"
+      });
+      setIsSubmitting(false);
+      return;
+    }
+
+    try {
+      // Get reCAPTCHA token
+      const recaptchaToken = await executeRecaptcha("contact_form");
+
+      const emailBody = `
 Company Name: ${formData.companyName}
 Contact Name: ${formData.contactName}
 Email: ${formData.email}
@@ -41,9 +52,8 @@ Preferred Contact: ${formData.preferredContact}
 
 Financial Situation:
 ${formData.financialConcerns}
-    `.trim();
-    
-    try {
+      `.trim();
+      
       const response = await fetch("/api/send-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -51,9 +61,15 @@ ${formData.financialConcerns}
           subject: "Confidential Business Review Request",
           message: emailBody,
           from: formData.email,
-          customerName: formData.contactName
+          customerName: formData.contactName,
+          companyName: formData.companyName,
+          phone: formData.phone,
+          recaptchaToken,
+          honeypot: formData.website // Honeypot field
         })
       });
+
+      const data = await response.json();
 
       if (response.ok) {
         setShowSuccess(true);
@@ -64,11 +80,22 @@ ${formData.financialConcerns}
           phone: "",
           revenueRange: "",
           financialConcerns: "",
-          preferredContact: ""
+          preferredContact: "",
+          website: ""
         });
         setTimeout(() => setShowSuccess(false), 8000);
+      } else if (response.status === 429) {
+        toast({
+          title: "Rate Limit Exceeded",
+          description: data.message || "Too many requests. Please try again later.",
+          variant: "destructive"
+        });
       } else {
-        throw new Error("Failed to send");
+        toast({
+          title: "Submission Failed",
+          description: data.message || "Failed to submit request. Please try again or call us directly.",
+          variant: "destructive"
+        });
       }
     } catch (error) {
       toast({
@@ -79,7 +106,7 @@ ${formData.financialConcerns}
     } finally {
       setIsSubmitting(false);
     }
-  };
+  }, [executeRecaptcha, formData, toast]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -95,7 +122,6 @@ ${formData.financialConcerns}
         description="Schedule a confidential business review with our restructuring experts. Get professional guidance on financial challenges, MCA obligations, and creditor coordination."
         url="/contact"
       />
-      
 
       <Navigation />
 
@@ -104,11 +130,11 @@ ${formData.financialConcerns}
           title="Confidential Business Review"
           subtitle="Connect with our experienced advisory team for a confidential discussion about your business challenges and restructuring needs."
           breadcrumbs={[
-          { label: "Home", href: "/" },
-          { label: "Contact" }]
-          }
-          backgroundImage="/generated/contact-reception.png" />
-        
+            { label: "Home", href: "/" },
+            { label: "Contact" }
+          ]}
+          backgroundImage="/generated/contact-reception.png"
+        />
 
         <section className="py-20 md:py-32 bg-white">
           <div className="max-w-[1400px] mx-auto px-6">
@@ -116,8 +142,8 @@ ${formData.financialConcerns}
               <img
                 src="/location-map.png"
                 alt="Regroup Partners - Boca Raton Location and Service Area"
-                className="w-full rounded-2xl shadow-2xl" />
-              
+                className="w-full rounded-2xl shadow-2xl"
+              />
             </div>
 
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
@@ -189,8 +215,8 @@ ${formData.financialConcerns}
                         </svg>
                         <div>
                           <div className="font-semibold text-foreground">Email</div>
-                          <a href="mailto:laura@regrouppartners.com,claudia@regrouppartners.com" className="text-accent hover:underline">info@regrouppartners.com
-
+                          <a href="mailto:laura@regrouppartners.com,claudia@regrouppartners.com" className="text-accent hover:underline">
+                            info@regrouppartners.com
                           </a>
                         </div>
                       </div>
@@ -237,14 +263,28 @@ ${formData.financialConcerns}
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                         <div>
-                          <h3 className="font-semibold text-green-900 mb-1">Thank you for contacting REgroup Partners.</h3>
-                          <p className="text-sm text-green-800">A member of our team will reach out shortly.</p>
+                          <h3 className="font-semibold text-green-900 mb-1">Thank you for contacting Regroup Partners.</h3>
+                          <p className="text-sm text-green-800">A member of our team will reach out shortly. Check your email for confirmation.</p>
                         </div>
                       </div>
                     </div>
                   )}
 
                   <div className="space-y-2">
+                    {/* Honeypot field - hidden from users but visible to bots */}
+                    <div style={{ position: "absolute", left: "-9999px" }} aria-hidden="true">
+                      <label htmlFor="website">Website (leave blank)</label>
+                      <input
+                        type="text"
+                        id="website"
+                        name="website"
+                        tabIndex={-1}
+                        autoComplete="off"
+                        value={formData.website}
+                        onChange={handleChange}
+                      />
+                    </div>
+
                     <div>
                       <label htmlFor="companyName" className="block text-sm font-semibold text-foreground mb-2">
                         Company Name *
@@ -257,8 +297,8 @@ ${formData.financialConcerns}
                         value={formData.companyName}
                         onChange={handleChange}
                         className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
-                        placeholder="Your business name" />
-                      
+                        placeholder="Your business name"
+                      />
                     </div>
 
                     <div>
@@ -273,8 +313,8 @@ ${formData.financialConcerns}
                         value={formData.contactName}
                         onChange={handleChange}
                         className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
-                        placeholder="Your full name" />
-                      
+                        placeholder="Your full name"
+                      />
                     </div>
 
                     <div className="grid sm:grid-cols-2 gap-4">
@@ -290,8 +330,8 @@ ${formData.financialConcerns}
                           value={formData.email}
                           onChange={handleChange}
                           className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
-                          placeholder="you@company.com" />
-                        
+                          placeholder="you@company.com"
+                        />
                       </div>
 
                       <div>
@@ -306,8 +346,8 @@ ${formData.financialConcerns}
                           value={formData.phone}
                           onChange={handleChange}
                           className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
-                          placeholder="(555) 123-4567" />
-                        
+                          placeholder="(555) 123-4567"
+                        />
                       </div>
                     </div>
 
@@ -321,8 +361,8 @@ ${formData.financialConcerns}
                         required
                         value={formData.revenueRange}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all">
-                        
+                        className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
+                      >
                         <option value="">Select revenue range</option>
                         <option value="under-500k">Under $500,000</option>
                         <option value="500k-1m">$500,000 - $1M</option>
@@ -344,8 +384,8 @@ ${formData.financialConcerns}
                         onChange={handleChange}
                         rows={4}
                         className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all resize-none"
-                        placeholder="Please describe your business situation and financial concerns..." />
-                      
+                        placeholder="Please describe your business situation and financial concerns..."
+                      />
                     </div>
 
                     <div>
@@ -358,8 +398,8 @@ ${formData.financialConcerns}
                         required
                         value={formData.preferredContact}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all">
-                        
+                        className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
+                      >
                         <option value="">Select preference</option>
                         <option value="email">Email</option>
                         <option value="phone">Phone</option>
@@ -370,7 +410,8 @@ ${formData.financialConcerns}
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full px-8 py-4 bg-accent text-white font-semibold rounded-lg hover:bg-accent/90 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2">
+                      className="w-full px-8 py-4 bg-accent text-white font-semibold rounded-lg hover:bg-accent/90 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                    >
                       {isSubmitting ? (
                         <>
                           <Loader2 className="w-5 h-5 animate-spin" />
@@ -381,8 +422,16 @@ ${formData.financialConcerns}
                       )}
                     </button>
 
-                    <p className="text-sm text-foreground/60 text-center">
-                      All information submitted is treated with strict confidentiality. We typically respond within one business day.
+                    <p className="text-xs text-foreground/60 text-center">
+                      This site is protected by reCAPTCHA and the Google{" "}
+                      <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
+                        Privacy Policy
+                      </a>{" "}
+                      and{" "}
+                      <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
+                        Terms of Service
+                      </a>{" "}
+                      apply. All information submitted is treated with strict confidentiality. We typically respond within one business day.
                     </p>
                   </div>
                 </form>
@@ -393,6 +442,6 @@ ${formData.financialConcerns}
       </main>
 
       <Footer />
-    </>);
-
+    </>
+  );
 }
