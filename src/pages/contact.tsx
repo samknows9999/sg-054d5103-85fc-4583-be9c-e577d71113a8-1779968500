@@ -24,11 +24,26 @@ export default function Contact() {
     website: "" // Honeypot field
   });
 
+  // Log Turnstile configuration on mount
+  useEffect(() => {
+    const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
+    console.log('[TURNSTILE CLIENT] Site key configured:', !!siteKey);
+    if (siteKey) {
+      console.log('[TURNSTILE CLIENT] Site key:', siteKey);
+      console.log('[TURNSTILE CLIENT] Widget should render on this page');
+    } else {
+      console.log('[TURNSTILE CLIENT] ⚠ No site key - widget will not render');
+      console.log('[TURNSTILE CLIENT] This means NEXT_PUBLIC_TURNSTILE_SITE_KEY was not embedded at build time');
+      console.log('[TURNSTILE CLIENT] → Solution: Redeploy the application after adding environment variables');
+    }
+  }, []);
+
   // Track when form is first interacted with
   useEffect(() => {
     const handleFirstInteraction = () => {
       if (formStartTime.current === 0) {
         formStartTime.current = Date.now();
+        console.log('[FORM] User started filling form');
       }
     };
 
@@ -42,19 +57,34 @@ export default function Contact() {
     };
   }, []);
 
+  const handleTurnstileSuccess = (token: string) => {
+    console.log('[TURNSTILE CLIENT] ✓ Token generated successfully');
+    console.log('[TURNSTILE CLIENT] Token length:', token.length);
+    setTurnstileToken(token);
+  };
+
   const handleSubmit = useCallback(async (e: React.FormEvent) => {
     e.preventDefault();
 
     // Check minimum form completion time (5 seconds)
     const timeTaken = Date.now() - formStartTime.current;
+    console.log(`[FORM] Form submission started - completion time: ${Math.round(timeTaken / 1000)}s`);
+    
     if (timeTaken < 5000) {
-      console.log(`[SPAM BLOCK] Form submitted too quickly: ${timeTaken}ms`);
+      console.log(`[SPAM BLOCK CLIENT] Form submitted too quickly: ${timeTaken}ms`);
       toast({
         title: "Please Slow Down",
         description: "Please take a moment to review your submission.",
         variant: "destructive"
       });
       return;
+    }
+
+    console.log(`[FORM] Turnstile token available: ${!!turnstileToken}`);
+    if (turnstileToken) {
+      console.log(`[FORM] ✓ Submitting with Turnstile token (length: ${turnstileToken.length})`);
+    } else {
+      console.log(`[FORM] ⚠ Submitting without Turnstile token (widget may not have loaded)`);
     }
 
     // Note: Turnstile verification is optional in frontend (checked server-side)
@@ -435,7 +465,14 @@ Form Completion Time: ${Math.round(timeTaken / 1000)}s
                       <div className="flex justify-center py-2">
                         <Turnstile
                           siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
-                          onSuccess={setTurnstileToken}
+                          onSuccess={handleTurnstileSuccess}
+                          onError={(error) => {
+                            console.error('[TURNSTILE CLIENT] ✗ Widget error:', error);
+                          }}
+                          onExpire={() => {
+                            console.log('[TURNSTILE CLIENT] ⚠ Token expired - user needs to reverify');
+                            setTurnstileToken("");
+                          }}
                           options={{
                             theme: 'light',
                             size: 'normal',

@@ -60,12 +60,18 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   try {
+    console.log(`[SECURITY] Starting security checks...`);
+    console.log(`[SECURITY] Turnstile token provided: ${!!turnstileToken}`);
+    console.log(`[SECURITY] Turnstile secret configured: ${!!process.env.TURNSTILE_SECRET_KEY}`);
+    
     // 1. CLOUDFLARE TURNSTILE VERIFICATION (OPTIONAL)
     // Only verify if a token is provided - don't block if missing
     if (turnstileToken) {
+      console.log(`[TURNSTILE] Verifying token for IP: ${clientIP}`);
       const turnstileResult = await verifyTurnstile(turnstileToken);
       if (!turnstileResult.valid) {
         console.log(`[SPAM BLOCK] Turnstile verification failed from IP: ${clientIP}`);
+        console.log(`[SPAM BLOCK] Turnstile error: ${turnstileResult.error}`);
         logBlockedSubmission(
           clientIP,
           from,
@@ -76,9 +82,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           message: "Security verification failed. Please try again or contact us directly at (954) 354-1800."
         });
       }
-      console.log(`[SECURITY] Turnstile verification passed`);
+      console.log(`[SECURITY] ✓ Turnstile verification PASSED for IP: ${clientIP}`);
+      console.log(`[SECURITY] ✓ Token successfully verified with Cloudflare`);
     } else {
-      console.log(`[SECURITY] No Turnstile token provided - relying on other spam protections`);
+      console.log(`[SECURITY] ⚠ No Turnstile token provided - relying on other spam protections`);
+      console.log(`[SECURITY] This is normal if the widget hasn't loaded or is not configured`);
     }
 
     // 2. RECAPTCHA VERIFICATION (FALLBACK - Optional)
