@@ -57,16 +57,9 @@ export default function Contact() {
       return;
     }
 
-    // Verify Turnstile token exists
-    if (!turnstileToken) {
-      toast({
-        title: "Security Verification Required",
-        description: "Please complete the security check before submitting.",
-        variant: "destructive"
-      });
-      return;
-    }
-
+    // Note: Turnstile verification is optional in frontend (checked server-side)
+    // This allows legitimate users to submit if widget fails to load
+    
     setIsSubmitting(true);
     setShowSuccess(false);
 
@@ -467,7 +460,10 @@ Form Completion Time: ${Math.round(timeTaken / 1000)}s
                     </button>
 
                     <p className="text-xs text-foreground/60 text-center">
-                      This site is protected by Cloudflare Turnstile and advanced anti-spam measures. All information submitted is treated with strict confidentiality. We typically respond within one business day.
+                      {process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY 
+                        ? "This site is protected by Cloudflare Turnstile and advanced anti-spam measures."
+                        : "This site is protected by advanced anti-spam measures."
+                      } All information submitted is treated with strict confidentiality. We typically respond within one business day.
                     </p>
                   </div>
                 </form>
