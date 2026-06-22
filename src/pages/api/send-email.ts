@@ -3,6 +3,7 @@ import { Resend } from "resend";
 import { checkRateLimit } from "@/lib/rate-limiter";
 import { checkForSpam } from "@/lib/spam-detection";
 import { verifyRecaptcha } from "@/lib/recaptcha";
+import { verifyTurnstile } from "@/lib/turnstile";
 import { logBlockedSubmission, logSuccessfulSubmission } from "@/lib/submission-logger";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -32,6 +33,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     companyName, 
     phone,
     recaptchaToken,
+    turnstileToken,
     honeypot 
   } = req.body;
 
@@ -39,7 +41,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   if (honeypot) {
     console.log(`[SPAM BLOCK] Honeypot triggered from IP: ${clientIP}, Email: ${from}`);
     logBlockedSubmission(clientIP, from || 'unknown', req.body, 'Honeypot field filled');
-    // Return success to fool bots
     return res.status(200).json({ message: "Request received" });
   }
 
@@ -59,31 +60,54 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   try {
-    // 1. RECAPTCHA VERIFICATION (OPTIONAL - skip if not configured)
+    // 1. CLOUDFLARE TURNSTILE VERIFICATION (PRIMARY CAPTCHA)
+    if (turnstileToken) {
+      const turnstileResult = await verifyTurnstile(turnstileToken);
+      if (!turnstileResult.valid) {
+        console.log(`[SPAM BLOCK] Turnstile verification failed from IP: ${clientIP}`);
+        logBlockedSubmission(
+          clientIP,
+          from,
+          req.body,
+          `Turnstile verification failed: ${turnstileResult.error}`
+        );
+        return res.status(400).json({
+          message: "Security verification failed. Please try again or contact us directly at (954) 354-1800."
+        });
+      }
+      console.log(`[SECURITY] Turnstile verification passed`);
+    } else if (process.env.TURNSTILE_SECRET_KEY) {
+      // If Turnstile is configured but no token provided, block
+      console.log(`[SPAM BLOCK] Missing Turnstile token from IP: ${clientIP}`);
+      logBlockedSubmission(clientIP, from, req.body, 'Missing Turnstile verification token');
+      return res.status(400).json({
+        message: "Security verification required. Please complete the security check."
+      });
+    }
+
+    // 2. RECAPTCHA VERIFICATION (FALLBACK - Optional)
     let recaptchaScore = undefined;
     if (recaptchaToken && process.env.RECAPTCHA_SECRET_KEY) {
       const recaptchaResult = await verifyRecaptcha(recaptchaToken);
       if (!recaptchaResult.valid) {
         console.log(`[SPAM BLOCK] reCAPTCHA failed from IP: ${clientIP}, Score: ${recaptchaResult.score}`);
         logBlockedSubmission(
-          clientIP, 
-          from, 
-          req.body, 
+          clientIP,
+          from,
+          req.body,
           `reCAPTCHA verification failed: ${recaptchaResult.error}`,
           undefined,
           recaptchaResult.score
         );
-        return res.status(400).json({ 
-          message: "Security verification failed. You may be identified as a bot. Please try again or contact us directly." 
+        return res.status(400).json({
+          message: "Security verification failed. You may be identified as a bot. Please try again or contact us directly."
         });
       }
       recaptchaScore = recaptchaResult.score;
       console.log(`[SECURITY] reCAPTCHA passed with score: ${recaptchaScore}`);
-    } else {
-      console.log(`[SECURITY] reCAPTCHA skipped (not configured or no token provided)`);
     }
 
-    // 2. RATE LIMITING
+    // 3. RATE LIMITING
     const rateLimitResult = await checkRateLimit(clientIP, from);
     if (!rateLimitResult.allowed) {
       console.log(`[SPAM BLOCK] Rate limit exceeded from IP: ${clientIP}, Email: ${from}`);
@@ -101,7 +125,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       });
     }
 
-    // 3. SPAM CONTENT DETECTION
+    // 4. SPAM CONTENT DETECTION
     const spamCheck = checkForSpam({
       email: from,
       companyName,

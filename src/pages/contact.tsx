@@ -5,13 +5,13 @@ import { useState, useCallback, useEffect, useRef } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { SEO } from "@/components/SEO";
 import { Loader2 } from "lucide-react";
-import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
+import Turnstile from "@marsidev/react-turnstile";
 
 export default function Contact() {
   const { toast } = useToast();
-  const { executeRecaptcha } = useGoogleReCaptcha();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
+  const [turnstileToken, setTurnstileToken] = useState<string>("");
   const formStartTime = useRef<number>(0);
   const [formData, setFormData] = useState({
     companyName: "",
@@ -32,7 +32,6 @@ export default function Contact() {
       }
     };
 
-    // Track first interaction
     const form = document.querySelector('form');
     form?.addEventListener('focus', handleFirstInteraction, true);
     form?.addEventListener('input', handleFirstInteraction, true);
@@ -58,20 +57,20 @@ export default function Contact() {
       return;
     }
 
+    // Verify Turnstile token exists
+    if (!turnstileToken) {
+      toast({
+        title: "Security Verification Required",
+        description: "Please complete the security check before submitting.",
+        variant: "destructive"
+      });
+      return;
+    }
+
     setIsSubmitting(true);
     setShowSuccess(false);
 
     try {
-      // Get reCAPTCHA token if available (optional)
-      let recaptchaToken = undefined;
-      if (executeRecaptcha) {
-        try {
-          recaptchaToken = await executeRecaptcha("contact_form");
-        } catch (error) {
-          console.warn("reCAPTCHA not available, proceeding without it");
-        }
-      }
-
       const emailBody = `
 Company Name: ${formData.companyName}
 Contact Name: ${formData.contactName}
@@ -96,8 +95,8 @@ Form Completion Time: ${Math.round(timeTaken / 1000)}s
           customerName: formData.contactName,
           companyName: formData.companyName,
           phone: formData.phone,
-          recaptchaToken,
-          honeypot: formData.website // Honeypot field
+          turnstileToken,
+          honeypot: formData.website
         })
       });
 
@@ -115,6 +114,7 @@ Form Completion Time: ${Math.round(timeTaken / 1000)}s
           preferredContact: "",
           website: ""
         });
+        setTurnstileToken("");
         setTimeout(() => setShowSuccess(false), 8000);
       } else if (response.status === 429) {
         toast({
@@ -138,7 +138,7 @@ Form Completion Time: ${Math.round(timeTaken / 1000)}s
     } finally {
       setIsSubmitting(false);
     }
-  }, [executeRecaptcha, formData, toast]);
+  }, [formData, toast, turnstileToken]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -303,7 +303,6 @@ Form Completion Time: ${Math.round(timeTaken / 1000)}s
                   )}
 
                   <div className="space-y-2">
-                    {/* Honeypot field - hidden from users but visible to bots */}
                     <div style={{ position: "absolute", left: "-9999px" }} aria-hidden="true">
                       <label htmlFor="website">Website (leave blank)</label>
                       <input
@@ -439,6 +438,19 @@ Form Completion Time: ${Math.round(timeTaken / 1000)}s
                       </select>
                     </div>
 
+                    {process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY && (
+                      <div className="flex justify-center py-2">
+                        <Turnstile
+                          siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
+                          onSuccess={setTurnstileToken}
+                          options={{
+                            theme: 'light',
+                            size: 'normal',
+                          }}
+                        />
+                      </div>
+                    )}
+
                     <button
                       type="submit"
                       disabled={isSubmitting}
@@ -455,15 +467,7 @@ Form Completion Time: ${Math.round(timeTaken / 1000)}s
                     </button>
 
                     <p className="text-xs text-foreground/60 text-center">
-                      This site is protected by reCAPTCHA and the Google{" "}
-                      <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
-                        Privacy Policy
-                      </a>{" "}
-                      and{" "}
-                      <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
-                        Terms of Service
-                      </a>{" "}
-                      apply. All information submitted is treated with strict confidentiality. We typically respond within one business day.
+                      This site is protected by Cloudflare Turnstile and advanced anti-spam measures. All information submitted is treated with strict confidentiality. We typically respond within one business day.
                     </p>
                   </div>
                 </form>
