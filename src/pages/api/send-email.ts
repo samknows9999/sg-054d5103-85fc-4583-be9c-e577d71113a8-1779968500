@@ -60,7 +60,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   try {
-    // 1. CLOUDFLARE TURNSTILE VERIFICATION (PRIMARY CAPTCHA)
+    // 1. CLOUDFLARE TURNSTILE VERIFICATION (OPTIONAL)
+    // Only verify if a token is provided - don't block if missing
     if (turnstileToken) {
       const turnstileResult = await verifyTurnstile(turnstileToken);
       if (!turnstileResult.valid) {
@@ -76,13 +77,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         });
       }
       console.log(`[SECURITY] Turnstile verification passed`);
-    } else if (process.env.TURNSTILE_SECRET_KEY) {
-      // If Turnstile is configured but no token provided, block
-      console.log(`[SPAM BLOCK] Missing Turnstile token from IP: ${clientIP}`);
-      logBlockedSubmission(clientIP, from, req.body, 'Missing Turnstile verification token');
-      return res.status(400).json({
-        message: "Security verification required. Please complete the security check."
-      });
+    } else {
+      console.log(`[SECURITY] No Turnstile token provided - relying on other spam protections`);
     }
 
     // 2. RECAPTCHA VERIFICATION (FALLBACK - Optional)
