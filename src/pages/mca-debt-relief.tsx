@@ -277,7 +277,7 @@ export default function MCADebtReliefLanding() {
                         type="submit"
                         disabled={isSubmitting}
                         className="w-full h-12 text-lg font-semibold"
-                        variant="premium"
+                        variant="default"
                       >
                         {isSubmitting ? "Submitting..." : "Get Free Consultation"}
                       </Button>
