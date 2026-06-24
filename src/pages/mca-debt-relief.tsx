@@ -26,14 +26,30 @@ export default function MCADebtReliefLanding() {
     e.preventDefault();
     setIsSubmitting(true);
     
+    const emailBody = `
+New MCA Debt Relief Consultation Request
+
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Company: ${formData.company}
+Approximate MCA Debt: ${formData.mcaDebt}
+Message: ${formData.message}
+
+Source Page: mca-debt-relief
+Page URL: ${window.location.href}
+Date & Time: ${new Date().toLocaleString()}
+    `.trim();
+    
     try {
       const response = await fetch("/api/send-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          ...formData,
-          subject: "MCA Debt Relief Consultation Request",
-          source: "Google Ads Landing Page"
+          subject: "New MCA Debt Relief Consultation Request",
+          message: emailBody,
+          from: formData.email,
+          customerName: formData.name
         })
       });
 
@@ -123,7 +139,7 @@ export default function MCADebtReliefLanding() {
               "name": "Regroup Partners",
               "description": "Business Restructuring & Financial Advisory",
               "url": "https://regrouppartners.com",
-              "telephone": "+1-305-912-5481",
+              "telephone": "+1-954-354-1800",
               "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "100 N Biscayne Blvd, Suite 1508",
@@ -149,9 +165,9 @@ export default function MCADebtReliefLanding() {
           <Link href="/" className="flex items-center gap-3">
             <img src="/Logo_Regroup.png" alt="Regroup Partners" className="h-10 w-auto" />
           </Link>
-          <a href="tel:+13059125481" className="flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-semibold">
+          <a href="tel:+19543541800" className="flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-semibold">
             <Phone className="h-5 w-5" />
-            <span className="hidden sm:inline">305-912-5481</span>
+            <span className="hidden sm:inline">954-354-1800</span>
           </a>
         </div>
       </header>
@@ -515,14 +531,14 @@ export default function MCADebtReliefLanding() {
                   className="h-14 px-8 text-lg font-semibold bg-white/10 border-white/30 hover:bg-white/20 text-white"
                   asChild
                 >
-                  <a href="tel:+13059125481">
+                  <a href="tel:+19543541800">
                     <Phone className="h-5 w-5 mr-2" />
                     Speak With An Advisor
                   </a>
                 </Button>
               </div>
               <p className="text-sm text-white/70 pt-4">
-                Confidential consultations available. No obligation. Call 305-912-5481
+                Confidential consultations available. No obligation. Call 954-354-1800
               </p>
             </div>
           </div>
