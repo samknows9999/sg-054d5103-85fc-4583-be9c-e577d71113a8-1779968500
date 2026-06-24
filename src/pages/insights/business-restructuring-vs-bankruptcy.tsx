@@ -153,7 +153,7 @@ export default function BusinessRestructuringVsBankruptcy() {
         />
       </Head>
 
-      <Navigation />
+      <Navigation alwaysVisible={true} />
 
       <main className="pt-32 pb-20">
         {/* Breadcrumb */}

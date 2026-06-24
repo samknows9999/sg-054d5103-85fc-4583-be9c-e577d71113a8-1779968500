@@ -160,9 +160,9 @@ Date & Time: ${new Date().toLocaleString()}
         />
       </Head>
 
-      <Navigation />
+      <Navigation alwaysVisible={true} />
 
-      <main>
+      <main className="pt-24">
         {/* Hero Section with Inline Form */}
         <section className="relative py-20 lg:py-32 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-muted/50 to-background -z-10" />

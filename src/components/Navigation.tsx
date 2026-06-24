@@ -6,13 +6,23 @@ import { Menu, X, Phone, ChevronDown, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SearchModal } from "@/components/SearchModal";
 
-export function Navigation() {
+interface NavigationProps {
+  alwaysVisible?: boolean;
+}
+
+export function Navigation({ alwaysVisible = false }: NavigationProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
-  const [scrolled, setScrolled] = useState(false);
+  const [scrolled, setScrolled] = useState(alwaysVisible);
 
   useEffect(() => {
+    if (alwaysVisible) {
+      setIsVisible(true);
+      setScrolled(true);
+      return;
+    }
+
     let lastScrollY = window.scrollY;
 
     const handleScroll = () => {
@@ -32,7 +42,7 @@ export function Navigation() {
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [alwaysVisible]);
 
   return (
     <header
