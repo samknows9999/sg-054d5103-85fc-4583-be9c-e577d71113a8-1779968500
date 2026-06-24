@@ -69,6 +69,10 @@ Date & Time: ${new Date().toLocaleString()}
 
   const faqs = [
     {
+      q: "What is MCA debt restructuring?",
+      a: "MCA debt restructuring refers to strategies used to address Merchant Cash Advance obligations, improve cash flow, coordinate with creditors, and create a more sustainable financial structure for the business. Depending on the situation, restructuring may involve reviewing repayment arrangements, improving cash flow management, and developing a practical plan to support long-term business stability."
+    },
+    {
       q: "What is MCA debt relief?",
       a: "MCA debt relief involves working with creditors to restructure or reduce Merchant Cash Advance obligations through professional negotiation, cash flow analysis, and strategic business restructuring."
     },
