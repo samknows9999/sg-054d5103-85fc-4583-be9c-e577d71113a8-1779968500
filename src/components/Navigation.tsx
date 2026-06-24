@@ -117,6 +117,9 @@ export function Navigation() {
                     <Link href="/mca-advisory" className="block px-4 py-2.5 text-sm font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">
                       MCA Advisory
                     </Link>
+                    <Link href="/mca-debt-relief" className="block px-4 py-2.5 text-sm font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">
+                      MCA Debt Relief
+                    </Link>
                     <div className="h-px bg-white/10 my-1 mx-2"></div>
                     <Link href="/services" className="block px-4 py-2.5 text-sm font-medium text-white hover:bg-white/10 rounded-lg transition-all">
                       All Advisory Services
@@ -250,6 +253,12 @@ export function Navigation() {
                 className="block px-6 py-2 text-sm font-medium text-white/70 hover:text-accent transition-colors pl-10">
                 
                   — MCA Advisory
+                </Link>
+                <Link
+                href="/mca-debt-relief"
+                className="block px-6 py-2 text-sm font-medium text-white/70 hover:text-accent transition-colors pl-10">
+                
+                  — MCA Debt Relief
                 </Link>
               </div>
               <Link
