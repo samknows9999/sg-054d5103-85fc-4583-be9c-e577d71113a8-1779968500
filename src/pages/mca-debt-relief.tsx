@@ -1,5 +1,6 @@
 import { SEO } from "@/components/SEO";
 import { Footer } from "@/components/Footer";
+import { Navigation } from "@/components/Navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -159,18 +160,7 @@ Date & Time: ${new Date().toLocaleString()}
         />
       </Head>
 
-      {/* Simplified Header - No Distracting Navigation */}
-      <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container mx-auto px-6 h-20 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-3">
-            <img src="/Logo_Regroup.png" alt="Regroup Partners" className="h-10 w-auto" />
-          </Link>
-          <a href="tel:+19543541800" className="flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-semibold">
-            <Phone className="h-5 w-5" />
-            <span className="hidden sm:inline">954-354-1800</span>
-          </a>
-        </div>
-      </header>
+      <Navigation />
 
       <main>
         {/* Hero Section with Inline Form */}
