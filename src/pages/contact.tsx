@@ -319,7 +319,7 @@ Form Completion Time: ${Math.round(timeTaken / 1000)}s
                         </svg>
                         <div>
                           <h3 className="font-semibold text-green-900 mb-1">Thank you for contacting Regroup Partners.</h3>
-                          <p className="text-sm text-green-800">A member of our team will reach out shortly. Check your email for confirmation.</p>
+                          <p className="text-sm text-green-800">Your request has been received successfully. A member of our team will review your information and contact you shortly.</p>
                         </div>
                       </div>
                     </div>

@@ -213,10 +213,14 @@ export default function MCADebtReliefLanding() {
                   </div>
 
                   {submitStatus === "success" ? (
-                    <div className="text-center py-8 space-y-4">
-                      <CheckCircle2 className="h-16 w-16 text-primary mx-auto" />
-                      <h3 className="font-semibold text-xl">Thank you for reaching out!</h3>
-                      <p className="text-foreground/70">An advisor will contact you within 24 hours to discuss your MCA relief options.</p>
+                    <div className="bg-green-50 border border-green-200 rounded-lg p-6 space-y-4">
+                      <div className="flex items-start gap-3">
+                        <CheckCircle2 className="h-6 w-6 text-green-600 flex-shrink-0 mt-0.5" />
+                        <div>
+                          <h3 className="font-semibold text-green-900 text-lg mb-2">Thank you for contacting Regroup Partners.</h3>
+                          <p className="text-green-800 leading-relaxed">Your request has been received successfully. A member of our team will review your information and contact you shortly.</p>
+                        </div>
+                      </div>
                     </div>
                   ) : (
                     <form onSubmit={handleSubmit} className="space-y-4">
