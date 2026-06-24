@@ -1,6 +1,5 @@
 import { SEO } from "@/components/SEO";
 import { Footer } from "@/components/Footer";
-import { Navigation } from "@/components/Navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -10,6 +9,7 @@ import { Phone, CheckCircle2, Shield, Users, Clock, TrendingUp, FileText, Chevro
 import { useState, FormEvent } from "react";
 import Link from "next/link";
 import Head from "next/head";
+import Image from "next/image";
 
 export default function MCADebtReliefLanding() {
   const [formData, setFormData] = useState({
@@ -164,9 +164,56 @@ Date & Time: ${new Date().toLocaleString()}
         />
       </Head>
 
-      <Navigation alwaysVisible={true} />
+      {/* Custom Landing Page Header */}
+      <header className="fixed top-0 left-0 right-0 z-50 bg-[#0B1F3A]">
+        <div className="container mx-auto px-6">
+          <div className="flex items-center justify-between h-20">
+            {/* Logo */}
+            <Link href="/" className="flex items-center">
+              <Image
+                src="/Logo_Regroup.png"
+                alt="Regroup Partners"
+                width={180}
+                height={40}
+                className="h-10 w-auto"
+              />
+            </Link>
 
-      <main className="pt-24">
+            {/* Call Now Button */}
+            <Button
+              variant="default"
+              size="lg"
+              className="h-12 px-6 text-base font-semibold bg-primary hover:bg-primary/90"
+              asChild
+            >
+              <a href="tel:+19543541800">
+                <Phone className="h-5 w-5 mr-2" />
+                Call Now: 954-354-1800
+              </a>
+            </Button>
+          </div>
+
+          {/* Trust Bar */}
+          <div className="border-t border-white/10 py-3">
+            <div className="flex flex-wrap items-center justify-center gap-6 md:gap-12 text-white/90 text-sm">
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="h-4 w-4 text-white" />
+                <span>21+ Years Experience</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="h-4 w-4 text-white" />
+                <span>Confidential Consultation</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="h-4 w-4 text-white" />
+                <span>Business Advisory Specialists</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main className="pt-40">
         {/* Hero Section with Inline Form */}
         <section className="relative py-20 lg:py-32 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-muted/50 to-background -z-10" />
