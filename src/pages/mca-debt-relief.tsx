@@ -114,7 +114,7 @@ Date & Time: ${new Date().toLocaleString()}
       <SEO
         title="MCA Debt Relief & Merchant Cash Advance Solutions | Regroup Partners"
         description="Struggling with MCA payments? Regroup Partners helps businesses explore MCA debt relief, creditor negotiations, cash flow solutions, and restructuring options."
-        url="https://regrouppartners.com/mca-debt-relief"
+        url="/mca-debt-relief"
       />
 
       <Head>
