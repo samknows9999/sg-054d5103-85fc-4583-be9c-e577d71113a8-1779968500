@@ -32,7 +32,7 @@ const challenges = [
 ];
 
 const solutions = [
-  { title: "MCA Payment Restructuring", desc: "Strategic negotiation to align payment structures with actual business revenue." },
+  { title: "MCA Debt Relief & Payment Restructuring", desc: "Strategic negotiation to align payment structures with actual business revenue.", link: "/mca-debt-relief" },
   { title: "Cash Flow Analysis", desc: "Comprehensive review of inflows and outflows to identify immediate liquidity opportunities." },
   { title: "Creditor Coordination", desc: "Centralized, professional communication with all advance providers and lenders." },
   { title: "Financial Assessments", desc: "Deep-dive operational review to determine the true health of the business." },
@@ -85,6 +85,7 @@ const caseStudies = [
 ];
 
 const faqs = [
+  { q: "What is MCA debt relief?", a: "MCA debt relief helps businesses struggling with Merchant Cash Advance payment obligations improve cash flow, reduce payment pressure, and explore structured recovery options. Learn more about our <link>MCA Debt Relief services</link>." },
   { q: "What is MCA advisory?", a: "MCA advisory involves professional financial consulting to help businesses manage, restructure, and overcome the burden of Merchant Cash Advances. We analyze your financial position and negotiate sustainable payment structures." },
   { q: "How does MCA restructuring work?", a: "Restructuring works by analyzing the business's true affordability, communicating directly with funders, and strategically adjusting the payment terms to align with realistic, current revenue capabilities." },
   { q: "Can MCA advisory improve cash flow?", a: "Yes. By addressing the root cause of the liquidity drain—typically high-frequency, high-cost daily ACH withdrawals—MCA advisory immediately preserves working capital for essential operations." },
@@ -278,7 +279,7 @@ Message: ${formData.get("message")}
                     When a business takes on multiple overlapping advances, the resulting daily ACH withdrawals create immense financial pressure, leading to delayed vendor payments and payroll anxiety. 
                   </p>
                   <p>
-                    Through strategic MCA negotiation support and business cash flow recovery tactics, our advisory and restructuring strategies help businesses stabilize operations, realign payment expectations, and provide essential MCA payment relief.
+                    Through strategic MCA negotiation support and business cash flow recovery tactics, our advisory and restructuring strategies help businesses stabilize operations, realign payment expectations, and provide essential <Link href="/mca-debt-relief" className="text-accent hover:underline font-medium">MCA payment relief</Link>.
                   </p>
                 </div>
               </div>
@@ -351,15 +352,27 @@ Message: ${formData.get("message")}
             </div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {solutions.map((item, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm flex items-start gap-4">
-                  <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0 mt-1" />
-                  <div>
-                    <h4 className="font-semibold text-foreground mb-2">{item.title}</h4>
-                    <p className="text-sm text-foreground/60">{item.desc}</p>
+              {solutions.map((item, index) => {
+                const CardContent = (
+                  <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm flex items-start gap-4">
+                    <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0 mt-1" />
+                    <div>
+                      <h4 className="font-semibold text-foreground mb-2">{item.title}</h4>
+                      <p className="text-sm text-foreground/60">{item.desc}</p>
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+
+                return item.link ? (
+                  <Link key={index} href={item.link} className="block hover:scale-[1.02] transition-transform">
+                    {CardContent}
+                  </Link>
+                ) : (
+                  <div key={index}>
+                    {CardContent}
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -521,7 +534,17 @@ Message: ${formData.get("message")}
                     {faq.q}
                   </AccordionTrigger>
                   <AccordionContent className="text-foreground/70 text-base leading-relaxed pb-6">
-                    {faq.a}
+                    {faq.a.includes('<link>') ? (
+                      <>
+                        {faq.a.split('<link>')[0]}
+                        <Link href="/mca-debt-relief" className="text-accent hover:underline font-medium">
+                          {faq.a.split('<link>')[1].split('</link>')[0]}
+                        </Link>
+                        {faq.a.split('</link>')[1]}
+                      </>
+                    ) : (
+                      faq.a
+                    )}
                   </AccordionContent>
                 </AccordionItem>
               ))}
