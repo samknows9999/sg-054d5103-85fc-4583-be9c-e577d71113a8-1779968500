@@ -130,7 +130,6 @@ Message: ${formData.get("message")}
       if (response.ok) {
         setShowSuccess(true);
         (e.target as HTMLFormElement).reset();
-        setTimeout(() => setShowSuccess(false), 8000);
       } else {
         throw new Error("Failed to send");
       }
@@ -574,62 +573,66 @@ Message: ${formData.get("message")}
                   <p className="text-foreground/60 mb-8">Fill out the form below and a specialist will contact you confidentially.</p>
                   
                   <form className="space-y-6" onSubmit={handleFormSubmit}>
-                    {showSuccess && (
-                      <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
-                        <div className="flex items-start gap-3">
-                          <svg className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    {showSuccess ? (
+                      <div className="text-center py-16 px-6">
+                        <div className="w-24 h-24 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-8">
+                          <svg className="w-12 h-12 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                           </svg>
-                          <div>
-                            <h3 className="font-semibold text-green-900 mb-1">Thank you for contacting REgroup Partners.</h3>
-                            <p className="text-sm text-green-800">A member of our team will reach out shortly.</p>
+                        </div>
+                        <h3 className="text-3xl font-serif font-semibold text-green-900 mb-6">
+                          Thank you for contacting Regroup Partners.
+                        </h3>
+                        <p className="text-xl text-green-800 leading-relaxed max-w-lg mx-auto">
+                          Your request has been received successfully. A member of our team will review your information and contact you shortly.
+                        </p>
+                      </div>
+                    ) : (
+                      <>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                          <div className="space-y-2">
+                            <Label htmlFor="firstName">First Name</Label>
+                            <Input id="firstName" placeholder="John" className="h-12 bg-gray-50 border-gray-200" />
+                          </div>
+                          <div className="space-y-2">
+                            <Label htmlFor="lastName">Last Name</Label>
+                            <Input id="lastName" placeholder="Smith" className="h-12 bg-gray-50 border-gray-200" />
                           </div>
                         </div>
-                      </div>
+                        
+                        <div className="space-y-2">
+                          <Label htmlFor="company">Company Name</Label>
+                          <Input id="company" placeholder="Business LLC" className="h-12 bg-gray-50 border-gray-200" />
+                        </div>
+                        
+                        <div className="grid grid-cols-2 gap-6">
+                          <div className="space-y-2">
+                            <Label htmlFor="email">Email Address</Label>
+                            <Input id="email" type="email" placeholder="john@company.com" className="h-12 bg-gray-50 border-gray-200" />
+                          </div>
+                          <div className="space-y-2">
+                            <Label htmlFor="phone">Phone Number</Label>
+                            <Input id="phone" type="tel" placeholder="(555) 123-4567" className="h-12 bg-gray-50 border-gray-200" />
+                          </div>
+                        </div>
+                        
+                        <div className="space-y-2">
+                          <Label htmlFor="message">Brief Description of Financial Needs</Label>
+                          <Textarea id="message" placeholder="How can our advisory team assist you?" className="min-h-[120px] bg-gray-50 border-gray-200 resize-none" />
+                        </div>
+                        
+                        <Button disabled={isSubmitting} className="w-full h-14 text-base font-bold bg-accent hover:bg-accent/90 text-white shadow-lg shadow-accent/20 disabled:opacity-50 disabled:cursor-not-allowed">
+                          {isSubmitting ? (
+                            <span className="flex items-center justify-center gap-2">
+                              <Loader2 className="w-5 h-5 animate-spin" />
+                              Submitting...
+                            </span>
+                          ) : (
+                            "Get Free MCA Consultation"
+                          )}
+                        </Button>
+                      </>
                     )}
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div className="space-y-2">
-                        <Label htmlFor="firstName">First Name</Label>
-                        <Input id="firstName" placeholder="John" className="h-12 bg-gray-50 border-gray-200" />
-                      </div>
-                      <div className="space-y-2">
-                        <Label htmlFor="lastName">Last Name</Label>
-                        <Input id="lastName" placeholder="Smith" className="h-12 bg-gray-50 border-gray-200" />
-                      </div>
-                    </div>
-                    
-                    <div className="space-y-2">
-                      <Label htmlFor="company">Company Name</Label>
-                      <Input id="company" placeholder="Business LLC" className="h-12 bg-gray-50 border-gray-200" />
-                    </div>
-                    
-                    <div className="grid grid-cols-2 gap-6">
-                      <div className="space-y-2">
-                        <Label htmlFor="email">Email Address</Label>
-                        <Input id="email" type="email" placeholder="john@company.com" className="h-12 bg-gray-50 border-gray-200" />
-                      </div>
-                      <div className="space-y-2">
-                        <Label htmlFor="phone">Phone Number</Label>
-                        <Input id="phone" type="tel" placeholder="(555) 123-4567" className="h-12 bg-gray-50 border-gray-200" />
-                      </div>
-                    </div>
-                    
-                    <div className="space-y-2">
-                      <Label htmlFor="message">Brief Description of Financial Needs</Label>
-                      <Textarea id="message" placeholder="How can our advisory team assist you?" className="min-h-[120px] bg-gray-50 border-gray-200 resize-none" />
-                    </div>
-                    
-                    <Button disabled={isSubmitting} className="w-full h-14 text-base font-bold bg-accent hover:bg-accent/90 text-white shadow-lg shadow-accent/20 disabled:opacity-50 disabled:cursor-not-allowed">
-                      {isSubmitting ? (
-                        <span className="flex items-center justify-center gap-2">
-                          <Loader2 className="w-5 h-5 animate-spin" />
-                          Submitting...
-                        </span>
-                      ) : (
-                        "Get Free MCA Consultation"
-                      )}
-                    </Button>
                   </form>
                 </div>
               </div>

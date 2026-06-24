@@ -52,7 +52,6 @@ Date & Time: ${new Date().toLocaleString()}
       if (response.ok) {
         setShowSuccess(true);
         (e.target as HTMLFormElement).reset();
-        setTimeout(() => setShowSuccess(false), 8000);
       } else {
         throw new Error("Failed to send");
       }
@@ -405,66 +404,70 @@ Date & Time: ${new Date().toLocaleString()}
               
               <div className="bg-white rounded-[2rem] p-8 md:p-12 shadow-2xl relative">
                 <form className="space-y-6" onSubmit={handleFormSubmit}>
-                  {showSuccess && (
-                    <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
-                      <div className="flex items-start gap-3">
-                        <svg className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  {showSuccess ? (
+                    <div className="text-center py-16 px-6">
+                      <div className="w-24 h-24 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-8">
+                        <svg className="w-12 h-12 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
-                        <div>
-                          <h3 className="font-semibold text-green-900 mb-1">Thank you for contacting REgroup Partners.</h3>
-                          <p className="text-sm text-green-800">A member of our team will reach out shortly.</p>
+                      </div>
+                      <h3 className="text-3xl font-serif font-semibold text-green-900 mb-6">
+                        Thank you for contacting Regroup Partners.
+                      </h3>
+                      <p className="text-xl text-green-800 leading-relaxed max-w-lg mx-auto">
+                        Your request has been received successfully. A member of our team will review your information and contact you shortly.
+                      </p>
+                    </div>
+                  ) : (
+                    <>
+                      <div className="space-y-2.5 text-left">
+                        <Label htmlFor="name" className="text-gray-900 font-semibold text-sm">Name</Label>
+                        <Input id="name" name="name" placeholder="Full Name" required className="bg-gray-50/50 h-14 rounded-xl border-gray-200 focus-visible:ring-accent focus-visible:border-accent text-base px-4" />
+                      </div>
+                      
+                      <div className="space-y-2.5 text-left">
+                        <Label htmlFor="businessName" className="text-gray-900 font-semibold text-sm">Business Name</Label>
+                        <Input id="businessName" name="businessName" placeholder="Company Name" required className="bg-gray-50/50 h-14 rounded-xl border-gray-200 focus-visible:ring-accent focus-visible:border-accent text-base px-4" />
+                      </div>
+                      
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div className="space-y-2.5 text-left">
+                          <Label htmlFor="email" className="text-gray-900 font-semibold text-sm">Email Address</Label>
+                          <Input id="email" name="email" type="email" placeholder="email@example.com" required className="bg-gray-50/50 h-14 rounded-xl border-gray-200 focus-visible:ring-accent focus-visible:border-accent text-base px-4" />
+                        </div>
+                        <div className="space-y-2.5 text-left">
+                          <Label htmlFor="phone" className="text-gray-900 font-semibold text-sm">Phone Number</Label>
+                          <Input id="phone" name="phone" type="tel" placeholder="(555) 000-0000" required className="bg-gray-50/50 h-14 rounded-xl border-gray-200 focus-visible:ring-accent focus-visible:border-accent text-base px-4" />
                         </div>
                       </div>
-                    </div>
+                      
+                      <div className="space-y-2.5 text-left">
+                        <Label htmlFor="obligations" className="text-gray-900 font-semibold text-sm">Number of MCA / Business Obligations</Label>
+                        <Input id="obligations" name="obligations" type="text" placeholder="e.g. 3 MCAs, 1 Vendor" className="bg-gray-50/50 h-14 rounded-xl border-gray-200 focus-visible:ring-accent focus-visible:border-accent text-base px-4" />
+                      </div>
+                      
+                      <div className="space-y-2.5 text-left">
+                        <Label htmlFor="description" className="text-gray-900 font-semibold text-sm">Brief Description of Situation</Label>
+                        <Textarea
+                          id="description"
+                          name="description"
+                          placeholder="Please briefly describe your current challenges..."
+                          className="min-h-[140px] resize-y bg-gray-50/50 rounded-xl border-gray-200 p-4 focus-visible:ring-accent focus-visible:border-accent text-base" />
+                        
+                      </div>
+                      
+                      <Button disabled={isSubmitting} className="w-full bg-accent hover:bg-accent/90 text-white h-16 rounded-xl text-lg font-semibold mt-4 shadow-lg shadow-accent/20 transition-all hover:shadow-accent/40 hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed">
+                        {isSubmitting ? (
+                          <span className="flex items-center justify-center gap-2">
+                            <Loader2 className="w-5 h-5 animate-spin" />
+                            Submitting...
+                          </span>
+                        ) : (
+                          "Submit Review Request"
+                        )}
+                      </Button>
+                    </>
                   )}
-
-                  <div className="space-y-2.5 text-left">
-                    <Label htmlFor="name" className="text-gray-900 font-semibold text-sm">Name</Label>
-                    <Input id="name" name="name" placeholder="Full Name" required className="bg-gray-50/50 h-14 rounded-xl border-gray-200 focus-visible:ring-accent focus-visible:border-accent text-base px-4" />
-                  </div>
-                  
-                  <div className="space-y-2.5 text-left">
-                    <Label htmlFor="businessName" className="text-gray-900 font-semibold text-sm">Business Name</Label>
-                    <Input id="businessName" name="businessName" placeholder="Company Name" required className="bg-gray-50/50 h-14 rounded-xl border-gray-200 focus-visible:ring-accent focus-visible:border-accent text-base px-4" />
-                  </div>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="space-y-2.5 text-left">
-                      <Label htmlFor="email" className="text-gray-900 font-semibold text-sm">Email Address</Label>
-                      <Input id="email" name="email" type="email" placeholder="email@example.com" required className="bg-gray-50/50 h-14 rounded-xl border-gray-200 focus-visible:ring-accent focus-visible:border-accent text-base px-4" />
-                    </div>
-                    <div className="space-y-2.5 text-left">
-                      <Label htmlFor="phone" className="text-gray-900 font-semibold text-sm">Phone Number</Label>
-                      <Input id="phone" name="phone" type="tel" placeholder="(555) 000-0000" required className="bg-gray-50/50 h-14 rounded-xl border-gray-200 focus-visible:ring-accent focus-visible:border-accent text-base px-4" />
-                    </div>
-                  </div>
-                  
-                  <div className="space-y-2.5 text-left">
-                    <Label htmlFor="obligations" className="text-gray-900 font-semibold text-sm">Number of MCA / Business Obligations</Label>
-                    <Input id="obligations" name="obligations" type="text" placeholder="e.g. 3 MCAs, 1 Vendor" className="bg-gray-50/50 h-14 rounded-xl border-gray-200 focus-visible:ring-accent focus-visible:border-accent text-base px-4" />
-                  </div>
-                  
-                  <div className="space-y-2.5 text-left">
-                    <Label htmlFor="description" className="text-gray-900 font-semibold text-sm">Brief Description of Situation</Label>
-                    <Textarea
-                      id="description"
-                      name="description"
-                      placeholder="Please briefly describe your current challenges..."
-                      className="min-h-[140px] resize-y bg-gray-50/50 rounded-xl border-gray-200 p-4 focus-visible:ring-accent focus-visible:border-accent text-base" />
-                    
-                  </div>
-                  
-                  <Button disabled={isSubmitting} className="w-full bg-accent hover:bg-accent/90 text-white h-16 rounded-xl text-lg font-semibold mt-4 shadow-lg shadow-accent/20 transition-all hover:shadow-accent/40 hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed">
-                    {isSubmitting ? (
-                      <span className="flex items-center justify-center gap-2">
-                        <Loader2 className="w-5 h-5 animate-spin" />
-                        Submitting...
-                      </span>
-                    ) : (
-                      "Submit Review Request"
-                    )}
-                  </Button>
                 </form>
               </div>
             </div>

@@ -138,7 +138,6 @@ Form Completion Time: ${Math.round(timeTaken / 1000)}s
           website: ""
         });
         setTurnstileToken("");
-        setTimeout(() => setShowSuccess(false), 8000);
       } else if (response.status === 429) {
         toast({
           title: "Rate Limit Exceeded",
@@ -311,198 +310,202 @@ Form Completion Time: ${Math.round(timeTaken / 1000)}s
                 </p>
 
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  {showSuccess && (
-                    <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
-                      <div className="flex items-start gap-3">
-                        <svg className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  {showSuccess ? (
+                    <div className="text-center py-16 px-6">
+                      <div className="w-24 h-24 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-8">
+                        <svg className="w-12 h-12 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
-                        <div>
-                          <h3 className="font-semibold text-green-900 mb-1">Thank you for contacting Regroup Partners.</h3>
-                          <p className="text-sm text-green-800">Your request has been received successfully. A member of our team will review your information and contact you shortly.</p>
+                      </div>
+                      <h3 className="text-3xl font-serif font-semibold text-green-900 mb-6">
+                        Thank you for contacting Regroup Partners.
+                      </h3>
+                      <p className="text-xl text-green-800 leading-relaxed max-w-lg mx-auto">
+                        Your request has been received successfully. A member of our team will review your information and contact you shortly.
+                      </p>
+                    </div>
+                  ) : (
+                    <>
+                      <div className="space-y-2">
+                        <div style={{ position: "absolute", left: "-9999px" }} aria-hidden="true">
+                          <label htmlFor="website">Website (leave blank)</label>
+                          <input
+                            type="text"
+                            id="website"
+                            name="website"
+                            tabIndex={-1}
+                            autoComplete="off"
+                            value={formData.website}
+                            onChange={handleChange}
+                          />
                         </div>
+
+                        <div>
+                          <label htmlFor="companyName" className="block text-sm font-semibold text-foreground mb-2">
+                            Company Name *
+                          </label>
+                          <input
+                            type="text"
+                            id="companyName"
+                            name="companyName"
+                            required
+                            value={formData.companyName}
+                            onChange={handleChange}
+                            className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
+                            placeholder="Your business name"
+                          />
+                        </div>
+
+                        <div>
+                          <label htmlFor="contactName" className="block text-sm font-semibold text-foreground mb-2">
+                            Contact Name *
+                          </label>
+                          <input
+                            type="text"
+                            id="contactName"
+                            name="contactName"
+                            required
+                            value={formData.contactName}
+                            onChange={handleChange}
+                            className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
+                            placeholder="Your full name"
+                          />
+                        </div>
+
+                        <div className="grid sm:grid-cols-2 gap-4">
+                          <div>
+                            <label htmlFor="email" className="block text-sm font-semibold text-foreground mb-2">
+                              Email *
+                            </label>
+                            <input
+                              type="email"
+                              id="email"
+                              name="email"
+                              required
+                              value={formData.email}
+                              onChange={handleChange}
+                              className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
+                              placeholder="you@company.com"
+                            />
+                          </div>
+
+                          <div>
+                            <label htmlFor="phone" className="block text-sm font-semibold text-foreground mb-2">
+                              Phone *
+                            </label>
+                            <input
+                              type="tel"
+                              id="phone"
+                              name="phone"
+                              required
+                              value={formData.phone}
+                              onChange={handleChange}
+                              className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
+                              placeholder="(555) 123-4567"
+                            />
+                          </div>
+                        </div>
+
+                        <div>
+                          <label htmlFor="revenueRange" className="block text-sm font-semibold text-foreground mb-2">
+                            Annual Revenue Range *
+                          </label>
+                          <select
+                            id="revenueRange"
+                            name="revenueRange"
+                            required
+                            value={formData.revenueRange}
+                            onChange={handleChange}
+                            className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
+                          >
+                            <option value="">Select revenue range</option>
+                            <option value="under-500k">Under $500,000</option>
+                            <option value="500k-1m">$500,000 - $1M</option>
+                            <option value="1m-5m">$1M - $5M</option>
+                            <option value="5m-10m">$5M - $10M</option>
+                            <option value="10m-plus">$10M+</option>
+                          </select>
+                        </div>
+
+                        <div>
+                          <label htmlFor="financialConcerns" className="block text-sm font-semibold text-foreground mb-2">
+                            Brief Description of Financial Situation *
+                          </label>
+                          <textarea
+                            id="financialConcerns"
+                            name="financialConcerns"
+                            required
+                            value={formData.financialConcerns}
+                            onChange={handleChange}
+                            rows={4}
+                            className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all resize-none"
+                            placeholder="Please describe your business situation and financial concerns..."
+                          />
+                        </div>
+
+                        <div>
+                          <label htmlFor="preferredContact" className="block text-sm font-semibold text-foreground mb-2">
+                            Preferred Contact Method *
+                          </label>
+                          <select
+                            id="preferredContact"
+                            name="preferredContact"
+                            required
+                            value={formData.preferredContact}
+                            onChange={handleChange}
+                            className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
+                          >
+                            <option value="">Select preference</option>
+                            <option value="email">Email</option>
+                            <option value="phone">Phone</option>
+                            <option value="either">Either Email or Phone</option>
+                          </select>
+                        </div>
+
+                        {process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY && (
+                          <div className="flex justify-center py-2">
+                            <Turnstile
+                              siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
+                              onSuccess={handleTurnstileSuccess}
+                              onError={(error) => {
+                                console.error('[TURNSTILE CLIENT] ✗ Widget error:', error);
+                              }}
+                              onExpire={() => {
+                                console.log('[TURNSTILE CLIENT] ⚠ Token expired - user needs to reverify');
+                                setTurnstileToken("");
+                              }}
+                              options={{
+                                theme: 'light',
+                                size: 'normal',
+                              }}
+                            />
+                          </div>
+                        )}
+
+                        <button
+                          type="submit"
+                          disabled={isSubmitting}
+                          className="w-full px-8 py-4 bg-accent text-white font-semibold rounded-lg hover:bg-accent/90 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                        >
+                          {isSubmitting ? (
+                            <>
+                              <Loader2 className="w-5 h-5 animate-spin" />
+                              Submitting...
+                            </>
+                          ) : (
+                            "Submit Confidential Request"
+                          )}
+                        </button>
+
+                        <p className="text-xs text-foreground/60 text-center">
+                          {process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY 
+                            ? "This site is protected by Cloudflare Turnstile and advanced anti-spam measures."
+                            : "This site is protected by advanced anti-spam measures."
+                          } All information submitted is treated with strict confidentiality. We typically respond within one business day.
+                        </p>
                       </div>
-                    </div>
+                    </>
                   )}
-
-                  <div className="space-y-2">
-                    <div style={{ position: "absolute", left: "-9999px" }} aria-hidden="true">
-                      <label htmlFor="website">Website (leave blank)</label>
-                      <input
-                        type="text"
-                        id="website"
-                        name="website"
-                        tabIndex={-1}
-                        autoComplete="off"
-                        value={formData.website}
-                        onChange={handleChange}
-                      />
-                    </div>
-
-                    <div>
-                      <label htmlFor="companyName" className="block text-sm font-semibold text-foreground mb-2">
-                        Company Name *
-                      </label>
-                      <input
-                        type="text"
-                        id="companyName"
-                        name="companyName"
-                        required
-                        value={formData.companyName}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
-                        placeholder="Your business name"
-                      />
-                    </div>
-
-                    <div>
-                      <label htmlFor="contactName" className="block text-sm font-semibold text-foreground mb-2">
-                        Contact Name *
-                      </label>
-                      <input
-                        type="text"
-                        id="contactName"
-                        name="contactName"
-                        required
-                        value={formData.contactName}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
-                        placeholder="Your full name"
-                      />
-                    </div>
-
-                    <div className="grid sm:grid-cols-2 gap-4">
-                      <div>
-                        <label htmlFor="email" className="block text-sm font-semibold text-foreground mb-2">
-                          Email *
-                        </label>
-                        <input
-                          type="email"
-                          id="email"
-                          name="email"
-                          required
-                          value={formData.email}
-                          onChange={handleChange}
-                          className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
-                          placeholder="you@company.com"
-                        />
-                      </div>
-
-                      <div>
-                        <label htmlFor="phone" className="block text-sm font-semibold text-foreground mb-2">
-                          Phone *
-                        </label>
-                        <input
-                          type="tel"
-                          id="phone"
-                          name="phone"
-                          required
-                          value={formData.phone}
-                          onChange={handleChange}
-                          className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
-                          placeholder="(555) 123-4567"
-                        />
-                      </div>
-                    </div>
-
-                    <div>
-                      <label htmlFor="revenueRange" className="block text-sm font-semibold text-foreground mb-2">
-                        Annual Revenue Range *
-                      </label>
-                      <select
-                        id="revenueRange"
-                        name="revenueRange"
-                        required
-                        value={formData.revenueRange}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
-                      >
-                        <option value="">Select revenue range</option>
-                        <option value="under-500k">Under $500,000</option>
-                        <option value="500k-1m">$500,000 - $1M</option>
-                        <option value="1m-5m">$1M - $5M</option>
-                        <option value="5m-10m">$5M - $10M</option>
-                        <option value="10m-plus">$10M+</option>
-                      </select>
-                    </div>
-
-                    <div>
-                      <label htmlFor="financialConcerns" className="block text-sm font-semibold text-foreground mb-2">
-                        Brief Description of Financial Situation *
-                      </label>
-                      <textarea
-                        id="financialConcerns"
-                        name="financialConcerns"
-                        required
-                        value={formData.financialConcerns}
-                        onChange={handleChange}
-                        rows={4}
-                        className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all resize-none"
-                        placeholder="Please describe your business situation and financial concerns..."
-                      />
-                    </div>
-
-                    <div>
-                      <label htmlFor="preferredContact" className="block text-sm font-semibold text-foreground mb-2">
-                        Preferred Contact Method *
-                      </label>
-                      <select
-                        id="preferredContact"
-                        name="preferredContact"
-                        required
-                        value={formData.preferredContact}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
-                      >
-                        <option value="">Select preference</option>
-                        <option value="email">Email</option>
-                        <option value="phone">Phone</option>
-                        <option value="either">Either Email or Phone</option>
-                      </select>
-                    </div>
-
-                    {process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY && (
-                      <div className="flex justify-center py-2">
-                        <Turnstile
-                          siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
-                          onSuccess={handleTurnstileSuccess}
-                          onError={(error) => {
-                            console.error('[TURNSTILE CLIENT] ✗ Widget error:', error);
-                          }}
-                          onExpire={() => {
-                            console.log('[TURNSTILE CLIENT] ⚠ Token expired - user needs to reverify');
-                            setTurnstileToken("");
-                          }}
-                          options={{
-                            theme: 'light',
-                            size: 'normal',
-                          }}
-                        />
-                      </div>
-                    )}
-
-                    <button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="w-full px-8 py-4 bg-accent text-white font-semibold rounded-lg hover:bg-accent/90 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
-                    >
-                      {isSubmitting ? (
-                        <>
-                          <Loader2 className="w-5 h-5 animate-spin" />
-                          Submitting...
-                        </>
-                      ) : (
-                        "Submit Confidential Request"
-                      )}
-                    </button>
-
-                    <p className="text-xs text-foreground/60 text-center">
-                      {process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY 
-                        ? "This site is protected by Cloudflare Turnstile and advanced anti-spam measures."
-                        : "This site is protected by advanced anti-spam measures."
-                      } All information submitted is treated with strict confidentiality. We typically respond within one business day.
-                    </p>
-                  </div>
                 </form>
               </div>
             </div>
