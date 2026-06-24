@@ -355,6 +355,76 @@ Date & Time: ${new Date().toLocaleString()}
           </div>
         </section>
 
+        {/* MCA Debt Restructuring Solutions */}
+        <section className="py-20">
+          <div className="container mx-auto px-6">
+            <div className="max-w-5xl mx-auto space-y-12">
+              <div className="text-center space-y-6">
+                <h2 className="font-display text-4xl lg:text-5xl font-bold text-foreground">
+                  MCA Debt Restructuring Solutions
+                </h2>
+                <p className="text-xl text-foreground/70 max-w-3xl mx-auto leading-relaxed">
+                  Businesses facing multiple <strong>Merchant Cash Advance</strong> obligations often require a structured approach to improve cash flow and reduce financial pressure. <strong>MCA debt restructuring</strong> solutions focus on creating a more sustainable financial path while helping business owners regain control of daily operations.
+                </p>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-8">
+                <Card className="p-8 space-y-4 hover:shadow-xl transition-shadow">
+                  <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center">
+                    <FileText className="h-7 w-7 text-primary" />
+                  </div>
+                  <h3 className="font-display text-2xl font-semibold text-foreground">
+                    Payment Restructuring
+                  </h3>
+                  <p className="text-foreground/70 leading-relaxed">
+                    Review repayment obligations and explore opportunities to create more manageable payment arrangements.
+                  </p>
+                </Card>
+
+                <Card className="p-8 space-y-4 hover:shadow-xl transition-shadow">
+                  <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Users className="h-7 w-7 text-primary" />
+                  </div>
+                  <h3 className="font-display text-2xl font-semibold text-foreground">
+                    Creditor Coordination
+                  </h3>
+                  <p className="text-foreground/70 leading-relaxed">
+                    Work collaboratively with creditors and lenders to improve communication and support practical solutions.
+                  </p>
+                </Card>
+
+                <Card className="p-8 space-y-4 hover:shadow-xl transition-shadow">
+                  <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center">
+                    <TrendingUp className="h-7 w-7 text-primary" />
+                  </div>
+                  <h3 className="font-display text-2xl font-semibold text-foreground">
+                    Cash Flow Stabilization
+                  </h3>
+                  <p className="text-foreground/70 leading-relaxed">
+                    Identify opportunities to improve liquidity and reduce financial strain on business operations.
+                  </p>
+                </Card>
+
+                <Card className="p-8 space-y-4 hover:shadow-xl transition-shadow">
+                  <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Shield className="h-7 w-7 text-primary" />
+                  </div>
+                  <h3 className="font-display text-2xl font-semibold text-foreground">
+                    Long-Term Business Planning
+                  </h3>
+                  <p className="text-foreground/70 leading-relaxed">
+                    Develop strategies designed to support ongoing business stability and operational growth.
+                  </p>
+                </Card>
+              </div>
+
+              <p className="text-lg text-foreground/70 text-center max-w-3xl mx-auto leading-relaxed pt-4">
+                Every business situation is unique. Regroup Partners evaluates each case individually to identify restructuring opportunities that align with the company's financial goals and operational needs.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* How Regroup Partners Helps */}
         <section className="py-20">
           <div className="container mx-auto px-6">
