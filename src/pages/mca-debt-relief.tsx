@@ -156,7 +156,7 @@ Date & Time: ${new Date().toLocaleString()}
     <>
       <SEO
               title="MCA Debt Relief, Settlement & Restructuring for Businesses | Regroup Partners"
-        description="Struggling with MCA payments? Regroup Partners helps businesses explore MCA debt relief, creditor negotiations, cash flow solutions, and restructuring options."
+              description="Buried in MCA debt? Regroup Partners specializes in MCA debt relief, loan restructuring, and creditor settlement for businesses nationwide. 21+ years experience. Free confidential consultation."
         url="/mca-debt-relief" />
       
 
