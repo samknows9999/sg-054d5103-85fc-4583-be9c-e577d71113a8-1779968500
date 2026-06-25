@@ -12,87 +12,87 @@ import { Label } from "@/components/ui/label";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
-import { 
-  Building2, LineChart, Shield, Target, Phone, MapPin, CheckCircle2, 
-  ArrowRight, FileWarning, Wallet, TrendingDown, Clock, CreditCard, 
+import {
+  Building2, LineChart, Shield, Target, Phone, MapPin, CheckCircle2,
+  ArrowRight, FileWarning, Wallet, TrendingDown, Clock, CreditCard,
   Receipt, Calculator, HardHat, Stethoscope, Coffee, ShoppingBag, Truck,
-  Briefcase, Loader2, TrendingUp, Users, AlertCircle, FileText, DollarSign, Scale, BarChart3
-} from "lucide-react";
+  Briefcase, Loader2, TrendingUp, Users, AlertCircle, FileText, DollarSign, Scale, BarChart3 } from
+"lucide-react";
 
 // Data Arrays
 const challenges = [
-  { icon: Clock, title: "Multiple Daily ACH Withdrawals", desc: "Constant drain on operating accounts causing severe liquidity shortages." },
-  { icon: FileWarning, title: "Stacked MCA Loans", desc: "Multiple overlapping advances creating an unsustainable daily payment burden." },
-  { icon: TrendingDown, title: "Declining Cash Flow", desc: "Insufficient working capital to cover essential business operations." },
-  { icon: Receipt, title: "Vendor Payment Delays", desc: "Struggling to maintain critical supplier relationships due to lack of funds." },
-  { icon: Wallet, title: "Payroll Pressure", desc: "Anxiety surrounding meeting payroll obligations for key employees." },
-  { icon: Phone, title: "Aggressive Collection Activity", desc: "Relentless communication from funders causing severe operational distraction." },
-  { icon: Calculator, title: "High Factor Rates", desc: "Exorbitant cost of capital disguised by short-term repayment structures." },
-  { icon: LineChart, title: "Revenue Instability", desc: "Inability to predict or stabilize monthly business revenue cycles." }
-];
+{ icon: Clock, title: "Multiple Daily ACH Withdrawals", desc: "Constant drain on operating accounts causing severe liquidity shortages." },
+{ icon: FileWarning, title: "Stacked MCA Loans", desc: "Multiple overlapping advances creating an unsustainable daily payment burden." },
+{ icon: TrendingDown, title: "Declining Cash Flow", desc: "Insufficient working capital to cover essential business operations." },
+{ icon: Receipt, title: "Vendor Payment Delays", desc: "Struggling to maintain critical supplier relationships due to lack of funds." },
+{ icon: Wallet, title: "Payroll Pressure", desc: "Anxiety surrounding meeting payroll obligations for key employees." },
+{ icon: Phone, title: "Aggressive Collection Activity", desc: "Relentless communication from funders causing severe operational distraction." },
+{ icon: Calculator, title: "High Factor Rates", desc: "Exorbitant cost of capital disguised by short-term repayment structures." },
+{ icon: LineChart, title: "Revenue Instability", desc: "Inability to predict or stabilize monthly business revenue cycles." }];
+
 
 const solutions = [
-  { title: "MCA Debt Relief & Payment Restructuring", desc: "Strategic negotiation to align payment structures with actual business revenue.", link: "/mca-debt-relief" },
-  { title: "Cash Flow Analysis", desc: "Comprehensive review of inflows and outflows to identify immediate liquidity opportunities." },
-  { title: "Creditor Coordination", desc: "Centralized, professional communication with all advance providers and lenders." },
-  { title: "Financial Assessments", desc: "Deep-dive operational review to determine the true health of the business." },
-  { title: "Payment Strategy Planning", desc: "Developing a sustainable, long-term approach to debt servicing." },
-  { title: "Working Capital Improvement", desc: "Techniques to preserve cash and optimize available operating funds." },
-  { title: "Vendor Negotiation Support", desc: "Assisting in managing critical trade payables during recovery phases." },
-  { title: "Business Stabilization Consulting", desc: "Holistic advisory to return the enterprise to a state of operational balance." }
-];
+{ title: "MCA Debt Relief & Payment Restructuring", desc: "Strategic negotiation to align payment structures with actual business revenue.", link: "/mca-debt-relief" },
+{ title: "Cash Flow Analysis", desc: "Comprehensive review of inflows and outflows to identify immediate liquidity opportunities." },
+{ title: "Creditor Coordination", desc: "Centralized, professional communication with all advance providers and lenders." },
+{ title: "Financial Assessments", desc: "Deep-dive operational review to determine the true health of the business." },
+{ title: "Payment Strategy Planning", desc: "Developing a sustainable, long-term approach to debt servicing." },
+{ title: "Working Capital Improvement", desc: "Techniques to preserve cash and optimize available operating funds." },
+{ title: "Vendor Negotiation Support", desc: "Assisting in managing critical trade payables during recovery phases." },
+{ title: "Business Stabilization Consulting", desc: "Holistic advisory to return the enterprise to a state of operational balance." }];
+
 
 const processSteps = [
-  { step: "01", title: "Business Financial Review", desc: "Comprehensive analysis of current financial obligations, cash position, and operational health." },
-  { step: "02", title: "MCA Obligation Analysis", desc: "Detailed review of all active advances, factor rates, and daily withdrawal burdens." },
-  { step: "03", title: "Cash Flow Evaluation", desc: "Identifying immediate opportunities to preserve liquidity and extend operational runway." },
-  { step: "04", title: "Creditor Coordination Strategy", desc: "Developing a unified communication protocol for all funding sources." },
-  { step: "05", title: "Financial Restructuring Plan", desc: "Executing strategic adjustments to align debt service with realistic business capacity." },
-  { step: "06", title: "Ongoing Stabilization Support", desc: "Continuous advisory to ensure long-term financial health and operational recovery." }
-];
+{ step: "01", title: "Business Financial Review", desc: "Comprehensive analysis of current financial obligations, cash position, and operational health." },
+{ step: "02", title: "MCA Obligation Analysis", desc: "Detailed review of all active advances, factor rates, and daily withdrawal burdens." },
+{ step: "03", title: "Cash Flow Evaluation", desc: "Identifying immediate opportunities to preserve liquidity and extend operational runway." },
+{ step: "04", title: "Creditor Coordination Strategy", desc: "Developing a unified communication protocol for all funding sources." },
+{ step: "05", title: "Financial Restructuring Plan", desc: "Executing strategic adjustments to align debt service with realistic business capacity." },
+{ step: "06", title: "Ongoing Stabilization Support", desc: "Continuous advisory to ensure long-term financial health and operational recovery." }];
+
 
 const benefits = [
-  "Reduced financial pressure",
-  "Better cash flow visibility",
-  "Improved operational stability",
-  "Centralized creditor communication",
-  "Reduced daily payment stress",
-  "Structured business recovery support"
-];
+"Reduced financial pressure",
+"Better cash flow visibility",
+"Improved operational stability",
+"Centralized creditor communication",
+"Reduced daily payment stress",
+"Structured business recovery support"];
+
 
 const industries = [
-  { icon: Coffee, title: "Restaurants", desc: "Managing seasonal fluctuations and high overhead while addressing aggressive daily MCA drafts." },
-  { icon: Truck, title: "Trucking & Transportation", desc: "Stabilizing cash flow disrupted by fuel costs, repairs, and stacked merchant advances." },
-  { icon: HardHat, title: "Construction Companies", desc: "Aligning debt payments with delayed project milestone payouts and material costs." },
-  { icon: Stethoscope, title: "Medical Practices", desc: "Balancing insurance reimbursement delays with the immediate burden of short-term capital." },
-  { icon: Building2, title: "Hospitality Businesses", desc: "Structuring financial recovery for hotels and venues facing occupancy-driven revenue gaps." },
-  { icon: ShoppingBag, title: "Retail Stores", desc: "Optimizing working capital to maintain inventory levels without relying on high-cost daily advances." },
-  { icon: Target, title: "E-commerce Companies", desc: "Realigning digital marketing and inventory spend to survive aggressive MCA payback structures." },
-  { icon: Briefcase, title: "Service-Based Businesses", desc: "Advising professional services on strategies to restore consistent operational liquidity." }
-];
+{ icon: Coffee, title: "Restaurants", desc: "Managing seasonal fluctuations and high overhead while addressing aggressive daily MCA drafts." },
+{ icon: Truck, title: "Trucking & Transportation", desc: "Stabilizing cash flow disrupted by fuel costs, repairs, and stacked merchant advances." },
+{ icon: HardHat, title: "Construction Companies", desc: "Aligning debt payments with delayed project milestone payouts and material costs." },
+{ icon: Stethoscope, title: "Medical Practices", desc: "Balancing insurance reimbursement delays with the immediate burden of short-term capital." },
+{ icon: Building2, title: "Hospitality Businesses", desc: "Structuring financial recovery for hotels and venues facing occupancy-driven revenue gaps." },
+{ icon: ShoppingBag, title: "Retail Stores", desc: "Optimizing working capital to maintain inventory levels without relying on high-cost daily advances." },
+{ icon: Target, title: "E-commerce Companies", desc: "Realigning digital marketing and inventory spend to survive aggressive MCA payback structures." },
+{ icon: Briefcase, title: "Service-Based Businesses", desc: "Advising professional services on strategies to restore consistent operational liquidity." }];
+
 
 const geoBlocks = [
-  { region: "Florida", title: "MCA Advisory Florida", desc: "Serving businesses from Miami to Jacksonville with premium MCA restructuring and financial advisory. We help Florida enterprises stabilize cash flow." },
-  { region: "California", title: "MCA Restructuring California", desc: "Providing Los Angeles, San Francisco, and statewide businesses with professional creditor coordination and operational recovery strategies." },
-  { region: "Texas", title: "Merchant Cash Advance Help Texas", desc: "Assisting Houston, Dallas, and Austin companies in managing stacked advances and improving vital working capital." },
-  { region: "New York", title: "Business Financial Recovery New York", desc: "Delivering institutional-grade business restructuring and MCA advisory services to NYC and statewide commercial entities." }
-];
+{ region: "Florida", title: "MCA Advisory Florida", desc: "Serving businesses from Miami to Jacksonville with premium MCA restructuring and financial advisory. We help Florida enterprises stabilize cash flow." },
+{ region: "California", title: "MCA Restructuring California", desc: "Providing Los Angeles, San Francisco, and statewide businesses with professional creditor coordination and operational recovery strategies." },
+{ region: "Texas", title: "Merchant Cash Advance Help Texas", desc: "Assisting Houston, Dallas, and Austin companies in managing stacked advances and improving vital working capital." },
+{ region: "New York", title: "Business Financial Recovery New York", desc: "Delivering institutional-grade business restructuring and MCA advisory services to NYC and statewide commercial entities." }];
+
 
 const caseStudies = [
-  { metric: "72%", title: "Reduced Daily Pressure", desc: "Successfully renegotiated multiple stacked MCAs, extending terms and dramatically reducing the daily cash drain." },
-  { metric: "$140k+", title: "Increased Monthly Cash Flow", desc: "Freed up critical working capital by restructuring debt service, allowing a logistics firm to maintain its fleet." },
-  { metric: "100%", title: "Stabilized Operations", desc: "Centralized all creditor communications, stopping aggressive collections and returning focus to business growth." }
-];
+{ metric: "72%", title: "Reduced Daily Pressure", desc: "Successfully renegotiated multiple stacked MCAs, extending terms and dramatically reducing the daily cash drain." },
+{ metric: "$140k+", title: "Increased Monthly Cash Flow", desc: "Freed up critical working capital by restructuring debt service, allowing a logistics firm to maintain its fleet." },
+{ metric: "100%", title: "Stabilized Operations", desc: "Centralized all creditor communications, stopping aggressive collections and returning focus to business growth." }];
+
 
 const faqs = [
-  { q: "What is MCA debt relief?", a: "MCA debt relief helps businesses struggling with Merchant Cash Advance payment obligations improve cash flow, reduce payment pressure, and explore structured recovery options. Learn more about our <link>MCA Debt Relief services</link>." },
-  { q: "What is MCA advisory?", a: "MCA advisory involves professional financial consulting to help businesses manage, restructure, and overcome the burden of Merchant Cash Advances. We analyze your financial position and negotiate sustainable payment structures." },
-  { q: "How does MCA restructuring work?", a: "Restructuring works by analyzing the business's true affordability, communicating directly with funders, and strategically adjusting the payment terms to align with realistic, current revenue capabilities." },
-  { q: "Can MCA advisory improve cash flow?", a: "Yes. By addressing the root cause of the liquidity drain—typically high-frequency, high-cost daily ACH withdrawals—MCA advisory immediately preserves working capital for essential operations." },
-  { q: "Can businesses recover from stacked MCA loans?", a: "Absolutely. While stacked MCAs create severe operational distress, a structured advisory approach can un-stack the burden, prioritize critical payables, and return the business to stability." },
-  { q: "Is MCA restructuring an alternative to bankruptcy?", a: "In many cases, yes. Professional MCA restructuring and creditor coordination are designed to resolve unsustainable debt burdens outside of formal bankruptcy proceedings, preserving the enterprise." },
-  { q: "How quickly can financial stabilization begin?", a: "Stabilization efforts begin immediately upon engagement. While comprehensive restructuring takes time, the initial steps of cash flow analysis and creditor coordination provide rapid operational relief." }
-];
+{ q: "What is MCA debt relief?", a: "MCA debt relief helps businesses struggling with Merchant Cash Advance payment obligations improve cash flow, reduce payment pressure, and explore structured recovery options. Learn more about our <link>MCA Debt Relief services</link>." },
+{ q: "What is MCA advisory?", a: "MCA advisory involves professional financial consulting to help businesses manage, restructure, and overcome the burden of Merchant Cash Advances. We analyze your financial position and negotiate sustainable payment structures." },
+{ q: "How does MCA restructuring work?", a: "Restructuring works by analyzing the business's true affordability, communicating directly with funders, and strategically adjusting the payment terms to align with realistic, current revenue capabilities." },
+{ q: "Can MCA advisory improve cash flow?", a: "Yes. By addressing the root cause of the liquidity drain—typically high-frequency, high-cost daily ACH withdrawals—MCA advisory immediately preserves working capital for essential operations." },
+{ q: "Can businesses recover from stacked MCA loans?", a: "Absolutely. While stacked MCAs create severe operational distress, a structured advisory approach can un-stack the burden, prioritize critical payables, and return the business to stability." },
+{ q: "Is MCA restructuring an alternative to bankruptcy?", a: "In many cases, yes. Professional MCA restructuring and creditor coordination are designed to resolve unsustainable debt burdens outside of formal bankruptcy proceedings, preserving the enterprise." },
+{ q: "How quickly can financial stabilization begin?", a: "Stabilization efforts begin immediately upon engagement. While comprehensive restructuring takes time, the initial steps of cash flow analysis and creditor coordination provide rapid operational relief." }];
+
 
 export default function MCAAdvisory() {
   const { toast } = useToast();
@@ -103,7 +103,7 @@ export default function MCAAdvisory() {
     e.preventDefault();
     setIsSubmitting(true);
     setShowSuccess(false);
-    
+
     const formData = new FormData(e.target as HTMLFormElement);
     const emailBody = `
 MCA Advisory Consultation Request
@@ -115,7 +115,7 @@ Email: ${formData.get("email")}
 Phone: ${formData.get("phone")}
 Message: ${formData.get("message")}
     `.trim();
-    
+
     try {
       const response = await fetch("/api/send-email", {
         method: "POST",
@@ -148,7 +148,7 @@ Message: ${formData.get("message")}
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
+    "mainEntity": faqs.map((faq) => ({
       "@type": "Question",
       "name": faq.q,
       "acceptedAnswer": {
@@ -178,11 +178,11 @@ Message: ${formData.get("message")}
 
   return (
     <div className="min-h-screen bg-white font-sans text-foreground">
-      <SEO 
+      <SEO
         title="MCA Advisory Services | Merchant Cash Advance Consulting"
         description="Expert MCA advisory and restructuring services. Specialized guidance for businesses dealing with Merchant Cash Advance obligations, debt consolidation, and cash flow recovery."
-        url="/mca-advisory"
-      />
+        url="/mca-advisory" />
+      
       <Head>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
@@ -196,11 +196,11 @@ Message: ${formData.get("message")}
         <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden bg-gray-900 text-white">
           <div className="absolute inset-0 w-full h-full">
             <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/90 to-gray-900/40 z-10"></div>
-            <img 
-              src="/generated/mca-advisory-hero.png" 
-              alt="Premium financial advisory office" 
-              className="w-full h-full object-cover object-center opacity-60"
-            />
+            <img
+              src="/generated/mca-advisory-hero.png"
+              alt="Premium financial advisory office"
+              className="w-full h-full object-cover object-center opacity-60" />
+            
           </div>
           <div className="relative z-20 max-w-[1400px] mx-auto px-6">
             <div className="max-w-3xl">
@@ -209,7 +209,7 @@ Message: ${formData.get("message")}
                 MCA Advisory Services
               </div>
               <h1 className="text-4xl md:text-6xl font-serif font-bold leading-[1.1] mb-6 tracking-tight">
-                MCA Advisory & <br/><span className="text-gray-300">Business Stabilization Services</span>
+                MCA Advisory & <br /><span className="text-gray-300">Business Stabilization Services</span>
               </h1>
               <p className="text-lg md:text-xl text-gray-300 mb-10 leading-relaxed font-light max-w-2xl">
                 Helping businesses manage MCA payment pressure, improve cash flow, and create structured financial recovery strategies through professional advisory solutions.
@@ -294,12 +294,12 @@ Message: ${formData.get("message")}
                     We do not offer generic debt settlement. We provide institutional-grade creditor coordination, utilizing our deep understanding of the alternative finance space to structure realistic business recovery pathways.
                   </p>
                   <ul className="space-y-4">
-                    {["Financial position analysis", "Direct funder communication", "Liquidity preservation", "Operational turnaround"].map((item, i) => (
-                      <li key={i} className="flex items-center gap-3">
+                    {["Financial position analysis", "Direct funder communication", "Liquidity preservation", "Operational turnaround"].map((item, i) =>
+                    <li key={i} className="flex items-center gap-3">
                         <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0" />
                         <span className="font-medium text-foreground/80">{item}</span>
                       </li>
-                    ))}
+                    )}
                   </ul>
                 </div>
               </div>
@@ -319,15 +319,15 @@ Message: ${formData.get("message")}
             </div>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {challenges.map((card, index) => (
-                <div key={index} className="bg-white border border-gray-100 p-8 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 group">
+              {challenges.map((card, index) =>
+              <div key={index} className="bg-white border border-gray-100 p-8 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 group">
                   <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-white transition-colors text-accent">
                     <card.icon className="w-6 h-6" />
                   </div>
                   <h3 className="text-lg font-serif font-bold mb-3">{card.title}</h3>
                   <p className="text-foreground/70 text-sm leading-relaxed">{card.desc}</p>
                 </div>
-              ))}
+              )}
             </div>
           </div>
         </section>
@@ -353,25 +353,25 @@ Message: ${formData.get("message")}
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {solutions.map((item, index) => {
-                const CardContent = (
-                  <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm flex items-start gap-4">
+                const CardContent =
+                <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm flex items-start gap-4">
                     <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0 mt-1" />
                     <div>
                       <h4 className="font-semibold text-foreground mb-2">{item.title}</h4>
                       <p className="text-sm text-foreground/60">{item.desc}</p>
                     </div>
-                  </div>
-                );
+                  </div>;
 
-                return item.link ? (
-                  <Link key={index} href={item.link} className="block hover:scale-[1.02] transition-transform">
+
+                return item.link ?
+                <Link key={index} href={item.link} className="block hover:scale-[1.02] transition-transform">
                     {CardContent}
-                  </Link>
-                ) : (
-                  <div key={index}>
+                  </Link> :
+
+                <div key={index}>
                     {CardContent}
-                  </div>
-                );
+                  </div>;
+
               })}
             </div>
           </div>
@@ -389,13 +389,13 @@ Message: ${formData.get("message")}
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {processSteps.map((step, index) => (
-                <div key={index} className="relative p-8 border border-gray-100 rounded-xl bg-gray-50 hover:bg-white hover:shadow-xl transition-all duration-300">
+              {processSteps.map((step, index) =>
+              <div key={index} className="relative p-8 border border-gray-100 rounded-xl bg-gray-50 hover:bg-white hover:shadow-xl transition-all duration-300">
                   <div className="text-5xl font-serif font-bold text-gray-200 mb-6">{step.step}</div>
                   <h3 className="text-xl font-bold mb-3 text-foreground">{step.title}</h3>
                   <p className="text-foreground/70 leading-relaxed">{step.desc}</p>
                 </div>
-              ))}
+              )}
             </div>
           </div>
         </section>
@@ -411,14 +411,14 @@ Message: ${formData.get("message")}
                   Engaging a specialized restructuring firm transforms operational chaos into a highly coordinated stabilization effort, providing immediate and long-term advantages.
                 </p>
                 <div className="grid sm:grid-cols-2 gap-y-6 gap-x-4">
-                  {benefits.map((benefit, i) => (
-                    <div key={i} className="flex items-center gap-3">
+                  {benefits.map((benefit, i) =>
+                  <div key={i} className="flex items-center gap-3">
                       <div className="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0">
                         <CheckCircle2 className="w-4 h-4 text-accent" />
                       </div>
                       <span className="font-medium text-gray-200">{benefit}</span>
                     </div>
-                  ))}
+                  )}
                 </div>
               </div>
               <div className="grid grid-cols-2 gap-4">
@@ -463,15 +463,15 @@ Message: ${formData.get("message")}
             </div>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {industries.map((ind, idx) => (
-                <div key={idx} className="bg-white p-8 rounded-xl border border-gray-100 shadow-sm">
+              {industries.map((ind, idx) =>
+              <div key={idx} className="bg-white p-8 rounded-xl border border-gray-100 shadow-sm">
                   <div className="w-12 h-12 bg-gray-50 rounded-lg flex items-center justify-center mb-6">
                     <ind.icon className="w-6 h-6 text-foreground" />
                   </div>
                   <h3 className="text-xl font-bold mb-3">{ind.title}</h3>
                   <p className="text-foreground/70 text-sm leading-relaxed">{ind.desc}</p>
                 </div>
-              ))}
+              )}
             </div>
           </div>
         </section>
@@ -481,8 +481,8 @@ Message: ${formData.get("message")}
           <div className="max-w-[1400px] mx-auto px-6">
             <h2 className="text-2xl font-serif font-bold mb-12 text-center text-foreground">Nationwide Reach, Local Expertise</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {geoBlocks.map((geo, idx) => (
-                <div key={idx} className="p-6 bg-gray-50 rounded-lg border border-gray-100">
+              {geoBlocks.map((geo, idx) =>
+              <div key={idx} className="p-6 bg-gray-50 rounded-lg border border-gray-100">
                   <div className="flex items-center gap-2 mb-4">
                     <MapPin className="w-5 h-5 text-accent" />
                     <h3 className="font-bold text-foreground">{geo.region}</h3>
@@ -490,7 +490,7 @@ Message: ${formData.get("message")}
                   <h4 className="font-semibold text-sm mb-2">{geo.title}</h4>
                   <p className="text-sm text-foreground/70 leading-relaxed">{geo.desc}</p>
                 </div>
-              ))}
+              )}
             </div>
           </div>
         </section>
@@ -508,13 +508,13 @@ Message: ${formData.get("message")}
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
-              {caseStudies.map((study, idx) => (
-                <div key={idx} className="bg-white/5 border border-white/10 p-8 rounded-xl backdrop-blur-sm">
+              {caseStudies.map((study, idx) =>
+              <div key={idx} className="bg-white/5 border border-white/10 p-8 rounded-xl backdrop-blur-sm">
                   <div className="text-4xl font-serif font-bold text-accent mb-4">{study.metric}</div>
                   <h3 className="text-xl font-bold mb-3 text-white">{study.title}</h3>
                   <p className="text-gray-400 text-sm leading-relaxed">{study.desc}</p>
                 </div>
-              ))}
+              )}
             </div>
           </div>
         </section>
@@ -528,26 +528,26 @@ Message: ${formData.get("message")}
             </div>
 
             <Accordion type="single" collapsible className="w-full space-y-4">
-              {faqs.map((faq, index) => (
-                <AccordionItem key={index} value={`item-${index}`} className="bg-white border border-gray-200 rounded-lg px-6">
+              {faqs.map((faq, index) =>
+              <AccordionItem key={index} value={`item-${index}`} className="bg-white border border-gray-200 rounded-lg px-6">
                   <AccordionTrigger className="text-left font-semibold text-lg py-6 hover:no-underline hover:text-accent transition-colors">
                     {faq.q}
                   </AccordionTrigger>
                   <AccordionContent className="text-foreground/70 text-base leading-relaxed pb-6">
-                    {faq.a.includes('<link>') ? (
-                      <>
+                    {faq.a.includes('<link>') ?
+                  <>
                         {faq.a.split('<link>')[0]}
                         <Link href="/mca-debt-relief" className="text-accent hover:underline font-medium">
                           {faq.a.split('<link>')[1].split('</link>')[0]}
                         </Link>
                         {faq.a.split('</link>')[1]}
-                      </>
-                    ) : (
-                      faq.a
-                    )}
+                      </> :
+
+                  faq.a
+                  }
                   </AccordionContent>
                 </AccordionItem>
-              ))}
+              )}
             </Accordion>
           </div>
         </section>
@@ -596,8 +596,8 @@ Message: ${formData.get("message")}
                   <p className="text-foreground/60 mb-8">Fill out the form below and a specialist will contact you confidentially.</p>
                   
                   <form className="space-y-6" onSubmit={handleFormSubmit}>
-                    {showSuccess ? (
-                      <div className="text-center py-16 px-6">
+                    {showSuccess ?
+                    <div className="text-center py-16 px-6">
                         <div className="w-24 h-24 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-8">
                           <svg className="w-12 h-12 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -609,9 +609,9 @@ Message: ${formData.get("message")}
                         <p className="text-xl text-green-800 leading-relaxed max-w-lg mx-auto">
                           Your request has been received successfully. A member of our team will review your information and contact you shortly.
                         </p>
-                      </div>
-                    ) : (
-                      <>
+                      </div> :
+
+                    <>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                           <div className="space-y-2">
                             <Label htmlFor="firstName">First Name</Label>
@@ -645,17 +645,17 @@ Message: ${formData.get("message")}
                         </div>
                         
                         <Button disabled={isSubmitting} className="w-full h-14 text-base font-bold bg-accent hover:bg-accent/90 text-white shadow-lg shadow-accent/20 disabled:opacity-50 disabled:cursor-not-allowed">
-                          {isSubmitting ? (
-                            <span className="flex items-center justify-center gap-2">
+                          {isSubmitting ?
+                        <span className="flex items-center justify-center gap-2">
                               <Loader2 className="w-5 h-5 animate-spin" />
                               Submitting...
-                            </span>
-                          ) : (
-                            "Get Free MCA Consultation"
-                          )}
+                            </span> :
+
+                        "Get Free MCA Consultation"
+                        }
                         </Button>
                       </>
-                    )}
+                    }
                   </form>
                 </div>
               </div>
@@ -665,6 +665,6 @@ Message: ${formData.get("message")}
       </main>
 
       <Footer />
-    </div>
-  );
+    </div>);
+
 }
