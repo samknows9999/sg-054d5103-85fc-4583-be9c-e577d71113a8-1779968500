@@ -458,7 +458,7 @@ Date & Time: ${new Date().toLocaleString()}
                     </p>
                   </div>
                   <Button variant="outline" size="lg" className="w-full" asChild>
-                    <a href="/contact">Learn More</a>
+                    <Link href="/contact">Learn More</Link>
                   </Button>
                 </Card>
 
@@ -478,7 +478,7 @@ Date & Time: ${new Date().toLocaleString()}
                     </p>
                   </div>
                   <Button variant="outline" size="lg" className="w-full" asChild>
-                    <a href="/contact">Learn More</a>
+                    <Link href="/contact">Learn More</Link>
                   </Button>
                 </Card>
 
