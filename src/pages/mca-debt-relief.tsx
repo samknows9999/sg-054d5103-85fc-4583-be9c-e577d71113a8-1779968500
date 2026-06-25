@@ -246,7 +246,7 @@ Date & Time: ${new Date().toLocaleString()}
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="h-4 w-4 text-white" />
-                <span>Business Advisory Specialists</span>
+                <span>MCA Debt Relief Specialists</span>
               </div>
             </div>
           </div>
