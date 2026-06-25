@@ -315,8 +315,8 @@ Date & Time: ${new Date().toLocaleString()}
                 <div className="inline-flex items-center gap-3 px-4 py-2 bg-white/5 border border-white/10 rounded-full mb-8 backdrop-blur-sm">
                   <span className="text-sm font-semibold text-white tracking-widest uppercase" style={{ color: "#000000" }}>21+ Years Experience</span>
                 </div>
-                <h2 className="font-serif text-4xl md:text-5xl font-bold mb-6 text-white leading-tight" style={{ color: "#000000" }}>
-                  Experience, Relationships, Results
+                <h2 className="font-serif text-4xl md:text-5xl font-bold mb-6 text-white leading-tight" style={{ color: "#000000" }}>Why Businesses Choose Regroup Partners
+
                 </h2>
                 <p className="text-lg text-gray-300 mb-6 leading-relaxed font-light" style={{ color: "#000000" }}>
                   As a women-owned and operated professional business advisory firm, we bring more than two decades of hands-on restructuring experience and deep industry relationships.
@@ -327,21 +327,21 @@ Date & Time: ${new Date().toLocaleString()}
               </div>
               <div className="space-y-6">
                 <div className="p-8 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-colors" style={{ backgroundColor: "#d1d5db", backgroundImage: "none" }}>
-                  <h3 className="font-serif text-2xl font-semibold mb-3 text-white" style={{ color: "#000000" }}>Industry Pioneer</h3>
-                  <p className="text-gray-400 font-light" style={{ color: "#1a1a1a" }}>
-                    Pioneers in the merchant cash advance industry for over 20 years, with specialized expertise in MCA restructuring and creditor coordination.
+                  <h3 className="font-serif text-2xl font-semibold mb-3 text-white" style={{ color: "#000000" }}>Business Debt Relief Strategies</h3>
+                  <p className="text-gray-400 font-light" style={{ color: "#1a1a1a" }}>We help businesses evaluate practical debt relief strategies that reduce financial pressure while protecting long-term operations.
+
                   </p>
                 </div>
                 <div className="p-8 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-colors" style={{ backgroundColor: "#d1d5db", backgroundImage: "none" }}>
-                  <h3 className="font-serif text-2xl font-semibold mb-3 text-white" style={{ color: "#000000" }}>Trusted Advisors</h3>
-                  <p className="text-gray-400 font-light" style={{ color: "#1a1a1a" }}>
-                    We work diligently with all types of creditors, maintaining professional relationships that benefit our clients' restructuring outcomes.
+                  <h3 className="font-serif text-2xl font-semibold mb-3 text-white" style={{ color: "#000000" }}>Business Debt Consolidation Options</h3>
+                  <p className="text-gray-400 font-light" style={{ color: "#1a1a1a" }}>Our advisors work with multiple creditors to simplify repayment structures and improve financial flexibility.
+
                   </p>
                 </div>
                 <div className="p-8 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-colors" style={{ backgroundColor: "#d1d5db", backgroundImage: "none" }}>
-                  <h3 className="font-serif text-2xl font-semibold mb-3 text-white" style={{ color: "#000000" }}>Hands-On Approach</h3>
-                  <p className="text-gray-400 font-light" style={{ color: "#000000" }}>
-                    Direct involvement in every engagement, coordinating with banks, lenders, vendors, attorneys, and financial stakeholders.
+                  <h3 className="font-serif text-2xl font-semibold mb-3 text-white" style={{ color: "#000000" }}>MCA Debt Relief Specialists</h3>
+                  <p className="text-gray-400 font-light" style={{ color: "#000000" }}>For businesses struggling with merchant cash advances, we provide specialized restructuring and lender coordination backed by more than two decades of experience.
+
                   </p>
                 </div>
               </div>
