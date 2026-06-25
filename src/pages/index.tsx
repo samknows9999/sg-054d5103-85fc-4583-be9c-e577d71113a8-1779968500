@@ -133,7 +133,7 @@ Date & Time: ${new Date().toLocaleString()}
         <section className="py-24 bg-gray-50 border-b border-gray-200">
           <div className="max-w-[1400px] mx-auto px-6">
             <div className="text-center mb-16">
-              <h2 className="font-serif font-semibold text-4xl md:text-5xl text-[#0A192F] mb-6">Business Debt Relief & Advisory Services
+              <h2 className="font-serif font-semibold text-4xl md:text-5xl text-[#0A192F] mb-6">Business Debt Relief Solutions
 
               </h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">We help businesses overcome financial challenges through business debt relief, business debt consolidation, business restructuring, MCA debt relief, creditor coordination, and cash flow improvement strategies tailored to long-term stability.
