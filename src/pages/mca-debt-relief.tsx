@@ -265,9 +265,9 @@ Date & Time: ${new Date().toLocaleString()}
                   <span>Confidential Consultation</span>
                 </div>
 
-                <h1 className="font-display text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-                  MCA Debt Relief for Business Owners
-                </h1>
+                <h1 className="font-display text-5xl lg:text-6xl font-bold text-foreground leading-tight">MCA Debt Relief & Loan Restructuring for Business Owners
+
+</h1>
 
                 <p className="text-xl text-foreground/80 leading-relaxed">
                   Overwhelmed by Merchant Cash Advance payments? Our experienced team helps businesses restructure MCA debt, improve cash flow, and regain financial stability.
