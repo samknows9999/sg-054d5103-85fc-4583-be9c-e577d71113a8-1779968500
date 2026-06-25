@@ -615,7 +615,31 @@ Date & Time: ${new Date().toLocaleString()}
           </div>
         </section>
 
-        <section className="py-20 bg-muted/30">
+        {/* Urgent CTA Banner */}
+        <section className="py-8 bg-primary/5 border-y border-primary/20">
+          <div className="max-w-[1400px] mx-auto px-6">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-4 text-center md:text-left">
+              <div className="flex items-center gap-3">
+                <div className="w-3 h-3 rounded-full bg-primary animate-pulse"></div>
+                <p className="text-lg text-foreground">
+                  <strong>Facing MCA default?</strong> Call us now at{" "}
+                  <a 
+                    href="tel:+19543541800" 
+                    className="font-bold text-primary hover:text-primary/80 transition-colors underline decoration-2 decoration-primary/30 hover:decoration-primary text-xl">
+                    954-354-1800
+                  </a>{" "}
+                  for an emergency confidential consultation.
+                </p>
+              </div>
+              <p className="text-foreground/70 italic">
+                The sooner you act, the more options you have.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Common MCA Debt Challenges - Expanded */}
+        <section className="py-24 bg-white">
           <div className="container mx-auto px-6">
             <div className="max-w-6xl mx-auto space-y-12">
               <div className="text-center space-y-4">
