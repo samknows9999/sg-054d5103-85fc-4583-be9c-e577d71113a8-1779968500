@@ -50,9 +50,9 @@ export function Hero({ title, subtitle, breadcrumbs, backgroundImage }: HeroProp
         </h1>
         
         {subtitle &&
-        <p className="text-xl md:text-2xl text-gray-300 mt-8 max-w-3xl leading-relaxed font-light">
-            {subtitle}
-          </p>
+        <p className="text-xl md:text-2xl text-gray-300 mt-8 max-w-3xl leading-relaxed font-light">Helping businesses overcome financial pressure through business debt relief, restructuring, creditor negotiations, merchant cash advance solutions, and cash flow improvement.
+
+        </p>
         }
       </div>
     </section>);
