@@ -349,6 +349,22 @@ Date & Time: ${new Date().toLocaleString()}
           </div>
         </section>
 
+        {/* MCA Debt Relief CTA */}
+        <section className="py-16 bg-gray-50 border-b border-gray-200">
+          <div className="max-w-[1400px] mx-auto px-6 text-center">
+            <h2 className="font-serif text-3xl md:text-4xl font-semibold mb-8 text-[#0A192F]">
+              Learn How We Help Businesses Recover Financial Stability
+            </h2>
+            <Link href="/mca-debt-relief">
+              <Button
+                size="lg"
+                className="bg-primary hover:bg-primary/90 text-white px-10 py-6 text-lg font-semibold shadow-lg shadow-primary/20">
+                MCA Debt Relief
+              </Button>
+            </Link>
+          </div>
+        </section>
+
         {/* Testimonials */}
         <section className="py-24 md:py-32 bg-gray-50 border-b border-gray-200">
           <div className="max-w-[1400px] mx-auto px-6">
