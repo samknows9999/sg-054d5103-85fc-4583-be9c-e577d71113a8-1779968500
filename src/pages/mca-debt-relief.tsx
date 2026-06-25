@@ -57,6 +57,10 @@ Date & Time: ${new Date().toLocaleString()}
       if (response.ok) {
         setSubmitStatus("success");
         setFormData({ name: "", email: "", phone: "", company: "", mcaDebt: "", message: "" });
+        // Redirect to thank you page after brief delay
+        setTimeout(() => {
+          window.location.href = "/thank-you";
+        }, 1500);
       } else {
         setSubmitStatus("error");
       }

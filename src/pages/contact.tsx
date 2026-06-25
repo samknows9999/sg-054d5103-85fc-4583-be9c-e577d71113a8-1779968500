@@ -138,6 +138,10 @@ Form Completion Time: ${Math.round(timeTaken / 1000)}s
           website: ""
         });
         setTurnstileToken("");
+        // Redirect to thank you page after brief delay
+        setTimeout(() => {
+          window.location.href = "/thank-you";
+        }, 1000);
       } else if (response.status === 429) {
         toast({
           title: "Rate Limit Exceeded",

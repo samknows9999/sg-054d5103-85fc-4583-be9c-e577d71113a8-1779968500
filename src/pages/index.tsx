@@ -51,6 +51,10 @@ Date & Time: ${new Date().toLocaleString()}
       if (response.ok) {
         setShowSuccess(true);
         (e.target as HTMLFormElement).reset();
+        // Redirect to thank you page after brief delay
+        setTimeout(() => {
+          window.location.href = "/thank-you";
+        }, 1000);
       } else {
         throw new Error("Failed to send");
       }
