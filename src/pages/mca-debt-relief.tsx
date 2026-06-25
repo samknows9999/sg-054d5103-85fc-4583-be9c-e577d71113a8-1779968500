@@ -71,94 +71,94 @@ Date & Time: ${new Date().toLocaleString()}
   };
 
   const faqs = [
-    {
-      q: "Is MCA Debt Relief legitimate?",
-      a: "Yes, MCA debt relief through professional business restructuring is a legitimate solution for businesses struggling with Merchant Cash Advance obligations. Unlike debt settlement companies, Regroup Partners is an experienced business advisory firm that focuses on creditor coordination, cash flow improvement, and comprehensive business restructuring strategies."
-    },
-    {
-      q: "Is MCA Debt Relief different from debt settlement?",
-      a: "Yes. MCA debt relief through business restructuring involves comprehensive financial analysis, creditor coordination, and strategic business planning. We are not a debt settlement company—we are professional business advisors with 21+ years of restructuring experience focused on sustainable, long-term solutions."
-    },
-    {
-      q: "Can MCA lenders sue my business?",
-      a: "Yes, MCA lenders can pursue legal action including lawsuits, judgments, and bank account levies if obligations remain unpaid. Many MCA agreements also include Confession of Judgment clauses that allow creditors to obtain judgments without going to court. Early professional intervention can help address these situations before legal action escalates."
-    },
-    {
-      q: "What happens if I default on an MCA?",
-      a: "Defaulting on a Merchant Cash Advance can result in frozen bank accounts, UCC lien enforcement, daily ACH withdrawal attempts, aggressive collection activity, lawsuits, judgments, and severe cash flow disruption. Professional assistance can help navigate default situations and work toward resolution with creditors."
-    },
-    {
-      q: "Can multiple MCA loans be consolidated?",
-      a: "While traditional debt consolidation may not always be available for MCA obligations, businesses with multiple MCAs can work with restructuring advisors to coordinate creditors, improve cash flow, and develop strategies to address multiple obligations more effectively."
-    },
-    {
-      q: "How long does MCA Debt Relief take?",
-      a: "The timeline varies based on the complexity of your situation, the number of creditors involved, and the specific restructuring strategies implemented. Some businesses see relief within weeks, while more complex cases may take several months. We work efficiently to provide relief as quickly as possible."
-    },
-    {
-      q: "Will this affect my business credit?",
-      a: "Our approach focuses on professional creditor coordination and business restructuring strategies designed to preserve business relationships whenever possible. The impact on credit depends on your specific situation and the strategies implemented. We work to minimize negative effects while achieving sustainable debt relief."
-    },
-    {
-      q: "Can I continue operating during negotiations?",
-      a: "Yes, most businesses continue operating while working through MCA debt relief. Our strategies are designed to stabilize cash flow and protect operations so you can maintain business continuity throughout the restructuring process."
-    },
-    {
-      q: "Do you work with businesses nationwide?",
-      a: "Yes, Regroup Partners works with businesses throughout the United States facing MCA debt challenges. Our team has experience with MCA lenders and creditors across all states and can provide effective representation regardless of your location."
-    },
-    {
-      q: "When should I seek professional help?",
-      a: "Seek professional help as soon as you recognize unsustainable payment obligations, declining cash flow, threats of legal action, frozen accounts, or difficulty meeting multiple MCA payments. Early intervention provides more options and better outcomes than waiting until the situation becomes critical."
-    },
-    {
-      q: "What is MCA debt restructuring?",
-      a: "MCA debt restructuring refers to strategies used to address Merchant Cash Advance obligations, improve cash flow, coordinate with creditors, and create a more sustainable financial structure for the business. Depending on the situation, restructuring may involve reviewing repayment arrangements, improving cash flow management, and developing a practical plan to support long-term business stability."
-    },
-    {
-      q: "What is MCA debt relief?",
-      a: "MCA debt relief involves working with creditors to restructure or reduce Merchant Cash Advance obligations through professional negotiation, cash flow analysis, and strategic business restructuring."
-    },
-    {
-      q: "How quickly can I get help with my MCA debt?",
-      a: "We typically schedule confidential consultations within 24-48 hours. Our team begins analyzing your situation immediately to develop a customized relief strategy."
-    },
-    {
-      q: "Will working with Regroup Partners affect my credit?",
-      a: "Our approach focuses on professional creditor coordination and business restructuring strategies that aim to preserve your business relationships and creditworthiness."
-    },
-    {
-      q: "How much does MCA debt relief cost?",
-      a: "Every situation is unique. We provide a free initial consultation to assess your needs and discuss our fee structure transparently before any engagement."
-    },
-    {
-      q: "Can you help if I have multiple MCAs?",
-      a: "Yes. We specialize in complex situations involving multiple Merchant Cash Advances and coordinating with various creditors simultaneously."
-    },
-    {
-      q: "What makes Regroup Partners different from debt settlement companies?",
-      a: "We are a professional business advisory firm with 21+ years of restructuring experience, not a debt settlement company. We focus on comprehensive business solutions and creditor coordination."
-    }
-  ];
+  {
+    q: "Is MCA Debt Relief legitimate?",
+    a: "Yes, MCA debt relief through professional business restructuring is a legitimate solution for businesses struggling with Merchant Cash Advance obligations. Unlike debt settlement companies, Regroup Partners is an experienced business advisory firm that focuses on creditor coordination, cash flow improvement, and comprehensive business restructuring strategies."
+  },
+  {
+    q: "Is MCA Debt Relief different from debt settlement?",
+    a: "Yes. MCA debt relief through business restructuring involves comprehensive financial analysis, creditor coordination, and strategic business planning. We are not a debt settlement company—we are professional business advisors with 21+ years of restructuring experience focused on sustainable, long-term solutions."
+  },
+  {
+    q: "Can MCA lenders sue my business?",
+    a: "Yes, MCA lenders can pursue legal action including lawsuits, judgments, and bank account levies if obligations remain unpaid. Many MCA agreements also include Confession of Judgment clauses that allow creditors to obtain judgments without going to court. Early professional intervention can help address these situations before legal action escalates."
+  },
+  {
+    q: "What happens if I default on an MCA?",
+    a: "Defaulting on a Merchant Cash Advance can result in frozen bank accounts, UCC lien enforcement, daily ACH withdrawal attempts, aggressive collection activity, lawsuits, judgments, and severe cash flow disruption. Professional assistance can help navigate default situations and work toward resolution with creditors."
+  },
+  {
+    q: "Can multiple MCA loans be consolidated?",
+    a: "While traditional debt consolidation may not always be available for MCA obligations, businesses with multiple MCAs can work with restructuring advisors to coordinate creditors, improve cash flow, and develop strategies to address multiple obligations more effectively."
+  },
+  {
+    q: "How long does MCA Debt Relief take?",
+    a: "The timeline varies based on the complexity of your situation, the number of creditors involved, and the specific restructuring strategies implemented. Some businesses see relief within weeks, while more complex cases may take several months. We work efficiently to provide relief as quickly as possible."
+  },
+  {
+    q: "Will this affect my business credit?",
+    a: "Our approach focuses on professional creditor coordination and business restructuring strategies designed to preserve business relationships whenever possible. The impact on credit depends on your specific situation and the strategies implemented. We work to minimize negative effects while achieving sustainable debt relief."
+  },
+  {
+    q: "Can I continue operating during negotiations?",
+    a: "Yes, most businesses continue operating while working through MCA debt relief. Our strategies are designed to stabilize cash flow and protect operations so you can maintain business continuity throughout the restructuring process."
+  },
+  {
+    q: "Do you work with businesses nationwide?",
+    a: "Yes, Regroup Partners works with businesses throughout the United States facing MCA debt challenges. Our team has experience with MCA lenders and creditors across all states and can provide effective representation regardless of your location."
+  },
+  {
+    q: "When should I seek professional help?",
+    a: "Seek professional help as soon as you recognize unsustainable payment obligations, declining cash flow, threats of legal action, frozen accounts, or difficulty meeting multiple MCA payments. Early intervention provides more options and better outcomes than waiting until the situation becomes critical."
+  },
+  {
+    q: "What is MCA debt restructuring?",
+    a: "MCA debt restructuring refers to strategies used to address Merchant Cash Advance obligations, improve cash flow, coordinate with creditors, and create a more sustainable financial structure for the business. Depending on the situation, restructuring may involve reviewing repayment arrangements, improving cash flow management, and developing a practical plan to support long-term business stability."
+  },
+  {
+    q: "What is MCA debt relief?",
+    a: "MCA debt relief involves working with creditors to restructure or reduce Merchant Cash Advance obligations through professional negotiation, cash flow analysis, and strategic business restructuring."
+  },
+  {
+    q: "How quickly can I get help with my MCA debt?",
+    a: "We typically schedule confidential consultations within 24-48 hours. Our team begins analyzing your situation immediately to develop a customized relief strategy."
+  },
+  {
+    q: "Will working with Regroup Partners affect my credit?",
+    a: "Our approach focuses on professional creditor coordination and business restructuring strategies that aim to preserve your business relationships and creditworthiness."
+  },
+  {
+    q: "How much does MCA debt relief cost?",
+    a: "Every situation is unique. We provide a free initial consultation to assess your needs and discuss our fee structure transparently before any engagement."
+  },
+  {
+    q: "Can you help if I have multiple MCAs?",
+    a: "Yes. We specialize in complex situations involving multiple Merchant Cash Advances and coordinating with various creditors simultaneously."
+  },
+  {
+    q: "What makes Regroup Partners different from debt settlement companies?",
+    a: "We are a professional business advisory firm with 21+ years of restructuring experience, not a debt settlement company. We focus on comprehensive business solutions and creditor coordination."
+  }];
+
 
   const industries = [
-    "Restaurants & Hospitality",
-    "Retail & E-commerce",
-    "Healthcare Services",
-    "Professional Services",
-    "Construction & Contractors",
-    "Automotive Services",
-    "Beauty & Wellness",
-    "Transportation & Logistics"
-  ];
+  "Restaurants & Hospitality",
+  "Retail & E-commerce",
+  "Healthcare Services",
+  "Professional Services",
+  "Construction & Contractors",
+  "Automotive Services",
+  "Beauty & Wellness",
+  "Transportation & Logistics"];
+
 
   return (
     <>
       <SEO
         title="MCA Debt Relief & Merchant Cash Advance Solutions | Regroup Partners"
         description="Struggling with MCA payments? Regroup Partners helps businesses explore MCA debt relief, creditor negotiations, cash flow solutions, and restructuring options."
-        url="/mca-debt-relief"
-      />
+        url="/mca-debt-relief" />
+      
 
       <Head>
         <script
@@ -176,8 +176,8 @@ Date & Time: ${new Date().toLocaleString()}
                 }
               }))
             })
-          }}
-        />
+          }} />
+        
 
         <script
           type="application/ld+json"
@@ -204,8 +204,8 @@ Date & Time: ${new Date().toLocaleString()}
               },
               "priceRange": "$$"
             })
-          }}
-        />
+          }} />
+        
       </Head>
 
       <header className="fixed top-0 left-0 right-0 z-50 bg-[#0B1F3A]">
@@ -217,16 +217,16 @@ Date & Time: ${new Date().toLocaleString()}
                 alt="Regroup Partners"
                 width={288}
                 height={64}
-                className="h-16 w-auto scale-[2.5] origin-left"
-              />
+                className="h-16 w-auto scale-[2.5] origin-left" />
+              
             </Link>
 
             <Button
               variant="default"
               size="lg"
               className="h-12 px-6 text-base font-semibold bg-primary hover:bg-primary/90"
-              asChild
-            >
+              asChild>
+              
               <a href="tel:+19543541800">
                 <Phone className="h-5 w-5 mr-2" />
                 Call Now: 954-354-1800
@@ -305,8 +305,8 @@ Date & Time: ${new Date().toLocaleString()}
                     <p className="text-foreground/70">Discuss your MCA debt situation confidentially with an expert advisor.</p>
                   </div>
 
-                  {submitStatus === "success" ? (
-                    <div className="bg-green-50 border border-green-200 rounded-lg p-6 space-y-4">
+                  {submitStatus === "success" ?
+                  <div className="bg-green-50 border border-green-200 rounded-lg p-6 space-y-4">
                       <div className="flex items-start gap-3">
                         <CheckCircle2 className="h-6 w-6 text-green-600 flex-shrink-0 mt-0.5" />
                         <div>
@@ -314,75 +314,75 @@ Date & Time: ${new Date().toLocaleString()}
                           <p className="text-green-800 leading-relaxed">Your request has been received successfully. A member of our team will review your information and contact you shortly.</p>
                         </div>
                       </div>
-                    </div>
-                  ) : (
-                    <form onSubmit={handleSubmit} className="space-y-4">
+                    </div> :
+
+                  <form onSubmit={handleSubmit} className="space-y-4">
                       <div>
                         <Input
-                          placeholder="Full Name *"
-                          value={formData.name}
-                          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                          required
-                          className="h-12"
-                        />
+                        placeholder="Full Name *"
+                        value={formData.name}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        required
+                        className="h-12" />
+                      
                       </div>
                       <div>
                         <Input
-                          type="email"
-                          placeholder="Email Address *"
-                          value={formData.email}
-                          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                          required
-                          className="h-12"
-                        />
+                        type="email"
+                        placeholder="Email Address *"
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        required
+                        className="h-12" />
+                      
                       </div>
                       <div>
                         <Input
-                          type="tel"
-                          placeholder="Phone Number *"
-                          value={formData.phone}
-                          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                          required
-                          className="h-12"
-                        />
+                        type="tel"
+                        placeholder="Phone Number *"
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                        required
+                        className="h-12" />
+                      
                       </div>
                       <div>
                         <Input
-                          placeholder="Company Name"
-                          value={formData.company}
-                          onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                          className="h-12"
-                        />
+                        placeholder="Company Name"
+                        value={formData.company}
+                        onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                        className="h-12" />
+                      
                       </div>
                       <div>
                         <Input
-                          placeholder="Approximate MCA Debt Amount"
-                          value={formData.mcaDebt}
-                          onChange={(e) => setFormData({ ...formData, mcaDebt: e.target.value })}
-                          className="h-12"
-                        />
+                        placeholder="Approximate MCA Debt Amount"
+                        value={formData.mcaDebt}
+                        onChange={(e) => setFormData({ ...formData, mcaDebt: e.target.value })}
+                        className="h-12" />
+                      
                       </div>
                       <div>
                         <Textarea
-                          placeholder="Brief description of your situation (optional)"
-                          value={formData.message}
-                          onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                          rows={4}
-                        />
+                        placeholder="Brief description of your situation (optional)"
+                        value={formData.message}
+                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                        rows={4} />
+                      
                       </div>
                       <Button
-                        type="submit"
-                        disabled={isSubmitting}
-                        className="w-full h-12 text-lg font-semibold"
-                        variant="default"
-                      >
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full h-12 text-lg font-semibold"
+                      variant="default">
+                      
                         {isSubmitting ? "Submitting..." : "Get Free Consultation"}
                       </Button>
                       <p className="text-xs text-center text-foreground/60">
                         All consultations are confidential. We respect your privacy.
                       </p>
                     </form>
-                  )}
+                  }
                 </div>
               </Card>
             </div>
@@ -1079,9 +1079,9 @@ Date & Time: ${new Date().toLocaleString()}
           <div className="container mx-auto px-6">
             <div className="max-w-5xl mx-auto space-y-12">
               <div className="text-center space-y-4">
-                <h2 className="font-display text-4xl lg:text-5xl font-bold text-foreground">
-                  Why Choose Regroup Partners
-                </h2>
+                
+
+                
                 <p className="text-xl text-foreground/70 max-w-3xl mx-auto">
                   We are not a debt settlement company. We are experienced business advisors focused on sustainable solutions.
                 </p>
@@ -1089,32 +1089,32 @@ Date & Time: ${new Date().toLocaleString()}
 
               <div className="space-y-6">
                 {[
-                  {
-                    title: "21+ Years of Restructuring Experience",
-                    description: "Decades of proven success helping businesses navigate complex financial challenges and creditor relationships."
-                  },
-                  {
-                    title: "Specialized MCA Expertise",
-                    description: "Deep understanding of Merchant Cash Advance structures, lender practices, and effective negotiation strategies through dedicated MCA advisory services."
-                  },
-                  {
-                    title: "Professional Creditor Relationships",
-                    description: "Established relationships with major MCA providers enable more effective negotiations and better outcomes."
-                  },
-                  {
-                    title: "Confidential & Discreet Service",
-                    description: "All consultations and negotiations are handled with complete confidentiality to protect your business reputation."
-                  },
-                  {
-                    title: "Comprehensive Business Solutions",
-                    description: "We address the root causes of financial stress, not just the symptoms, creating long-term stability."
-                  },
-                  {
-                    title: "Women-Owned & Operated",
-                    description: "Committed to delivering institutional-grade advisory services with personalized attention and hands-on involvement."
-                  }
-                ].map((item, idx) => (
-                  <Card key={idx} className="p-6 hover:shadow-lg transition-shadow">
+                {
+                  title: "21+ Years of Restructuring Experience",
+                  description: "Decades of proven success helping businesses navigate complex financial challenges and creditor relationships."
+                },
+                {
+                  title: "Specialized MCA Expertise",
+                  description: "Deep understanding of Merchant Cash Advance structures, lender practices, and effective negotiation strategies through dedicated MCA advisory services."
+                },
+                {
+                  title: "Professional Creditor Relationships",
+                  description: "Established relationships with major MCA providers enable more effective negotiations and better outcomes."
+                },
+                {
+                  title: "Confidential & Discreet Service",
+                  description: "All consultations and negotiations are handled with complete confidentiality to protect your business reputation."
+                },
+                {
+                  title: "Comprehensive Business Solutions",
+                  description: "We address the root causes of financial stress, not just the symptoms, creating long-term stability."
+                },
+                {
+                  title: "Women-Owned & Operated",
+                  description: "Committed to delivering institutional-grade advisory services with personalized attention and hands-on involvement."
+                }].
+                map((item, idx) =>
+                <Card key={idx} className="p-6 hover:shadow-lg transition-shadow">
                     <div className="flex items-start gap-4">
                       <ChevronRight className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                       <div className="space-y-2">
@@ -1123,7 +1123,7 @@ Date & Time: ${new Date().toLocaleString()}
                       </div>
                     </div>
                   </Card>
-                ))}
+                )}
               </div>
             </div>
           </div>
@@ -1142,11 +1142,11 @@ Date & Time: ${new Date().toLocaleString()}
               </div>
 
               <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
-                {industries.map((industry, idx) => (
-                  <div key={idx} className="p-4 rounded-lg bg-muted border border-border hover:border-primary/50 transition-colors">
+                {industries.map((industry, idx) =>
+                <div key={idx} className="p-4 rounded-lg bg-muted border border-border hover:border-primary/50 transition-colors">
                     <p className="font-semibold text-foreground">{industry}</p>
                   </div>
-                ))}
+                )}
               </div>
             </div>
           </div>
@@ -1165,8 +1165,8 @@ Date & Time: ${new Date().toLocaleString()}
               </div>
 
               <Accordion type="single" collapsible className="w-full space-y-4">
-                {faqs.map((faq, idx) => (
-                  <AccordionItem key={idx} value={`item-${idx}`} className="bg-background border border-border rounded-lg px-6">
+                {faqs.map((faq, idx) =>
+                <AccordionItem key={idx} value={`item-${idx}`} className="bg-background border border-border rounded-lg px-6">
                     <AccordionTrigger className="text-left font-semibold text-lg hover:text-primary">
                       {faq.q}
                     </AccordionTrigger>
@@ -1174,7 +1174,7 @@ Date & Time: ${new Date().toLocaleString()}
                       {faq.a}
                     </AccordionContent>
                   </AccordionItem>
-                ))}
+                )}
               </Accordion>
 
               <div className="bg-primary/5 border border-primary/20 rounded-lg p-8 text-center">
@@ -1206,16 +1206,16 @@ Date & Time: ${new Date().toLocaleString()}
                   variant="secondary"
                   size="lg"
                   className="h-14 px-8 text-lg font-semibold"
-                  asChild
-                >
+                  asChild>
+                  
                   <a href="#hero">Get Free Consultation</a>
                 </Button>
                 <Button
                   variant="outline"
                   size="lg"
                   className="h-14 px-8 text-lg font-semibold bg-white/10 border-white/30 hover:bg-white/20 text-white"
-                  asChild
-                >
+                  asChild>
+                  
                   <a href="tel:+19543541800">
                     <Phone className="h-5 w-5 mr-2" />
                     Speak With An Advisor
@@ -1231,6 +1231,6 @@ Date & Time: ${new Date().toLocaleString()}
       </main>
 
       <Footer />
-    </>
-  );
+    </>);
+
 }
