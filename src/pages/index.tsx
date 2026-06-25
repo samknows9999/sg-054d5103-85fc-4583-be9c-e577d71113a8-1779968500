@@ -287,16 +287,16 @@ Date & Time: ${new Date().toLocaleString()}
                         <textarea id="message" name="message" rows={3} className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none"></textarea>
                       </div>
 
-                      <Button type="submit" disabled={isSubmitting} className="w-full py-6 text-base font-semibold bg-primary hover:bg-primary/90 text-white mt-4 shadow-lg shadow-primary/20 disabled:opacity-50 disabled:cursor-not-allowed">
-                        {isSubmitting ?
-                      <span className="flex items-center justify-center gap-2">
-                            <Loader2 className="w-5 h-5 animate-spin" />
-                            Submitting...
-                          </span> :
+                      <Button type="submit" disabled={isSubmitting} className="w-full py-6 text-base font-semibold bg-primary hover:bg-primary/90 text-white mt-4 shadow-lg shadow-primary/20 disabled:opacity-50 disabled:cursor-not-allowed">Schedule My Consultation
 
-                      "Request Consultation"
-                      }
-                      </Button>
+
+
+
+
+
+
+
+                    </Button>
                     </>
                   }
                 </form>
