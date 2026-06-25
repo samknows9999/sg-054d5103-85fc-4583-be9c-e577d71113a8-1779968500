@@ -179,7 +179,7 @@ Date & Time: ${new Date().toLocaleString()}
                 alt="Regroup Partners"
                 width={288}
                 height={64}
-                className="h-16 w-auto"
+                className="h-16 w-auto scale-[2.5] origin-left"
               />
             </Link>
 
