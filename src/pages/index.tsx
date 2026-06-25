@@ -20,7 +20,7 @@ export default function Home() {
     e.preventDefault();
     setIsSubmitting(true);
     setShowSuccess(false);
-    
+
     const formData = new FormData(e.target as HTMLFormElement);
     const emailBody = `
 New Website Lead - Homepage Consultation
@@ -35,7 +35,7 @@ Message: ${formData.get("message")}
 Page URL: ${window.location.href}
 Date & Time: ${new Date().toLocaleString()}
     `.trim();
-    
+
     try {
       const response = await fetch("/api/send-email", {
         method: "POST",
@@ -71,11 +71,11 @@ Date & Time: ${new Date().toLocaleString()}
 
   return (
     <>
-      <SEO 
+      <SEO
         title="Business Restructuring & Financial Advisory Services | Regroup Partners"
         description="Leading business restructuring and financial advisory firm. 21+ years of experience helping businesses navigate financial challenges, MCA obligations, and creditor coordination."
-        url="/"
-      />
+        url="/" />
+      
       
 
       <Navigation />
@@ -133,11 +133,11 @@ Date & Time: ${new Date().toLocaleString()}
         <section className="py-24 bg-gray-50 border-b border-gray-200">
           <div className="max-w-[1400px] mx-auto px-6">
             <div className="text-center mb-16">
-              <h2 className="font-serif font-semibold text-4xl md:text-5xl text-[#0A192F] mb-6">
-                Advisory Services
+              <h2 className="font-serif font-semibold text-4xl md:text-5xl text-[#0A192F] mb-6">Business Debt Relief & Advisory Services
+
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Comprehensive restructuring and financial advisory tailored to your business needs
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">We help businesses overcome financial challenges through business debt relief, business debt consolidation, business restructuring, MCA debt relief, creditor coordination, and cash flow improvement strategies tailored to long-term stability.
+
               </p>
             </div>
 
@@ -239,8 +239,8 @@ Date & Time: ${new Date().toLocaleString()}
                 </div>
                 
                 <form className="space-y-6" onSubmit={handleFormSubmit}>
-                  {showSuccess ? (
-                    <div className="text-center py-12 px-6">
+                  {showSuccess ?
+                  <div className="text-center py-12 px-6">
                       <div className="w-20 h-20 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-6">
                         <svg className="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -252,9 +252,9 @@ Date & Time: ${new Date().toLocaleString()}
                       <p className="text-lg text-green-800 leading-relaxed max-w-md mx-auto">
                         Your request has been received successfully. A member of our team will review your information and contact you shortly.
                       </p>
-                    </div>
-                  ) : (
-                    <>
+                    </div> :
+
+                  <>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div className="space-y-2">
                           <label htmlFor="firstName" className="text-sm font-semibold text-[#0A192F]">First Name</label>
@@ -288,17 +288,17 @@ Date & Time: ${new Date().toLocaleString()}
                       </div>
 
                       <Button type="submit" disabled={isSubmitting} className="w-full py-6 text-base font-semibold bg-primary hover:bg-primary/90 text-white mt-4 shadow-lg shadow-primary/20 disabled:opacity-50 disabled:cursor-not-allowed">
-                        {isSubmitting ? (
-                          <span className="flex items-center justify-center gap-2">
+                        {isSubmitting ?
+                      <span className="flex items-center justify-center gap-2">
                             <Loader2 className="w-5 h-5 animate-spin" />
                             Submitting...
-                          </span>
-                        ) : (
-                          "Request Consultation"
-                        )}
+                          </span> :
+
+                      "Request Consultation"
+                      }
                       </Button>
                     </>
-                  )}
+                  }
                 </form>
               </div>
             </div>
