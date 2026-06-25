@@ -232,9 +232,9 @@ Date & Time: ${new Date().toLocaleString()}
             <div className="lg:w-1/2 bg-white text-[#0A192F] p-12 md:p-24 flex flex-col justify-center shadow-[-20px_0_40px_rgba(0,0,0,0.03)] relative z-10">
               <div className="max-w-lg mx-auto w-full">
                 <div className="mb-10">
-                  <h3 className="font-serif text-3xl font-semibold mb-4 text-[#0A192F]">Confidential Consultation</h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    Submit your details below for a discreet review of your business's financial position.
+                  <h3 className="font-serif text-3xl font-semibold mb-4 text-[#0A192F]">Schedule Your Confidential Business Debt Relief Consultation</h3>
+                  <p className="text-gray-600 leading-relaxed">Tell us about your business challenges and one of our experienced advisors will review your situation and discuss potential business debt relief, restructuring, or creditor negotiation options.
+
                   </p>
                 </div>
                 
@@ -283,7 +283,7 @@ Date & Time: ${new Date().toLocaleString()}
                       </div>
 
                       <div className="space-y-2">
-                        <label htmlFor="message" className="text-sm font-semibold text-[#0A192F]">How can we help? (Optional)</label>
+                        <label htmlFor="message" className="text-sm font-semibold text-[#0A192F]">Describe Your Business Challenge</label>
                         <textarea id="message" name="message" rows={3} className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none"></textarea>
                       </div>
 
