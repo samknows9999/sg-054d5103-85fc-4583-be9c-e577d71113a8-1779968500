@@ -26,7 +26,7 @@ export default function MCADebtReliefLanding() {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     const emailBody = `
 New MCA Debt Relief Consultation Request
 
@@ -41,7 +41,7 @@ Source Page: mca-debt-relief
 Page URL: ${window.location.href}
 Date & Time: ${new Date().toLocaleString()}
     `.trim();
-    
+
     try {
       const response = await fetch("/api/send-email", {
         method: "POST",
@@ -72,54 +72,54 @@ Date & Time: ${new Date().toLocaleString()}
   };
 
   const faqs = [
-    {
-      q: "What is MCA debt restructuring?",
-      a: "MCA debt restructuring refers to strategies used to address Merchant Cash Advance obligations, improve cash flow, coordinate with creditors, and create a more sustainable financial structure for the business. Depending on the situation, restructuring may involve reviewing repayment arrangements, improving cash flow management, and developing a practical plan to support long-term business stability."
-    },
-    {
-      q: "What is MCA debt relief?",
-      a: "MCA debt relief involves working with creditors to restructure or reduce Merchant Cash Advance obligations through professional negotiation, cash flow analysis, and strategic business restructuring."
-    },
-    {
-      q: "How quickly can I get help with my MCA debt?",
-      a: "We typically schedule confidential consultations within 24-48 hours. Our team begins analyzing your situation immediately to develop a customized relief strategy."
-    },
-    {
-      q: "Will working with Regroup Partners affect my credit?",
-      a: "Our approach focuses on professional creditor coordination and business restructuring strategies that aim to preserve your business relationships and creditworthiness."
-    },
-    {
-      q: "How much does MCA debt relief cost?",
-      a: "Every situation is unique. We provide a free initial consultation to assess your needs and discuss our fee structure transparently before any engagement."
-    },
-    {
-      q: "Can you help if I have multiple MCAs?",
-      a: "Yes. We specialize in complex situations involving multiple Merchant Cash Advances and coordinating with various creditors simultaneously."
-    },
-    {
-      q: "What makes Regroup Partners different from debt settlement companies?",
-      a: "We are a professional business advisory firm with 21+ years of restructuring experience, not a debt settlement company. We focus on comprehensive business solutions and creditor coordination."
-    }
-  ];
+  {
+    q: "What is MCA debt restructuring?",
+    a: "MCA debt restructuring refers to strategies used to address Merchant Cash Advance obligations, improve cash flow, coordinate with creditors, and create a more sustainable financial structure for the business. Depending on the situation, restructuring may involve reviewing repayment arrangements, improving cash flow management, and developing a practical plan to support long-term business stability."
+  },
+  {
+    q: "What is MCA debt relief?",
+    a: "MCA debt relief involves working with creditors to restructure or reduce Merchant Cash Advance obligations through professional negotiation, cash flow analysis, and strategic business restructuring."
+  },
+  {
+    q: "How quickly can I get help with my MCA debt?",
+    a: "We typically schedule confidential consultations within 24-48 hours. Our team begins analyzing your situation immediately to develop a customized relief strategy."
+  },
+  {
+    q: "Will working with Regroup Partners affect my credit?",
+    a: "Our approach focuses on professional creditor coordination and business restructuring strategies that aim to preserve your business relationships and creditworthiness."
+  },
+  {
+    q: "How much does MCA debt relief cost?",
+    a: "Every situation is unique. We provide a free initial consultation to assess your needs and discuss our fee structure transparently before any engagement."
+  },
+  {
+    q: "Can you help if I have multiple MCAs?",
+    a: "Yes. We specialize in complex situations involving multiple Merchant Cash Advances and coordinating with various creditors simultaneously."
+  },
+  {
+    q: "What makes Regroup Partners different from debt settlement companies?",
+    a: "We are a professional business advisory firm with 21+ years of restructuring experience, not a debt settlement company. We focus on comprehensive business solutions and creditor coordination."
+  }];
+
 
   const industries = [
-    "Restaurants & Hospitality",
-    "Retail & E-commerce",
-    "Healthcare Services",
-    "Professional Services",
-    "Construction & Contractors",
-    "Automotive Services",
-    "Beauty & Wellness",
-    "Transportation & Logistics"
-  ];
+  "Restaurants & Hospitality",
+  "Retail & E-commerce",
+  "Healthcare Services",
+  "Professional Services",
+  "Construction & Contractors",
+  "Automotive Services",
+  "Beauty & Wellness",
+  "Transportation & Logistics"];
+
 
   return (
     <>
       <SEO
         title="MCA Debt Relief & Merchant Cash Advance Solutions | Regroup Partners"
         description="Struggling with MCA payments? Regroup Partners helps businesses explore MCA debt relief, creditor negotiations, cash flow solutions, and restructuring options."
-        url="/mca-debt-relief"
-      />
+        url="/mca-debt-relief" />
+      
 
       <Head>
         <script
@@ -128,7 +128,7 @@ Date & Time: ${new Date().toLocaleString()}
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "FAQPage",
-              "mainEntity": faqs.map(faq => ({
+              "mainEntity": faqs.map((faq) => ({
                 "@type": "Question",
                 "name": faq.q,
                 "acceptedAnswer": {
@@ -137,8 +137,8 @@ Date & Time: ${new Date().toLocaleString()}
                 }
               }))
             })
-          }}
-        />
+          }} />
+        
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -164,8 +164,8 @@ Date & Time: ${new Date().toLocaleString()}
               },
               "priceRange": "$$"
             })
-          }}
-        />
+          }} />
+        
       </Head>
 
       {/* Custom Landing Page Header */}
@@ -175,12 +175,12 @@ Date & Time: ${new Date().toLocaleString()}
             {/* Logo */}
             <Link href="/" className="flex items-center">
               <Image
-                src="/Logo_Regroup.png"
+                src="/Logo_Transparent.png"
                 alt="Regroup Partners"
                 width={180}
                 height={40}
-                className="h-10 w-auto"
-              />
+                className="h-10 w-auto" />
+              
             </Link>
 
             {/* Call Now Button */}
@@ -188,8 +188,8 @@ Date & Time: ${new Date().toLocaleString()}
               variant="default"
               size="lg"
               className="h-12 px-6 text-base font-semibold bg-primary hover:bg-primary/90"
-              asChild
-            >
+              asChild>
+              
               <a href="tel:+19543541800">
                 <Phone className="h-5 w-5 mr-2" />
                 Call Now: 954-354-1800
@@ -273,8 +273,8 @@ Date & Time: ${new Date().toLocaleString()}
                     <p className="text-foreground/70">Discuss your MCA debt situation confidentially with an expert advisor.</p>
                   </div>
 
-                  {submitStatus === "success" ? (
-                    <div className="bg-green-50 border border-green-200 rounded-lg p-6 space-y-4">
+                  {submitStatus === "success" ?
+                  <div className="bg-green-50 border border-green-200 rounded-lg p-6 space-y-4">
                       <div className="flex items-start gap-3">
                         <CheckCircle2 className="h-6 w-6 text-green-600 flex-shrink-0 mt-0.5" />
                         <div>
@@ -282,75 +282,75 @@ Date & Time: ${new Date().toLocaleString()}
                           <p className="text-green-800 leading-relaxed">Your request has been received successfully. A member of our team will review your information and contact you shortly.</p>
                         </div>
                       </div>
-                    </div>
-                  ) : (
-                    <form onSubmit={handleSubmit} className="space-y-4">
+                    </div> :
+
+                  <form onSubmit={handleSubmit} className="space-y-4">
                       <div>
                         <Input
-                          placeholder="Full Name *"
-                          value={formData.name}
-                          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                          required
-                          className="h-12"
-                        />
+                        placeholder="Full Name *"
+                        value={formData.name}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        required
+                        className="h-12" />
+                      
                       </div>
                       <div>
                         <Input
-                          type="email"
-                          placeholder="Email Address *"
-                          value={formData.email}
-                          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                          required
-                          className="h-12"
-                        />
+                        type="email"
+                        placeholder="Email Address *"
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        required
+                        className="h-12" />
+                      
                       </div>
                       <div>
                         <Input
-                          type="tel"
-                          placeholder="Phone Number *"
-                          value={formData.phone}
-                          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                          required
-                          className="h-12"
-                        />
+                        type="tel"
+                        placeholder="Phone Number *"
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                        required
+                        className="h-12" />
+                      
                       </div>
                       <div>
                         <Input
-                          placeholder="Company Name"
-                          value={formData.company}
-                          onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                          className="h-12"
-                        />
+                        placeholder="Company Name"
+                        value={formData.company}
+                        onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                        className="h-12" />
+                      
                       </div>
                       <div>
                         <Input
-                          placeholder="Approximate MCA Debt Amount"
-                          value={formData.mcaDebt}
-                          onChange={(e) => setFormData({ ...formData, mcaDebt: e.target.value })}
-                          className="h-12"
-                        />
+                        placeholder="Approximate MCA Debt Amount"
+                        value={formData.mcaDebt}
+                        onChange={(e) => setFormData({ ...formData, mcaDebt: e.target.value })}
+                        className="h-12" />
+                      
                       </div>
                       <div>
                         <Textarea
-                          placeholder="Brief description of your situation (optional)"
-                          value={formData.message}
-                          onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                          rows={4}
-                        />
+                        placeholder="Brief description of your situation (optional)"
+                        value={formData.message}
+                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                        rows={4} />
+                      
                       </div>
                       <Button
-                        type="submit"
-                        disabled={isSubmitting}
-                        className="w-full h-12 text-lg font-semibold"
-                        variant="default"
-                      >
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full h-12 text-lg font-semibold"
+                      variant="default">
+                      
                         {isSubmitting ? "Submitting..." : "Get Free Consultation"}
                       </Button>
                       <p className="text-xs text-center text-foreground/60">
                         All consultations are confidential. We respect your privacy.
                       </p>
                     </form>
-                  )}
+                  }
                 </div>
               </Card>
             </div>
@@ -391,20 +391,20 @@ Date & Time: ${new Date().toLocaleString()}
 
               <div className="grid md:grid-cols-2 gap-6 text-left pt-8">
                 {[
-                  "Daily or weekly payments draining cash flow",
-                  "Multiple MCA obligations compounding pressure",
-                  "Unable to meet payment schedules consistently",
-                  "Bank accounts frozen or levied by creditors",
-                  "UCC liens limiting financing options",
-                  "Confession of judgment threats or actions",
-                  "Declining revenue making payments unsustainable",
-                  "Need immediate relief to stabilize operations"
-                ].map((challenge, idx) => (
-                  <div key={idx} className="flex items-start gap-3 p-4 rounded-lg bg-background border border-border">
+                "Daily or weekly payments draining cash flow",
+                "Multiple MCA obligations compounding pressure",
+                "Unable to meet payment schedules consistently",
+                "Bank accounts frozen or levied by creditors",
+                "UCC liens limiting financing options",
+                "Confession of judgment threats or actions",
+                "Declining revenue making payments unsustainable",
+                "Need immediate relief to stabilize operations"].
+                map((challenge, idx) =>
+                <div key={idx} className="flex items-start gap-3 p-4 rounded-lg bg-background border border-border">
                     <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                     <p className="text-foreground/80">{challenge}</p>
                   </div>
-                ))}
+                )}
               </div>
             </div>
           </div>
@@ -549,32 +549,32 @@ Date & Time: ${new Date().toLocaleString()}
 
               <div className="space-y-6">
                 {[
-                  {
-                    title: "21+ Years of Restructuring Experience",
-                    description: "Decades of proven success helping businesses navigate complex financial challenges and creditor relationships."
-                  },
-                  {
-                    title: "Specialized MCA Expertise",
-                    description: "Deep understanding of Merchant Cash Advance structures, lender practices, and effective negotiation strategies."
-                  },
-                  {
-                    title: "Professional Creditor Relationships",
-                    description: "Established relationships with major MCA providers enable more effective negotiations and better outcomes."
-                  },
-                  {
-                    title: "Confidential & Discreet Service",
-                    description: "All consultations and negotiations are handled with complete confidentiality to protect your business reputation."
-                  },
-                  {
-                    title: "Comprehensive Business Solutions",
-                    description: "We address the root causes of financial stress, not just the symptoms, creating long-term stability."
-                  },
-                  {
-                    title: "Women-Owned & Operated",
-                    description: "Committed to delivering institutional-grade advisory services with personalized attention and hands-on involvement."
-                  }
-                ].map((item, idx) => (
-                  <Card key={idx} className="p-6 hover:shadow-lg transition-shadow">
+                {
+                  title: "21+ Years of Restructuring Experience",
+                  description: "Decades of proven success helping businesses navigate complex financial challenges and creditor relationships."
+                },
+                {
+                  title: "Specialized MCA Expertise",
+                  description: "Deep understanding of Merchant Cash Advance structures, lender practices, and effective negotiation strategies."
+                },
+                {
+                  title: "Professional Creditor Relationships",
+                  description: "Established relationships with major MCA providers enable more effective negotiations and better outcomes."
+                },
+                {
+                  title: "Confidential & Discreet Service",
+                  description: "All consultations and negotiations are handled with complete confidentiality to protect your business reputation."
+                },
+                {
+                  title: "Comprehensive Business Solutions",
+                  description: "We address the root causes of financial stress, not just the symptoms, creating long-term stability."
+                },
+                {
+                  title: "Women-Owned & Operated",
+                  description: "Committed to delivering institutional-grade advisory services with personalized attention and hands-on involvement."
+                }].
+                map((item, idx) =>
+                <Card key={idx} className="p-6 hover:shadow-lg transition-shadow">
                     <div className="flex items-start gap-4">
                       <ChevronRight className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                       <div className="space-y-2">
@@ -583,7 +583,7 @@ Date & Time: ${new Date().toLocaleString()}
                       </div>
                     </div>
                   </Card>
-                ))}
+                )}
               </div>
             </div>
           </div>
@@ -603,11 +603,11 @@ Date & Time: ${new Date().toLocaleString()}
               </div>
 
               <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
-                {industries.map((industry, idx) => (
-                  <div key={idx} className="p-4 rounded-lg bg-muted border border-border hover:border-primary/50 transition-colors">
+                {industries.map((industry, idx) =>
+                <div key={idx} className="p-4 rounded-lg bg-muted border border-border hover:border-primary/50 transition-colors">
                     <p className="font-semibold text-foreground">{industry}</p>
                   </div>
-                ))}
+                )}
               </div>
             </div>
           </div>
@@ -627,8 +627,8 @@ Date & Time: ${new Date().toLocaleString()}
               </div>
 
               <Accordion type="single" collapsible className="w-full space-y-4">
-                {faqs.map((faq, idx) => (
-                  <AccordionItem key={idx} value={`item-${idx}`} className="bg-background border border-border rounded-lg px-6">
+                {faqs.map((faq, idx) =>
+                <AccordionItem key={idx} value={`item-${idx}`} className="bg-background border border-border rounded-lg px-6">
                     <AccordionTrigger className="text-left font-semibold text-lg hover:text-primary">
                       {faq.q}
                     </AccordionTrigger>
@@ -636,7 +636,7 @@ Date & Time: ${new Date().toLocaleString()}
                       {faq.a}
                     </AccordionContent>
                   </AccordionItem>
-                ))}
+                )}
               </Accordion>
             </div>
           </div>
@@ -657,16 +657,16 @@ Date & Time: ${new Date().toLocaleString()}
                   variant="secondary"
                   size="lg"
                   className="h-14 px-8 text-lg font-semibold"
-                  asChild
-                >
+                  asChild>
+                  
                   <a href="#hero">Get Free Consultation</a>
                 </Button>
                 <Button
                   variant="outline"
                   size="lg"
                   className="h-14 px-8 text-lg font-semibold bg-white/10 border-white/30 hover:bg-white/20 text-white"
-                  asChild
-                >
+                  asChild>
+                  
                   <a href="tel:+19543541800">
                     <Phone className="h-5 w-5 mr-2" />
                     Speak With An Advisor
@@ -682,6 +682,6 @@ Date & Time: ${new Date().toLocaleString()}
       </main>
 
       <Footer />
-    </>
-  );
+    </>);
+
 }
