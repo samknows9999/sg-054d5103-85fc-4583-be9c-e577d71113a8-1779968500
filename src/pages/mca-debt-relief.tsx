@@ -177,10 +177,10 @@ Date & Time: ${new Date().toLocaleString()}
               <Image
                 src="/Logo_Transparent.png"
                 alt="Regroup Partners"
-                width={180}
-                height={40}
-                className="h-10 w-auto" />
-              
+                width={288}
+                height={64}
+                className="h-16 w-auto"
+              />
             </Link>
 
             {/* Call Now Button */}
