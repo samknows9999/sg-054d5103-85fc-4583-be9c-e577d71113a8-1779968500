@@ -173,8 +173,8 @@ Date & Time: ${new Date().toLocaleString()}
                     <div className="w-14 h-14 bg-gray-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary/10 transition-colors">
                       <service.icon className="w-7 h-7 text-[#0A192F] group-hover:text-primary transition-colors" />
                     </div>
-                    <h3 className="font-serif font-semibold text-2xl text-[#0A192F] mb-3 group-hover:text-primary transition-colors">MCA Debt Relief</h3>
-                    <p className="text-sm text-gray-600 leading-relaxed">Specialized advisory for businesses managing Merchant Cash Advance debt, lender negotiations, and repayment restructuring.</p>
+                    <h3 className="font-serif font-semibold text-2xl text-[#0A192F] mb-3 group-hover:text-primary transition-colors">{service.title}</h3>
+                    <p className="text-sm text-gray-600 leading-relaxed">{service.description}</p>
                   </Card>;
 
 
