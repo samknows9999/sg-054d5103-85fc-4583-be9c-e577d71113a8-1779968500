@@ -47,7 +47,7 @@ export function Navigation({ alwaysVisible = false }: NavigationProps) {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 w-full flex flex-col transition-transform duration-300 ease-in-out ${isVisible ? "translate-y-0" : "-translate-y-full"} ${scrolled ? "backdrop-blur-xl shadow-2xl" : ""}`}
-      style={{ backgroundColor: scrolled ? '#061124' : 'transparent' }}>
+          style={{ backgroundColor: '#061124' }}>
       
           <nav className={`w-full relative transition-all duration-300 ${''}`}>
         <div className="max-w-[1400px] mx-auto px-6">
