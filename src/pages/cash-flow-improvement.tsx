@@ -181,7 +181,7 @@ Description: ${formData.get("description")}
             <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-[#050505]/90 to-transparent"></div>
           </div>
           
-          <div className="max-w-[1400px] mx-auto px-6 relative z-10">
+                  <div className="max-w-[1400px] mx-auto px-6 relative z-10 pt-8">
             <div className="max-w-3xl">
               
 
