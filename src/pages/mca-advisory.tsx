@@ -179,8 +179,8 @@ Message: ${formData.get("message")}
   return (
     <div className="min-h-screen bg-white font-sans text-foreground">
       <SEO
-              title="MCA Debt Restructuring & Advisory Services | Regroup Partners"
-              description="Struggling with stacked MCA payments? Regroup Partners provides expert MCA debt restructuring, creditor coordination, and cash flow relief for businesses nationwide. Free confidential consultation."
+        title="MCA Debt Restructuring & Advisory Services | Regroup Partners"
+        description="Struggling with stacked MCA payments? Regroup Partners provides expert MCA debt restructuring, creditor coordination, and cash flow relief for businesses nationwide. Free confidential consultation."
         url="/mca-advisory" />
       
       <Head>
@@ -269,7 +269,7 @@ Message: ${formData.get("message")}
           <div className="max-w-[1400px] mx-auto px-6">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div>
-                <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6 text-foreground">What Is MCA Advisory?</h2>
+                <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6 text-foreground">What Is MCA Debt Restructuring?</h2>
                 <div className="w-16 h-1 bg-accent mb-8"></div>
                 <div className="space-y-6 text-lg text-foreground/70 leading-relaxed">
                   <p>
