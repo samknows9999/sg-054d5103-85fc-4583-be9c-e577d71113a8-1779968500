@@ -179,8 +179,8 @@ Message: ${formData.get("message")}
   return (
     <div className="min-h-screen bg-white font-sans text-foreground">
       <SEO
-        title="MCA Advisory Services | Merchant Cash Advance Consulting"
-        description="Expert MCA advisory and restructuring services. Specialized guidance for businesses dealing with Merchant Cash Advance obligations, debt consolidation, and cash flow recovery."
+              title="MCA Debt Restructuring & Advisory Services | Regroup Partners"
+              description="Struggling with stacked MCA payments? Regroup Partners provides expert MCA debt restructuring, creditor coordination, and cash flow relief for businesses nationwide. Free confidential consultation."
         url="/mca-advisory" />
       
       <Head>
