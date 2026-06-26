@@ -289,9 +289,9 @@ Through professional MCA debt restructuring, businesses can negotiate with MCA l
                   <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mb-6">
                     <Shield className="w-8 h-8 text-accent" />
                   </div>
-                  <h3 className="text-2xl font-serif font-bold mb-4">Strategic Financial Consulting</h3>
-                  <p className="text-foreground/70 mb-6 leading-relaxed">
-                    We do not offer generic debt settlement. We provide institutional-grade creditor coordination, utilizing our deep understanding of the alternative finance space to structure realistic business recovery pathways.
+                  <h3 className="text-2xl font-serif font-bold mb-4">Why MCA Debt Restructuring Works</h3>
+                  <p className="text-foreground/70 mb-6 leading-relaxed">Our approach focuses on restructuring Merchant Cash Advance obligations through strategic lender negotiations, cash flow planning, and coordinated creditor communication. Every strategy is designed around your business's financial position and long-term recovery—not a one-size-fits-all solution.
+
                   </p>
                   <ul className="space-y-4">
                     {["Financial position analysis", "Direct funder communication", "Liquidity preservation", "Operational turnaround"].map((item, i) =>
