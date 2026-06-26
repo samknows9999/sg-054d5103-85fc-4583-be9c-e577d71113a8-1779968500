@@ -85,13 +85,39 @@ const caseStudies = [
 
 
 const faqs = [
-{ q: "What is MCA debt relief?", a: "MCA debt relief helps businesses struggling with Merchant Cash Advance payment obligations improve cash flow, reduce payment pressure, and explore structured recovery options. Learn more about our <link>MCA Debt Relief services</link>." },
-{ q: "What is MCA advisory?", a: "MCA advisory involves professional financial consulting to help businesses manage, restructure, and overcome the burden of Merchant Cash Advances. We analyze your financial position and negotiate sustainable payment structures." },
-{ q: "How does MCA restructuring work?", a: "Restructuring works by analyzing the business's true affordability, communicating directly with funders, and strategically adjusting the payment terms to align with realistic, current revenue capabilities." },
-{ q: "Can MCA advisory improve cash flow?", a: "Yes. By addressing the root cause of the liquidity drain—typically high-frequency, high-cost daily ACH withdrawals—MCA advisory immediately preserves working capital for essential operations." },
-{ q: "Can businesses recover from stacked MCA loans?", a: "Absolutely. While stacked MCAs create severe operational distress, a structured advisory approach can un-stack the burden, prioritize critical payables, and return the business to stability." },
-{ q: "Is MCA restructuring an alternative to bankruptcy?", a: "In many cases, yes. Professional MCA restructuring and creditor coordination are designed to resolve unsustainable debt burdens outside of formal bankruptcy proceedings, preserving the enterprise." },
-{ q: "How quickly can financial stabilization begin?", a: "Stabilization efforts begin immediately upon engagement. While comprehensive restructuring takes time, the initial steps of cash flow analysis and creditor coordination provide rapid operational relief." }];
+    {
+        q: "What is MCA debt restructuring?",
+        a: "MCA debt restructuring is the process of reorganizing Merchant Cash Advance obligations to reduce payment pressure, improve cash flow, and create a more sustainable repayment strategy for a business."
+    },
+    {
+        q: "How does MCA debt restructuring work?",
+        a: "MCA debt restructuring usually starts by reviewing active MCA agreements, daily or weekly payment withdrawals, cash flow, and creditor pressure. From there, an advisor may communicate with MCA funders, negotiate adjusted terms, and create a practical recovery strategy."
+    },
+    {
+        q: "Can MCA debt restructuring improve cash flow?",
+        a: "Yes. MCA debt restructuring can help reduce aggressive daily or weekly ACH withdrawals that strain working capital. By adjusting payment expectations and coordinating with creditors, businesses may be able to stabilize cash flow and protect operations."
+    },
+    {
+        q: "Can businesses recover from stacked MCA loans?",
+        a: "Yes. Businesses with multiple stacked MCA loans may be able to recover through a structured restructuring plan. This may include reviewing all active advances, prioritizing creditor communication, reducing payment pressure, and building a manageable path forward."
+    },
+    {
+        q: "Is MCA debt restructuring an alternative to bankruptcy?",
+        a: "MCA debt restructuring may be an alternative to bankruptcy for some businesses. It focuses on improving cash flow, negotiating with MCA lenders, and creating a repayment strategy before considering more serious legal or financial options."
+    },
+    {
+        q: "How long does MCA debt restructuring take?",
+        a: "The timeline depends on the number of MCA lenders involved, the business's financial condition, and how quickly creditors respond. Some stabilization steps can begin quickly, while a full restructuring plan may take longer."
+    },
+    {
+        q: "Can multiple Merchant Cash Advances be restructured?",
+        a: "Yes. Multiple Merchant Cash Advances can often be reviewed together as part of a broader restructuring strategy. This helps businesses understand total obligations, coordinate lender communication, and reduce overlapping payment pressure."
+    },
+    {
+        q: "Is MCA debt restructuring different from debt settlement?",
+        a: "Yes. MCA debt restructuring focuses on modifying repayment terms, improving cash flow, and stabilizing the business. Debt settlement usually focuses on resolving a balance for less than the full amount. In some cases, settlement may be part of a restructuring plan."
+    }
+];
 
 
 export default function MCAAdvisory() {
