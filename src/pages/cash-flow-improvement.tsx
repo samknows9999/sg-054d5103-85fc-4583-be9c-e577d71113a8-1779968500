@@ -186,7 +186,7 @@ Description: ${formData.get("description")}
               
 
               
-              <h1 className="font-serif text-4xl md:text-6xl font-semibold mb-6 leading-tight">
+                          <h1 className="font-serif text-4xl md:text-6xl font-semibold mb-10 md:mb-12 leading-tight">
                 Improve Business Cash Flow & Regain Financial Stability
               </h1>
               <p className="text-xl md:text-2xl text-gray-300 mb-10 leading-relaxed font-light">
