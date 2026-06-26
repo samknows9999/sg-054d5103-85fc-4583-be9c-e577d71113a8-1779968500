@@ -171,7 +171,7 @@ Description: ${formData.get("description")}
 
       <main className="">
         {/* Section 1: Hero */}
-        <section className="relative overflow-hidden bg-[#050505] text-white py-24 lg:py-32">
+              <section className="relative overflow-hidden bg-[#050505] text-white pt-36 pb-24 lg:pt-40 lg:pb-32">
           <div className="absolute inset-0 z-0">
             <img
               src="/generated/cash-flow-hero.png"
