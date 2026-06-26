@@ -179,8 +179,8 @@ Message: ${formData.get("message")}
   return (
     <div className="min-h-screen bg-white font-sans text-foreground">
       <SEO
-              title="MCA Debt Restructuring & Advisory Services | Regroup Partners"
-              description="Struggling with stacked MCA payments? Regroup Partners provides expert MCA debt restructuring, creditor coordination, and cash flow relief for businesses nationwide. Free confidential consultation."
+        title="MCA Debt Restructuring & Advisory Services | Regroup Partners"
+        description="Struggling with stacked MCA payments? Regroup Partners provides expert MCA debt restructuring, creditor coordination, and cash flow relief for businesses nationwide. Free confidential consultation."
         url="/mca-advisory" />
       
       <Head>
