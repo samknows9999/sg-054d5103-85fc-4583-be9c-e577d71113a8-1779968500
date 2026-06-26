@@ -179,8 +179,8 @@ Message: ${formData.get("message")}
   return (
     <div className="min-h-screen bg-white font-sans text-foreground">
       <SEO
-        title="MCA Debt Restructuring & Advisory Services | Regroup Partners"
-        description="Struggling with stacked MCA payments? Regroup Partners provides expert MCA debt restructuring, creditor coordination, and cash flow relief for businesses nationwide. Free confidential consultation."
+              title="MCA Debt Restructuring & Advisory Services | Regroup Partners"
+              description="Struggling with stacked MCA payments? Regroup Partners provides expert MCA debt restructuring, creditor coordination, and cash flow relief for businesses nationwide. Free confidential consultation."
         url="/mca-advisory" />
       
       <Head>
@@ -209,7 +209,7 @@ Message: ${formData.get("message")}
                 MCA Advisory Services
               </div>
               <h1 className="text-4xl md:text-6xl font-serif font-bold leading-[1.1] mb-6 tracking-tight">
-                MCA Advisory & <br /><span className="text-gray-300">Business Stabilization Services</span>
+                MCA Debt Restructuring & <br /><span className="text-gray-300">Advisory Services</span>
               </h1>
               <p className="text-lg md:text-xl text-gray-300 mb-10 leading-relaxed font-light max-w-2xl">
                 Helping businesses manage MCA payment pressure, improve cash flow, and create structured financial recovery strategies through professional advisory solutions.
