@@ -135,7 +135,7 @@ Date & Time: ${new Date().toLocaleString()}
 
       <main className="">
         {/* Section 1: Hero */}
-        <section className="relative min-h-[60vh] flex items-center bg-[#000000] overflow-hidden pt-12 pb-24">
+        <section className="relative min-h-[60vh] flex items-center bg-[#000000] overflow-hidden pt-32 pb-24">
           <div className="absolute inset-0 w-full h-full">
             <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/40 z-10"></div>
             <img
