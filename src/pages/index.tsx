@@ -218,11 +218,11 @@ Date & Time: ${new Date().toLocaleString()}
                   <div className="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
                   <span className="text-sm font-semibold text-[#0A192F] tracking-widest uppercase">Discreet & Confidential</span>
                 </div>
-                <h2 className="font-serif text-3xl md:text-5xl font-semibold mb-6 leading-tight text-[#0A192F]">Get Expert Business Debt Relief & Financial Advisory
+                <h2 className="font-serif text-3xl md:text-5xl font-semibold mb-6 leading-tight text-[#0A192F]">Merchant Cash Advance (MCA) Restructuring & Business Advisory
 
                 </h2>
                 <div className="w-16 h-1 bg-primary mb-8"></div>
-                <p className="text-gray-600 text-lg md:text-xl leading-relaxed font-light">Speak with experienced advisors about business debt relief, business debt consolidation, merchant cash advance (MCA) debt relief, creditor negotiations, and business restructuring. Every consultation is confidential and tailored to your business.
+                <p className="text-gray-600 text-lg md:text-xl leading-relaxed font-light">Work with experienced MCA advisors to restructure merchant cash advance obligations, improve cash flow, coordinate with creditors, and develop strategic financial solutions tailored to your business.
 
                 </p>
               </div>
