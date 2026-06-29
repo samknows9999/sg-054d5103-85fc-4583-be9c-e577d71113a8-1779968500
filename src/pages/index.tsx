@@ -327,14 +327,14 @@ Date & Time: ${new Date().toLocaleString()}
               </div>
               <div className="space-y-6">
                 <div className="p-8 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-colors" style={{ backgroundColor: "#d1d5db", backgroundImage: "none" }}>
-                  <h3 className="font-serif text-2xl font-semibold mb-3 text-white" style={{ color: "#000000" }}>Business Debt Relief Strategies</h3>
-                  <p className="text-gray-400 font-light" style={{ color: "#1a1a1a" }}>We help businesses evaluate practical debt relief strategies that reduce financial pressure while protecting long-term operations.
+                  <h3 className="font-serif text-2xl font-semibold mb-3 text-white" style={{ color: "#000000" }}>Business Debt Restructuring</h3>
+                  <p className="text-gray-400 font-light" style={{ color: "#1a1a1a" }}>Coordinate with creditors and restructure financial obligations through customized strategies designed for sustainable business recovery.
 
                   </p>
                 </div>
                 <div className="p-8 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-colors" style={{ backgroundColor: "#d1d5db", backgroundImage: "none" }}>
-                  <h3 className="font-serif text-2xl font-semibold mb-3 text-white" style={{ color: "#000000" }}>Business Debt Consolidation Options</h3>
-                  <p className="text-gray-400 font-light" style={{ color: "#1a1a1a" }}>Our advisors work with multiple creditors to simplify repayment structures and improve financial flexibility.
+                  <h3 className="font-serif text-2xl font-semibold mb-3 text-white" style={{ color: "#000000" }}>Trusted Creditor Relationships</h3>
+                  <p className="text-gray-400 font-light" style={{ color: "#1a1a1a" }}>More than two decades of experience working with lenders, attorneys, vendors, and financial stakeholders to achieve practical restructuring outcomes.
 
                   </p>
                 </div>
