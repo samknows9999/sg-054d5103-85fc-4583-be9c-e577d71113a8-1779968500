@@ -500,14 +500,14 @@ Date & Time: ${new Date().toLocaleString()}
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
-              <Link href="/insights" className="group block">
+              <Link href="/insights/business-restructuring-vs-bankruptcy" className="group block">
                 <Card className="p-8 bg-gray-50 border border-gray-100 hover:border-primary/30 hover:shadow-xl transition-all duration-300 h-full">
                   <div className="text-xs font-bold text-primary tracking-wider uppercase mb-4">Business Restructuring</div>
                   <h3 className="font-serif text-2xl font-semibold mb-4 text-[#0A192F] group-hover:text-primary transition-colors">
-                    How Business Restructuring Improves Cash Flow
+                    Business Restructuring vs Bankruptcy: Key Differences
                   </h3>
                   <p className="text-gray-600 mb-6 leading-relaxed text-sm">
-                    Strategic approaches to improving operational cash flow through creditor coordination and financial stabilization.
+                    Understanding when business restructuring offers a path to stabilization outside of formal bankruptcy proceedings and the advantages of strategic creditor coordination.
                   </p>
                   <div className="flex items-center text-primary font-semibold text-sm">
                     Read Article
