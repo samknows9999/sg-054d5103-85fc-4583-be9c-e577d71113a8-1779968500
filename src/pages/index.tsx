@@ -232,7 +232,7 @@ Date & Time: ${new Date().toLocaleString()}
             <div className="lg:w-1/2 bg-white text-[#0A192F] p-12 md:p-24 flex flex-col justify-center shadow-[-20px_0_40px_rgba(0,0,0,0.03)] relative z-10">
               <div className="max-w-lg mx-auto w-full">
                 <div className="mb-10">
-                  <h3 className="font-serif text-3xl font-semibold mb-4 text-[#0A192F]">Schedule Your Confidential Business Debt Relief Consultation</h3>
+                  <h3 className="font-serif text-3xl font-semibold mb-4 text-[#0A192F]">Speak with a Business Restructuring Advisor</h3>
                   <p className="text-gray-600 leading-relaxed">Tell us about your business challenges and one of our experienced advisors will review your situation and discuss potential business debt relief, restructuring, or creditor negotiation options.
 
                   </p>
